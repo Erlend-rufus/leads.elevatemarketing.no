@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="nb" data-anim="on">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E1116">
+<title>Gratis GEO-audit | Kundene spør AI. Nevnes dere? | Elevate Marketing</title>
+<meta name="description" content="Gratis GEO-audit for norske servicebedrifter. Vi tester om ChatGPT, Gemini og Google AI nevner bedriften din når kundene spør, og viser hva som skal til.">
+
+<!-- Open Graph / sosial deling -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Elevate Marketing">
+<meta property="og:title" content="Kundene spør AI. Nevnes dere?">
+<meta property="og:description" content="Gratis GEO-audit som viser om ChatGPT, Gemini og Google AI nevner bedriften din når kundene spør, og hva som skal til.">
+<!-- TODO (domene): sett absolutt og:url + og:image (1200×630) når domenet er koblet på. -->
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- Self-hostede fonter — preload de to LCP-kritiske (H1 = Montserrat, brødtekst = Poppins 300) -->
+<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/poppins-300.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/site.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Elevate Marketing",
+  "legalName": "EngeCo AS",
+  "url": "https://elevatemarketing.no",
+  "areaServed": "NO"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Er auditen faktisk gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Ingen betalingsinformasjon, ingen binding. Rapporten og tiltakslisten er deres uansett hva dere velger etterpå." } },
+    { "@type": "Question", "name": "Hvorfor gjør dere dette gratis?", "acceptedAnswer": { "@type": "Answer", "text": "Fordi vi tror en andel av dere vil ønske hjelp til å gjennomføre tiltakene etterpå. Det sier vi rett ut. Auditen er like fullt komplett og deres uansett." } },
+    { "@type": "Question", "name": "Hva forplikter det meg til?", "acceptedAnswer": { "@type": "Answer", "text": "Ingenting. Dere fyller ut et skjema på 2 minutter og møter oss i 30 minutter på video. Hva dere gjør med funnene, bestemmer dere selv." } },
+    { "@type": "Question", "name": "Kan dere garantere at AI nevner oss?", "acceptedAnswer": { "@type": "Answer", "text": "Nei. Ingen kan styre hva en AI-modell svarer, og du bør være skeptisk til alle som lover det. Vi bygger forutsetningene og måler utviklingen." } },
+    { "@type": "Question", "name": "Hvor lang tid tar det?", "acceptedAnswer": { "@type": "Answer", "text": "Skjemaet tar 2 minutter. Gjennomgangen tar 30 minutter. Alt arbeidet i mellom gjør vi." } },
+    { "@type": "Question", "name": "Hva skjer etter gjennomgangen?", "acceptedAnswer": { "@type": "Answer", "text": "Dere sitter igjen med rapporten og en prioritert tiltaksliste. Vil dere gjennomføre selv, gjør dere det. Vil dere ha hjelp av oss, snakker vi om hvordan det kan se ut." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- TODO (funnel): alle href="#skjema" skal peke på Typeform-lenken for dette løpet,
+     med UTM-gjennomstrømming (utm_source, utm_campaign, utm_content, angle) til Typeform
+     hidden fields. Kvalifisert sti -> /takk (Lead-event GEOAuditKvalifisert fyres KUN der),
+     ikke-kvalifisert -> /ikke-aktuell (ingen event). Se README + landingsside-brief punkt 4. -->
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Elevate<span>.</span></a>
+    <a class="btn btn-outline" href="#skjema">Start gratis audit</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow" style="margin-bottom: 0;">GEO for servicebedrifter</p>
+    <h1 id="hero-h1">Kundene spør AI. <em>Nevnes dere?</em></h1>
+    <p class="lead hero-lead">Gratis GEO-audit som viser om ChatGPT, Gemini og Google AI nevner bedriften din når kundene spør, og hva som skal til for å bli nevnt.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#skjema" id="skjema">Start gratis audit</a>
+      <p class="hero-qualifier">For servicebedrifter i hele Norge med 10+ ansatte eller 15+ MNOK i omsetning.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-outer mockup-section on-deep">
+  <div class="wrap">
+    <div class="chat" id="chat-demo" aria-label="Eksempel på et AI-svar der bedriften ikke nevnes">
+      <div class="chat-user" data-step="1">
+        <p class="chat-label">Kunde</p>
+        <p class="bubble">Hvilken rørlegger bør jeg bruke ved vannskade?</p>
+      </div>
+      <div class="chat-ai">
+        <p class="chat-label" data-step="2" style="margin-bottom: 0;">AI-svar</p>
+        <div class="chat-typing" data-step="2" hidden><i></i><i></i><i></i></div>
+        <p class="chat-intro" data-step="3">Ved vannskade lønner det seg å velge et etablert firma med døgnvakt. Basert på kildene jeg har tilgang til, er dette aktuelle alternativer i ditt område:</p>
+        <ul class="chat-firms">
+          <li data-step="4"><strong>Rørleggerfirma A</strong><span>fremhevet for vannskade og bad</span></li>
+          <li data-step="5"><strong>Rørleggerfirma B</strong><span>omtalt for service og rehabilitering</span></li>
+          <li data-step="6"><strong>Rørleggerfirma C</strong><span>nevnt i flere kilder om VVS</span></li>
+        </ul>
+      </div>
+      <p class="chat-verdict" data-step="7"><span class="verdict-label">Bedriften din</span><span class="verdict-text">Ikke nevnt.</span></p>
+    </div>
+    <p class="chat-caption caption">
+      <span>Illustrasjon, ikke et ekte AI-svar. Hvilke firmaer som nevnes, avhenger av kildene modellen stoler på.</span>
+      <button class="chat-replay" type="button" id="chat-replay">Spill av igjen</button>
+    </p>
+  </div>
+</section>
+
+<section class="section-outer a2">
+  <div class="wrap two-col">
+    <div class="section-head">
+      <p class="section-num">01</p>
+      <p class="eyebrow">Skiftet</p>
+      <h2>Kundene spør AI før de googler</h2>
+    </div>
+    <div class="shift-body">
+      <div>
+        <p>Stadig flere spør ChatGPT eller Gemini direkte når de trenger en håndverker, et verksted eller et flyttebyrå. Og når de fortsatt googler, besvarer Googles egne AI-svar stadig mer øverst på siden, før noen rekker å klikke.</p>
+        <p>Synligheten bedriften din har bygget opp i søk, forvitrer uten varsel. Klikkene stopper i svaret.</p>
+      </div>
+      <div class="serp" aria-label="Illustrasjon: et AI-svar legger seg over de vanlige søkeresultatene">
+        <div class="serp-bar"><i></i>rørlegger nær meg</div>
+        <div class="serp-ai">
+          <p class="serp-ai-label">AI-svar</p>
+          <div class="skel skel-w90"></div>
+          <div class="skel skel-w80"></div>
+          <div class="skel skel-w65"></div>
+        </div>
+        <div class="serp-links">
+          <div class="serp-link"><div class="skel skel-url"></div><div class="skel skel-title"></div><div class="skel skel-w80"></div></div>
+          <div class="serp-link"><div class="skel skel-url"></div><div class="skel skel-title"></div><div class="skel skel-w65"></div></div>
+          <div class="serp-link"><div class="skel skel-url"></div><div class="skel skel-title"></div><div class="skel skel-w80"></div></div>
+        </div>
+      </div>
+      <div class="shift-stats">
+        <div class="stat">
+          <span class="stat-num">58&nbsp;%</span>
+          <p class="stat-label">lavere klikkrate til toppresultatet når Google viser et AI-svar over det.</p>
+          <p class="stat-source">Ahrefs, 2026. Analyse av 300 000 søkeord.</p>
+        </div>
+        <div class="stat">
+          <span class="stat-num">8 av 100</span>
+          <p class="stat-label">søk med AI-oppsummering ender i et klikk på et vanlig resultat, mot 15 av 100 uten.</p>
+          <p class="stat-source">Pew Research Center, 2025.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-outer a3">
+  <div class="wrap">
+    <div class="two-col">
+      <div class="section-head">
+        <p class="section-num">02</p>
+        <p class="eyebrow">Hva er GEO</p>
+        <h2>Samme logikk som SEO, men for AI-svarene</h2>
+      </div>
+      <div>
+        <p>GEO er arbeidet med å bli nevnt når en AI svarer. Samme logikk som søkemotoroptimalisering, men rettet mot AI-svarene som nå legger seg foran søkeresultatene.</p>
+        <p>Modellene anbefaler bedrifter de finner igjen i kilder de stoler på. Slik henger det sammen:</p>
+      </div>
+    </div>
+    <div class="mech-panels">
+      <div class="mech-panel">
+        <p class="mech-step">STEG 1</p>
+        <div class="mech-figure">
+          <div class="mech-bubble">Hvilken elektriker bør jeg velge?</div>
+        </div>
+        <div>
+          <h3>Kunden stiller et spørsmål</h3>
+          <p class="mech-desc">I ChatGPT, Gemini eller rett i Google. Ett spørsmål, ett samlet svar.</p>
+        </div>
+      </div>
+      <div class="mech-panel">
+        <p class="mech-step">STEG 2</p>
+        <div class="mech-figure">
+          <div class="mech-source"><span class="mech-chip">Nettsiden din</span><span class="mech-line"></span></div>
+          <div class="mech-source"><span class="mech-chip">Struktur og schema</span><span class="mech-line"></span></div>
+          <div class="mech-source"><span class="mech-chip">Omtale i kilder</span><span class="mech-line"></span></div>
+        </div>
+        <div>
+          <h3>Modellen henter fra kilder den stoler på</h3>
+          <p class="mech-desc">Tydelig fagstoff, ryddig struktur og konsistent omtale på tvers av nettet er signalene som teller.</p>
+        </div>
+      </div>
+      <div class="mech-panel">
+        <p class="mech-step">STEG 3</p>
+        <div class="mech-figure">
+          <div class="mech-answer">
+            <div class="mech-row"><span class="dot"></span>Firma A</div>
+            <div class="mech-row is-you"><span class="dot"></span>Bedriften din</div>
+            <div class="mech-row"><span class="dot"></span>Firma B</div>
+          </div>
+        </div>
+        <div>
+          <h3>Bedriftene med riktige signaler nevnes</h3>
+          <p class="mech-desc">Svaret trekker frem noen få navn. Målet med GEO er at ditt er ett av dem.</p>
+        </div>
+      </div>
+    </div>
+    <p class="mech-claim">Du blir anbefalt fordi modellene kjenner deg som en autoritet, ikke fordi du kjøpte en annonse eller et lead.</p>
+  </div>
+</section>
+
+<section class="section-outer a4 on-deep">
+  <div class="wrap two-col">
+    <div class="section-head">
+      <p class="section-num">03</p>
+      <p class="eyebrow">Gratis GEO-audit</p>
+      <h2>Dette sjekker vi</h2>
+    </div>
+    <div>
+      <ul class="audit-list">
+        <li class="audit-item">
+          <span class="audit-check"><svg width="14" height="12" viewBox="0 0 14 12" aria-hidden="true"><path d="M1.5 6.5 5 10 12.5 1.5"></path></svg></span>
+          <div>
+            <h3>AI-synlighet</h3>
+            <p>10 til 20 reelle kundespørsmål for deres fagfelt og område, testet i ChatGPT, Gemini, Perplexity og Google AI Overviews. Nevnes dere, ja eller nei per spørsmål.</p>
+          </div>
+        </li>
+        <li class="audit-item">
+          <span class="audit-check"><svg width="14" height="12" viewBox="0 0 14 12" aria-hidden="true"><path d="M1.5 6.5 5 10 12.5 1.5"></path></svg></span>
+          <div>
+            <h3>Konkurrentbildet</h3>
+            <p>Hvilke firmaer som faktisk nevnes i svarene i deres marked.</p>
+          </div>
+        </li>
+        <li class="audit-item">
+          <span class="audit-check"><svg width="14" height="12" viewBox="0 0 14 12" aria-hidden="true"><path d="M1.5 6.5 5 10 12.5 1.5"></path></svg></span>
+          <div>
+            <h3>Teknisk AI-lesbarhet</h3>
+            <p>Struktur og ekstraherbarhet på nettsiden, schema-markup og om AI-botene i det hele tatt slipper til.</p>
+          </div>
+        </li>
+        <li class="audit-item">
+          <span class="audit-check"><svg width="14" height="12" viewBox="0 0 14 12" aria-hidden="true"><path d="M1.5 6.5 5 10 12.5 1.5"></path></svg></span>
+          <div>
+            <h3>Autoritets- og innholdsgap</h3>
+            <p>Hva som mangler for å bli sitert: svarblokker, FAQ, tall og kilder, omtale hos tredjeparter.</p>
+          </div>
+        </li>
+        <li class="audit-item">
+          <span class="audit-check"><svg width="14" height="12" viewBox="0 0 14 12" aria-hidden="true"><path d="M1.5 6.5 5 10 12.5 1.5"></path></svg></span>
+          <div>
+            <h3>Prioritert tiltaksliste</h3>
+            <p>3 til 5 punkter, sortert etter effekt. Konkret nok til å handle på.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="audit-delivery">Leveransen er en kort rapport på 6 til 10 sider som vi går gjennom sammen i et videomøte på 30 minutter.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-outer a5">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="section-num">04</p>
+      <p class="eyebrow">Slik fungerer det</p>
+      <h2>Tre steg, det meste gjør vi</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <h3>Fyll ut skjemaet</h3>
+        <p>2 minutter. Bedriftsnavn, nettside, bransje og størrelse. Ingen betalingsinfo.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <h3>Vi kjører auditen</h3>
+        <p>På deres bedrift, deres fagfelt og deres marked. Dere trenger ikke gjøre noe.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <h3>30 minutters gjennomgang</h3>
+        <p>Vi går gjennom funnene og den prioriterte tiltakslisten på video. Rapporten er deres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-outer on-deep">
+  <div class="wrap two-col">
+    <div class="section-head">
+      <p class="section-num">05</p>
+      <p class="eyebrow">Kvalifisering</p>
+      <h2>Hvem auditen passer for</h2>
+    </div>
+    <div>
+      <div class="fit-grid">
+        <div class="fit-panel">
+          <h3>Passer for</h3>
+          <ul class="fit-list">
+            <li><span class="mark">✓</span>Etablerte norske servicebedrifter</li>
+            <li><span class="mark">✓</span>10+ ansatte eller 15+ MNOK i omsetning</li>
+            <li><span class="mark">✓</span>Egen nettside og et reelt driftsapparat</li>
+            <li><span class="mark">✓</span>Bransjer som rørlegger, elektriker, renhold, bygg og håndverk, bilverksted, skadedyrkontroll og anleggsgartner</li>
+          </ul>
+        </div>
+        <div class="fit-panel fit-no">
+          <h3>Passer ikke for</h3>
+          <ul class="fit-list">
+            <li><span class="mark">–</span>Enkeltpersonforetak</li>
+            <li><span class="mark">–</span>Oppstartsbedrifter uten driftshistorikk</li>
+            <li><span class="mark">–</span>Bedrifter uten nettside, da kan ikke auditen kjøres</li>
+          </ul>
+          <p class="fit-reason">Ærlig grunn: auditen gir mest verdi der det finnes drift og volum å bygge på.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-outer">
+  <div class="wrap two-col">
+    <div class="section-head">
+      <p class="section-num">06</p>
+      <p class="eyebrow">Hvorfor gratis</p>
+      <h2>Vi sier det rett ut</h2>
+    </div>
+    <div class="honest">
+      <p><strong>Vi tror en andel av dere vil ønske hjelp til å gjennomføre tiltakene etterpå.</strong> Derfor er auditen gratis og uforpliktende. Det er hele regnestykket.</p>
+      <p>Rapporten og tiltakslisten er komplette og deres uansett. Ingen betalingsinfo, ingen binding, ingen liten skrift.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section-outer on-deep">
+  <div class="wrap two-col">
+    <div class="section-head">
+      <p class="section-num">07</p>
+      <p class="eyebrow">Hvorfor Elevate</p>
+      <h2>Byrå for bedrifter som vil ha tall, ikke ord</h2>
+    </div>
+    <div class="why-points">
+      <div>
+        <h3>Spesialisert, ikke generalist</h3>
+        <p>Vi jobber med servicebedrifter og advokatfirmaer. Vi kjenner hverdagen der jobben vinnes på belegg, ordrereserve og margin.</p>
+      </div>
+      <div>
+        <h3>Datadrevet</h3>
+        <p>Vi måles på det som kan måles og rapporterer ærlig hver måned. Vi justerer på det tallene viser, ikke magefølelsen.</p>
+      </div>
+      <div>
+        <h3>Ingen innpakning</h3>
+        <p>Ingen garantert sitering, ingen betaling for løfter. Du ser status i din egen audit før du vurderer noe som helst.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-outer">
+  <div class="wrap two-col">
+    <div class="section-head">
+      <p class="section-num">08</p>
+      <p class="eyebrow">Spørsmål og svar</p>
+      <h2>Det folk lurer på</h2>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Er auditen faktisk gratis?<span class="faq-x"></span></summary>
+        <p class="faq-a">Ja. Ingen betalingsinformasjon, ingen binding. Rapporten og tiltakslisten er deres uansett hva dere velger etterpå.</p>
+      </details>
+      <details>
+        <summary>Hvorfor gjør dere dette gratis?<span class="faq-x"></span></summary>
+        <p class="faq-a">Fordi vi tror en andel av dere vil ønske hjelp til å gjennomføre tiltakene etterpå. Det sier vi rett ut. Auditen er like fullt komplett og deres uansett.</p>
+      </details>
+      <details>
+        <summary>Hva forplikter det meg til?<span class="faq-x"></span></summary>
+        <p class="faq-a">Ingenting. Dere fyller ut et skjema på 2 minutter og møter oss i 30 minutter på video. Hva dere gjør med funnene, bestemmer dere selv.</p>
+      </details>
+      <details>
+        <summary>Kan dere garantere at AI nevner oss?<span class="faq-x"></span></summary>
+        <p class="faq-a">Nei. Ingen kan styre hva en AI-modell svarer, og du bør være skeptisk til alle som lover det. Det vi gjør, er å bygge forutsetningene og måle utviklingen.</p>
+      </details>
+      <details>
+        <summary>Hvor lang tid tar det?<span class="faq-x"></span></summary>
+        <p class="faq-a">Skjemaet tar 2 minutter. Gjennomgangen tar 30 minutter. Alt arbeidet i mellom gjør vi.</p>
+      </details>
+      <details>
+        <summary>Hva skjer etter gjennomgangen?<span class="faq-x"></span></summary>
+        <p class="faq-a">Dere sitter igjen med rapporten og en prioritert tiltaksliste. Vil dere gjennomføre selv, gjør dere det. Vil dere ha hjelp av oss, snakker vi om hvordan det kan se ut.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section-outer final-cta">
+  <div class="wrap">
+    <p class="eyebrow">Gratis GEO-audit</p>
+    <h2>Finn ut om AI anbefaler <em>dere.</em></h2>
+    <a class="btn btn-primary" href="#skjema">Start gratis audit</a>
+    <p class="hero-qualifier">For servicebedrifter i hele Norge med 10+ ansatte eller 15+ MNOK i omsetning. 2 minutter skjema, 30 minutters gjennomgang.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Elevate<span>.</span></a>
+    <p>Elevate Marketing, en del av EngeCo AS</p>
+    <p><a href="#">Personvern</a></p>
+  </div>
+</footer>
+
+<script src="js/geo-sb.js" defer></script>
+
+</body>
+</html>

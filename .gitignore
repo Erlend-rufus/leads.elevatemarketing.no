@@ -1,0 +1,14 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node (kun hvis verktøy introduseres senere; siden i seg selv er rammeverk-fri)
+node_modules/
+npm-debug.log*
+
+# Python (font-skriptet)
+__pycache__/
+*.pyc

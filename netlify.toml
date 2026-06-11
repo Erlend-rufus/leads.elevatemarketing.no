@@ -1,0 +1,51 @@
+# Netlify-konfig for GEO-audit landingssiden.
+# Ren statisk side (ingen build) — publiseres fra repo-roten.
+# Domenet kobles på senere; inntil da kjører siden på et Netlify preview-domene.
+
+[build]
+  publish = "."
+  command = ""
+
+# ---- Rene URL-er for funnel-stiene (Typeform redirecter hit) ----------------
+[[redirects]]
+  from = "/takk"
+  to = "/takk.html"
+  status = 200
+
+[[redirects]]
+  from = "/ikke-aktuell"
+  to = "/ikke-aktuell.html"
+  status = 200
+
+# ---- Sikkerhetsheadere -------------------------------------------------------
+# Bevisst ingen streng Content-Security-Policy ennå: Typeform, Calendly og Meta
+# Pixel embeddes/lastes på funnel-sidene. Legg til en CSP når de kildene er låst.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# ---- Caching -----------------------------------------------------------------
+# HTML revalideres alltid; fonter er innholdsstabile og kan caches lenge.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
