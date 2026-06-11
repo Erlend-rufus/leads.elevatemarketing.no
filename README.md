@@ -88,8 +88,8 @@ Disse er bevisst stubbet (TODO i koden) fordi de avhenger av beslutninger/lenker
 | Punkt | Hvor | Hva som mangler |
 |---|---|---|
 | **Typeform** ✅ | `index.html` CTA-er | Wiret: CTA-ene åpner skjema `nzIBCOAn` som popup (`embed.js`) med UTM-gjennomstrømming (`utm_source`, `utm_campaign`, `utm_content`, `angle`). Gjenstår: opprett disse som **hidden fields** i Typeform, og sett endings til å redirecte kvalifisert → `https://leads.elevatemarketing.no/takk` og ikke-kvalifisert → `https://leads.elevatemarketing.no/ikke-aktuell` |
-| **Calendly** | `takk.html` | Sett inn inline-embed med egen lenke for dette løpet (kommentert scaffold ligger klart) |
-| **Meta Pixel** | `takk.html` | Beslutning: eksisterende pixel `1671736210640206` med nye eventnavn, eller eget dataset. Fyll inn ID, fjern kommentaren |
+| **Calendly** ✅ | `takk.html` | Wiret: inline-embed (`geo-gjennomgang-for-servicebedrifter`) med mørkt tema + mint via URL-parametre |
+| **Meta Pixel** ✅ | `takk.html` | Wiret: pixel `2054301445970035`, `GEOAuditKvalifisert` på load + `GEOAuditMoteBooket` på Calendly-bekreftelse. Gjenstår: **verifiser i Events Manager (Test Events)** før annonsene skrus på |
 | **Personvern** | footer, alle sider | `href="#"` → faktisk personvern-URL |
 | **Domene + OG** | `index.html`, `robots.txt` | Absolutt `og:url`/`og:image`, `Sitemap`-linje |
 
@@ -99,8 +99,9 @@ Disse er bevisst stubbet (TODO i koden) fordi de avhenger av beslutninger/lenker
   aldri på `/ikke-aktuell`. Lag en custom conversion av den og optimaliser mot den.
 - `GEOAuditMoteBooket` fyres på Calendly-bekreftelse (`calendly.event_scheduled`).
 - **Verifiser begge stier i Events Manager (Test Events) FØR lansering.** Forrige funnel
-  gikk live uten Lead-event; det skal ikke gjentas. Derfor er pixel-koden lagt inn
-  inaktiv (kommentert) med candidate-ID på plass.
+  gikk live uten Lead-event; det skal ikke gjentas. Pixel `2054301445970035` er nå aktiv
+  på `/takk` — kjør Test Events på `/takk` (skal fyre `GEOAuditKvalifisert`) og bekreft at
+  `/ikke-aktuell` ikke fyrer noe, før annonsene skrus på.
 
 ## Avvik fra designfila (verdt å merke seg)
 

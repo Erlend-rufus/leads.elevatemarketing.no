@@ -12,31 +12,22 @@
 <link rel="preload" href="fonts/poppins-300.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
 
-<!-- ============================================================================
-     META PIXEL — KVALIFISERT STI (KRITISK, må verifiseres før lansering)
-
-     Eventet GEOAuditKvalifisert skal fyres KUN på page-load av DENNE siden,
-     aldri på form-submit og aldri på /ikke-aktuell. Lag en custom conversion
-     av eventet og optimaliser kampanjen mot den. Verifiser BEGGE stier i
-     Events Manager (Test Events) FØR lansering — forrige funnel gikk live uten
-     Lead-event; det gjentas ikke.
-
-     Åpen beslutning (Erlend): eksisterende pixel 1671736210640206 med de nye
-     eventnavnene, eller eget dataset. Fyll inn ID og fjern kommentaren når valgt.
-
+<!-- Meta Pixel — GEOAuditKvalifisert fyres KUN på /takk (kvalifisert sti),
+     aldri på form-submit og aldri på /ikke-aktuell. Lag en custom conversion av
+     eventet og optimaliser mot den. Verifiser i Events Manager (Test Events) før
+     annonsene skrus på. -->
 <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
   n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', 'PIXEL_ID');                 // TODO: 1671736210640206 eller eget dataset
+  fbq('init', '2054301445970035');
   fbq('track', 'PageView');
-  fbq('trackCustom', 'GEOAuditKvalifisert'); // fyres på load, KUN her
+  fbq('trackCustom', 'GEOAuditKvalifisert');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-     ============================================================================ -->
+  src="https://www.facebook.com/tr?id=2054301445970035&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
@@ -52,15 +43,14 @@
     <h1 style="font-size: clamp(32px, 5vw, 52px);">Takk. Velg et tidspunkt for gjennomgangen.</h1>
     <p class="lead">Dere kvalifiserer for auditen. Book 30 minutter på video under, så kjører vi auditen på deres bedrift og marked før møtet.</p>
 
-    <!-- CALENDLY — egen lenke for dette løpet (åpen beslutning, Erlend).
-         Bytt ut placeholder-slotten under med inline-embeden når lenken er klar:
-
+    <!-- Calendly inline widget. Mørkt tema + mint via URL-parametre, så det
+         matcher siden. Telefonnummer fanges i bookingen, ikke i skjemaet. -->
     <div class="calendly-inline-widget"
-         data-url="https://calendly.com/ELEVATE-LENKE/geo-audit?hide_gdpr_banner=1&background_color=13161b&text_color=ffffff&primary_color=00ffc5"
-         style="min-width:320px;height:680px;"></div>
+         data-url="https://calendly.com/eb-growwithelevate/geo-gjennomgang-for-servicebedrifter?hide_event_type_details=1&hide_gdpr_banner=1&background_color=13161b&text_color=ffffff&primary_color=00ffc5"
+         style="min-width:320px;height:700px;"
+         aria-label="Book GEO-gjennomgang"></div>
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-         GEOAuditMoteBooket fyres når møtet bekreftes. Lytt på Calendly-eventet:
+    <!-- GEOAuditMoteBooket fyres når møtet bekreftes -->
     <script>
       window.addEventListener('message', function (e) {
         if (e.data && e.data.event === 'calendly.event_scheduled') {
@@ -68,14 +58,6 @@
         }
       });
     </script>
-    -->
-
-    <div class="calendly-slot" aria-label="Plass til Calendly-booking">
-      <div>
-        <p style="margin-bottom: 10px;"><code>Calendly-embed</code></p>
-        <p>Egen Calendly-lenke for dette løpet settes inn her. Telefonnummer fanges i bookingen, ikke i skjemaet.</p>
-      </div>
-    </div>
     <p class="caption">Får du ikke booket nå? Vi følger opp på e-posten du oppga i skjemaet.</p>
   </div>
 </main>
