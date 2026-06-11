@@ -87,7 +87,7 @@ Disse er bevisst stubbet (TODO i koden) fordi de avhenger av beslutninger/lenker
 
 | Punkt | Hvor | Hva som mangler |
 |---|---|---|
-| **Typeform-lenke** | alle `href="#skjema"` i `index.html` | Bytt `#skjema` med Typeform-URL + UTM-gjennomstrømming (`utm_source`, `utm_campaign`, `utm_content`, `angle`) til hidden fields |
+| **Typeform** ✅ | `index.html` CTA-er | Wiret: CTA-ene åpner skjema `nzIBCOAn` som popup (`embed.js`) med UTM-gjennomstrømming (`utm_source`, `utm_campaign`, `utm_content`, `angle`). Gjenstår: opprett disse som **hidden fields** i Typeform, og sett endings til å redirecte kvalifisert → `https://leads.elevatemarketing.no/takk` og ikke-kvalifisert → `https://leads.elevatemarketing.no/ikke-aktuell` |
 | **Calendly** | `takk.html` | Sett inn inline-embed med egen lenke for dette løpet (kommentert scaffold ligger klart) |
 | **Meta Pixel** | `takk.html` | Beslutning: eksisterende pixel `1671736210640206` med nye eventnavn, eller eget dataset. Fyll inn ID, fjern kommentaren |
 | **Personvern** | footer, alle sider | `href="#"` → faktisk personvern-URL |

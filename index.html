@@ -51,15 +51,18 @@
 </head>
 <body>
 
-<!-- TODO (funnel): alle href="#skjema" skal peke på Typeform-lenken for dette løpet,
-     med UTM-gjennomstrømming (utm_source, utm_campaign, utm_content, angle) til Typeform
-     hidden fields. Kvalifisert sti -> /takk (Lead-event GEOAuditKvalifisert fyres KUN der),
-     ikke-kvalifisert -> /ikke-aktuell (ingen event). Se README + landingsside-brief punkt 4. -->
+<!-- CTA-ene åpner Typeform (skjema nzIBCOAn) som popup via embed.js. UTM-ene
+     (utm_source, utm_campaign, utm_content, angle) sendes gjennom til Typeform
+     hidden fields med data-tf-transitive-search-params. Uten JS faller lenken
+     tilbake til skjemaet i full side. Typeform-endings router videre: kvalifisert
+     -> /takk (GEOAuditKvalifisert fyres KUN der), ikke-kvalifisert -> /ikke-aktuell. -->
 
 <header class="topbar">
   <div class="wrap">
     <a class="wordmark" href="#top">Elevate<span>.</span></a>
-    <a class="btn btn-outline" href="#skjema">Start gratis audit</a>
+    <a class="btn btn-outline" href="https://w4kqaqa1bsa.typeform.com/to/nzIBCOAn"
+       data-tf-popup="nzIBCOAn" data-tf-transitive-search-params="utm_source,utm_campaign,utm_content,angle"
+       data-tf-medium="snippet" data-tf-iframe-props="title=Gratis GEO-audit">Start gratis audit</a>
   </div>
 </header>
 
@@ -71,7 +74,9 @@
     <h1 id="hero-h1">Kundene spør AI. <em>Nevnes dere?</em></h1>
     <p class="lead hero-lead">Gratis GEO-audit som viser om ChatGPT, Gemini og Google AI nevner bedriften din når kundene spør, og hva som skal til for å bli nevnt.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#skjema" id="skjema">Start gratis audit</a>
+      <a class="btn btn-primary" href="https://w4kqaqa1bsa.typeform.com/to/nzIBCOAn"
+         data-tf-popup="nzIBCOAn" data-tf-transitive-search-params="utm_source,utm_campaign,utm_content,angle"
+         data-tf-medium="snippet" data-tf-iframe-props="title=Gratis GEO-audit">Start gratis audit</a>
       <p class="hero-qualifier">For servicebedrifter i hele Norge med 10+ ansatte eller 15+ MNOK i omsetning.</p>
     </div>
   </div>
@@ -387,7 +392,9 @@
   <div class="wrap">
     <p class="eyebrow">Gratis GEO-audit</p>
     <h2>Finn ut om AI anbefaler <em>dere.</em></h2>
-    <a class="btn btn-primary" href="#skjema">Start gratis audit</a>
+    <a class="btn btn-primary" href="https://w4kqaqa1bsa.typeform.com/to/nzIBCOAn"
+       data-tf-popup="nzIBCOAn" data-tf-transitive-search-params="utm_source,utm_campaign,utm_content,angle"
+       data-tf-medium="snippet" data-tf-iframe-props="title=Gratis GEO-audit">Start gratis audit</a>
     <p class="hero-qualifier">For servicebedrifter i hele Norge med 10+ ansatte eller 15+ MNOK i omsetning. 2 minutter skjema, 30 minutters gjennomgang.</p>
   </div>
 </section>
@@ -403,6 +410,9 @@
 </footer>
 
 <script src="js/geo-sb.js" defer></script>
+
+<!-- Typeform popup-embed (åpner skjema fra CTA-ene; UTM-passthrough via data-attributtene) -->
+<script src="https://embed.typeform.com/next/embed.js"></script>
 
 </body>
 </html>
