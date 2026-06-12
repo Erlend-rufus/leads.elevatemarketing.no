@@ -89,7 +89,7 @@ Disse er bevisst stubbet (TODO i koden) fordi de avhenger av beslutninger/lenker
 |---|---|---|
 | **Typeform** ✅ | `index.html` CTA-er | Wiret: CTA-ene åpner skjema `nzIBCOAn` som popup (`embed.js`) med UTM-gjennomstrømming (`utm_source`, `utm_campaign`, `utm_content`, `angle`). Gjenstår: opprett disse som **hidden fields** i Typeform, og sett endings til å redirecte kvalifisert → `https://leads.elevatemarketing.no/takk` og ikke-kvalifisert → `https://leads.elevatemarketing.no/ikke-aktuell` |
 | **Calendly** ✅ | `takk.html` | Wiret: inline-embed (`geo-gjennomgang-for-servicebedrifter`) med mørkt tema + mint via URL-parametre |
-| **Meta Pixel** ✅ | `takk.html` | Wiret: pixel `2054301445970035`, `GEOAuditKvalifisert` på load + `GEOAuditMoteBooket` på Calendly-bekreftelse. Gjenstår: **verifiser i Events Manager (Test Events)** før annonsene skrus på |
+| **Meta Pixel** ✅ | `takk.html`, `index.html` | Wiret: pixel `2054301445970035`. Forsiden: kun base `PageView` (retargeting). `/takk`: `PageView` + `GEOAuditKvalifisert` på load + `GEOAuditMoteBooket` på Calendly-bekreftelse. `/ikke-aktuell`: ingen pixel. Gjenstår: **verifiser i Events Manager (Test Events)** før annonsene skrus på |
 | **Personvern** | footer, alle sider | `href="#"` → faktisk personvern-URL |
 | **Domene + OG** | `index.html`, `robots.txt` | Absolutt `og:url`/`og:image`, `Sitemap`-linje |
 
