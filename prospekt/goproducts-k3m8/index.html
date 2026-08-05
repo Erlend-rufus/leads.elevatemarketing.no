@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Go Products, agility- og jaktutstyr produsert i Norge</title>
+<meta name="description" content="Go Products lager agilityhinder, treningsbokser og jaktutstyr i Norge. Hopphinderet er godkjent av FCI for konkurransebruk.">
+
+<!-- SKISSE for salgsmøte. Ingen sporing, ingen pixel, ingen delte filer fra resten
+     av repoet. Alt av CSS og JS ligger i denne fila. -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 76 64'%3E%3Cpath d='M52 22A22 22 0 1 0 52 42H34' fill='none' stroke='%2312161C' stroke-width='10'/%3E%3Crect x='62' y='4' width='11' height='11' fill='%23C41E24'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Saira+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --signal:#C41E24;
+  --signal-mork:#9E1519;
+  --marine:#101E38;
+  --kull:#12161C;
+  --papir:#F4F5F3;
+  --hvit:#FFFFFF;
+  --stal:#5B6470;
+  --linje:#DDE1E4;
+  --linje-sterk:#C3C9CE;
+
+  --display:'Saira Condensed','Haettenschweiler','Arial Narrow',system-ui,sans-serif;
+  --brod:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+
+  --maks:1120px;
+  --radius:3px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--papir);
+  color:var(--kull);
+  font-family:var(--brod);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:76px; /* plass til sticky bunnlinje på mobil */
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+
+h1,h2,h3{
+  font-family:var(--display);
+  font-weight:800;
+  line-height:1.04;
+  letter-spacing:.005em;
+  margin:0;
+  text-transform:uppercase;
+}
+h1{font-size:clamp(38px,10.5vw,74px);text-wrap:balance}
+h2{font-size:clamp(27px,7vw,42px);text-wrap:balance}
+h3{font-size:19px;font-weight:700;letter-spacing:.01em}
+p{margin:0}
+
+.wrap{width:100%;max-width:var(--maks);margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+.seksjonshode{max-width:640px;margin-bottom:28px}
+.seksjonshode p{margin-top:12px;color:var(--stal)}
+
+/* Etikett over overskrifter: liten, teknisk, med strek */
+.etikett{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--display);font-weight:700;font-size:13px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--signal-mork);
+  margin-bottom:12px;
+}
+.etikett::before{content:"";width:22px;height:2px;background:var(--signal);flex:none}
+
+.tall{font-variant-numeric:tabular-nums}
+
+/* ---------- Fokus og bevegelse ---------- */
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:2px}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+
+.hopp-til{
+  position:absolute;left:-9999px;top:0;background:var(--marine);color:#fff;
+  padding:12px 18px;z-index:200;font-weight:600;
+}
+.hopp-til:focus{left:8px;top:8px}
+
+/* ---------- Knapper ---------- */
+.knapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--display);font-weight:700;font-size:17px;
+  letter-spacing:.06em;text-transform:uppercase;text-decoration:none;
+  padding:15px 24px;border-radius:var(--radius);border:2px solid transparent;
+  cursor:pointer;transition:transform .12s ease,background-color .12s ease;
+  min-height:52px;
+}
+.knapp:hover{transform:translateY(-1px)}
+.knapp--primar{background:var(--signal);color:#fff}
+.knapp--primar:hover{background:var(--signal-mork)}
+.knapp--sekundar{background:transparent;color:var(--marine);border-color:var(--linje-sterk)}
+.knapp--sekundar:hover{border-color:var(--marine)}
+.knapp--lys{background:#fff;color:var(--marine)}
+.knapp--liten{padding:11px 16px;font-size:14px;min-height:44px}
+
+/* ---------- Topplinje ---------- */
+.topp{
+  position:sticky;top:0;z-index:100;
+  background:rgba(244,245,243,.94);
+  backdrop-filter:saturate(160%) blur(8px);
+  border-bottom:1px solid var(--linje);
+}
+.topp .wrap{display:flex;align-items:center;gap:14px;height:64px}
+.merke{display:flex;align-items:center;gap:10px;text-decoration:none;flex:none}
+.merke svg{width:34px;height:29px;color:var(--kull)}
+.merke b{
+  font-family:var(--display);font-weight:800;font-size:15px;
+  letter-spacing:.15em;text-transform:uppercase;line-height:1;
+}
+.topp-hoyre{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tlf-topp{
+  display:none;align-items:center;gap:8px;text-decoration:none;font-weight:600;
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.tlf-topp:hover{color:var(--signal-mork)}
+@media (min-width:720px){.tlf-topp{display:inline-flex}}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  padding:44px 0 40px;
+  background:var(--hvit);
+  border-bottom:1px solid var(--linje);
+}
+/* Teknisk rutenett, ren CSS. Ingen bildefiler, ingenting å vente på. */
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right,rgba(16,30,56,.055) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(16,30,56,.055) 1px,transparent 1px);
+  background-size:28px 28px;
+  mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 62%,transparent 100%);
+}
+.hero .wrap{position:relative}
+.hero h1{max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--signal)}
+.hero-ingress{margin-top:18px;max-width:46ch;font-size:17px;color:#2A3038}
+.hero-knapper{display:flex;flex-direction:column;gap:11px;margin-top:26px}
+@media (min-width:600px){
+  .hero-knapper{flex-direction:row;flex-wrap:wrap}
+  .hero-knapper .knapp{flex:1 1 auto;min-width:210px}
+}
+
+/* Trust-strip rett under hero */
+.tillit{
+  margin-top:30px;padding-top:20px;border-top:2px solid var(--kull);
+  display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;
+}
+@media (min-width:820px){.tillit{grid-template-columns:repeat(4,1fr)}}
+.tillit div{min-width:0}
+.tillit strong{
+  display:block;font-family:var(--display);font-weight:800;font-size:19px;
+  letter-spacing:.02em;text-transform:uppercase;line-height:1.1;
+}
+.tillit span{display:block;font-size:13.5px;color:var(--stal);margin-top:3px}
+
+/* ---------- Signatur: målskissen ---------- */
+.mal{background:var(--marine);color:#fff}
+.mal h2{color:#fff}
+.mal .etikett{color:#FF9A9E}
+.mal .etikett::before{background:#FF9A9E}
+.mal .seksjonshode p{color:#B9C2D2}
+
+.malkort{
+  background:#0A1428;border:1px solid #26375A;border-radius:var(--radius);
+  padding:18px 16px 20px;
+}
+@media (min-width:900px){
+  .mal-rad{display:grid;grid-template-columns:1.25fr .95fr;gap:26px;align-items:start}
+}
+.klasser{
+  display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;
+}
+.klasser button{
+  flex:1 1 auto;min-width:64px;
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.08em;
+  text-transform:uppercase;
+  background:transparent;color:#C8D2E4;border:1px solid #33456B;
+  border-radius:var(--radius);padding:11px 8px;cursor:pointer;min-height:46px;
+  transition:background-color .12s ease,color .12s ease,border-color .12s ease;
+}
+.klasser button:hover{border-color:#5E7099;color:#fff}
+.klasser button[aria-pressed="true"]{background:var(--signal);border-color:var(--signal);color:#fff}
+.klasser button small{display:block;font-family:var(--brod);font-size:11px;letter-spacing:0;
+  text-transform:none;font-weight:400;opacity:.85;margin-top:2px}
+
+.tegning{width:100%;height:auto}
+.tegning .grunn{stroke:#4A5E88;stroke-width:2}
+.tegning .stolpe{stroke:#E7ECF5;stroke-width:7;stroke-linecap:square}
+.tegning .ligger{stroke:var(--signal);stroke-width:8;stroke-linecap:square;
+  transition:transform .35s cubic-bezier(.32,.72,.3,1)}
+.tegning .malelinje{stroke:#7C8FB8;stroke-width:1.5;stroke-dasharray:4 4}
+.tegning .pil{stroke:#7C8FB8;stroke-width:1.5;fill:none}
+.tegning text{fill:#C8D2E4;font-family:var(--brod);font-size:13px;font-variant-numeric:tabular-nums}
+.tegning .rod-tekst{fill:#FF9A9E;font-weight:600}
+
+.malfakta{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:1px;background:#26375A;
+  border:1px solid #26375A;border-radius:var(--radius);overflow:hidden}
+.malfakta li{background:#0A1428;padding:12px 14px;display:flex;justify-content:space-between;gap:14px;font-size:14.5px}
+.malfakta dt,.malfakta .n{color:#9FADC7}
+.malfakta .v{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.malnote{margin-top:14px;font-size:13.5px;color:#A3B0C7;max-width:52ch}
+.mal-tekst{margin-top:22px}
+@media (min-width:900px){.mal-tekst{margin-top:0}}
+
+/* ---------- Produkter ---------- */
+.produkter{background:var(--papir)}
+.p-rutenett{display:grid;gap:16px}
+@media (min-width:760px){.p-rutenett{grid-template-columns:repeat(3,1fr)}}
+.kort{
+  background:var(--hvit);border:1px solid var(--linje);border-radius:var(--radius);
+  display:flex;flex-direction:column;overflow:hidden;
+}
+/* Illustrasjonsflate, ren CSS. Erstattes med produktfoto. */
+.flate{
+  position:relative;aspect-ratio:16/10;border-bottom:1px solid var(--linje);
+  background:
+    repeating-linear-gradient(135deg,rgba(16,30,56,.045) 0 2px,transparent 2px 9px),
+    linear-gradient(160deg,#EDEFF2 0%,#DFE3E8 100%);
+  display:flex;align-items:flex-end;padding:12px;
+}
+.flate span{
+  font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:#77808C;
+  font-weight:600;background:rgba(255,255,255,.82);padding:4px 8px;border-radius:2px;
+}
+@media (min-width:760px){.flate{aspect-ratio:4/3}}
+.kort-inn{padding:18px 16px 20px;display:flex;flex-direction:column;flex:1;gap:10px}
+.kort h3{margin:0}
+.kort .univers{
+  font-family:var(--display);font-size:12.5px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--stal);
+}
+.kort p{font-size:14.5px;color:#39414B}
+.spek{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:5px;font-size:13.5px}
+.spek li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--linje-sterk);padding-bottom:5px}
+.spek .n{color:var(--stal)}
+.spek .v{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.venter{
+  color:var(--stal);font-style:normal;background:#EFF1F3;padding:1px 7px;
+  border-radius:2px;font-size:12.5px;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+.kort-bunn{margin-top:auto;padding-top:14px;display:flex;flex-direction:column;align-items:stretch;gap:11px}
+.kort-bunn .knapp{width:100%}
+.pris{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:.02em}
+.pris .venter{white-space:nowrap}
+.pris small{display:block;font-family:var(--brod);font-weight:400;font-size:12px;
+  letter-spacing:0;color:var(--stal);text-transform:none}
+
+/* ---------- Hvorfor: spesifikasjonsplater ---------- */
+.plater{display:grid;gap:14px}
+@media (min-width:760px){.plater{grid-template-columns:repeat(3,1fr)}}
+.plate{
+  background:var(--hvit);border:1px solid var(--linje);border-left:4px solid var(--signal);
+  border-radius:var(--radius);padding:20px 18px;
+}
+.plate .stempel{
+  font-family:var(--display);font-weight:800;font-size:13px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--signal-mork);display:block;margin-bottom:8px;
+}
+.plate h3{margin-bottom:8px}
+.plate p{font-size:14.5px;color:#39414B}
+
+/* ---------- Prosess ---------- */
+.prosess{background:var(--hvit);border-top:1px solid var(--linje);border-bottom:1px solid var(--linje)}
+.steg{display:grid;gap:20px;counter-reset:steg}
+@media (min-width:820px){.steg{grid-template-columns:repeat(3,1fr);gap:28px}}
+.steg li{list-style:none;counter-increment:steg;padding-top:16px;border-top:2px solid var(--kull)}
+.steg li::before{
+  content:counter(steg,decimal-leading-zero);
+  font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.1em;
+  color:var(--signal);display:block;margin-bottom:8px;
+}
+.steg h3{margin-bottom:7px}
+.steg p{font-size:14.5px;color:#39414B}
+
+/* ---------- Omtaler ---------- */
+.omtaler-boks{
+  background:var(--hvit);border:1px dashed var(--linje-sterk);border-radius:var(--radius);
+  padding:36px 22px;text-align:center;
+}
+.omtaler-boks .stjerner{display:flex;gap:6px;justify-content:center;margin-bottom:14px}
+.omtaler-boks .stjerner svg{width:20px;height:20px;color:var(--linje-sterk)}
+.omtaler-boks p{color:var(--stal);max-width:36ch;margin:0 auto}
+
+/* ---------- Klubbspor ---------- */
+.klubb{background:var(--marine);color:#fff}
+.klubb h2{color:#fff}
+.klubb .etikett{color:#FF9A9E}
+.klubb .etikett::before{background:#FF9A9E}
+.klubb-rad{display:grid;gap:22px}
+@media (min-width:860px){.klubb-rad{grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}}
+.klubb p{color:#C4CCDB;max-width:52ch}
+.klubb-liste{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:9px}
+.klubb-liste li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#DCE2EC}
+.klubb-liste li::before{content:"";flex:none;width:7px;height:7px;background:var(--signal);margin-top:8px}
+
+/* ---------- Levering ---------- */
+.levering-rutenett{display:grid;gap:14px}
+@media (min-width:760px){.levering-rutenett{grid-template-columns:repeat(3,1fr)}}
+.lev{background:var(--hvit);border:1px solid var(--linje);border-radius:var(--radius);padding:18px}
+.lev h3{margin-bottom:7px;font-size:17px}
+.lev p{font-size:14.5px;color:#39414B}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:760px}
+.faq details{background:var(--hvit);border:1px solid var(--linje);border-radius:var(--radius);margin-bottom:10px}
+.faq summary{
+  cursor:pointer;padding:16px 46px 16px 16px;position:relative;list-style:none;
+  font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.01em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:18px;top:50%;width:11px;height:11px;
+  border-right:2px solid var(--signal);border-bottom:2px solid var(--signal);
+  transform:translateY(-70%) rotate(45deg);transition:transform .18s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq .svar{padding:0 16px 17px;font-size:15px;color:#39414B}
+
+/* ---------- Avsluttende CTA ---------- */
+.avslutt{background:var(--kull);color:#fff;text-align:center}
+.avslutt h2{color:#fff}
+.avslutt p{color:#B5BCC6;max-width:44ch;margin:14px auto 0}
+.avslutt .etikett{color:#FF9A9E;justify-content:center}
+.varsel{
+  display:flex;flex-direction:column;gap:10px;max-width:440px;margin:26px auto 0;
+}
+@media (min-width:560px){.varsel{flex-direction:row}}
+.varsel input{
+  flex:1;min-height:52px;padding:14px 15px;font:inherit;font-size:16px;
+  background:#1D232C;border:1px solid #39414B;border-radius:var(--radius);color:#fff;
+}
+.varsel input::placeholder{color:#8A929C}
+.avslutt .smatekst{font-size:12.5px;color:#8A929C;margin-top:14px}
+.avslutt .eller{margin-top:24px;font-size:15px;color:#B5BCC6}
+.avslutt .eller a{font-weight:600;color:#fff}
+
+/* ---------- Footer ---------- */
+footer{background:var(--marine);color:#C4CCDB;padding:44px 0 34px}
+.f-rutenett{display:grid;gap:26px}
+@media (min-width:760px){.f-rutenett{grid-template-columns:1.3fr 1fr 1fr}}
+footer h3{color:#fff;font-size:15px;letter-spacing:.14em;margin-bottom:12px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.nap{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:14.5px;font-variant-numeric:tabular-nums}
+.f-merke{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.f-merke svg{width:38px;height:32px;color:#fff}
+.f-merke b{font-family:var(--display);font-weight:800;font-size:16px;letter-spacing:.15em;
+  text-transform:uppercase;color:#fff;line-height:1}
+.f-bunn{border-top:1px solid #26375A;margin-top:30px;padding-top:18px;font-size:13px;color:#8E9CB6}
+
+/* ---------- Sticky bunnlinje på mobil ---------- */
+.bunnlinje{
+  position:fixed;left:0;right:0;bottom:0;z-index:110;
+  background:rgba(255,255,255,.97);border-top:1px solid var(--linje-sterk);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center;
+  box-shadow:0 -6px 20px rgba(18,22,28,.09);
+}
+.bunnlinje .tlf{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:52px;padding:0 16px;border:2px solid var(--linje-sterk);border-radius:var(--radius);
+  text-decoration:none;font-weight:600;flex:none;font-variant-numeric:tabular-nums;
+}
+.bunnlinje .knapp{flex:1}
+@media (min-width:900px){
+  .bunnlinje{display:none}
+  body{padding-bottom:0}
+}
+</style>
+</head>
+<body>
+
+<a class="hopp-til" href="#innhold">Hopp til innhold</a>
+
+<header class="topp">
+  <div class="wrap">
+    <a class="merke" href="#" aria-label="Go Products, til toppen av siden">
+      <svg viewBox="0 0 76 64" role="img" aria-hidden="true" focusable="false">
+        <path d="M52 22A22 22 0 1 0 52 42H34" fill="none" stroke="currentColor" stroke-width="10"/>
+        <rect x="62" y="4" width="11" height="11" fill="#C41E24"/>
+      </svg>
+      <b>Go Products</b>
+    </a>
+    <div class="topp-hoyre">
+      <a class="tlf-topp" href="tel:+4797587222" aria-label="Ring Go Products på 975 87 222">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+        975 87 222
+      </a>
+      <a class="knapp knapp--primar knapp--liten" href="#produkter">Se produktene</a>
+    </div>
+  </div>
+</header>
+
+<main id="innhold">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-tittel">
+    <div class="wrap">
+      <span class="etikett">Norskprodusert siden dag én</span>
+      <h1 id="hero-tittel">Hinder som holder <em>målet</em>, ikke omtrent</h1>
+      <p class="hero-ingress">
+        Vi utvikler og produserer agilityhinder, treningsbokser og jaktutstyr i Norge.
+        Hopphinderet er godkjent av FCI for konkurransebruk, så det du trener på hjemme
+        har samme mål som det du møter på stevnet.
+      </p>
+
+      <div class="hero-knapper">
+        <a class="knapp knapp--primar" href="#produkter">Se agilityutstyret</a>
+        <a class="knapp knapp--sekundar" href="#produkter">Se jaktutstyret</a>
+      </div>
+
+      <div class="tillit">
+        <div>
+          <strong>Produsert i Norge</strong>
+          <span>Utviklet og laget her, ikke importert</span>
+        </div>
+        <div>
+          <strong>FCI-godkjent</strong>
+          <span>Hopphinderet er godkjent for konkurranse</span>
+        </div>
+        <div>
+          <strong>Laget av utøvere</strong>
+          <span>Av folk som selv driver agility og jakt</span>
+        </div>
+        <div>
+          <strong class="tall">August 2026</strong>
+          <span>Nettbutikken åpner</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIGNATUR: MÅLSKISSEN ============ -->
+  <section class="mal" aria-labelledby="mal-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Målene bak godkjenningen</span>
+        <h2 id="mal-tittel">Velg klassen hunden konkurrerer i</h2>
+        <p>
+          FCI setter målene for hvert hinder ned til centimeteren. Her er de, slik at du
+          vet nøyaktig hva du trener mot før du bestiller.
+        </p>
+      </div>
+
+      <div class="mal-rad">
+        <div class="malkort">
+          <div class="klasser" role="group" aria-label="Velg høydeklasse">
+            <button type="button" data-klasse="S" data-min="25" data-maks="30" aria-pressed="false">S <small>Small</small></button>
+            <button type="button" data-klasse="M" data-min="35" data-maks="40" aria-pressed="false">M <small>Medium</small></button>
+            <button type="button" data-klasse="I" data-min="45" data-maks="50" aria-pressed="false">I <small>Intermediate</small></button>
+            <button type="button" data-klasse="L" data-min="55" data-maks="60" aria-pressed="true">L <small>Large</small></button>
+          </div>
+
+          <svg class="tegning" viewBox="0 0 340 230" role="img"
+               aria-labelledby="tegning-tittel tegning-tekst">
+            <title id="tegning-tittel">Målskisse av hopphinder</title>
+            <desc id="tegning-tekst">Strektegning av et hopphinder sett forfra. Overliggeren
+              flyttes opp eller ned når du velger høydeklasse, og målene oppdateres.</desc>
+
+            <!-- bakken -->
+            <line class="grunn" x1="20" y1="195" x2="320" y2="195"/>
+
+            <!-- stolper -->
+            <line class="stolpe" x1="70" y1="195" x2="70" y2="45"/>
+            <line class="stolpe" x1="270" y1="195" x2="270" y2="45"/>
+
+            <!-- overligger, flyttes med JS via translate -->
+            <g id="ligger-gruppe">
+              <line class="ligger" x1="66" y1="105" x2="274" y2="105"/>
+            </g>
+
+            <!-- høydemål -->
+            <line class="malelinje" x1="40" y1="195" x2="40" y2="105" id="hoyde-linje"/>
+            <path class="pil" d="M36 111 L40 105 L44 111" id="hoyde-pil"/>
+            <text x="10" y="150" class="rod-tekst" id="hoyde-tekst" transform="rotate(-90 14 150)">55–60 cm</text>
+
+            <!-- breddemål -->
+            <line class="malelinje" x1="70" y1="215" x2="270" y2="215"/>
+            <path class="pil" d="M76 211 L70 215 L76 219"/>
+            <path class="pil" d="M264 211 L270 215 L264 219"/>
+            <text x="132" y="211" >120–130 cm</text>
+          </svg>
+
+          <ul class="malfakta">
+            <li><span class="n">Høyde, valgt klasse</span> <span class="v" id="fakta-hoyde">55–60 cm</span></li>
+            <li><span class="n">Bredde på hinderet</span> <span class="v">120–130 cm</span></li>
+            <li><span class="n">Diameter på pinnene</span> <span class="v">3–5 cm</span></li>
+            <li><span class="n">Materiale</span> <span class="v">Tre eller trygg syntet</span></li>
+          </ul>
+        </div>
+
+        <div class="mal-tekst">
+          <p class="malnote">
+            Målene over er FCIs krav til hopphinder, ikke våre egne tall. Det er dem
+            hopphinderet vårt er godkjent mot. Metall er ikke tillatt i pinnene, og
+            liggeren skal falle av ved berøring, slik at hunden ikke tar skade.
+          </p>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Bekreft mot produktdatabladet
+               hvilke av de fire FCI-klassene Go Jump 26 faktisk leveres for, og om
+               hinderet selges med justerbar høyde eller i faste klasser. -->
+          <p class="malnote">
+            Go Jump 26 leveres for høydeklassene <span class="venter">S, M, I, L (bekreftes)</span>.
+            Er du usikker på hvilken klasse hunden din havner i, måler klubben mankehøyden
+            for deg.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUKTER ============ -->
+  <section class="produkter" id="produkter" aria-labelledby="prod-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Produktene våre</span>
+        <h2 id="prod-tittel">Tre produkter, laget for norsk bruk</h2>
+        <p>
+          Alt er utviklet og produsert i Norge, av folk som selv står på banen og i skogen.
+        </p>
+      </div>
+
+      <div class="p-rutenett">
+
+        <article class="kort">
+          <div class="flate"><span>Foto: Go Jump 26 på bane</span></div>
+          <div class="kort-inn">
+            <span class="univers">Agility</span>
+            <h3>Go Jump 26</h3>
+            <p>Hopphinderet vårt, godkjent av FCI for konkurransebruk. Samme mål ute på
+              gressbanen som inne i ringen.</p>
+            <!-- PLACEHOLDER: erstattes med ekte innhold. Vekt, materiale og pakningsmål
+                 hentes fra produktdatabladet. -->
+            <ul class="spek">
+              <li><span class="n">Bredde</span> <span class="v">120–130 cm</span></li>
+              <li><span class="n">Høydeklasser</span> <span class="v">S, M, I, L</span></li>
+              <li><span class="n">Vekt</span> <span class="v"><span class="venter">Fylles inn</span></span></li>
+            </ul>
+            <div class="kort-bunn">
+              <span class="pris"><span class="venter">Pris ved lansering</span></span>
+              <a class="knapp knapp--sekundar knapp--liten" href="#varsle">Se produktet</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="kort">
+          <div class="flate"><span>Foto: Go Box i bruk</span></div>
+          <div class="kort-inn">
+            <span class="univers">Agility og trening</span>
+            <h3>Go Box</h3>
+            <p>Treningsboks i tre for posisjonstrening, oppvarming og stabilitet. Tåler å
+              stå ute gjennom en norsk sesong.</p>
+            <!-- PLACEHOLDER: erstattes med ekte innhold. Mål, materiale, overflate-
+                 behandling og maks belastning mangler. -->
+            <ul class="spek">
+              <li><span class="n">Mål</span> <span class="v"><span class="venter">Fylles inn</span></span></li>
+              <li><span class="n">Materiale</span> <span class="v">Tre</span></li>
+              <li><span class="n">Bruk</span> <span class="v">Ute og inne</span></li>
+            </ul>
+            <div class="kort-bunn">
+              <span class="pris"><span class="venter">Pris ved lansering</span></span>
+              <a class="knapp knapp--sekundar knapp--liten" href="#varsle">Se produktet</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="kort">
+          <div class="flate"><span>Foto: Go Hunt i felt</span></div>
+          <div class="kort-inn">
+            <span class="univers">Jakt</span>
+            <h3>Go Hunt</h3>
+            <p>Jaktutstyret vårt, utviklet av jegere som bruker det selv. Laget for norsk
+              terreng og norsk vær.</p>
+            <!-- PLACEHOLDER: erstattes med ekte innhold. Hele spesifikasjonen mangler,
+                 inkludert hva Go Hunt faktisk er. Bekreft produkttype før møtet. -->
+            <ul class="spek">
+              <li><span class="n">Type</span> <span class="v"><span class="venter">Fylles inn</span></span></li>
+              <li><span class="n">Vekt</span> <span class="v"><span class="venter">Fylles inn</span></span></li>
+              <li><span class="n">Produsert</span> <span class="v">I Norge</span></li>
+            </ul>
+            <div class="kort-bunn">
+              <span class="pris"><span class="venter">Pris ved lansering</span></span>
+              <a class="knapp knapp--sekundar knapp--liten" href="#varsle">Se produktet</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HVORFOR OSS ============ -->
+  <section aria-labelledby="hvorfor-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Hvorfor Go Products</span>
+        <h2 id="hvorfor-tittel">Tre ting vi ikke gir slipp på</h2>
+      </div>
+
+      <div class="plater">
+        <div class="plate">
+          <span class="stempel">Produksjon</span>
+          <h3>Alt lages i Norge</h3>
+          <p>Alle produkter er utviklet og produsert i Norge. Det betyr kort vei fra en
+            feil oppdages til den er rettet, og at reservedeler finnes så lenge produktet gjør.</p>
+        </div>
+        <div class="plate">
+          <span class="stempel">Godkjenning</span>
+          <h3>FCI-godkjent hopphinder</h3>
+          <p>Hopphinderet er godkjent av FCI for konkurransebruk. Klubben kan bruke det til
+            stevner, ikke bare til trening.</p>
+        </div>
+        <div class="plate">
+          <span class="stempel">Utvikling</span>
+          <h3>Tegnet av folk som bruker det</h3>
+          <p>Laget av folk som selv driver med agility og jakt. Hvert produkt er prøvd ut i
+            felt før det settes i produksjon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROSESS ============ -->
+  <section class="prosess" aria-labelledby="prosess-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Slik gjør du</span>
+        <h2 id="prosess-tittel">Fra bestilling til første runde</h2>
+      </div>
+      <ol class="steg">
+        <li>
+          <h3>Velg klasse og antall</h3>
+          <p>Finn høydeklassen hunden konkurrerer i, og hvor mange hinder banen din trenger.
+            Er du i tvil, ring oss, så regner vi det ut sammen.</p>
+        </li>
+        <li>
+          <h3>Vi produserer og sender</h3>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Faktisk produksjonstid og
+               fraktpartner mangler. -->
+          <p>Utstyret lages i Norge og sendes med sporing. Leveringstid oppgis
+            <span class="venter">ved bestilling</span>, og frakten vises før du betaler.</p>
+        </li>
+        <li>
+          <h3>Sett opp og tren</h3>
+          <p>Hinderet settes opp uten spesialverktøy, og målene stemmer med det du møter på
+            stevnet fra første runde.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ SOSIALT BEVIS ============ -->
+  <section aria-labelledby="omtaler-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Fra kundene</span>
+        <h2 id="omtaler-tittel">Det andre sier</h2>
+      </div>
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Ingen omtaler er verifisert. Denne
+           seksjonen skal hente ekte sitater fra Google-profilen når den er på plass.
+           Ikke fyll inn oppdiktede navn eller sitater. -->
+      <div class="omtaler-boks">
+        <div class="stjerner" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 4.8 1.3 7L12 17.8 5.7 21.2 7 14.2 2 9.4l7-.9z"/></svg>
+        </div>
+        <p>Kundeomtaler hentes fra deres Google-profil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KLUBBSPOR ============ -->
+  <section class="klubb" aria-labelledby="klubb-tittel">
+    <div class="wrap">
+      <div class="klubb-rad">
+        <div>
+          <span class="etikett">Klubb og bane</span>
+          <h2 id="klubb-tittel">Skal banen utstyres fra bunnen?</h2>
+          <p>
+            Et komplett stevnesett etter NKKs krav er en større bestilling enn en handlekurv
+            er laget for. Ta kontakt, så setter vi opp et tilbud på antallet klubben trenger.
+          </p>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Bekreft at Go Products faktisk
+               leverer komplette sett, og hvilke hindertyper de har utover Go Jump 26.
+               Listen under er NKKs krav til et stevnesett, ikke en produktliste. -->
+          <ul class="klubb-liste">
+            <li>NKK krever minst 14 hoppehinder i et stevnesett</li>
+            <li>I tillegg hjul, mur, lengdehopp, stige, A-hinder, vippe og slalom</li>
+            <li>Og tre tunneler</li>
+          </ul>
+        </div>
+        <div>
+          <a class="knapp knapp--primar" href="tel:+4797587222" style="width:100%;margin-bottom:10px">Ring 975 87 222</a>
+          <a class="knapp knapp--lys" href="mailto:post@goproducts.no?subject=Foresp%C3%B8rsel%20om%20komplett%20sett" style="width:100%">Be om tilbud</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LEVERING ============ -->
+  <section aria-labelledby="lev-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Levering</span>
+        <h2 id="lev-tittel">Vi sender i hele Norge</h2>
+        <p>Store varer skal ikke koste deg en overraskelse i kassen.</p>
+      </div>
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Fraktpartner, priser, leveringstid og
+           returvilkår mangler. Frakt på store varer er det viktigste punktet på siden. -->
+      <div class="levering-rutenett">
+        <div class="lev">
+          <h3>Frakt vises før du betaler</h3>
+          <p>Prisen regnes ut fra postnummer og størrelse, og står i kurven før du legger
+            inn bestillingen. <span class="venter">Fraktpartner bekreftes</span></p>
+        </div>
+        <div class="lev">
+          <h3>Hele landet</h3>
+          <p>Vi sender til hele Norge, også til Nord-Norge og øykommuner. Store hinder
+            leveres på pall der det trengs.</p>
+        </div>
+        <div class="lev">
+          <h3>Henting</h3>
+          <p>Du kan hente selv etter avtale.
+            <span class="venter">Adresse fylles inn</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section aria-labelledby="faq-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Spørsmål vi får</span>
+        <h2 id="faq-tittel">Kort svar på det vanligste</h2>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>Kan hinderet brukes i konkurranse?</summary>
+          <div class="svar">Ja. Hopphinderet er godkjent av FCI for konkurransebruk, og
+            dommere kan bare bygge baner med FCI-godkjente hinder.</div>
+        </details>
+
+        <details>
+          <summary>Hvilken høyde skal hunden min hoppe?</summary>
+          <div class="svar">FCI deler inn i fire klasser etter mankehøyde: S (25–30 cm),
+            M (35–40 cm), I (45–50 cm) og L (55–60 cm). Klubben måler hunden og fører
+            klassen inn i målebeviset.</div>
+        </details>
+
+        <details>
+          <summary>Tåler utstyret å stå ute hele året?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Faktisk overflatebehandling og
+               garantitid mot vær mangler. Ikke lov noe som ikke er verifisert. -->
+          <div class="svar">Utstyret er laget for norsk vær.
+            <span class="venter">Overflatebehandling og levetid utendørs fylles inn</span></div>
+        </details>
+
+        <details>
+          <summary>Hva koster frakten, og hvor lang er leveringstiden?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. -->
+          <div class="svar">Frakten regnes ut fra postnummer og størrelse, og vises i kurven
+            før du betaler. <span class="venter">Leveringstid fylles inn</span></div>
+        </details>
+
+        <details>
+          <summary>Kan jeg kjøpe deler hver for seg?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Bekreft om reservedeler selges. -->
+          <div class="svar">Produktene lages i Norge, så deler kan etterbestilles så lenge
+            produktet er i produksjon. <span class="venter">Delesortiment bekreftes</span></div>
+        </details>
+
+        <details>
+          <summary>Kan klubben få tilbud på et komplett sett?</summary>
+          <div class="svar">Ja. Ring 975 87 222 eller send en e-post til
+            <a href="mailto:post@goproducts.no">post@goproducts.no</a>, så setter vi opp et
+            tilbud på antallet banen trenger.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AVSLUTTENDE CTA ============ -->
+  <section class="avslutt" id="varsle" aria-labelledby="avslutt-tittel">
+    <div class="wrap">
+      <span class="etikett">Nettbutikken åpner i august</span>
+      <h2 id="avslutt-tittel">Vil du vite når du kan bestille?</h2>
+      <p>Legg igjen e-posten din, så sier vi fra den dagen butikken åpner. Ingenting annet.</p>
+
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Skjemaet er ikke koblet til noe.
+           Trenger en mottaker (e-postliste eller skjematjeneste) før lansering.
+           Bevisst ingen sporing eller pixel i denne skissen. -->
+      <form class="varsel" onsubmit="return false;">
+        <label for="epost" class="hopp-til">E-postadresse</label>
+        <input id="epost" type="email" name="epost" placeholder="din@epost.no" autocomplete="email" required>
+        <button type="submit" class="knapp knapp--primar">Si fra til meg</button>
+      </form>
+      <p class="smatekst">Vi bruker adressen kun til denne ene beskjeden.</p>
+
+      <p class="eller">
+        Haster det? Ring <a href="tel:+4797587222">975 87 222</a> eller send en e-post til
+        <a href="mailto:post@goproducts.no">post@goproducts.no</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-rutenett">
+      <div>
+        <div class="f-merke">
+          <svg viewBox="0 0 76 64" role="img" aria-hidden="true" focusable="false">
+            <path d="M52 22A22 22 0 1 0 52 42H34" fill="none" stroke="currentColor" stroke-width="10"/>
+            <rect x="62" y="4" width="11" height="11" fill="#C41E24"/>
+          </svg>
+          <b>Go Products</b>
+        </div>
+        <p style="font-size:14.5px;max-width:34ch">
+          Agilityhinder, treningsbokser og jaktutstyr, utviklet og produsert i Norge.
+        </p>
+      </div>
+
+      <div>
+        <h3>Kontakt oss</h3>
+        <ul class="nap">
+          <li>Go Products AS</li>
+          <li><a href="tel:+4797587222">975 87 222</a></li>
+          <li><a href="mailto:post@goproducts.no">post@goproducts.no</a></li>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Org.nr og besøksadresse mangler
+               på dagens side og må hentes fra Brønnøysund før lansering. -->
+          <li>Org.nr [fylles inn]</li>
+          <li>[Gateadresse], [postnr] [sted]</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Sortiment</h3>
+        <ul class="nap">
+          <li><a href="#produkter">Agility</a></li>
+          <li><a href="#produkter">Jakt</a></li>
+          <li><a href="#klubb-tittel">Klubb og bane</a></li>
+          <li><a href="#faq-tittel">Spørsmål og svar</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="f-bunn">© 2026 Go Products AS. Alle rettigheter forbeholdt.</p>
+  </div>
+</footer>
+
+<div class="bunnlinje">
+  <a class="tlf" href="tel:+4797587222" aria-label="Ring Go Products på 975 87 222">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Ring
+  </a>
+  <a class="knapp knapp--primar" href="#produkter">Se produktene</a>
+</div>
+
+<script>
+/* Målskissen: flytter overliggeren og oppdaterer målene når du velger høydeklasse.
+   Ingen sporing, ingen eksterne kall. */
+(function () {
+  var knapper = document.querySelectorAll('.klasser button');
+  var ligger  = document.getElementById('ligger-gruppe');
+  var linje   = document.getElementById('hoyde-linje');
+  var pil     = document.getElementById('hoyde-pil');
+  var tekst   = document.getElementById('hoyde-tekst');
+  var fakta   = document.getElementById('fakta-hoyde');
+
+  if (!ligger) return;
+
+  var GRUNN = 195;      // y for bakken i tegningen
+  var SKALA = 1.5;      // piksler per centimeter
+  var START = 105;      // y der liggeren er tegnet (tilsvarer 60 cm)
+
+  function sett(btn) {
+    var min  = parseInt(btn.dataset.min, 10);
+    var maks = parseInt(btn.dataset.maks, 10);
+    var y    = GRUNN - maks * SKALA;
+
+    ligger.setAttribute('transform', 'translate(0,' + (y - START) + ')');
+    linje.setAttribute('y2', y);
+    pil.setAttribute('d', 'M36 ' + (y + 6) + ' L40 ' + y + ' L44 ' + (y + 6));
+
+    var merke = min + '–' + maks + ' cm';
+    tekst.textContent = merke;
+    fakta.textContent = merke;
+
+    knapper.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b === btn));
+    });
+  }
+
+  knapper.forEach(function (b) {
+    b.addEventListener('click', function () { sett(b); });
+  });
+})();
+</script>
+
+</body>
+</html>
