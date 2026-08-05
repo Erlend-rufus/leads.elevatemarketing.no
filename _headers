@@ -1,0 +1,10 @@
+# Netlify-headere som IKKE hører hjemme i netlify.toml.
+#
+# Reglene her slås sammen med [[headers]]-blokkene i netlify.toml. Ved konflikt
+# på samme sti vinner netlify.toml, så sikkerhets- og cache-headerne der står
+# uendret. Denne fila legger kun til noe nytt.
+
+# Salgsskisser for prospekter skal aldri indekseres. Mappene er upubliserte
+# arbeidsfiler som vises i møter, ikke offentlige sider.
+/prospekt/*
+  X-Robots-Tag: noindex, nofollow
