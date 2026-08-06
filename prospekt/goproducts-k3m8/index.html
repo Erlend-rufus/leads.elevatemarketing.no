@@ -81,6 +81,8 @@ section{padding:56px 0}
 
 /* ---------- Fokus og bevegelse ---------- */
 :focus-visible{outline:3px solid var(--signal);outline-offset:3px;border-radius:2px}
+[id]{scroll-margin-top:80px}
+.mal :focus-visible,.klubb :focus-visible,.avslutt :focus-visible,footer :focus-visible{outline-color:#fff}
 @media (prefers-reduced-motion:reduce){
   *{animation-duration:.001ms !important;transition-duration:.001ms !important}
 }
@@ -209,6 +211,8 @@ section{padding:56px 0}
 .tegning .pil{stroke:#7C8FB8;stroke-width:1.5;fill:none}
 .tegning text{fill:#C8D2E4;font-family:var(--brod);font-size:13px;font-variant-numeric:tabular-nums}
 .tegning .rod-tekst{fill:#FF9A9E;font-weight:600}
+.tegning .tittelfelt{fill:#7C8FB8;font-size:10.5px;font-weight:600;letter-spacing:.14em}
+.tegning .kopp line{stroke:#7C8FB8;stroke-width:2.5;stroke-linecap:round}
 
 .malfakta{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:1px;background:#26375A;
   border:1px solid #26375A;border-radius:var(--radius);overflow:hidden}
@@ -470,21 +474,36 @@ footer a:hover{color:#fff;text-decoration:underline}
             <desc id="tegning-tekst">Strektegning av et hopphinder sett forfra. Overliggeren
               flyttes opp eller ned når du velger høydeklasse, og målene oppdateres.</desc>
 
+            <!-- tittelfelt, som på en arbeidstegning -->
+            <rect x="20" y="12" width="7" height="7" fill="#C41E24"/>
+            <text x="34" y="19" class="tittelfelt">GO JUMP 26 · MÅLSATT ETTER FCI</text>
+
             <!-- bakken -->
             <line class="grunn" x1="20" y1="195" x2="320" y2="195"/>
 
-            <!-- stolper -->
+            <!-- stolper med fotplater -->
             <line class="stolpe" x1="70" y1="195" x2="70" y2="45"/>
             <line class="stolpe" x1="270" y1="195" x2="270" y2="45"/>
+            <rect x="55" y="192" width="30" height="4" fill="#E7ECF5"/>
+            <rect x="255" y="192" width="30" height="4" fill="#E7ECF5"/>
+
+            <!-- kopper i de fire klassehøydene (30, 40, 50, 60 cm) -->
+            <g class="kopp">
+              <line x1="74" y1="150" x2="82" y2="150"/><line x1="74" y1="135" x2="82" y2="135"/>
+              <line x1="74" y1="120" x2="82" y2="120"/><line x1="74" y1="105" x2="82" y2="105"/>
+              <line x1="266" y1="150" x2="258" y2="150"/><line x1="266" y1="135" x2="258" y2="135"/>
+              <line x1="266" y1="120" x2="258" y2="120"/><line x1="266" y1="105" x2="258" y2="105"/>
+            </g>
 
             <!-- overligger, flyttes med JS via translate -->
             <g id="ligger-gruppe">
               <line class="ligger" x1="66" y1="105" x2="274" y2="105"/>
             </g>
 
-            <!-- høydemål -->
+            <!-- høydemål med pilhoder i begge ender -->
             <line class="malelinje" x1="40" y1="195" x2="40" y2="105" id="hoyde-linje"/>
             <path class="pil" d="M36 111 L40 105 L44 111" id="hoyde-pil"/>
+            <path class="pil" d="M36 189 L40 195 L44 189"/>
             <text x="10" y="150" class="rod-tekst" id="hoyde-tekst" transform="rotate(-90 14 150)">55–60 cm</text>
 
             <!-- breddemål -->
@@ -550,7 +569,7 @@ footer a:hover{color:#fff;text-decoration:underline}
             </ul>
             <div class="kort-bunn">
               <span class="pris"><span class="venter">Pris ved lansering</span></span>
-              <a class="knapp knapp--sekundar knapp--liten" href="#varsle">Se produktet</a>
+              <a class="knapp knapp--sekundar knapp--liten" href="mailto:post@goproducts.no?subject=Pris%20p%C3%A5%20Go%20Jump%2026">Be om pris</a>
             </div>
           </div>
         </article>
@@ -572,7 +591,7 @@ footer a:hover{color:#fff;text-decoration:underline}
             </ul>
             <div class="kort-bunn">
               <span class="pris"><span class="venter">Pris ved lansering</span></span>
-              <a class="knapp knapp--sekundar knapp--liten" href="#varsle">Se produktet</a>
+              <a class="knapp knapp--sekundar knapp--liten" href="mailto:post@goproducts.no?subject=Pris%20p%C3%A5%20Go%20Box">Be om pris</a>
             </div>
           </div>
         </article>
@@ -595,7 +614,7 @@ footer a:hover{color:#fff;text-decoration:underline}
             </ul>
             <div class="kort-bunn">
               <span class="pris"><span class="venter">Pris ved lansering</span></span>
-              <a class="knapp knapp--sekundar knapp--liten" href="#varsle">Se produktet</a>
+              <a class="knapp knapp--sekundar knapp--liten" href="mailto:post@goproducts.no?subject=Pris%20p%C3%A5%20Go%20Hunt">Be om pris</a>
             </div>
           </div>
         </article>
