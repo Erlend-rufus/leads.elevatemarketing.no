@@ -110,19 +110,38 @@ section{padding:54px 0}
 .hero-knapper{display:flex;flex-direction:column;gap:11px;margin-top:26px}
 @media (min-width:560px){.hero-knapper{flex-direction:row;flex-wrap:wrap}}
 
-/* Signatur: GODKJENT-stempelet */
-.stempel{
-  justify-self:center;width:min(300px,70vw);aspect-ratio:1;position:relative;
-  display:flex;align-items:center;justify-content:center;
-  transform:rotate(-7deg);
+/* Signatur: kontrollseddelen med interaktivt GODKJENT-stempel */
+.seddel-panel{justify-self:center;text-align:center;width:min(330px,80vw)}
+.seddel{
+  position:relative;background:#fff;color:var(--tekst);border-radius:10px;
+  padding:18px 18px 22px;text-align:left;overflow:hidden;
+  box-shadow:0 10px 30px rgba(10,13,15,.35);
 }
+.seddel-hode{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+  border-bottom:2px solid var(--verksted);padding-bottom:8px;margin-bottom:12px}
+.seddel-hode b{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.seddel-hode span{font-size:11.5px;color:var(--dempet);letter-spacing:.08em;text-transform:uppercase}
+.seddel-linjer{height:118px;
+  background:repeating-linear-gradient(to bottom,transparent 0 21px,var(--linje) 21px 22px)}
+.stempel{
+  position:absolute;left:50%;top:54%;width:min(220px,60vw);aspect-ratio:1;
+  display:flex;align-items:center;justify-content:center;
+  transform:translate(-50%,-50%) rotate(-30deg) scale(2.3);
+  opacity:0;pointer-events:none;
+  transition:transform .45s cubic-bezier(.2,1.35,.4,1),opacity .3s ease;
+}
+.seddel-panel.stemplet .stempel{
+  opacity:1;transform:translate(-50%,-50%) rotate(-8deg) scale(1);
+}
+.seddel-panel .knapp{margin-top:16px;width:100%}
+.stempel-status{margin-top:10px;font-size:13.5px;color:#9BE2BC;min-height:22px}
 .stempel svg{width:100%;height:100%}
 .stempel-tekst{
   position:absolute;text-align:center;font-family:var(--display);font-weight:800;
-  text-transform:uppercase;color:#7ED9A6;line-height:1.1;
+  text-transform:uppercase;color:var(--godkjent);line-height:1.1;
 }
-.stempel-tekst .stor{font-size:clamp(30px,6vw,44px);letter-spacing:.06em;display:block}
-.stempel-tekst small{font-size:12.5px;letter-spacing:.22em;font-weight:700;color:#5FB88A}
+.stempel-tekst .stor{font-size:clamp(26px,5vw,36px);letter-spacing:.06em;display:block}
+.stempel-tekst small{font-size:11px;letter-spacing:.2em;font-weight:700;color:var(--godkjent-mork)}
 
 /* Trust-strip */
 .tillit{background:var(--verksted-dyp);color:#fff;padding:0}
@@ -273,17 +292,25 @@ footer a:hover{color:#fff;text-decoration:underline}
           <a class="knapp knapp--lys" href="#tjenester">Se hva vi gjør</a>
         </div>
       </div>
-      <!-- Signatur: GODKJENT-stempelet, tegnet som kontrollmerke -->
-      <div class="stempel" aria-hidden="true">
-        <svg viewBox="0 0 200 200" fill="none">
-          <circle cx="100" cy="100" r="92" stroke="#7ED9A6" stroke-width="5" stroke-dasharray="4 7"/>
-          <circle cx="100" cy="100" r="76" stroke="#7ED9A6" stroke-width="2.5"/>
-        </svg>
-        <span class="stempel-tekst">
-          <small>EU-kontroll</small>
-          <span class="stor">Godkjent</span>
-          <small>uten anmerkning</small>
-        </span>
+      <!-- Signatur: kontrollseddelen. Knappen stempler GODKJENT på seddelen. -->
+      <div class="seddel-panel" id="seddel-panel">
+        <div class="seddel" aria-hidden="true">
+          <div class="seddel-hode"><b>Kontrollseddel</b><span>EU-kontroll</span></div>
+          <div class="seddel-linjer"></div>
+          <div class="stempel">
+            <svg viewBox="0 0 200 200" fill="none">
+              <circle cx="100" cy="100" r="92" stroke="#1E7A46" stroke-width="5" stroke-dasharray="4 7"/>
+              <circle cx="100" cy="100" r="76" stroke="#1E7A46" stroke-width="2.5"/>
+            </svg>
+            <span class="stempel-tekst">
+              <small>EU-kontroll</small>
+              <span class="stor">Godkjent</span>
+              <small>uten anmerkning</small>
+            </span>
+          </div>
+        </div>
+        <button type="button" class="knapp knapp--gronn" id="stemple-knapp" aria-pressed="false">Stemple: godkjent</button>
+        <p class="stempel-status" id="stempel-status" role="status" aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -565,6 +592,23 @@ footer a:hover{color:#fff;text-decoration:underline}
     Ring verkstedet
   </a>
 </div>
+
+<script>
+/* Kontrollseddelen: stempler GODKJENT med et dunk, og kan nullstilles.
+   Ingen sporing, ingen eksterne kall. */
+(function () {
+  var panel = document.getElementById('seddel-panel');
+  var knapp = document.getElementById('stemple-knapp');
+  var status = document.getElementById('stempel-status');
+  if (!panel || !knapp || !status) return;
+  knapp.addEventListener('click', function () {
+    var stemplet = panel.classList.toggle('stemplet');
+    knapp.setAttribute('aria-pressed', String(stemplet));
+    knapp.textContent = stemplet ? 'Ta ny kontroll' : 'Stemple: godkjent';
+    status.textContent = stemplet ? 'Godkjent uten anmerkning. Slik skal det gjøres.' : '';
+  });
+})();
+</script>
 
 </body>
 </html>

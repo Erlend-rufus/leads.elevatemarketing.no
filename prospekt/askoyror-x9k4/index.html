@@ -121,6 +121,23 @@ section{padding:54px 0}
   background:#FDF3E7;border-left:4px solid var(--kobber);border-radius:0 6px 6px 0;
   padding:10px 12px;font-size:14px;color:#6B4A22;
 }
+/* Signatur: kran-øvelsen. Vri igjen kranen, se dryppet stoppe. */
+.kran-ovelse{
+  background:#F2F5F4;border:1px solid var(--linje);border-radius:8px;
+  padding:12px 14px;display:flex;gap:14px;align-items:center;
+}
+.kran-figur{flex:none;width:104px}
+.kran-figur svg{width:100%;height:auto}
+.hjul{transform-origin:52px 30px;transition:transform 1.1s cubic-bezier(.45,0,.2,1)}
+.kran-ovelse.stengt .hjul{transform:rotate(540deg)}
+@keyframes drypp{0%{transform:translateY(0);opacity:0}18%{opacity:1}100%{transform:translateY(26px);opacity:0}}
+.drape{animation:drypp 1.3s linear infinite;transform-origin:center}
+.drape:nth-child(2){animation-delay:.45s}
+.drape:nth-child(3){animation-delay:.9s}
+.kran-ovelse.stengt .drape{animation:none;opacity:0}
+.kran-info{flex:1;min-width:0}
+.kran-info p{font-size:13.5px;color:#3C4643;margin-bottom:8px;min-height:40px}
+.kran-info .knapp{width:100%}
 .spor-kort .knapp{margin-top:auto}
 
 /* Trust-strip: kvalifikasjonsskiltene */
@@ -267,6 +284,30 @@ footer a:hover{color:#fff;text-decoration:underline}
           <p class="raad"><b>Gjør dette først:</b> steng hovedstoppekranen. Den sitter
             som regel der vannledningen kommer inn i huset, ofte i bod, vaskerom
             eller under kjøkkenbenken.</p>
+          <!-- Signatur: øv på det ene rådet som haster. Ingen sporing. -->
+          <div class="kran-ovelse" id="kran-ovelse">
+            <div class="kran-figur" aria-hidden="true">
+              <svg viewBox="0 0 104 96" fill="none">
+                <rect x="4" y="52" width="86" height="14" rx="3" fill="#B06A2A"/>
+                <rect x="4" y="52" width="86" height="4" rx="2" fill="#D08A45"/>
+                <rect x="46" y="38" width="12" height="16" fill="#8F541F"/>
+                <g class="hjul">
+                  <circle cx="52" cy="30" r="16" stroke="#8F541F" stroke-width="5"/>
+                  <path d="M52 16v28M38 30h28M42 20l20 20M62 20L42 40" stroke="#8F541F" stroke-width="3.5"/>
+                  <circle cx="52" cy="30" r="4" fill="#8F541F"/>
+                </g>
+                <g class="drypp">
+                  <circle class="drape" cx="90" cy="72" r="3.4" fill="#5FA8C4"/>
+                  <circle class="drape" cx="90" cy="72" r="3.4" fill="#5FA8C4"/>
+                  <circle class="drape" cx="90" cy="72" r="3.4" fill="#5FA8C4"/>
+                </g>
+              </svg>
+            </div>
+            <div class="kran-info">
+              <p id="kran-status" role="status" aria-live="polite">Det drypper. Øv nå, så husker du det når det gjelder.</p>
+              <button type="button" class="knapp knapp--petrol knapp--liten" id="kran-knapp" aria-pressed="false">Vri igjen kranen</button>
+            </div>
+          </div>
           <p>Ring oss så snart vannet er stengt, så tar vi det derfra.</p>
           <a class="knapp knapp--kobber" href="tel:+4747901717">Ring 479 01 717</a>
         </div>
@@ -537,6 +578,25 @@ footer a:hover{color:#fff;text-decoration:underline}
     Ring rørleggeren
   </a>
 </div>
+
+<script>
+/* Kran-øvelsen: vri igjen hovedstoppekranen, se dryppet stoppe.
+   Ingen sporing, ingen eksterne kall. */
+(function () {
+  var ovelse = document.getElementById('kran-ovelse');
+  var knapp = document.getElementById('kran-knapp');
+  var status = document.getElementById('kran-status');
+  if (!ovelse || !knapp || !status) return;
+  knapp.addEventListener('click', function () {
+    var stengt = ovelse.classList.toggle('stengt');
+    knapp.setAttribute('aria-pressed', String(stengt));
+    knapp.textContent = stengt ? 'Åpne kranen igjen' : 'Vri igjen kranen';
+    status.textContent = stengt
+      ? 'Kranen er stengt og vannet står. Ring oss på 479 01 717.'
+      : 'Det drypper. Øv nå, så husker du det når det gjelder.';
+  });
+})();
+</script>
 
 </body>
 </html>
