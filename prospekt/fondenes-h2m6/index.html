@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Forsideskisse for B Fondenes Aut Rørleggerfirma AS: rørlegger og varmepumpesenter på Fantoft i Bergen.">
+<title>B Fondenes · Rørlegger og varmepumpesenter i Bergen</title>
+
+<!-- SKISSE for salgsmøte. Ingen sporing, ingen pixel, ingen delte filer.
+     Innholdet bygger på bfondenes.no og offentlige kilder, og er merket
+     PLACEHOLDER der det ikke er verifisert. Poenget med skissen: samle
+     rørleggerfirmaet og IVT Varmepumpe Senter under ett merke; i dag heter
+     Google-treffet deres "Hjem | IVT Varmepumpe Senter" og navnet B Fondenes
+     er usynlig i søk. -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='%232C5F8A' stroke-width='3'/%3E%3Cpath d='M12 12L12 5' stroke='%23D25E2E' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --kald:#2C5F8A;
+  --kald-dyp:#1E4363;
+  --varm:#D25E2E;
+  --varm-dyp:#A94A22;
+  --krem:#F8F5F0;
+  --hvit:#FFFFFF;
+  --linje:#E2DCD3;
+  --dempet:#6A645C;
+  --tekst:#242019;
+  --mork:#221D18;
+  /* aktiv modus, styres av dialen */
+  --aksent:var(--kald);
+  --aksent-dyp:var(--kald-dyp);
+  --display:'Bricolage Grotesque',Georgia,system-ui,serif;
+  --brod:'Figtree',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --maks:1100px;
+}
+body.varme{--aksent:var(--varm);--aksent-dyp:var(--varm-dyp)}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--krem);color:var(--tekst);
+  font-family:var(--brod);font-size:16.5px;line-height:1.6;padding-bottom:76px;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.08;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(31px,7vw,52px)}
+h2{font-size:clamp(25px,5vw,36px)}
+h3{font-size:19px}
+p{margin:0}
+.wrap{width:100%;max-width:var(--maks);margin:0 auto;padding:0 20px}
+section{padding:54px 0}
+[id]{scroll-margin-top:84px}
+:focus-visible{outline:3px solid var(--aksent);outline-offset:3px;border-radius:3px}
+.morkflate :focus-visible{outline-color:#fff}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
+.hopp-til{position:absolute;left:-9999px;top:0;background:var(--mork);color:#fff;padding:12px 18px;z-index:300;font-weight:600}
+.hopp-til:focus{left:8px;top:8px}
+
+.seksjonshode{max-width:640px;margin-bottom:26px}
+.seksjonshode p{margin-top:10px;color:var(--dempet)}
+.etikett{
+  display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:12.5px;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--aksent);margin-bottom:10px;
+  transition:color .4s ease;
+}
+.etikett::before{content:"";width:20px;height:3px;background:var(--aksent);transition:background-color .4s ease}
+
+.knapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:700;font-size:16px;text-decoration:none;
+  padding:14px 24px;border-radius:10px;border:2px solid transparent;cursor:pointer;
+  min-height:50px;transition:background-color .3s ease,transform .13s ease;
+}
+.knapp:hover{transform:translateY(-1px)}
+.knapp--aksent{background:var(--aksent);color:#fff}
+.knapp--aksent:hover{background:var(--aksent-dyp)}
+.knapp--mork{background:var(--mork);color:#fff}
+.knapp--lys{background:#fff;color:var(--tekst);border-color:var(--linje)}
+.knapp--lys:hover{border-color:var(--mork)}
+.knapp--liten{padding:10px 16px;font-size:14px;min-height:42px}
+
+/* ---------- Topplinje ---------- */
+.topp{
+  position:sticky;top:0;z-index:100;background:rgba(248,245,240,.95);
+  backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--linje);
+}
+.topp .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.merke{display:flex;flex-direction:column;text-decoration:none;flex:none;line-height:1.1}
+.merke b{font-family:var(--display);font-weight:800;font-size:16.5px}
+.merke small{font-size:10.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--dempet)}
+.topp-hoyre{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tlf-topp{display:none;text-decoration:none;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tlf-topp:hover{color:var(--aksent)}
+@media (min-width:700px){.tlf-topp{display:inline}}
+
+/* ---------- Hero med termostaten ---------- */
+.hero{
+  background:linear-gradient(140deg,var(--aksent) 0%,var(--aksent-dyp) 100%);
+  color:#fff;padding:56px 0 54px;transition:background .5s ease;
+}
+.hero .wrap{display:grid;gap:34px}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1.1fr .9fr;align-items:center;gap:44px}}
+.hero h1{max-width:16ch}
+.hero-ingress{margin-top:14px;max-width:48ch;font-size:17px;color:rgba(255,255,255,.85)}
+.hero-knapper{display:flex;flex-direction:column;gap:11px;margin-top:24px}
+@media (min-width:560px){.hero-knapper{flex-direction:row;flex-wrap:wrap}}
+.hero .knapp--lys{color:var(--tekst)}
+
+/* Signatur: termostaten */
+.termostat{justify-self:center;text-align:center}
+.dial-omraade{display:flex;align-items:center;gap:18px;justify-content:center}
+.dial-merke{
+  font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);transition:color .3s ease;
+}
+.dial-merke.aktiv{color:#fff}
+.dial{
+  width:132px;height:132px;border-radius:50%;background:#fff;border:none;cursor:pointer;
+  position:relative;box-shadow:0 12px 30px rgba(0,0,0,.3),inset 0 0 0 8px var(--krem);
+  transition:transform .12s ease;
+}
+.dial:hover{transform:scale(1.03)}
+.dial .viser{
+  position:absolute;left:50%;top:12px;bottom:50%;width:6px;margin-left:-3px;
+  border-radius:3px;background:var(--aksent);transform-origin:50% 100%;
+  transform:rotate(-42deg);transition:transform .5s cubic-bezier(.35,1.2,.4,1),background-color .4s ease;
+}
+body.varme .dial .viser{transform:rotate(42deg)}
+.dial .nav{
+  position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;
+  border-radius:50%;background:var(--mork);
+}
+.termostat-status{margin-top:14px;font-weight:600;font-size:14.5px;color:rgba(255,255,255,.9);min-height:24px}
+
+/* Trust-strip */
+.tillit{background:var(--mork);color:#fff;padding:0}
+.tillit ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+@media (min-width:860px){.tillit ul{grid-template-columns:repeat(4,auto);justify-content:space-between}}
+.tillit li{display:flex;align-items:center;gap:9px;font-size:13.5px;color:#CFC8C0}
+.tillit li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--aksent);transition:background-color .4s ease}
+
+/* ---------- De to universene ---------- */
+.univers-rutenett{display:grid;gap:16px}
+@media (min-width:820px){.univers-rutenett{grid-template-columns:1fr 1fr}}
+.univers{
+  border-radius:14px;padding:24px 20px;color:#fff;display:flex;flex-direction:column;gap:10px;
+  transition:box-shadow .3s ease,transform .3s ease;
+}
+.univers--vann{background:linear-gradient(150deg,var(--kald) 0%,var(--kald-dyp) 100%)}
+.univers--varme{background:linear-gradient(150deg,var(--varm) 0%,var(--varm-dyp) 100%)}
+.univers.fremhevet{box-shadow:0 14px 34px rgba(34,29,24,.28);transform:translateY(-3px)}
+.univers h3{color:#fff;font-size:22px}
+.univers p{font-size:14.5px;color:rgba(255,255,255,.88)}
+.univers ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:7px;font-size:14.5px}
+.univers li{display:flex;gap:9px;align-items:baseline}
+.univers li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.7)}
+.univers .knapp{margin-top:auto;background:#fff;color:var(--tekst)}
+
+/* ---------- Hvorfor: historien ---------- */
+.historie{background:#fff;border-top:1px solid var(--linje);border-bottom:1px solid var(--linje)}
+.hist-rad{display:grid;gap:26px}
+@media (min-width:860px){.hist-rad{grid-template-columns:1fr 1fr;gap:48px;align-items:center}}
+.hist-tekst p{color:#453F37;max-width:50ch}
+.hist-tekst p + p{margin-top:12px}
+.milepaler{list-style:none;margin:0;padding:0}
+.milepaler li{display:flex;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--linje)}
+.milepaler .aar{
+  flex:none;font-family:var(--display);font-weight:800;font-size:19px;min-width:64px;
+  font-variant-numeric:tabular-nums;color:var(--aksent);transition:color .4s ease;
+}
+.milepaler p{font-size:15px;color:#453F37}
+
+/* ---------- Prosess ---------- */
+.steg{display:grid;gap:18px;counter-reset:steg;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.steg{grid-template-columns:repeat(3,1fr);gap:26px}}
+.steg li{counter-increment:steg;background:#fff;border:1px solid var(--linje);border-radius:12px;padding:18px 16px}
+.steg li::before{
+  content:counter(steg);display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;background:var(--aksent);color:#fff;
+  font-family:var(--display);font-weight:800;font-size:16px;margin-bottom:10px;
+  transition:background-color .4s ease;
+}
+.steg h3{margin-bottom:6px}
+.steg p{font-size:14.5px;color:#453F37}
+
+/* ---------- Omtaler ---------- */
+.omtaler-boks{
+  background:#fff;border:1px dashed #CFC7BC;border-radius:12px;padding:34px 22px;text-align:center;
+}
+.omtaler-boks p{color:var(--dempet);max-width:40ch;margin:0 auto}
+
+/* ---------- Dekning ---------- */
+.dekning{background:var(--mork);color:#fff}
+.dekning h2{color:#fff}
+.dekning p{color:#CFC8C0;max-width:52ch}
+.steder{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none;padding:0}
+.steder li{
+  font-weight:600;font-size:13.5px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);padding:7px 14px;border-radius:99px;
+}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:740px}
+.faq details{background:#fff;border:1px solid var(--linje);border-radius:12px;margin-bottom:10px}
+.faq summary{
+  cursor:pointer;padding:16px 46px 16px 18px;position:relative;list-style:none;
+  font-family:var(--display);font-weight:800;font-size:16.5px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:19px;top:50%;width:10px;height:10px;
+  border-right:2.5px solid var(--aksent);border-bottom:2.5px solid var(--aksent);
+  transform:translateY(-70%) rotate(45deg);transition:transform .16s ease,border-color .4s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq .svar{padding:0 18px 17px;font-size:15px;color:#453F37}
+
+/* ---------- Avsluttende CTA ---------- */
+.avslutt{
+  background:linear-gradient(140deg,var(--aksent) 0%,var(--aksent-dyp) 100%);
+  color:#fff;text-align:center;transition:background .5s ease;
+}
+.avslutt h2{color:#fff}
+.avslutt p{color:rgba(255,255,255,.85);max-width:44ch;margin:12px auto 0}
+.avslutt .knapp--mork{margin-top:24px}
+
+/* ---------- Footer ---------- */
+footer{background:var(--mork);color:#B5ADA3;padding:42px 0 30px}
+.f-rutenett{display:grid;gap:24px}
+@media (min-width:760px){.f-rutenett{grid-template-columns:1.2fr 1fr 1fr}}
+footer h3{color:#fff;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;font-family:var(--brod);font-weight:700}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.nap{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14.5px;font-variant-numeric:tabular-nums}
+.f-bunn{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:15px;font-size:13px;color:#847C72}
+
+/* ---------- Sticky bunnlinje ---------- */
+.bunnlinje{
+  position:fixed;left:0;right:0;bottom:0;z-index:110;background:#fff;
+  border-top:1px solid var(--linje);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center;box-shadow:0 -6px 20px rgba(34,29,24,.12);
+}
+.bunnlinje .knapp{flex:1}
+@media (min-width:900px){.bunnlinje{display:none} body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<a class="hopp-til" href="#innhold">Hopp til innhold</a>
+
+<header class="topp">
+  <div class="wrap">
+    <a class="merke" href="#" aria-label="B Fondenes, til toppen">
+      <b>B Fondenes</b>
+      <small>Rørlegger og varmepumpesenter</small>
+    </a>
+    <div class="topp-hoyre">
+      <a class="tlf-topp" href="tel:+4755311800">55 31 18 00</a>
+      <a class="knapp knapp--aksent knapp--liten" href="tel:+4755311800">Ring oss</a>
+    </div>
+  </div>
+</header>
+
+<main id="innhold">
+
+  <!-- Hero med termostaten -->
+  <section class="hero morkflate" aria-labelledby="hero-tittel">
+    <div class="wrap">
+      <div>
+        <span class="etikett" style="color:rgba(255,255,255,.85)">Fantoft, Bergen</span>
+        <h1 id="hero-tittel">Rørleggeren som ble Bergens første varmepumpesenter</h1>
+        <p class="hero-ingress">
+          B Fondenes har lagt rør i Bergen siden 1970, og driver i dag byens
+          første varmepumpesenter sammen med IVT. Vann og varme, ett firma,
+          ett nummer.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp--mork" href="tel:+4755311800">Ring 55 31 18 00</a>
+          <a class="knapp knapp--lys" href="#univers">Se begge fagene</a>
+        </div>
+      </div>
+
+      <!-- Signatur: termostaten. Vri mellom vann og varme. -->
+      <div class="termostat">
+        <div class="dial-omraade">
+          <span class="dial-merke aktiv" id="merke-vann">Vann</span>
+          <button type="button" class="dial" id="dial" role="switch" aria-checked="false"
+                  aria-label="Vri termostaten mellom rørleggerfaget (vann) og varmepumpesenteret (varme)">
+            <span class="viser" aria-hidden="true"></span>
+            <span class="nav" aria-hidden="true"></span>
+          </button>
+          <span class="dial-merke" id="merke-varme">Varme</span>
+        </div>
+        <p class="termostat-status" id="termostat-status" role="status" aria-live="polite">
+          Rørleggerfaget: bad, service, vann og avløp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust-strip -->
+  <div class="tillit morkflate" role="region" aria-label="Kjernefakta">
+    <div class="wrap">
+      <ul>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Egen side sier historie fra
+             1970; lead-arket sa 1989. Årstallet må bekreftes av bedriften. -->
+        <li>Rørleggerhistorie fra 1970</li>
+        <li>Autorisert rørleggerfirma</li>
+        <li>Bergens første varmepumpesenter, med IVT</li>
+        <li>Se og hør varmepumper i drift hos oss</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- De to universene -->
+  <section id="univers" aria-labelledby="univers-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Ett firma, to fag</span>
+        <h2 id="univers-tittel">Vannet og varmen hører sammen</h2>
+        <p>Varmepumpen din er bare så god som rørene rundt den. Derfor er det en
+          fordel at samme firma kan begge deler.</p>
+      </div>
+      <div class="univers-rutenett">
+        <div class="univers univers--vann fremhevet" id="univers-vann">
+          <h3>Rørleggertjenester</h3>
+          <p>Alt en rørlegger gjør, fra små servicejobber til store, langvarige
+            prosjekter.</p>
+          <ul>
+            <li>Bad og våtrom</li>
+            <li>Vann og avløp</li>
+            <li>Service og reparasjoner</li>
+            <li>Prosjekter for bedrift og borettslag</li>
+          </ul>
+          <a class="knapp knapp--liten" href="tel:+4755311800">Ring om rørjobb</a>
+        </div>
+        <div class="univers univers--varme" id="univers-varme">
+          <h3>Varmepumpesenteret</h3>
+          <p>Bergens første varmepumpesenter, i samarbeid med IVT. Kom innom og
+            se og hør varmepumper i drift før du velger.</p>
+          <ul>
+            <li>Væske-til-vann og bergvarme</li>
+            <li>Riktig dimensjonering for huset ditt</li>
+            <li>Montering av egne fagfolk</li>
+            <li>Utstilling på Fantoft</li>
+          </ul>
+          <a class="knapp knapp--liten" href="tel:+4755311800">Ring om varmepumpe</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historien -->
+  <section class="historie" aria-labelledby="hist-tittel">
+    <div class="wrap">
+      <div class="hist-rad">
+        <div class="hist-tekst">
+          <span class="etikett">Hvorfor Fondenes</span>
+          <h2 id="hist-tittel">Femti år med vann. Så kom varmen.</h2>
+          <p style="margin-top:12px">
+            B Fondenes har vært autorisert rørleggerfirma i Bergen i over femti
+            år. Da varmepumpene kom, gjorde vi det ingen andre i byen hadde
+            gjort: åpnet et eget senter der du kan se og høre pumpene i drift
+            før du bestemmer deg.
+          </p>
+          <p>I dag er vi fire rørleggere, en teknisk ansvarlig og et kontor som
+            svarer når du ringer. Lite nok til å kjenne kundene, gammelt nok
+            til å ha sett det meste.</p>
+        </div>
+        <ul class="milepaler">
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Årstall for senteråpning
+               må bekreftes av bedriften. -->
+          <li><span class="aar">1970</span><p>Rørleggerfirmaet startes i Bergen</p></li>
+          <li><span class="aar">[År]</span><p>Bergens første varmepumpesenter åpner, med IVT</p></li>
+          <li><span class="aar">I dag</span><p>Fire rørleggere, teknisk ansvarlig og utstilling på Fantoft</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prosess -->
+  <section aria-labelledby="prosess-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Slik gjør du</span>
+        <h2 id="prosess-tittel">Fra telefon til ferdig anlegg</h2>
+      </div>
+      <ol class="steg">
+        <li>
+          <h3>Ring, eller kom innom</h3>
+          <p>Ring <a href="tel:+4755311800">55 31 18 00</a>, eller besøk
+            utstillingen på Fantoft og hør en varmepumpe i drift.</p>
+        </li>
+        <li>
+          <h3>Befaring og pris</h3>
+          <p>Vi ser på huset og rørene dine, og du får pris og anbefaling før
+            noe bestilles.</p>
+        </li>
+        <li>
+          <h3>Montert av egne fagfolk</h3>
+          <p>Rør og varme monteres av våre egne folk, dokumentert og ferdig
+            innregulert.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Omtaler: nøytralt -->
+  <section aria-labelledby="omtale-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Fra kundene</span>
+        <h2 id="omtale-tittel">Det kundene sier</h2>
+      </div>
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Omtaler hentes fra Google-
+           profilen med samtykke. Aldri dikt opp sitater eller navn. -->
+      <div class="omtaler-boks">
+        <p>Kundeomtaler hentes fra Google-profilen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dekning -->
+  <section class="dekning morkflate" aria-labelledby="dekning-tittel">
+    <div class="wrap">
+      <span class="etikett" style="color:#CFC8C0">Her jobber vi</span>
+      <h2 id="dekning-tittel">Bergen og omegn</h2>
+      <p>Utstilling og base på Fantoftneset, oppdrag i hele Bergensområdet.</p>
+      <ul class="steder">
+        <li>Fantoft</li><li>Fana</li><li>Sentrum</li><li>Minde</li>
+        <li>Nesttun</li><li>Åsane</li><li>Laksevåg</li><li>Omegn etter avtale</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="faq-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Spørsmål og svar</span>
+        <h2 id="faq-tittel">Det folk lurer på</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Lønner en varmepumpe seg for mitt hus?</summary>
+          <div class="svar">Det avhenger av husets størrelse, dagens oppvarming og
+            rørene du har. Kom innom senteret eller be om befaring, så får du et
+            ærlig svar, også hvis svaret er nei.</div>
+        </details>
+        <details>
+          <summary>Kan jeg se en varmepumpe i drift før jeg kjøper?</summary>
+          <div class="svar">Ja, det er hele poenget med senteret vårt på Fantoft. Du
+            kan se og høre pumpene i drift før du bestemmer deg.</div>
+        </details>
+        <details>
+          <summary>Tar dere vanlige rørleggerjobber?</summary>
+          <div class="svar">Ja. Bad, service, vann og avløp har vært kjernen i
+            firmaet siden 1970, og er det fortsatt.</div>
+        </details>
+        <details>
+          <summary>Hva koster det?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Priser må fylles inn av
+               bedriften. -->
+          <div class="svar">Du får pris etter befaring, før noe bestilles. Ring
+            <a href="tel:+4755311800">55 31 18 00</a>, så avtaler vi.</div>
+        </details>
+        <details>
+          <summary>Hvem monterer varmepumpen?</summary>
+          <div class="svar">Våre egne fagfolk. Du slipper å koordinere rørlegger og
+            montør fra to firmaer; hos oss er det samme laget.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avsluttende CTA -->
+  <section class="avslutt morkflate" aria-labelledby="avslutt-tittel">
+    <div class="wrap">
+      <h2 id="avslutt-tittel">Vann eller varme?</h2>
+      <p>Samme nummer uansett. Ring, eller kom innom utstillingen på Fantoft.</p>
+      <a class="knapp knapp--mork" href="tel:+4755311800">Ring 55 31 18 00</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="f-rutenett">
+      <div>
+        <div class="merke" style="margin-bottom:10px">
+          <b style="color:#fff;font-family:var(--display)">B Fondenes</b>
+          <small style="color:#B5ADA3">Rørlegger og varmepumpesenter</small>
+        </div>
+        <p style="font-size:14px;max-width:34ch">
+          Autorisert rørleggerfirma og Bergens første varmepumpesenter, på
+          Fantoft.
+        </p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="nap">
+          <li>B Fondenes Aut Rørleggerfirma AS</li>
+          <li><a href="tel:+4755311800">55 31 18 00</a></li>
+          <li><a href="mailto:ove@bfondenes.no">ove@bfondenes.no</a></li>
+          <li>Org.nr 954 623 718</li>
+          <li>Fantoftneset 1, 5072 Bergen</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Fagene</h3>
+        <ul class="nap">
+          <li><a href="#univers">Rørleggertjenester</a></li>
+          <li><a href="#univers">Varmepumpesenteret</a></li>
+          <li><a href="#univers">Bad og våtrom</a></li>
+          <li><a href="#univers">Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-bunn">© 2026 B Fondenes Aut Rørleggerfirma AS. Skisse til salgsmøte, ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="bunnlinje">
+  <a class="knapp knapp--aksent" href="tel:+4755311800">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Ring 55 31 18 00
+  </a>
+</div>
+
+<script>
+/* Termostaten: vrir hele siden mellom vann (rørlegger) og varme
+   (varmepumpesenter). Ingen sporing, ingen eksterne kall. */
+(function () {
+  var dial = document.getElementById('dial');
+  var status = document.getElementById('termostat-status');
+  var mVann = document.getElementById('merke-vann');
+  var mVarme = document.getElementById('merke-varme');
+  var uVann = document.getElementById('univers-vann');
+  var uVarme = document.getElementById('univers-varme');
+  if (!dial || !status) return;
+  dial.addEventListener('click', function () {
+    var varme = document.body.classList.toggle('varme');
+    dial.setAttribute('aria-checked', String(varme));
+    mVann.classList.toggle('aktiv', !varme);
+    mVarme.classList.toggle('aktiv', varme);
+    if (uVann && uVarme) {
+      uVann.classList.toggle('fremhevet', !varme);
+      uVarme.classList.toggle('fremhevet', varme);
+    }
+    status.textContent = varme
+      ? 'Varmepumpesenteret: se og hør pumpene i drift på Fantoft.'
+      : 'Rørleggerfaget: bad, service, vann og avløp.';
+  });
+})();
+</script>
+
+</body>
+</html>

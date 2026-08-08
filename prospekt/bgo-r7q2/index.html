@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Forsideskisse for BGO Elektro AS: elektroinstallatør i Fana, Bergen. Bolig, næring, storkjøkken og industri.">
+<title>BGO Elektro · Elektroinstallatør i Bergen og Fana</title>
+
+<!-- SKISSE for salgsmøte. Ingen sporing, ingen pixel, ingen delte filer.
+     Innholdet bygger på bgoelektro.no og offentlige kilder, og er merket
+     PLACEHOLDER der det ikke er verifisert. Dagens side har plassholderbilder
+     der prosjektbilder skulle vært, og kontaktinfo gjemt bak undersider. -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='7' y='2' width='10' height='20' rx='2' fill='%23222A31'/%3E%3Crect x='10' y='5' width='4' height='7' rx='1' fill='%2338B060'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --grafitt:#222A31;
+  --grafitt-dyp:#171D23;
+  --jord-gronn:#2E8B4F;
+  --jord-gul:#F2C21D;
+  --pa-gronn:#38B060;
+  --lys:#F4F5F6;
+  --hvit:#FFFFFF;
+  --linje:#DCE0E3;
+  --dempet:#5D666E;
+  --tekst:#1C232A;
+  --display:'Rubik',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --brod:'Rubik',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --maks:1100px;
+  /* jordledningens striper, elektrikerens egen aksent */
+  --jording:repeating-linear-gradient(135deg,var(--jord-gronn) 0 14px,var(--jord-gul) 14px 28px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--lys);color:var(--tekst);
+  font-family:var(--brod);font-weight:500;font-size:16px;line-height:1.6;padding-bottom:76px;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-weight:800;line-height:1.07;margin:0;letter-spacing:-.015em}
+h1{font-size:clamp(32px,7.4vw,54px)}
+h2{font-size:clamp(25px,5.2vw,37px)}
+h3{font-size:18px}
+p{margin:0}
+.wrap{width:100%;max-width:var(--maks);margin:0 auto;padding:0 20px}
+section{padding:54px 0}
+[id]{scroll-margin-top:84px}
+:focus-visible{outline:3px solid var(--jord-gronn);outline-offset:3px;border-radius:3px}
+.morkflate :focus-visible{outline-color:var(--jord-gul)}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
+.hopp-til{position:absolute;left:-9999px;top:0;background:var(--grafitt);color:#fff;padding:12px 18px;z-index:300;font-weight:600}
+.hopp-til:focus{left:8px;top:8px}
+
+.seksjonshode{max-width:620px;margin-bottom:26px}
+.seksjonshode p{margin-top:10px;color:var(--dempet)}
+.etikett{
+  display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:12.5px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--jord-gronn);margin-bottom:10px;
+}
+.etikett::before{content:"";width:26px;height:8px;border-radius:4px;background:var(--jording)}
+
+.knapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-weight:800;font-size:15.5px;text-decoration:none;
+  padding:14px 24px;border-radius:8px;border:2px solid transparent;cursor:pointer;
+  min-height:50px;transition:background-color .13s ease,transform .13s ease;
+}
+.knapp:hover{transform:translateY(-1px)}
+.knapp--gronn{background:var(--jord-gronn);color:#fff}
+.knapp--gronn:hover{background:#246E3E}
+.knapp--grafitt{background:var(--grafitt);color:#fff}
+.knapp--grafitt:hover{background:var(--grafitt-dyp)}
+.knapp--lys{background:#fff;color:var(--grafitt);border-color:var(--linje)}
+.knapp--lys:hover{border-color:var(--grafitt)}
+.knapp--liten{padding:10px 16px;font-size:14px;min-height:42px}
+
+/* ---------- Topplinje ---------- */
+.topp{
+  position:sticky;top:0;z-index:100;background:rgba(34,42,49,.97);color:#fff;
+}
+.topp::after{content:"";display:block;height:5px;background:var(--jording)}
+.topp .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.merke{display:flex;flex-direction:column;text-decoration:none;flex:none;line-height:1.1}
+.merke b{font-weight:800;font-size:16px}
+.merke small{font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#9FD9B4}
+.topp-hoyre{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tlf-topp{display:none;text-decoration:none;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;color:#fff}
+.tlf-topp:hover{color:#9FD9B4}
+@media (min-width:700px){.tlf-topp{display:inline}}
+
+/* ---------- Hero med sikringsskapet ---------- */
+.hero{background:var(--grafitt);color:#fff;padding:56px 0 54px}
+.hero .wrap{display:grid;gap:34px}
+@media (min-width:920px){.hero .wrap{grid-template-columns:1fr 1fr;align-items:start;gap:44px}}
+.hero h1{max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--jord-gul)}
+.hero-ingress{margin-top:14px;max-width:46ch;font-size:17px;color:#C2C9CF}
+.hero-knapper{display:flex;flex-direction:column;gap:11px;margin-top:24px}
+@media (min-width:560px){.hero-knapper{flex-direction:row;flex-wrap:wrap}}
+
+/* Signatur: sikringsskapet */
+.skap{
+  background:#E9ECEE;border-radius:14px;padding:16px;color:var(--tekst);
+  border:4px solid #CBD1D6;box-shadow:0 14px 34px rgba(15,20,25,.35);
+}
+.skap-hode{
+  display:flex;justify-content:space-between;align-items:center;
+  font-weight:800;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--dempet);padding:0 4px 12px;
+}
+.skap-hode i{width:34px;height:8px;border-radius:4px;background:var(--jording)}
+.kurser{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kurs{
+  background:#fff;border:1.5px solid #CBD1D6;border-radius:8px;padding:10px 6px 8px;
+  cursor:pointer;text-align:center;font:inherit;
+  transition:border-color .15s ease;
+}
+.kurs:hover{border-color:var(--grafitt)}
+.kurs[aria-pressed="true"]{border-color:var(--jord-gronn)}
+.bryterspor{
+  width:22px;height:40px;border-radius:5px;background:#DDE2E6;margin:0 auto 8px;
+  position:relative;
+}
+.bryter{
+  position:absolute;left:3px;right:3px;height:16px;border-radius:3px;
+  background:#8A939B;top:20px;transition:top .18s ease,background-color .18s ease;
+}
+.kurs[aria-pressed="true"] .bryter{top:4px;background:var(--pa-gronn)}
+.kurs b{display:block;font-size:11.5px;font-weight:800;letter-spacing:.02em;line-height:1.25}
+.kurs-info{
+  margin-top:12px;background:#fff;border:1.5px solid #CBD1D6;border-radius:8px;
+  padding:14px;min-height:96px;
+}
+.kurs-info h3{font-size:15.5px;margin-bottom:4px}
+.kurs-info p{font-size:13.5px;color:#3D454D}
+
+/* Trust-strip */
+.tillit{background:var(--grafitt-dyp);color:#fff;padding:0}
+.tillit ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+@media (min-width:860px){.tillit ul{grid-template-columns:repeat(4,auto);justify-content:space-between}}
+.tillit li{display:flex;align-items:center;gap:9px;font-size:13.5px;color:#C2C9CF}
+.tillit li::before{content:"";flex:none;width:14px;height:6px;border-radius:3px;background:var(--jording)}
+
+/* ---------- Tjenester (fulle kort) ---------- */
+.t-rutenett{display:grid;gap:14px}
+@media (min-width:760px){.t-rutenett{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.t-rutenett{grid-template-columns:repeat(3,1fr)}}
+.t-kort{background:#fff;border:1px solid var(--linje);border-radius:10px;padding:18px 16px}
+.t-kort h3{margin-bottom:6px}
+.t-kort p{font-size:14.5px;color:#3D454D}
+.t-kort .merk{display:inline-block;margin-top:8px;font-size:12.5px;color:var(--dempet);background:var(--lys);padding:2px 8px;border-radius:4px}
+
+/* ---------- Hvorfor ---------- */
+.hvorfor{background:#fff;border-top:1px solid var(--linje);border-bottom:1px solid var(--linje)}
+.h-rutenett{display:grid;gap:18px}
+@media (min-width:820px){.h-rutenett{grid-template-columns:repeat(3,1fr);gap:26px}}
+.h-kort{border-top:6px solid;border-image:var(--jording) 1;padding-top:14px}
+.h-kort h3{margin-bottom:6px}
+.h-kort p{font-size:14.5px;color:#3D454D}
+
+/* ---------- Prosess ---------- */
+.steg{display:grid;gap:18px;counter-reset:steg;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.steg{grid-template-columns:repeat(3,1fr);gap:26px}}
+.steg li{counter-increment:steg;background:#fff;border:1px solid var(--linje);border-radius:10px;padding:18px 16px}
+.steg li::before{
+  content:counter(steg);display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;background:var(--grafitt);color:var(--jord-gul);
+  font-weight:800;font-size:16px;margin-bottom:10px;
+}
+.steg h3{margin-bottom:6px}
+.steg p{font-size:14.5px;color:#3D454D}
+
+/* ---------- Omtaler ---------- */
+.omtaler-boks{
+  background:#fff;border:1px dashed #C6CCD1;border-radius:10px;padding:34px 22px;text-align:center;
+}
+.omtaler-boks p{color:var(--dempet);max-width:40ch;margin:0 auto}
+
+/* ---------- Dekning ---------- */
+.dekning{background:var(--grafitt);color:#fff}
+.dekning h2{color:#fff}
+.dekning .etikett{color:#9FD9B4}
+.dekning p{color:#C2C9CF;max-width:52ch}
+.steder{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none;padding:0}
+.steder li{
+  font-weight:600;font-size:13.5px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);padding:7px 14px;border-radius:99px;
+}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:740px}
+.faq details{background:#fff;border:1px solid var(--linje);border-radius:10px;margin-bottom:10px}
+.faq summary{
+  cursor:pointer;padding:15px 46px 15px 16px;position:relative;list-style:none;
+  font-weight:800;font-size:16px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:18px;top:50%;width:10px;height:10px;
+  border-right:2.5px solid var(--jord-gronn);border-bottom:2.5px solid var(--jord-gronn);
+  transform:translateY(-70%) rotate(45deg);transition:transform .16s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq .svar{padding:0 16px 16px;font-size:15px;color:#3D454D}
+
+/* ---------- Avsluttende CTA ---------- */
+.avslutt{background:var(--grafitt);color:#fff;text-align:center;position:relative}
+.avslutt::before{content:"";position:absolute;left:0;right:0;top:0;height:6px;background:var(--jording)}
+.avslutt h2{color:#fff}
+.avslutt p{color:#C2C9CF;max-width:44ch;margin:12px auto 0}
+.avslutt .knapp--gronn{margin-top:24px}
+
+/* ---------- Footer ---------- */
+footer{background:var(--grafitt-dyp);color:#AEB6BD;padding:42px 0 30px}
+.f-rutenett{display:grid;gap:24px}
+@media (min-width:760px){.f-rutenett{grid-template-columns:1.2fr 1fr 1fr}}
+footer h3{color:#fff;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.nap{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14.5px;font-variant-numeric:tabular-nums}
+.f-bunn{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:15px;font-size:13px;color:#79828A}
+
+/* ---------- Sticky bunnlinje ---------- */
+.bunnlinje{
+  position:fixed;left:0;right:0;bottom:0;z-index:110;background:#fff;
+  border-top:1px solid var(--linje);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center;box-shadow:0 -6px 20px rgba(23,29,35,.12);
+}
+.bunnlinje .knapp{flex:1}
+@media (min-width:900px){.bunnlinje{display:none} body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<a class="hopp-til" href="#innhold">Hopp til innhold</a>
+
+<header class="topp morkflate">
+  <div class="wrap">
+    <a class="merke" href="#" aria-label="BGO Elektro, til toppen">
+      <b>BGO Elektro</b>
+      <small>Elektroinstallatør · Fana</small>
+    </a>
+    <div class="topp-hoyre">
+      <a class="tlf-topp" href="tel:+4755694100">55 69 41 00</a>
+      <a class="knapp knapp--gronn knapp--liten" href="tel:+4755694100">Ring elektrikeren</a>
+    </div>
+  </div>
+</header>
+
+<main id="innhold">
+
+  <!-- Hero med sikringsskapet -->
+  <section class="hero morkflate" aria-labelledby="hero-tittel">
+    <div class="wrap">
+      <div>
+        <span class="etikett" style="color:#9FD9B4">Elektroinstallatør i Bergen og Fana</span>
+        <h1 id="hero-tittel">Alle kursene dine, <em>på ett skap</em></h1>
+        <p class="hero-ingress">
+          BGO Elektro installerer og vedlikeholder elektro for bolig, næringsbygg,
+          storkjøkken og industri, med base på Nesttun.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp--gronn" href="tel:+4755694100">Ring 55 69 41 00</a>
+          <a class="knapp knapp--lys" href="#tjenester">Se hva vi gjør</a>
+        </div>
+      </div>
+
+      <!-- Signatur: slå på kursene i skapet -->
+      <div class="skap" id="skap">
+        <div class="skap-hode"><span>Kursoversikt BGO</span><i aria-hidden="true"></i></div>
+        <div class="kurser" role="group" aria-label="Velg tjeneste i sikringsskapet">
+          <button type="button" class="kurs" data-kurs="bolig" aria-pressed="true">
+            <span class="bryterspor" aria-hidden="true"><span class="bryter"></span></span><b>Bolig</b>
+          </button>
+          <button type="button" class="kurs" data-kurs="naering" aria-pressed="false">
+            <span class="bryterspor" aria-hidden="true"><span class="bryter"></span></span><b>Næringsbygg</b>
+          </button>
+          <button type="button" class="kurs" data-kurs="kjokken" aria-pressed="false">
+            <span class="bryterspor" aria-hidden="true"><span class="bryter"></span></span><b>Storkjøkken</b>
+          </button>
+          <button type="button" class="kurs" data-kurs="lader" aria-pressed="false">
+            <span class="bryterspor" aria-hidden="true"><span class="bryter"></span></span><b>Elbillader</b>
+          </button>
+          <button type="button" class="kurs" data-kurs="varme" aria-pressed="false">
+            <span class="bryterspor" aria-hidden="true"><span class="bryter"></span></span><b>Gulvvarme</b>
+          </button>
+          <button type="button" class="kurs" data-kurs="kontroll" aria-pressed="false">
+            <span class="bryterspor" aria-hidden="true"><span class="bryter"></span></span><b>Kontroll</b>
+          </button>
+        </div>
+        <div class="kurs-info" role="status" aria-live="polite" id="kurs-info">
+          <h3>Bolig og rehabilitering</h3>
+          <p>Nye kurser, downlights, sikringsskap og komplett elektrisk anlegg ved
+            oppussing. Dokumentert med samsvarserklæring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust-strip -->
+  <div class="tillit morkflate" role="region" aria-label="Kjernefakta">
+    <div class="wrap">
+      <ul>
+        <li>Bolig, næring og industri</li>
+        <li>Lav- og høyspent</li>
+        <li>Base på Nesttun i Fana</li>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Registrering i El-
+             virksomhetsregisteret (DSB) er lovpålagt, men må verifiseres for
+             bedriften før publisering. -->
+        <li>Registrert elvirksomhet: bekreftes</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tjenester -->
+  <section id="tjenester" aria-labelledby="tjenester-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Det vi gjør</span>
+        <h2 id="tjenester-tittel">Fra stikkontakt til storkjøkken</h2>
+      </div>
+      <div class="t-rutenett">
+        <article class="t-kort">
+          <h3>Boliginstallasjon</h3>
+          <p>Nye anlegg, rehabilitering og utvidelser i hjemmet, med
+            samsvarserklæring til boligmappa.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Næringsbygg</h3>
+          <p>Elektroløsninger for kontor og næring, fra planlegging til drift og
+            vedlikehold.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Storkjøkken og restaurant</h3>
+          <p>Installasjoner i profesjonelle kjøkken, der utstyret er tungt, kravene
+            strenge og nedetid koster penger.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Industri</h3>
+          <p>Industrianlegg og spesialtilpassede løsninger, på både lav- og
+            høyspentsiden.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Elbillader og gulvvarme</h3>
+          <p>Hjemmelader med lastbalansering, og varmekabler som legges riktig
+            første gang.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Kontroll og vedlikehold</h3>
+          <p>Internkontroll og ettersyn av elektriske anlegg, for bedrifter og
+            borettslag som vil sove godt.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hvorfor -->
+  <section class="hvorfor" aria-labelledby="hvorfor-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Hvorfor BGO</span>
+        <h2 id="hvorfor-tittel">Jordet i mer enn én forstand</h2>
+      </div>
+      <div class="h-rutenett">
+        <div class="h-kort">
+          <h3>Bredden få har</h3>
+          <p>Samme firma tar boligkursen din og industrianlegget, på lav- og
+            høyspent. Kompetansen fra de store jobbene følger med hjem til deg.</p>
+        </div>
+        <div class="h-kort">
+          <h3>Storkjøkken som spesialfelt</h3>
+          <p>Restauranter og kantiner er blant de tøffeste elektromiljøene som
+            finnes. Vi kan dem.</p>
+        </div>
+        <div class="h-kort">
+          <h3>Personlig service</h3>
+          <p>Base på Nesttun, faste folk, og et nummer som besvares. Du vet hvem
+            som kommer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prosess -->
+  <section aria-labelledby="prosess-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Slik gjør du</span>
+        <h2 id="prosess-tittel">Fra idé til spenning på kursen</h2>
+      </div>
+      <ol class="steg">
+        <li>
+          <h3>Ring og fortell</h3>
+          <p>Ring <a href="tel:+4755694100">55 69 41 00</a> og beskriv jobben.
+            Småjobber avtales rett på telefonen.</p>
+        </li>
+        <li>
+          <h3>Pris før vi starter</h3>
+          <p>Du får pris på jobben før vi begynner. Større anlegg befarer vi
+            først.</p>
+        </li>
+        <li>
+          <h3>Utført og dokumentert</h3>
+          <p>Forskriftsmessig utført, med samsvarserklæring og dokumentasjon
+            levert.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Omtaler: nøytralt -->
+  <section aria-labelledby="omtale-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Fra kundene</span>
+        <h2 id="omtale-tittel">Det kundene sier</h2>
+      </div>
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Omtaler hentes fra Google-
+           profilen og Elektrolisten med samtykke. Aldri dikt opp sitater. -->
+      <div class="omtaler-boks">
+        <p>Kundeomtaler hentes fra Google-profilen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dekning -->
+  <section class="dekning morkflate" aria-labelledby="dekning-tittel">
+    <div class="wrap">
+      <span class="etikett">Her jobber vi</span>
+      <h2 id="dekning-tittel">Fana og hele Bergen</h2>
+      <p>Base i Apeltunvegen på Nesttun, oppdrag i hele Bergensområdet.</p>
+      <ul class="steder">
+        <li>Nesttun</li><li>Fana</li><li>Rådal</li><li>Sentrum</li>
+        <li>Åsane</li><li>Laksevåg</li><li>Os</li><li>Omegn etter avtale</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="faq-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Spørsmål og svar</span>
+        <h2 id="faq-tittel">Det folk lurer på</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Hva koster en elektriker?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Timepris og betingelser må
+               fylles inn av bedriften. -->
+          <div class="svar">Du får pris på jobben før vi begynner. Ring
+            <a href="tel:+4755694100">55 69 41 00</a>, så får du et konkret svar.</div>
+        </details>
+        <details>
+          <summary>Kan dere ta elektro i restaurantkjøkkenet vårt?</summary>
+          <div class="svar">Ja, storkjøkken og restaurantmiljøer er et av
+            spesialfeltene våre, fra nye installasjoner til feilsøking i drift.</div>
+        </details>
+        <details>
+          <summary>Bør sikringsskapet mitt oppgraderes?</summary>
+          <div class="svar">Har du skrusikringer eller mangler jordfeilbryter, er
+            svaret som regel ja. Et moderne skap beskytter bedre mot brann og er
+            et krav i mange forsikringsavtaler.</div>
+        </details>
+        <details>
+          <summary>Monterer dere elbillader?</summary>
+          <div class="svar">Ja, med lastbalansering dimensjonert for huset ditt, slik
+            at lading, varmtvann og komfyr går samtidig uten at hovedsikringen
+            ryker.</div>
+        </details>
+        <details>
+          <summary>Får jeg dokumentasjon på arbeidet?</summary>
+          <div class="svar">Ja, du får samsvarserklæring på alt fast elektrisk
+            arbeid. Den hører hjemme i boligmappa og er gull verdt ved salg.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avsluttende CTA -->
+  <section class="avslutt morkflate" aria-labelledby="avslutt-tittel">
+    <div class="wrap">
+      <h2 id="avslutt-tittel">Har du en jobb til oss?</h2>
+      <p>Ring, så får du snakke med en elektriker med en gang.</p>
+      <a class="knapp knapp--gronn" href="tel:+4755694100">Ring 55 69 41 00</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="f-rutenett">
+      <div>
+        <div class="merke" style="margin-bottom:10px">
+          <b style="color:#fff">BGO Elektro</b>
+          <small style="color:#9FD9B4">Elektroinstallatør · Fana</small>
+        </div>
+        <p style="font-size:14px;max-width:34ch">
+          Elektro for bolig, næringsbygg, storkjøkken og industri i Bergen.
+        </p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="nap">
+          <li>BGO Elektro AS</li>
+          <li><a href="tel:+4755694100">55 69 41 00</a></li>
+          <li><a href="mailto:post@bgoelektro.no">post@bgoelektro.no</a></li>
+          <li>Org.nr 914 466 016</li>
+          <li>Apeltunvegen 2C, 5222 Nesttun</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul class="nap">
+          <li><a href="#tjenester">Boliginstallasjon</a></li>
+          <li><a href="#tjenester">Næringsbygg og industri</a></li>
+          <li><a href="#tjenester">Storkjøkken</a></li>
+          <li><a href="#tjenester">Elbillader og gulvvarme</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-bunn">© 2026 BGO Elektro AS. Skisse til salgsmøte, ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="bunnlinje">
+  <a class="knapp knapp--gronn" href="tel:+4755694100">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Ring elektrikeren
+  </a>
+</div>
+
+<script>
+/* Sikringsskapet: slå på en kurs, les hva den gjør. Ingen sporing. */
+(function () {
+  var kurser = document.querySelectorAll('.kurs');
+  var info = document.getElementById('kurs-info');
+  if (!kurser.length || !info) return;
+  var tekster = {
+    bolig: ['Bolig og rehabilitering', 'Nye kurser, downlights, sikringsskap og komplett elektrisk anlegg ved oppussing. Dokumentert med samsvarserklæring.'],
+    naering: ['Næringsbygg', 'Elektroløsninger for kontor og næring, fra planlegging til drift, med serviceavtale om du vil.'],
+    kjokken: ['Storkjøkken og restaurant', 'Installasjoner i profesjonelle kjøkken, der utstyret er tungt og nedetid koster penger.'],
+    lader: ['Elbillader', 'Hjemmelader med lastbalansering, slik at lading, varmtvann og komfyr går samtidig.'],
+    varme: ['Gulvvarme', 'Varmekabler lagt riktig første gang, med dokumentasjonen i orden.'],
+    kontroll: ['Kontroll og vedlikehold', 'Internkontroll og ettersyn av elektriske anlegg for bedrifter og borettslag.']
+  };
+  kurser.forEach(function (k) {
+    k.addEventListener('click', function () {
+      kurser.forEach(function (b) { b.setAttribute('aria-pressed', String(b === k)); });
+      var t = tekster[k.dataset.kurs];
+      if (t) info.innerHTML = '<h3>' + t[0] + '</h3><p>' + t[1] + '</p>';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
