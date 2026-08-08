@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Forsideskisse for Bergen Lakksenter AS: billakkering i Bergen. Bil, buss, bobil og båt, med Bergens største lakkboks.">
+<title>Bergen Lakksenter · Billakkering i Bergen, fra bil til buss</title>
+
+<!-- SKISSE for salgsmøte. Ingen sporing, ingen pixel, ingen delte filer.
+     Innholdet bygger på bergenlakksenter.no og offentlige kilder, og er merket
+     PLACEHOLDER der det ikke er verifisert. -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='%23B01E3C'/%3E%3Cpath d='M8 14c1-4 7-4 8-8' stroke='%23fff' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;600;800&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --sort:#141216;
+  --sort-dyp:#0C0B0E;
+  --karmosin:#B01E3C;
+  --karmosin-dyp:#8A1730;
+  --perle:#F4F3F5;
+  --hvit:#FFFFFF;
+  --linje:#E0DEE3;
+  --dempet:#645F68;
+  --tekst:#1C1A1F;
+  --display:'Kanit',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --brod:'Mulish',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --maks:1100px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--perle);color:var(--tekst);
+  font-family:var(--brod);font-size:16px;line-height:1.6;padding-bottom:76px;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.06;margin:0;letter-spacing:-.01em;text-transform:uppercase}
+h1{font-size:clamp(33px,7.6vw,56px)}
+h2{font-size:clamp(25px,5.2vw,38px)}
+h3{font-size:18px;font-weight:600}
+p{margin:0}
+.wrap{width:100%;max-width:var(--maks);margin:0 auto;padding:0 20px}
+section{padding:54px 0}
+[id]{scroll-margin-top:84px}
+:focus-visible{outline:3px solid var(--karmosin);outline-offset:3px;border-radius:3px}
+.morkflate :focus-visible{outline-color:#fff}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
+.hopp-til{position:absolute;left:-9999px;top:0;background:var(--sort);color:#fff;padding:12px 18px;z-index:300;font-weight:600}
+.hopp-til:focus{left:8px;top:8px}
+
+.seksjonshode{max-width:620px;margin-bottom:26px}
+.seksjonshode p{margin-top:10px;color:var(--dempet)}
+.etikett{
+  display:inline-flex;align-items:center;gap:9px;font-family:var(--display);
+  font-weight:600;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--karmosin);margin-bottom:10px;
+}
+.etikett::before{content:"";width:20px;height:3px;background:var(--karmosin)}
+
+.knapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--display);font-weight:600;font-size:15.5px;letter-spacing:.03em;
+  text-transform:uppercase;text-decoration:none;padding:14px 24px;border-radius:7px;
+  border:2px solid transparent;cursor:pointer;min-height:50px;
+  transition:background-color .13s ease,transform .13s ease;
+}
+.knapp:hover{transform:translateY(-1px)}
+.knapp--rod{background:var(--karmosin);color:#fff}
+.knapp--rod:hover{background:var(--karmosin-dyp)}
+.knapp--sort{background:var(--sort);color:#fff}
+.knapp--sort:hover{background:var(--sort-dyp)}
+.knapp--lys{background:#fff;color:var(--sort);border-color:var(--linje)}
+.knapp--lys:hover{border-color:var(--sort)}
+.knapp--liten{padding:10px 16px;font-size:14px;min-height:42px}
+
+/* ---------- Topplinje ---------- */
+.topp{
+  position:sticky;top:0;z-index:100;background:rgba(20,18,22,.97);color:#fff;
+  border-bottom:3px solid var(--karmosin);
+}
+.topp .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.merke{display:flex;flex-direction:column;text-decoration:none;flex:none;line-height:1.1}
+.merke b{font-family:var(--display);font-weight:800;font-size:15px;letter-spacing:.03em;text-transform:uppercase}
+.merke small{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#E68CA0}
+.topp-hoyre{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tlf-topp{display:none;text-decoration:none;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;color:#fff}
+.tlf-topp:hover{color:#E68CA0}
+@media (min-width:700px){.tlf-topp{display:inline}}
+
+/* ---------- Hero med lakklagene ---------- */
+.hero{
+  background:
+    radial-gradient(600px 300px at 85% 0%,rgba(176,30,60,.28),transparent 65%),
+    var(--sort);
+  color:#fff;padding:56px 0 54px;
+}
+.hero .wrap{display:grid;gap:34px}
+@media (min-width:920px){.hero .wrap{grid-template-columns:1fr 1fr;align-items:center;gap:44px}}
+.hero h1{max-width:14ch}
+.hero h1 em{font-style:normal;color:#E68CA0}
+.hero-ingress{margin-top:14px;max-width:46ch;font-size:17px;color:#C7C2CB}
+.hero-knapper{display:flex;flex-direction:column;gap:11px;margin-top:24px}
+@media (min-width:560px){.hero-knapper{flex-direction:row;flex-wrap:wrap}}
+
+/* Signatur: lakkens tre lag */
+.lakk-panel{
+  background:var(--sort-dyp);border:1px solid #2B2830;border-radius:16px;
+  padding:20px 18px;text-align:center;
+}
+.lakk-tittel{
+  font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:#8F8996;margin-bottom:14px;
+}
+.panel-flate{
+  position:relative;height:150px;border-radius:12px;overflow:hidden;
+  background:linear-gradient(150deg,#6E6A72 0%,#57535C 100%); /* bart stål */
+  border:1px solid #2B2830;
+}
+.lag{position:absolute;inset:0;opacity:0;transition:opacity .55s ease}
+.lag--grunning{background:linear-gradient(150deg,#9A96A0 0%,#807C86 100%)}
+.lag--base{background:linear-gradient(150deg,#C22646 0%,#8A1730 100%)}
+.lag--klar{
+  background:
+    linear-gradient(115deg,transparent 30%,rgba(255,255,255,.4) 44%,rgba(255,255,255,.08) 52%,transparent 62%),
+    linear-gradient(150deg,rgba(255,255,255,.14) 0%,transparent 55%);
+}
+.lakk-panel.n1 .lag--grunning{opacity:1}
+.lakk-panel.n2 .lag--grunning,.lakk-panel.n2 .lag--base{opacity:1}
+.lakk-panel.n3 .lag--grunning,.lakk-panel.n3 .lag--base,.lakk-panel.n3 .lag--klar{opacity:1}
+.lag-knapper{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.lag-knapp{
+  font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.05em;
+  text-transform:uppercase;color:#C7C2CB;background:transparent;
+  border:1.5px solid #2B2830;border-radius:8px;padding:10px 6px;cursor:pointer;
+  transition:border-color .15s ease,color .15s ease;min-height:46px;
+}
+.lag-knapp:hover{border-color:#4A4552}
+.lag-knapp[aria-pressed="true"]{border-color:var(--karmosin);color:#fff}
+.lakk-status{margin-top:12px;font-size:13.5px;color:#8F8996;min-height:40px}
+.lakk-panel.n3 .lakk-status{color:#E6C6CE}
+
+/* Trust-strip */
+.tillit{background:var(--sort-dyp);color:#fff;padding:0}
+.tillit ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+@media (min-width:860px){.tillit ul{grid-template-columns:repeat(4,auto);justify-content:space-between}}
+.tillit li{display:flex;align-items:center;gap:9px;font-size:13.5px;color:#C7C2CB}
+.tillit li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--karmosin)}
+
+/* ---------- Tjenester ---------- */
+.t-rutenett{display:grid;gap:14px}
+@media (min-width:760px){.t-rutenett{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.t-rutenett{grid-template-columns:repeat(3,1fr)}}
+.t-kort{background:#fff;border:1px solid var(--linje);border-radius:12px;padding:20px 18px;border-bottom:4px solid var(--karmosin)}
+.t-kort h3{margin-bottom:6px}
+.t-kort p{font-size:14.5px;color:#403B45}
+.t-kort .merk{display:inline-block;margin-top:8px;font-size:12.5px;color:var(--dempet);background:var(--perle);padding:2px 8px;border-radius:4px}
+
+/* ---------- Hvorfor ---------- */
+.hvorfor{background:#fff;border-top:1px solid var(--linje);border-bottom:1px solid var(--linje)}
+.h-rutenett{display:grid;gap:18px}
+@media (min-width:820px){.h-rutenett{grid-template-columns:repeat(3,1fr);gap:26px}}
+.h-kort{border-top:3px solid var(--karmosin);padding-top:14px}
+.h-kort h3{margin-bottom:6px}
+.h-kort p{font-size:14.5px;color:#403B45}
+
+/* ---------- Prosess ---------- */
+.steg{display:grid;gap:18px;counter-reset:steg;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.steg{grid-template-columns:repeat(3,1fr);gap:26px}}
+.steg li{counter-increment:steg;background:#fff;border:1px solid var(--linje);border-radius:12px;padding:18px 16px}
+.steg li::before{
+  content:counter(steg);display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;background:var(--sort);color:#E68CA0;
+  font-family:var(--display);font-weight:800;font-size:16px;margin-bottom:10px;
+}
+.steg h3{margin-bottom:6px}
+.steg p{font-size:14.5px;color:#403B45}
+
+/* ---------- Omtaler ---------- */
+.omtaler-boks{background:#fff;border:1.5px dashed #CBC7D0;border-radius:12px;padding:34px 22px;text-align:center}
+.omtaler-boks p{color:var(--dempet);max-width:40ch;margin:0 auto}
+
+/* ---------- Boksen (dekning/USP) ---------- */
+.boksen{background:var(--sort);color:#fff}
+.boksen h2{color:#fff}
+.boksen .etikett{color:#E68CA0}
+.boksen .etikett::before{background:#E68CA0}
+.boksen p{color:#C7C2CB;max-width:54ch}
+.kjoretoy{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none;padding:0}
+.kjoretoy li{
+  font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.04em;
+  text-transform:uppercase;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);padding:7px 14px;border-radius:99px;
+}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:740px}
+.faq details{background:#fff;border:1px solid var(--linje);border-radius:12px;margin-bottom:10px}
+.faq summary{cursor:pointer;padding:15px 46px 15px 16px;position:relative;list-style:none;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.02em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:18px;top:50%;width:10px;height:10px;
+  border-right:2.5px solid var(--karmosin);border-bottom:2.5px solid var(--karmosin);
+  transform:translateY(-70%) rotate(45deg);transition:transform .16s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq .svar{padding:0 16px 16px;font-size:15px;color:#403B45}
+
+/* ---------- Avsluttende CTA ---------- */
+.avslutt{background:var(--karmosin);color:#fff;text-align:center}
+.avslutt h2{color:#fff}
+.avslutt p{color:#F2D4DB;max-width:44ch;margin:12px auto 0}
+.avslutt .knapp--sort{margin-top:24px}
+.avslutt .tider{margin-top:16px;font-size:14px;color:#E6AFBB}
+
+/* ---------- Footer ---------- */
+footer{background:var(--sort-dyp);color:#B3ADB8;padding:42px 0 30px}
+.f-rutenett{display:grid;gap:24px}
+@media (min-width:760px){.f-rutenett{grid-template-columns:1.2fr 1fr 1fr}}
+footer h3{color:#fff;font-size:13.5px;letter-spacing:.12em;margin-bottom:12px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.nap{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14.5px;font-variant-numeric:tabular-nums}
+.f-bunn{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:15px;font-size:13px;color:#7C7681}
+
+/* ---------- Sticky bunnlinje ---------- */
+.bunnlinje{
+  position:fixed;left:0;right:0;bottom:0;z-index:110;background:#fff;
+  border-top:1px solid var(--linje);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center;box-shadow:0 -6px 20px rgba(12,11,14,.14);
+}
+.bunnlinje .knapp{flex:1}
+@media (min-width:900px){.bunnlinje{display:none} body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<a class="hopp-til" href="#innhold">Hopp til innhold</a>
+
+<header class="topp morkflate">
+  <div class="wrap">
+    <a class="merke" href="#" aria-label="Bergen Lakksenter, til toppen">
+      <b>Bergen Lakksenter</b>
+      <small>Arna · Bergen</small>
+    </a>
+    <div class="topp-hoyre">
+      <a class="tlf-topp" href="tel:+4755248400">55 24 84 00</a>
+      <a class="knapp knapp--rod knapp--liten" href="tel:+4755248400">Be om takst</a>
+    </div>
+  </div>
+</header>
+
+<main id="innhold">
+
+  <!-- Hero med lakklagene -->
+  <section class="hero morkflate" aria-labelledby="hero-tittel">
+    <div class="wrap">
+      <div>
+        <span class="etikett" style="color:#E68CA0">Billakkering i Bergen</span>
+        <h1 id="hero-tittel">Lakk er et <em>håndverk</em> i tre lag</h1>
+        <p class="hero-ingress">
+          Bergen Lakksenter lakkerer alt fra personbil til buss og bobil, i
+          Bergens største lakkboks. Fra steinsprut og spot repair til hel
+          omlakkering.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp--rod" href="tel:+4755248400">Ring 55 24 84 00</a>
+          <a class="knapp knapp--lys" href="#tjenester">Se hva vi gjør</a>
+        </div>
+      </div>
+
+      <!-- Signatur: bygg opp lakken lag for lag -->
+      <div class="lakk-panel" id="lakk-panel">
+        <p class="lakk-tittel" id="lakk-tittel">Panelet · bygg opp lakken</p>
+        <div class="panel-flate" aria-hidden="true">
+          <div class="lag lag--grunning"></div>
+          <div class="lag lag--base"></div>
+          <div class="lag lag--klar"></div>
+        </div>
+        <div class="lag-knapper" role="group" aria-labelledby="lakk-tittel">
+          <button type="button" class="lag-knapp" data-n="1" aria-pressed="false">1 · Grunning</button>
+          <button type="button" class="lag-knapp" data-n="2" aria-pressed="false">2 · Baselakk</button>
+          <button type="button" class="lag-knapp" data-n="3" aria-pressed="false">3 · Klarlakk</button>
+        </div>
+        <p class="lakk-status" id="lakk-status" role="status" aria-live="polite">
+          Bart stål. Trykk deg gjennom lagene, så ser du hvorfor snarveier synes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust-strip -->
+  <div class="tillit morkflate" role="region" aria-label="Kjernefakta">
+    <div class="wrap">
+      <ul>
+        <!-- Deres egen formulering fra bergenlakksenter.no. -->
+        <li>Bergens største lakkboks</li>
+        <li>Bil, lastebil, buss, båt og bobil</li>
+        <li>Taksering og forsikringsskader</li>
+        <li>Åpent man til fre 08:00 til 16:00</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tjenester -->
+  <section id="tjenester" aria-labelledby="tjenester-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Det vi gjør</span>
+        <h2 id="tjenester-tittel">Fra steinsprut til hel buss</h2>
+      </div>
+      <div class="t-rutenett">
+        <article class="t-kort">
+          <h3>Billakkering</h3>
+          <p>Hel- og dellakkering av personbil, med fargematching mot
+            originallakken.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Spot repair</h3>
+          <p>Steinsprut, riper og små skader repareres lokalt, så du slipper å
+            lakkere hele panelet.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Micropaint</h3>
+          <p>Småskader fikses raskt og rimelig med micropaint-metoden, før rust
+            får sjansen.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Buss og lastebil</h3>
+          <p>Boksen vår tar kjøretøy de fleste andre må sende fra seg. Profilering
+            og lakk for tunge kjøretøy.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Bobil og båt</h3>
+          <p>Lang erfaring med bobillakkering, og lakk på båt og gelcoat-flater.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Skade og taksering</h3>
+          <p>Vi takserer skaden, tar forsikringsjobben og plastreparasjoner, og
+            leverer bilen tilbake ferdig.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hvorfor -->
+  <section class="hvorfor" aria-labelledby="hvorfor-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Hvorfor oss</span>
+        <h2 id="hvorfor-tittel">Størrelsen er faktisk poenget</h2>
+      </div>
+      <div class="h-rutenett">
+        <div class="h-kort">
+          <h3>Bergens største lakkboks</h3>
+          <p>Når boksen tar en buss, er personbilen din en enkel dag på jobben.
+            Stor boks betyr også riktig temperatur og støvfritt miljø.</p>
+        </div>
+        <div class="h-kort">
+          <h3>Alle metoder, ett sted</h3>
+          <p>Fra micropaint på et steinsprut til hel omlakkering. Du betaler for
+            riktig metode, ikke største metode.</p>
+        </div>
+        <div class="h-kort">
+          <h3>Forsikring uten styr</h3>
+          <p>Vi takserer, dokumenterer og gjør jobben. Du leverer bilen og henter
+            den ferdig.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prosess -->
+  <section aria-labelledby="prosess-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Slik gjør du</span>
+        <h2 id="prosess-tittel">Fra skade til speilblank</h2>
+      </div>
+      <ol class="steg">
+        <li>
+          <h3>Send bilde eller kom innom</h3>
+          <p>Ring <a href="tel:+4755248400">55 24 84 00</a> eller send bilde av
+            skaden på e-post, så får du en vurdering.</p>
+        </li>
+        <li>
+          <h3>Takst og pris</h3>
+          <p>Du får takst og pris før vi starter, og vi tar forsikringsdialogen
+            der det er en skadesak.</p>
+        </li>
+        <li>
+          <h3>Lakkert i tre lag</h3>
+          <p>Grunning, baselakk og klarlakk, lagt i riktig rekkefølge i riktig
+            temperatur. Det er derfor det holder.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Omtaler: nøytralt -->
+  <section aria-labelledby="omtale-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Fra kundene</span>
+        <h2 id="omtale-tittel">Det kundene sier</h2>
+      </div>
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Omtaler hentes fra Google-
+           profilen med samtykke. Aldri dikt opp sitater eller navn. -->
+      <div class="omtaler-boks">
+        <p>Kundeomtaler hentes fra Google-profilen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Boksen / dekning -->
+  <section class="boksen morkflate" aria-labelledby="boksen-tittel">
+    <div class="wrap">
+      <span class="etikett">Boksen i Arna</span>
+      <h2 id="boksen-tittel">Stor nok for det du kommer med</h2>
+      <p>
+        Verkstedet ligger på Arnatveit, med Bergens største lakkboks. Kunder fra
+        hele Bergensområdet, og kjøretøy i alle størrelser.
+      </p>
+      <ul class="kjoretoy">
+        <li>Personbil</li><li>Varebil</li><li>Lastebil</li><li>Buss</li>
+        <li>Bobil</li><li>Båt</li><li>Industrideler</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="faq-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Spørsmål og svar</span>
+        <h2 id="faq-tittel">Det folk lurer på</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Må hele panelet lakkeres for et steinsprut?</summary>
+          <div class="svar">Ofte ikke. Med spot repair og micropaint reparerer vi
+            lokalt, raskere og rimeligere. Send et bilde, så sier vi hvilken metode
+            som passer.</div>
+        </details>
+        <details>
+          <summary>Hva koster lakkering?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Priser må fylles inn av
+               bedriften. -->
+          <div class="svar">Det avhenger av skade, flate og metode. Du får takst og
+            pris før vi starter.</div>
+        </details>
+        <details>
+          <summary>Tar dere forsikringsskader?</summary>
+          <div class="svar">Ja, vi takserer skaden og tar jobben mot forsikringen.
+            Du leverer bilen og henter den ferdig.</div>
+        </details>
+        <details>
+          <summary>Kan dere lakkere bobilen min?</summary>
+          <div class="svar">Ja, bobil er et av spesialfeltene våre, og boksen vår er
+            stor nok til hele kjøretøyet i én operasjon.</div>
+        </details>
+        <details>
+          <summary>Hvor lang tid tar det?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Faktiske leveringstider må
+               bekreftes av bedriften. -->
+          <div class="svar">Det avhenger av jobben; småskader går raskt, hele
+            kjøretøy tar lenger. Du får tidsestimat sammen med taksten.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avsluttende CTA -->
+  <section class="avslutt morkflate" aria-labelledby="avslutt-tittel">
+    <div class="wrap">
+      <h2 id="avslutt-tittel">Har bilen fått en skramme?</h2>
+      <p>Ring, eller send et bilde av skaden, så får du takst og ærlig råd om
+        metode.</p>
+      <a class="knapp knapp--sort" href="tel:+4755248400">Ring 55 24 84 00</a>
+      <p class="tider">Mandag til fredag, 08:00 til 16:00 · Arnatveitvegen 137</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="f-rutenett">
+      <div>
+        <div class="merke" style="margin-bottom:10px">
+          <b style="color:#fff">Bergen Lakksenter</b>
+          <small style="color:#E68CA0">Arna · Bergen</small>
+        </div>
+        <p style="font-size:14px;max-width:34ch">
+          Lakkering av bil, lastebil, buss, båt og bobil, i Bergens største
+          lakkboks.
+        </p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="nap">
+          <li>Bergen Lakksenter AS</li>
+          <li><a href="tel:+4755248400">55 24 84 00</a></li>
+          <li><a href="mailto:totto@bergenlakksenter.no">totto@bergenlakksenter.no</a></li>
+          <li>Org.nr 998 266 246</li>
+          <li>Arnatveitvegen 137, 5262 Arnatveit</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul class="nap">
+          <li><a href="#tjenester">Billakkering</a></li>
+          <li><a href="#tjenester">Spot repair og micropaint</a></li>
+          <li><a href="#tjenester">Buss, bobil og båt</a></li>
+          <li><a href="#tjenester">Skade og taksering</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-bunn">© 2026 Bergen Lakksenter AS. Skisse til salgsmøte, ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="bunnlinje">
+  <a class="knapp knapp--rod" href="tel:+4755248400">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Ring lakksenteret
+  </a>
+</div>
+
+<script>
+/* Lakklagene: bygg opp grunning, baselakk og klarlakk. Ingen sporing. */
+(function () {
+  var panel = document.getElementById('lakk-panel');
+  var knapper = document.querySelectorAll('.lag-knapp');
+  var status = document.getElementById('lakk-status');
+  if (!panel || !knapper.length || !status) return;
+  var tekster = {
+    1: 'Grunningen gir lakken feste og stopper rust. Hopper du over den, slipper lakken.',
+    2: 'Baselakken er fargen, matchet mot originalen. Matt til klarlakken kommer på.',
+    3: 'Klarlakken gir glans og beskyttelse. Tre lag, riktig rekkefølge. Det er hele faget.'
+  };
+  knapper.forEach(function (k) {
+    k.addEventListener('click', function () {
+      var n = k.dataset.n;
+      panel.className = 'lakk-panel n' + n;
+      knapper.forEach(function (b) { b.setAttribute('aria-pressed', String(b === k)); });
+      status.textContent = tekster[n];
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
