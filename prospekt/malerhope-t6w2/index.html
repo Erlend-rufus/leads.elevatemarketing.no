@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Forsideskisse for Malermester Hope AS: malermester i Bergen. Maling inne og ute, tapet, gulv og fasade. I faget siden 1980.">
+<title>Malermester Hope · Malermester i Bergen siden 1980</title>
+
+<!-- SKISSE for salgsmøte. Ingen sporing, ingen pixel, ingen delte filer.
+     Innholdet bygger på offentlige kilder (absoluttmaling.no, Mesterregisteret,
+     1881, Mittanbud) og er merket PLACEHOLDER der det ikke er verifisert.
+     Poenget med skissen: samle merkevaren på malermesterhope.no, domenet
+     e-posten deres allerede bruker. -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='4' y='3' width='16' height='10' rx='2' fill='%237A8B74'/%3E%3Crect x='10' y='13' width='4' height='8' rx='1' fill='%232E2A26'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --kull:#2E2A26;
+  --kull-dyp:#211E1B;
+  --galleri:#FAF8F5;
+  --hvit:#FFFFFF;
+  --linje:#E4DFD7;
+  --dempet:#6E675E;
+  --tekst:#2B2723;
+  /* startfargen på veggen */
+  --vegg:#7A8B74;
+  --vegg-dyp:#66775F;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --brod:'Karla',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --maks:1100px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--galleri);color:var(--tekst);
+  font-family:var(--brod);font-size:16.5px;line-height:1.65;padding-bottom:76px;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.12;margin:0;letter-spacing:0}
+h1{font-size:clamp(32px,7vw,52px)}
+h2{font-size:clamp(25px,5vw,36px)}
+h3{font-size:19px}
+p{margin:0}
+.wrap{width:100%;max-width:var(--maks);margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+[id]{scroll-margin-top:84px}
+:focus-visible{outline:3px solid var(--kull);outline-offset:3px;border-radius:2px}
+.morkflate :focus-visible{outline-color:#fff}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
+.hopp-til{position:absolute;left:-9999px;top:0;background:var(--kull);color:#fff;padding:12px 18px;z-index:300;font-weight:600}
+.hopp-til:focus{left:8px;top:8px}
+
+.seksjonshode{max-width:620px;margin-bottom:28px}
+.seksjonshode p{margin-top:10px;color:var(--dempet)}
+.etikett{
+  display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:12.5px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--dempet);margin-bottom:12px;
+}
+.etikett::before{content:"";width:20px;height:2px;background:var(--kull)}
+
+.knapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--brod);font-weight:700;font-size:16px;text-decoration:none;
+  padding:14px 26px;border-radius:99px;border:2px solid transparent;cursor:pointer;
+  min-height:50px;transition:background-color .13s ease,transform .13s ease;
+}
+.knapp:hover{transform:translateY(-1px)}
+.knapp--kull{background:var(--kull);color:#fff}
+.knapp--kull:hover{background:var(--kull-dyp)}
+.knapp--lys{background:transparent;color:var(--kull);border-color:#CBC4B9}
+.knapp--lys:hover{border-color:var(--kull)}
+.knapp--liten{padding:10px 18px;font-size:14px;min-height:42px}
+
+/* ---------- Topplinje ---------- */
+.topp{
+  position:sticky;top:0;z-index:100;background:rgba(250,248,245,.95);
+  backdrop-filter:saturate(150%) blur(8px);border-bottom:1px solid var(--linje);
+}
+.topp .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.merke{display:flex;flex-direction:column;text-decoration:none;flex:none;line-height:1.1}
+.merke b{font-family:var(--display);font-weight:700;font-size:17px}
+.merke small{font-size:10.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dempet)}
+.topp-hoyre{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tlf-topp{display:none;text-decoration:none;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tlf-topp:hover{color:var(--dempet)}
+@media (min-width:700px){.tlf-topp{display:inline}}
+
+/* ---------- Hero med veggen ---------- */
+.hero{padding:60px 0 56px}
+.hero .wrap{display:grid;gap:36px}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1fr 1fr;align-items:center;gap:48px}}
+.hero h1 em{font-style:italic;color:var(--vegg-dyp);transition:color .5s ease}
+.hero-ingress{margin-top:16px;max-width:46ch;font-size:17px;color:#4A443C}
+.hero-knapper{display:flex;flex-direction:column;gap:11px;margin-top:26px}
+@media (min-width:560px){.hero-knapper{flex-direction:row;flex-wrap:wrap}}
+
+/* Signatur: veggen som males om */
+.veggpanel{max-width:440px;width:100%;justify-self:center}
+.vegg{
+  position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3.4;
+  background:var(--vegg);transition:background-color .55s ease;
+  box-shadow:0 14px 34px rgba(33,30,27,.16);
+}
+/* brystning og gulvlist gjør flaten til et rom, ikke en firkant */
+.vegg::before{
+  content:"";position:absolute;left:0;right:0;bottom:52px;height:3px;
+  background:rgba(255,255,255,.5);
+}
+.vegg::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:52px;
+  background:linear-gradient(#F1EDE6,#E7E2D8);
+  border-top:4px solid #FFFFFF;
+}
+.vegg .lysbryter{
+  position:absolute;right:26px;top:40%;width:22px;height:34px;border-radius:4px;
+  background:rgba(255,255,255,.85);box-shadow:inset 0 0 0 2px rgba(0,0,0,.08);
+}
+.fargevalg{margin-top:16px}
+.fargevalg p{font-size:13.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dempet);margin-bottom:10px}
+.prover{display:flex;gap:10px;flex-wrap:wrap}
+.prove{
+  width:52px;height:52px;border-radius:10px;border:2px solid rgba(0,0,0,.1);
+  cursor:pointer;padding:0;transition:transform .12s ease,box-shadow .12s ease;
+}
+.prove:hover{transform:translateY(-2px)}
+.prove[aria-pressed="true"]{box-shadow:0 0 0 3px var(--galleri),0 0 0 6px var(--kull)}
+.farge-status{margin-top:10px;font-size:14.5px;color:#4A443C;min-height:24px}
+.farge-status b{font-family:var(--display)}
+
+/* Trust-strip */
+.tillit{background:var(--kull);color:#EDE8E0;padding:0}
+.tillit ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+@media (min-width:860px){.tillit ul{grid-template-columns:repeat(4,auto);justify-content:space-between}}
+.tillit li{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:500}
+.tillit li::before{content:"";flex:none;width:8px;height:8px;background:#B9A98E;border-radius:50%}
+
+/* ---------- Tjenester ---------- */
+.t-rutenett{display:grid;gap:14px}
+@media (min-width:760px){.t-rutenett{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.t-rutenett{grid-template-columns:repeat(3,1fr)}}
+.t-kort{
+  background:#fff;border:1px solid var(--linje);border-radius:12px;padding:20px 18px;
+}
+.t-kort h3{margin-bottom:6px}
+.t-kort p{font-size:14.5px;color:#4A443C}
+
+/* ---------- Hvorfor: mesterskapet ---------- */
+.mester{background:#fff;border-top:1px solid var(--linje);border-bottom:1px solid var(--linje)}
+.m-rad{display:grid;gap:26px}
+@media (min-width:860px){.m-rad{grid-template-columns:1fr 1fr;gap:48px;align-items:center}}
+.merittliste{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.merittliste li{
+  display:flex;gap:16px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--linje);
+}
+.merittliste .aar{
+  flex:none;font-family:var(--display);font-weight:700;font-size:19px;min-width:64px;
+  font-variant-numeric:tabular-nums;
+}
+.merittliste p{font-size:15px;color:#4A443C}
+.m-tekst p{color:#4A443C;max-width:50ch}
+.m-tekst p + p{margin-top:12px}
+
+/* ---------- Prosess ---------- */
+.steg{display:grid;gap:18px;counter-reset:steg;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.steg{grid-template-columns:repeat(3,1fr);gap:26px}}
+.steg li{counter-increment:steg;border-top:2px solid var(--kull);padding-top:14px}
+.steg li::before{
+  content:counter(steg,decimal-leading-zero);font-family:var(--display);font-weight:700;
+  font-size:15px;color:var(--dempet);display:block;margin-bottom:8px;
+}
+.steg h3{margin-bottom:6px}
+.steg p{font-size:14.5px;color:#4A443C}
+
+/* ---------- Omtaler ---------- */
+.omtaler-boks{
+  background:#fff;border:1px dashed #CFC8BC;border-radius:12px;padding:36px 22px;text-align:center;
+}
+.omtaler-boks p{color:var(--dempet);max-width:40ch;margin:0 auto}
+
+/* ---------- Dekning ---------- */
+.dekning{background:var(--kull);color:#EDE8E0}
+.dekning h2{color:#fff}
+.dekning .etikett{color:#B9A98E}
+.dekning .etikett::before{background:#B9A98E}
+.dekning p{color:#C9C2B6;max-width:52ch}
+.steder{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none;padding:0}
+.steder li{
+  font-weight:600;font-size:13.5px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);padding:7px 14px;border-radius:99px;
+}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:740px}
+.faq details{background:#fff;border:1px solid var(--linje);border-radius:12px;margin-bottom:10px}
+.faq summary{
+  cursor:pointer;padding:16px 46px 16px 18px;position:relative;list-style:none;
+  font-family:var(--display);font-weight:600;font-size:17px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:19px;top:50%;width:10px;height:10px;
+  border-right:2px solid var(--kull);border-bottom:2px solid var(--kull);
+  transform:translateY(-70%) rotate(45deg);transition:transform .16s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq .svar{padding:0 18px 17px;font-size:15px;color:#4A443C}
+
+/* ---------- Avsluttende CTA ---------- */
+.avslutt{background:var(--vegg);color:#fff;text-align:center;transition:background-color .55s ease}
+.avslutt h2{color:#fff}
+.avslutt p{color:rgba(255,255,255,.85);max-width:44ch;margin:12px auto 0}
+.avslutt .knapp--kull{margin-top:24px}
+
+/* ---------- Footer ---------- */
+footer{background:var(--kull-dyp);color:#B8B1A6;padding:42px 0 30px}
+.f-rutenett{display:grid;gap:24px}
+@media (min-width:760px){.f-rutenett{grid-template-columns:1.2fr 1fr 1fr}}
+footer h3{color:#fff;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;font-family:var(--brod);font-weight:700}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.nap{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14.5px;font-variant-numeric:tabular-nums}
+.f-bunn{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:15px;font-size:13px;color:#8B847A}
+
+/* ---------- Sticky bunnlinje ---------- */
+.bunnlinje{
+  position:fixed;left:0;right:0;bottom:0;z-index:110;background:#fff;
+  border-top:1px solid var(--linje);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center;box-shadow:0 -6px 20px rgba(33,30,27,.12);
+}
+.bunnlinje .knapp{flex:1}
+@media (min-width:900px){.bunnlinje{display:none} body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<a class="hopp-til" href="#innhold">Hopp til innhold</a>
+
+<header class="topp">
+  <div class="wrap">
+    <a class="merke" href="#" aria-label="Malermester Hope, til toppen">
+      <b>Malermester Hope</b>
+      <small>I faget siden 1980</small>
+    </a>
+    <div class="topp-hoyre">
+      <a class="tlf-topp" href="tel:+4748854100">488 54 100</a>
+      <a class="knapp knapp--kull knapp--liten" href="tel:+4748854100">Få gratis befaring</a>
+    </div>
+  </div>
+</header>
+
+<main id="innhold">
+
+  <!-- Hero med veggen som males om -->
+  <section class="hero" aria-labelledby="hero-tittel">
+    <div class="wrap">
+      <div>
+        <span class="etikett">Malermester i Bergen</span>
+        <h1 id="hero-tittel">Riktig farge, <em>fagmessig</em> lagt</h1>
+        <p class="hero-ingress">
+          Malermester Hope har vært i faget siden 1980. Vi maler, tapetserer og
+          legger gulv for privatkunder, bedrifter og borettslag i hele Bergen,
+          inne og ute.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp--kull" href="tel:+4748854100">Ring 488 54 100</a>
+          <a class="knapp knapp--lys" href="mailto:stein@malermesterhope.no">Be om befaring</a>
+        </div>
+      </div>
+
+      <!-- Signatur: velg farge, veggen males om -->
+      <div class="veggpanel">
+        <div class="vegg" id="vegg" aria-hidden="true"><span class="lysbryter"></span></div>
+        <div class="fargevalg">
+          <p id="farge-tittel">Prøv en farge på veggen</p>
+          <div class="prover" role="group" aria-labelledby="farge-tittel">
+            <button type="button" class="prove" style="background:#7A8B74" data-farge="#7A8B74" data-dyp="#66775F" data-navn="Salvie" aria-pressed="true" aria-label="Mal veggen i salviegrønn"></button>
+            <button type="button" class="prove" style="background:#8A9BAA" data-farge="#8A9BAA" data-dyp="#71838F" data-navn="Støvblå" aria-pressed="false" aria-label="Mal veggen i støvblå"></button>
+            <button type="button" class="prove" style="background:#C4886B" data-farge="#C4886B" data-dyp="#A96F53" data-navn="Terrakotta" aria-pressed="false" aria-label="Mal veggen i terrakotta"></button>
+            <button type="button" class="prove" style="background:#B8AB93" data-farge="#B8AB93" data-dyp="#9C8F77" data-navn="Havre" aria-pressed="false" aria-label="Mal veggen i havre"></button>
+            <button type="button" class="prove" style="background:#5C5650" data-farge="#5C5650" data-dyp="#474240" data-navn="Kullgrå" aria-pressed="false" aria-label="Mal veggen i kullgrå"></button>
+          </div>
+          <p class="farge-status" id="farge-status" role="status" aria-live="polite">
+            <b>Salvie.</b> Vi hjelper deg å velge, og vi legger den riktig.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust-strip: fra Mesterregisteret og deres egen side -->
+  <div class="tillit morkflate" role="region" aria-label="Kvalifikasjoner">
+    <div class="wrap">
+      <ul>
+        <li>I faget siden 1980</li>
+        <li>Mesterbrev 1987</li>
+        <li>Frosio-inspektør overflatebehandling</li>
+        <li>Privat, bedrift og borettslag</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tjenester: fra deres egen tjenesteliste på dagens side -->
+  <section id="tjenester" aria-labelledby="tjenester-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Det vi gjør</span>
+        <h2 id="tjenester-tittel">Hele malerfaget, ett firma</h2>
+      </div>
+      <div class="t-rutenett">
+        <article class="t-kort">
+          <h3>Maling inne</h3>
+          <p>Sparkling, grunning og maling av vegger, tak og listverk. Rene linjer,
+            dekkende strøk, og støvet tatt med oss når vi går.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Maling ute</h3>
+          <p>Fasademaling som tåler bergensvær. Riktig forbehandling først, så
+            holder resultatet i år, ikke sesonger.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Fasadevask og -reparasjon</h3>
+          <p>Vask, utbedring og overflatebehandling av mur- og trefasader, vurdert
+            med inspektørblikk før vi anbefaler noe.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Tapetsering</h3>
+          <p>Tapet krever presisjon i skjøt og mønster. Vi har hengt tapet siden
+            åttitallet, og det synes på veggene.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Gulv</h3>
+          <p>Teppefliser, parkett og gulvbelegg, lagt fagmessig på riktig
+            underlag.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Borettslag og sameier</h3>
+          <p>Oppganger, fellesarealer og fasader, planlagt slik at beboerne
+            merker minst mulig til oss.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hvorfor: merittlisten -->
+  <section class="mester" aria-labelledby="mester-tittel">
+    <div class="wrap">
+      <div class="m-rad">
+        <div class="m-tekst">
+          <span class="etikett">Hvorfor Hope</span>
+          <h2 id="mester-tittel">Fire tiår på veggene i Bergen</h2>
+          <p style="margin-top:12px">
+            Stein Hope gikk inn i malerfaget i 1980, tok mesterbrevet i 1987, og ble
+            sertifisert Frosio-inspektør i overflatebehandling i 1991. Det betyr at
+            den som vurderer fasaden din, er kvalifisert til å inspisere den, ikke
+            bare male den.
+          </p>
+          <p>I dag maler vi for privatkunder, bedrifter og borettslag over hele
+            Bergen, med fagfolk på hele bredden av faget.</p>
+        </div>
+        <ul class="merittliste">
+          <li><span class="aar">1980</span><p>Inn i malerfaget</p></li>
+          <li><span class="aar">1987</span><p>Mesterbrev som malermester</p></li>
+          <li><span class="aar">1991</span><p>Sertifisert Frosio-inspektør, overflatebehandling</p></li>
+          <li><span class="aar">I dag</span><p>Fagfolk på maling, tapet, gulv og fasade i hele Bergen</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prosess -->
+  <section aria-labelledby="prosess-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Slik gjør du</span>
+        <h2 id="prosess-tittel">Fra befaring til ferdig strøk</h2>
+      </div>
+      <ol class="steg">
+        <li>
+          <h3>Befaring</h3>
+          <p>Vi kommer og ser på jobben, og du får en ærlig vurdering av hva som
+            trengs, og hva som ikke trengs.</p>
+        </li>
+        <li>
+          <h3>Fast pris og plan</h3>
+          <p>Du får pris og tidsplan før vi starter. Avtalt pris er avtalt pris.</p>
+        </li>
+        <li>
+          <h3>Utført og ryddet</h3>
+          <p>Fagmessig utført, tildekket underveis og ryddet etterpå. Du skal bare
+            merke resultatet.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Sosialt bevis: nøytralt -->
+  <section aria-labelledby="omtale-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Fra kundene</span>
+        <h2 id="omtale-tittel">Det kundene sier</h2>
+      </div>
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Bedriften har Mittanbud-profil;
+           omtaler hentes derfra og fra Google med samtykke. Aldri dikt opp sitater. -->
+      <div class="omtaler-boks">
+        <p>Kundeomtaler hentes fra Mittanbud- og Google-profilen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dekning -->
+  <section class="dekning morkflate" aria-labelledby="dekning-tittel">
+    <div class="wrap">
+      <span class="etikett">Her jobber vi</span>
+      <h2 id="dekning-tittel">Hele Bergen</h2>
+      <p>Vi holder til på Laksevåg og tar oppdrag i hele Bergen og omegn.</p>
+      <ul class="steder">
+        <li>Laksevåg</li><li>Fyllingsdalen</li><li>Loddefjord</li><li>Sentrum</li>
+        <li>Åsane</li><li>Fana</li><li>Askøy</li><li>Sotra</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="faq-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Spørsmål og svar</span>
+        <h2 id="faq-tittel">Det folk lurer på</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Hva koster det å male?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Pris og betingelser må
+               fylles inn av bedriften. -->
+          <div class="svar">Det avhenger av flate, stand og ønsket resultat. Befaringen
+            er gratis, og etter den får du en fast pris å forholde deg til.</div>
+        </details>
+        <details>
+          <summary>Hjelper dere med fargevalg?</summary>
+          <div class="svar">Ja. Etter fire tiår i bergenske hjem vet vi hva som fungerer
+            i vestlandslys. Vi hjelper deg gjerne med både farge og glans.</div>
+        </details>
+        <details>
+          <summary>Tar dere små jobber?</summary>
+          <div class="svar">Ja. En stue er også en jobb. Ring, så finner vi ut av det.</div>
+        </details>
+        <details>
+          <summary>Hva betyr det at dere er Frosio-sertifisert?</summary>
+          <div class="svar">Frosio er en internasjonal sertifisering for inspeksjon av
+            overflatebehandling. For deg betyr det at fasadevurderingen vår bygger på
+            inspektørkompetanse, ikke synsing.</div>
+        </details>
+        <details>
+          <summary>Jobber dere for borettslag?</summary>
+          <div class="svar">Ja, borettslag og sameier er en stor del av kundene våre,
+            fra oppganger til hele fasader. Styret får én kontaktperson og en tydelig
+            fremdriftsplan.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avsluttende CTA: følger veggfargen -->
+  <section class="avslutt morkflate" id="avslutt" aria-labelledby="avslutt-tittel">
+    <div class="wrap">
+      <h2 id="avslutt-tittel">Klar for nye vegger?</h2>
+      <p>Ring eller send en e-post, så avtaler vi gratis befaring.</p>
+      <a class="knapp knapp--kull" href="tel:+4748854100">Ring 488 54 100</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="f-rutenett">
+      <div>
+        <div class="merke" style="margin-bottom:10px">
+          <b style="color:#fff;font-family:var(--display);font-size:17px">Malermester Hope</b>
+          <small style="color:#B8B1A6">I faget siden 1980</small>
+        </div>
+        <p style="font-size:14px;max-width:34ch">
+          Maling, tapet, gulv og fasade for privatkunder, bedrifter og borettslag
+          i Bergen.
+        </p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="nap">
+          <li>Malermester Hope AS</li>
+          <li><a href="tel:+4748854100">488 54 100</a></li>
+          <li><a href="mailto:stein@malermesterhope.no">stein@malermesterhope.no</a></li>
+          <li>Org.nr 925 769 029</li>
+          <li>Johan Berentsens vei 41, Laksevåg</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul class="nap">
+          <li><a href="#tjenester">Maling inne og ute</a></li>
+          <li><a href="#tjenester">Fasadevask og -reparasjon</a></li>
+          <li><a href="#tjenester">Tapetsering</a></li>
+          <li><a href="#tjenester">Gulv</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-bunn">© 2026 Malermester Hope AS. Skisse til salgsmøte, ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="bunnlinje">
+  <a class="knapp knapp--kull" href="tel:+4748854100">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Ring malermesteren
+  </a>
+</div>
+
+<script>
+/* Fargevelgeren: maler veggen (og avslutningsseksjonen) i valgt farge.
+   Ingen sporing, ingen eksterne kall. */
+(function () {
+  var prover = document.querySelectorAll('.prove');
+  var status = document.getElementById('farge-status');
+  if (!prover.length || !status) return;
+  prover.forEach(function (p) {
+    p.addEventListener('click', function () {
+      document.documentElement.style.setProperty('--vegg', p.dataset.farge);
+      document.documentElement.style.setProperty('--vegg-dyp', p.dataset.dyp);
+      prover.forEach(function (q) { q.setAttribute('aria-pressed', String(q === p)); });
+      status.innerHTML = '<b>' + p.dataset.navn + '.</b> Vi hjelper deg å velge, og vi legger den riktig.';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

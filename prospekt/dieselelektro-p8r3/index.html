@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Forsideskisse for Diesel &amp; Elektro Service AS: båtmotorverksted på Alvøen kai i Bergen. Diesel, elektro og deler.">
+<title>Diesel &amp; Elektro Service · Båtmotorverksted på Alvøen kai</title>
+
+<!-- SKISSE for salgsmøte. Ingen sporing, ingen pixel, ingen delte filer.
+     Dagens nettside viser rå malkode; innholdet her bygger på offentlige
+     kilder (1881, Gulesider, Proff, stillingsannonser) og er merket
+     PLACEHOLDER der det ikke er verifisert. -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='9' fill='none' stroke='%23E8681A' stroke-width='3'/%3E%3Cpath d='M12 12L7 7' stroke='%23E8681A' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --marine:#12263B;
+  --marine-dyp:#0B1929;
+  --oransje:#E8681A;
+  --oransje-mork:#C25211;
+  --skum:#F2F4F6;
+  --hvit:#FFFFFF;
+  --linje:#D9DEE4;
+  --dempet:#5A6673;
+  --tekst:#16222F;
+  --gronn:#2E9E5B;
+  --display:'Oswald','Arial Narrow',system-ui,sans-serif;
+  --brod:'Roboto',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --maks:1100px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--skum);color:var(--tekst);
+  font-family:var(--brod);font-size:16px;line-height:1.6;padding-bottom:76px;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;margin:0;text-transform:uppercase;letter-spacing:.015em}
+h1{font-size:clamp(33px,7.6vw,56px)}
+h2{font-size:clamp(25px,5.2vw,38px)}
+h3{font-size:18px;font-weight:600}
+p{margin:0}
+.wrap{width:100%;max-width:var(--maks);margin:0 auto;padding:0 20px}
+section{padding:54px 0}
+[id]{scroll-margin-top:84px}
+:focus-visible{outline:3px solid var(--oransje);outline-offset:3px;border-radius:2px}
+.morkflate :focus-visible{outline-color:#fff}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
+.hopp-til{position:absolute;left:-9999px;top:0;background:var(--marine);color:#fff;padding:12px 18px;z-index:300;font-weight:600}
+.hopp-til:focus{left:8px;top:8px}
+
+.seksjonshode{max-width:620px;margin-bottom:26px}
+.seksjonshode p{margin-top:10px;color:var(--dempet)}
+.etikett{
+  display:inline-flex;align-items:center;gap:9px;font-family:var(--display);
+  font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--oransje);margin-bottom:10px;
+}
+.etikett::before{content:"";width:20px;height:3px;background:var(--oransje)}
+
+.knapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.04em;
+  text-transform:uppercase;text-decoration:none;padding:14px 24px;border-radius:6px;
+  border:2px solid transparent;cursor:pointer;min-height:50px;
+  transition:background-color .13s ease,transform .13s ease;
+}
+.knapp:hover{transform:translateY(-1px)}
+.knapp--oransje{background:var(--oransje);color:#fff}
+.knapp--oransje:hover{background:var(--oransje-mork)}
+.knapp--marine{background:var(--marine);color:#fff}
+.knapp--marine:hover{background:var(--marine-dyp)}
+.knapp--lys{background:#fff;color:var(--marine);border-color:var(--linje)}
+.knapp--lys:hover{border-color:var(--marine)}
+.knapp--liten{padding:10px 16px;font-size:14px;min-height:42px}
+
+/* ---------- Topplinje ---------- */
+.topp{
+  position:sticky;top:0;z-index:100;background:rgba(18,38,59,.97);color:#fff;
+  border-bottom:3px solid var(--oransje);
+}
+.topp .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.merke{display:flex;flex-direction:column;text-decoration:none;flex:none;line-height:1.1}
+.merke b{font-family:var(--display);font-weight:600;font-size:15.5px;letter-spacing:.05em;text-transform:uppercase}
+.merke small{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:#F5B78A}
+.topp-hoyre{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tlf-topp{display:none;text-decoration:none;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums;color:#fff}
+.tlf-topp:hover{color:#F5B78A}
+@media (min-width:700px){.tlf-topp{display:inline}}
+
+/* ---------- Hero med turtelleren ---------- */
+.hero{background:var(--marine);color:#fff;padding:56px 0 54px;position:relative;overflow:hidden}
+/* bølgelinje i bunn */
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:-2px;height:26px;
+  background:
+    radial-gradient(22px 18px at 22px 26px,var(--skum) 98%,transparent) left bottom/44px 26px repeat-x;
+}
+.hero .wrap{display:grid;gap:34px}
+@media (min-width:900px){.hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center}}
+.hero h1{max-width:14ch}
+.hero h1 em{font-style:normal;color:#F5B78A}
+.hero-ingress{margin-top:14px;max-width:46ch;font-size:17px;color:#BFCBD8}
+.hero-knapper{display:flex;flex-direction:column;gap:11px;margin-top:26px}
+@media (min-width:560px){.hero-knapper{flex-direction:row;flex-wrap:wrap}}
+
+/* Signatur: instrumentpanelet */
+.panel{
+  justify-self:center;width:min(320px,78vw);background:var(--marine-dyp);
+  border:1px solid #23405E;border-radius:16px;padding:20px 18px;text-align:center;
+}
+.turteller{position:relative;width:100%;max-width:230px;margin:0 auto}
+.turteller svg{width:100%;height:auto}
+.naal{transform-origin:100px 96px;transform:rotate(-118deg);transition:transform 1.15s cubic-bezier(.35,.9,.35,1)}
+.panel.igang .naal{transform:rotate(26deg)}
+.varsellampe{
+  display:inline-flex;align-items:center;gap:8px;margin-top:8px;
+  font-family:var(--display);font-weight:600;font-size:12.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:#8FA1B4;
+}
+.varsellampe i{
+  width:12px;height:12px;border-radius:50%;background:#C43B2A;
+  box-shadow:0 0 8px rgba(196,59,42,.8);transition:background-color .3s ease,box-shadow .3s ease;
+}
+.panel.igang .varsellampe i{background:var(--gronn);box-shadow:0 0 10px rgba(46,158,91,.9)}
+.panel .knapp{width:100%;margin-top:14px}
+.panel-status{margin-top:10px;font-size:13.5px;color:#8FA1B4;min-height:40px}
+.panel.igang .panel-status{color:#BFE5CE}
+
+/* Trust-strip */
+.tillit{background:var(--marine-dyp);color:#fff;padding:0}
+.tillit ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+@media (min-width:860px){.tillit ul{grid-template-columns:repeat(4,auto);justify-content:space-between}}
+.tillit li{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:500;color:#BFCBD8}
+.tillit li::before{content:"";flex:none;width:8px;height:8px;background:var(--oransje);border-radius:50%}
+
+/* ---------- Tjenester ---------- */
+.t-rutenett{display:grid;gap:14px}
+@media (min-width:760px){.t-rutenett{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.t-rutenett{grid-template-columns:repeat(3,1fr)}}
+.t-kort{
+  background:#fff;border:1px solid var(--linje);border-radius:8px;padding:18px 16px;
+  border-left:4px solid var(--oransje);
+}
+.t-kort h3{margin-bottom:6px}
+.t-kort p{font-size:14.5px;color:#3A4553}
+.t-kort .merk{display:inline-block;margin-top:8px;font-size:12.5px;color:var(--dempet);background:var(--skum);padding:2px 8px;border-radius:4px}
+
+/* ---------- Hvorfor ---------- */
+.hvorfor{background:#fff;border-top:1px solid var(--linje);border-bottom:1px solid var(--linje)}
+.h-rutenett{display:grid;gap:18px}
+@media (min-width:820px){.h-rutenett{grid-template-columns:repeat(3,1fr);gap:26px}}
+.h-kort{border-top:3px solid var(--marine);padding-top:14px}
+.h-kort h3{margin-bottom:6px}
+.h-kort p{font-size:14.5px;color:#3A4553}
+
+/* ---------- Prosess ---------- */
+.steg{display:grid;gap:18px;counter-reset:steg;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.steg{grid-template-columns:repeat(3,1fr);gap:26px}}
+.steg li{counter-increment:steg;background:#fff;border:1px solid var(--linje);border-radius:8px;padding:18px 16px}
+.steg li::before{
+  content:counter(steg);display:inline-flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;background:var(--oransje);color:#fff;
+  font-family:var(--display);font-weight:600;font-size:17px;margin-bottom:10px;
+}
+.steg h3{margin-bottom:6px}
+.steg p{font-size:14.5px;color:#3A4553}
+
+/* ---------- Omtaler ---------- */
+.omtaler-boks{
+  background:#fff;border:1px dashed #C4CBD3;border-radius:8px;padding:34px 22px;text-align:center;
+}
+.omtaler-boks p{color:var(--dempet);max-width:40ch;margin:0 auto}
+
+/* ---------- Dekning/kaia ---------- */
+.kai{background:var(--marine);color:#fff}
+.kai h2{color:#fff}
+.kai .etikett{color:#F5B78A}
+.kai .etikett::before{background:#F5B78A}
+.kai p{color:#BFCBD8;max-width:54ch}
+.kai-fakta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none;padding:0}
+.kai-fakta li{
+  font-family:var(--display);font-weight:600;font-size:13.5px;letter-spacing:.04em;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+  padding:7px 14px;border-radius:99px;
+}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:740px}
+.faq details{background:#fff;border:1px solid var(--linje);border-radius:8px;margin-bottom:10px}
+.faq summary{
+  cursor:pointer;padding:15px 46px 15px 16px;position:relative;list-style:none;
+  font-family:var(--display);font-weight:600;font-size:16.5px;letter-spacing:.02em;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:18px;top:50%;width:10px;height:10px;
+  border-right:2.5px solid var(--oransje);border-bottom:2.5px solid var(--oransje);
+  transform:translateY(-70%) rotate(45deg);transition:transform .16s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq .svar{padding:0 16px 16px;font-size:15px;color:#3A4553}
+
+/* ---------- Avsluttende CTA ---------- */
+.avslutt{background:var(--oransje);color:#fff;text-align:center}
+.avslutt h2{color:#fff}
+.avslutt p{color:#FCE2CF;max-width:44ch;margin:12px auto 0}
+.avslutt .knapp--marine{margin-top:24px}
+
+/* ---------- Footer ---------- */
+footer{background:var(--marine-dyp);color:#AAB6C3;padding:42px 0 30px}
+.f-rutenett{display:grid;gap:24px}
+@media (min-width:760px){.f-rutenett{grid-template-columns:1.2fr 1fr 1fr}}
+footer h3{color:#fff;font-size:13.5px;letter-spacing:.12em;margin-bottom:12px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.nap{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14.5px;font-variant-numeric:tabular-nums}
+.f-bunn{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:15px;font-size:13px;color:#768492}
+
+/* ---------- Sticky bunnlinje ---------- */
+.bunnlinje{
+  position:fixed;left:0;right:0;bottom:0;z-index:110;background:#fff;
+  border-top:1px solid var(--linje);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center;box-shadow:0 -6px 20px rgba(11,25,41,.12);
+}
+.bunnlinje .knapp{flex:1}
+@media (min-width:900px){.bunnlinje{display:none} body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<a class="hopp-til" href="#innhold">Hopp til innhold</a>
+
+<header class="topp morkflate">
+  <div class="wrap">
+    <a class="merke" href="#" aria-label="Diesel og Elektro Service, til toppen">
+      <b>Diesel &amp; Elektro Service</b>
+      <small>Alvøen kai · Bergen</small>
+    </a>
+    <div class="topp-hoyre">
+      <a class="tlf-topp" href="tel:+4755931070">55 93 10 70</a>
+      <a class="knapp knapp--oransje knapp--liten" href="tel:+4755931070">Ring verkstedet</a>
+    </div>
+  </div>
+</header>
+
+<main id="innhold">
+
+  <!-- Hero med instrumentpanelet -->
+  <section class="hero morkflate" aria-labelledby="hero-tittel">
+    <div class="wrap">
+      <div>
+        <span class="etikett" style="color:#F5B78A">Båtmotorverksted på Alvøen kai</span>
+        <h1 id="hero-tittel">Motoren skal <em>starte</em>. Hver gang.</h1>
+        <p class="hero-ingress">
+          Diesel og elektro på båtmotor, med eget verksted rett på kaia i Godvik.
+          Legg til med båten, eller ring, så tar vi det derfra.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp--oransje" href="tel:+4755931070">Ring 55 93 10 70</a>
+          <a class="knapp knapp--lys" href="#tjenester">Se hva vi gjør</a>
+        </div>
+      </div>
+
+      <!-- Signatur: turtelleren. Trykk start, se nålen sveipe og lampen bli grønn. -->
+      <div class="panel" id="panel">
+        <div class="turteller" aria-hidden="true">
+          <svg viewBox="0 0 200 120" fill="none">
+            <path d="M18 96A82 82 0 0 1 182 96" stroke="#23405E" stroke-width="10" stroke-linecap="round"/>
+            <path d="M18 96A82 82 0 0 1 100 14" stroke="#3D638C" stroke-width="10" stroke-linecap="round"/>
+            <g stroke="#5E7FA3" stroke-width="2.5">
+              <line x1="24" y1="96" x2="34" y2="96"/>
+              <line x1="34" y1="61" x2="43" y2="66"/>
+              <line x1="61" y1="34" x2="66" y2="43"/>
+              <line x1="100" y1="24" x2="100" y2="34"/>
+              <line x1="139" y1="34" x2="134" y2="43"/>
+              <line x1="166" y1="61" x2="157" y2="66"/>
+              <line x1="176" y1="96" x2="166" y2="96"/>
+            </g>
+            <line class="naal" x1="100" y1="96" x2="100" y2="30" stroke="#E8681A" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="100" cy="96" r="9" fill="#E8681A"/>
+            <text x="100" y="114" text-anchor="middle" font-family="Oswald,sans-serif" font-size="11" letter-spacing="2" fill="#5E7FA3">O/MIN</text>
+          </svg>
+        </div>
+        <p class="varsellampe"><i aria-hidden="true"></i><span id="lampe-tekst">Motorlampe</span></p>
+        <button type="button" class="knapp knapp--oransje" id="start-knapp" aria-pressed="false">Trykk start</button>
+        <p class="panel-status" id="panel-status" role="status" aria-live="polite">
+          Står båten med en motor som nøler? Det er dét vi fikser.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust-strip -->
+  <div class="tillit morkflate" role="region" aria-label="Kjernefakta">
+    <div class="wrap">
+      <ul>
+        <li>Eget verksted rett på kaia</li>
+        <li>Diesel og elektro, ett sted</li>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. "Over 30 år" står i katalog-
+             omtale om delevirksomheten; historikken må bekreftes av bedriften. -->
+        <li>Lang fartstid med deler og service</li>
+        <li>Fritidsbåt og yrkesbåt</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tjenester -->
+  <section id="tjenester" aria-labelledby="tjenester-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Det vi gjør</span>
+        <h2 id="tjenester-tittel">Diesel og elektro, under samme tak</h2>
+        <p>De fleste motorproblemer er elektriske. Hos oss slipper du å velge verksted etter feilen.</p>
+      </div>
+      <div class="t-rutenett">
+        <article class="t-kort">
+          <h3>Motorservice diesel</h3>
+          <p>Service og vedlikehold på dieselmotorer i fritids- og yrkesbåt: filtre,
+            impeller, kjøling, drivstoffsystem.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Feilsøking og reparasjon</h3>
+          <p>Startvansker, ujevn gange, effekttap. Vi feilsøker systematisk i stedet
+            for å bytte deler på gjetning.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Båtelektro og elektronikk</h3>
+          <p>Ladesystemer, batteribanker, instrumenter og kablings­feil. Elektro er
+            halve navnet vårt av en grunn.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Deler</h3>
+          <p>Deler til fritidsbåt og yrkesbruk. Trenger du en del, ring oss før du
+            bestiller feil på nett.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Båtvarmere</h3>
+          <p>Levering og montering av båtvarmere fra Eberspächer, for tørr båt og
+            lengre sesong.</p>
+        </article>
+        <article class="t-kort">
+          <h3>Vinterklargjøring</h3>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Bekreft om vinterkonservering
+               og opplagstjenester tilbys. -->
+          <p>Konservering og klargjøring før vinteren, så våren starter på første
+            forsøk.</p>
+          <span class="merk">Omfang bekreftes</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hvorfor oss -->
+  <section class="hvorfor" aria-labelledby="hvorfor-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Hvorfor oss</span>
+        <h2 id="hvorfor-tittel">Verkstedet du kan legge til hos</h2>
+      </div>
+      <div class="h-rutenett">
+        <div class="h-kort">
+          <h3>Rett på kaia</h3>
+          <p>Verkstedet ligger på Alvøen kai. Du kommer med båten, ikke med
+            henger. Det sparer deg for både kran og hodebry.</p>
+        </div>
+        <div class="h-kort">
+          <h3>To fag, én regning</h3>
+          <p>Diesel og elektro henger sammen i moderne båtmotorer. Hos oss
+            snakker fagene sammen, i samme hall.</p>
+        </div>
+        <div class="h-kort">
+          <h3>Ærlig diagnose</h3>
+          <p>Du får vite hva som feiler, hva det koster, og hva som kan vente.
+            Vi reparerer det som trengs, ikke mer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prosess -->
+  <section aria-labelledby="prosess-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Slik gjør du</span>
+        <h2 id="prosess-tittel">Fra nølende motor til klar båt</h2>
+      </div>
+      <ol class="steg">
+        <li>
+          <h3>Ring og beskriv</h3>
+          <p>Ring <a href="tel:+4755931070">55 93 10 70</a> og fortell hva motoren
+            gjør, eller ikke gjør. Ofte vet vi mye allerede da.</p>
+        </li>
+        <li>
+          <h3>Kom med båten</h3>
+          <p>Legg til ved kaia vår i Godvik etter avtale. Vi feilsøker og gir deg
+            pris før vi skrur.</p>
+        </li>
+        <li>
+          <h3>Hent den klar</h3>
+          <p>Du får beskjed når båten er klar, hva som er gjort, og hva du bør
+            følge med på utover sesongen.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Sosialt bevis: nøytralt -->
+  <section aria-labelledby="omtale-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Fra kundene</span>
+        <h2 id="omtale-tittel">Det båtfolket sier</h2>
+      </div>
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Omtaler hentes fra Google-
+           og Facebook-profilen med samtykke. Aldri dikt opp sitater. -->
+      <div class="omtaler-boks">
+        <p>Kundeomtaler hentes fra Google- og Facebook-profilen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kaia / dekning -->
+  <section class="kai morkflate" aria-labelledby="kai-tittel">
+    <div class="wrap">
+      <span class="etikett">Her ligger vi</span>
+      <h2 id="kai-tittel">Alvøen kai, Godvik</h2>
+      <p>
+        Alvøveien 160, med kaiplass rett utenfor verksteddøren. Kunder fra hele
+        Bergensområdet, Askøy og Sotra legger til her.
+      </p>
+      <ul class="kai-fakta">
+        <li>Egen kai</li>
+        <li>Alvøveien 160, Godvik</li>
+        <li>Bergen · Askøy · Sotra</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="faq-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Spørsmål og svar</span>
+        <h2 id="faq-tittel">Det båteiere lurer på</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Motoren starter dårlig. Hva kan det være?</summary>
+          <div class="svar">Alt fra batteri og tilkoblinger til drivstoff eller
+            forvarming. Nettopp derfor har vi diesel og elektro i samme hall: vi
+            feilsøker hele kjeden, ikke bare halve.</div>
+        </details>
+        <details>
+          <summary>Kan jeg komme med båten sjøveien?</summary>
+          <div class="svar">Ja, det er hele poenget med å ligge på kaia. Ring først,
+            så avtaler vi tidspunkt og kaiplass.</div>
+        </details>
+        <details>
+          <summary>Hva koster en service?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Priser må fylles inn av
+               bedriften. -->
+          <div class="svar">Det avhenger av motor og omfang. Ring
+            <a href="tel:+4755931070">55 93 10 70</a>, så får du pris før vi starter.</div>
+        </details>
+        <details>
+          <summary>Tar dere yrkesbåter?</summary>
+          <div class="svar">Ja, vi jobber med både fritidsbåter og yrkesbåter, og
+            leverer deler til begge.</div>
+        </details>
+        <details>
+          <summary>Når bør jeg bestille vinterklargjøring?</summary>
+          <div class="svar">Før alle andre gjør det. Ta kontakt i god tid før opplag,
+            så er du sikret plass i kalenderen.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avsluttende CTA -->
+  <section class="avslutt morkflate" aria-labelledby="avslutt-tittel">
+    <div class="wrap">
+      <h2 id="avslutt-tittel">Skal motoren gå til våren?</h2>
+      <p>Ring verkstedet, så tar vi det derfra.</p>
+      <a class="knapp knapp--marine" href="tel:+4755931070">Ring 55 93 10 70</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="f-rutenett">
+      <div>
+        <div class="merke" style="margin-bottom:10px">
+          <b style="color:#fff">Diesel &amp; Elektro Service</b>
+          <small style="color:#AAB6C3">Alvøen kai · Bergen</small>
+        </div>
+        <p style="font-size:14px;max-width:34ch">
+          Båtmotorverksted for diesel og elektro, med deler og båtvarmere.
+        </p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="nap">
+          <li>Diesel &amp; Elektro Service AS</li>
+          <li><a href="tel:+4755931070">55 93 10 70</a></li>
+          <li><a href="mailto:post@dieselelektroservice.no">post@dieselelektroservice.no</a></li>
+          <li>Org.nr 915 425 305</li>
+          <li>Alvøveien 160, 5179 Godvik</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul class="nap">
+          <li><a href="#tjenester">Motorservice diesel</a></li>
+          <li><a href="#tjenester">Båtelektro og elektronikk</a></li>
+          <li><a href="#tjenester">Deler</a></li>
+          <li><a href="#tjenester">Båtvarmere</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-bunn">© 2026 Diesel &amp; Elektro Service AS. Skisse til salgsmøte, ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="bunnlinje">
+  <a class="knapp knapp--oransje" href="tel:+4755931070">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Ring verkstedet
+  </a>
+</div>
+
+<script>
+/* Turtelleren: trykk start, nålen sveiper opp og motorlampen blir grønn.
+   Ingen sporing, ingen eksterne kall. */
+(function () {
+  var panel = document.getElementById('panel');
+  var knapp = document.getElementById('start-knapp');
+  var status = document.getElementById('panel-status');
+  var lampe = document.getElementById('lampe-tekst');
+  if (!panel || !knapp || !status || !lampe) return;
+  knapp.addEventListener('click', function () {
+    var igang = panel.classList.toggle('igang');
+    knapp.setAttribute('aria-pressed', String(igang));
+    knapp.textContent = igang ? 'Stopp motoren' : 'Trykk start';
+    lampe.textContent = igang ? 'Alt i orden' : 'Motorlampe';
+    status.textContent = igang
+      ? 'Sånn skal det låte. Vi holder den slik, sesong etter sesong.'
+      : 'Står båten med en motor som nøler? Det er dét vi fikser.';
+  });
+})();
+</script>
+
+</body>
+</html>
