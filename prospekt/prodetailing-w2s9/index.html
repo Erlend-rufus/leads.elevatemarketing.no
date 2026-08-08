@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pro Detailing | Båt- og bilpleie i Bergensområdet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sort:#0F1216;
+  --kull:#171C22;
+  --panel:#1E252D;
+  --glans:#3EC6DA;
+  --glans-dyp:#1E93A6;
+  --solv:#C9D2D8;
+  --tekst:#E8EDF0;
+  --dus:#8C99A3;
+  --strek:#2A333D;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Public Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--sort);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Schibsted Grotesk',sans-serif;line-height:1.12;font-weight:800;letter-spacing:-.015em}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--glans);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:#000;color:var(--dus);font-size:14px;padding:7px 0;border-bottom:1px solid var(--strek)}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:var(--glans);text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(15,18,22,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.05}
+.merke b{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:22px;letter-spacing:.02em;color:#fff}
+.merke b span{color:var(--glans)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dus);font-weight:600}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px;color:var(--solv)}
+nav.hoved a:hover{color:var(--glans)}
+.ring-knapp{background:var(--glans);color:#04252B;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:6px;white-space:nowrap}
+.ring-knapp:hover{background:#6BD6E5}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:radial-gradient(ellipse at 70% 10%,#1B2833 0%,var(--sort) 60%);border-bottom:1px solid var(--strek)}
+.hero .wrap{padding:72px 20px 60px;max-width:880px;text-align:center}
+.hero .overtittel{font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--glans);font-weight:700}
+.hero h1{font-size:clamp(32px,5vw,56px);color:#fff;margin:14px 0 18px}
+.hero .ingress{font-size:19px;color:var(--dus);max-width:58ch;margin:0 auto 30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:6px;font-size:17px}
+.knapp-primar{background:var(--glans);color:#04252B}
+.knapp-primar:hover{background:#6BD6E5}
+.knapp-sekundar{background:transparent;color:var(--tekst);border:2px solid var(--strek)}
+.knapp-sekundar:hover{border-color:var(--glans);color:var(--glans)}
+
+/* Trust-strip */
+.trust{background:var(--kull);border-bottom:1px solid var(--strek)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:var(--glans);font-size:15px}
+.trust span{font-size:13.5px;color:var(--dus)}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:76px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--glans)}
+.seksjonstittel h2{font-size:clamp(26px,3.4vw,40px);color:#fff;margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Båtvelger */
+.baat-seksjon{background:var(--kull);border-top:1px solid var(--strek);border-bottom:1px solid var(--strek)}
+.baat-ramme{background:linear-gradient(180deg,#141A20 0%,#10161B 70%,#0D2A33 100%);border:1px solid var(--strek);border-radius:14px;padding:26px 18px 6px;margin-bottom:26px}
+.sone{fill:#2A333D;stroke:#46535F;stroke-width:1.5;cursor:pointer;transition:fill .25s}
+.sone:hover{fill:#39434E}
+.sone.aktiv{fill:var(--glans-dyp);stroke:var(--glans)}
+.baat-detalj{fill:none;stroke:#5A6570;stroke-width:2;pointer-events:none}
+.vannlinje{stroke:#1E93A6;stroke-width:2;stroke-dasharray:10 8;opacity:.6}
+.baat-tekst{text-align:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dus);font-weight:700;padding:10px 0 14px}
+.sone-knapper{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.sone-knapp{font-family:'Schibsted Grotesk',sans-serif;font-weight:700;font-size:15px;padding:11px 18px;border-radius:6px;border:2px solid var(--strek);background:transparent;color:var(--solv);cursor:pointer}
+.sone-knapp[aria-pressed="true"]{background:var(--glans);border-color:var(--glans);color:#04252B}
+.sone-knapp:hover{border-color:var(--glans)}
+.sone-panel{background:var(--panel);border:1px solid var(--strek);border-left:4px solid var(--glans);border-radius:10px;padding:26px 28px}
+.sone-panel h3{font-size:24px;color:#fff;margin-bottom:10px}
+.sone-panel p{color:var(--dus);font-size:16px}
+.sone-panel ul{list-style:none;margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px}
+.sone-panel li{padding:6px 0 6px 24px;position:relative;color:var(--solv);font-size:15px}
+.sone-panel li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:2.5px;background:var(--glans)}
+@media (max-width:680px){.sone-panel ul{grid-template-columns:1fr}}
+
+/* Tjenester/prosess kort */
+.kort-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.kort{background:var(--kull);border:1px solid var(--strek);border-radius:10px;padding:26px 24px}
+.kort h3{font-size:19px;color:#fff;margin-bottom:8px}
+.kort p{font-size:15px;color:var(--dus)}
+.kort .nr{font-family:'Schibsted Grotesk',sans-serif;font-weight:800;font-size:15px;color:var(--glans);letter-spacing:.1em;display:block;margin-bottom:10px}
+@media (max-width:920px){.kort-grid{grid-template-columns:1fr}}
+
+/* Bil-stripe */
+.bil-stripe{background:var(--panel);border:1px solid var(--strek);border-radius:12px;padding:30px 28px;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.bil-stripe h3{font-size:22px;color:#fff;margin-bottom:6px}
+.bil-stripe p{color:var(--dus);font-size:15.5px;max-width:60ch}
+
+/* Omtaler */
+.omtale-ramme{background:var(--kull);border:1px dashed var(--glans-dyp);border-radius:10px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* FAQ */
+details{background:var(--kull);border:1px solid var(--strek);border-radius:10px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Schibsted Grotesk',sans-serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--glans);line-height:1;font-weight:500}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(135deg,#0D2A33,#134450);text-align:center;border-top:1px solid var(--strek)}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,42px);color:#fff}
+.slutt-cta p{color:#A9C7CE;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Schibsted Grotesk',sans-serif;font-size:clamp(30px,5vw,46px);font-weight:800;color:var(--glans);text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px;color:#7FA6AE}
+
+/* Footer */
+footer{background:#000;color:var(--dus);padding:48px 0 110px;font-size:15px;border-top:1px solid var(--strek)}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:var(--glans)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid var(--strek);margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#000;border-top:2px solid var(--glans);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:6px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--glans);color:#04252B}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid var(--strek)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Båt- og bilpleie i Bergensområdet &middot; Henting og transport av båt etter avtale</span>
+    <span>Ring: <a href="tel:+4746354960">463 54 960</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>PRO <span>DETAILING</span></b>
+      <small>Båt- og bilpleie</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#baat">Båten din</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#bil">Bilpleie</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4746354960">463 54 960</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <span class="overtittel">Profesjonell båtpleie</span>
+    <h1>Båten din, tilbake til glansen den fortjener</h1>
+    <p class="ingress">Pro Detailing klargjør, polerer og vedlikeholder båter hele året, fra vårpuss til full oppgradering av skrog, dekk og interiør. Vi henter gjerne båten der den ligger og leverer den tilbake ferdig.</p>
+    <div class="hero-cta">
+      <a class="knapp knapp-primar" href="tel:+4746354960">Ring 463 54 960</a>
+      <a class="knapp knapp-sekundar" href="#baat">Se hva vi gjør, sone for sone</a>
+    </div>
+  </div>
+</div>
+
+<div class="trust" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Snart ti år i faget</b><span>Med båt- og bilpleie<!-- PLACEHOLDER: erfaringsformulering fra prodetailing.no, bekreftes med kunden --></span></div>
+    <div><b>Henting og levering</b><span>Vi transporterer båten for deg</span></div>
+    <div><b>Hele året</b><span>Klargjøring uansett sesong</span></div>
+    <div><b>Små og store jobber</b><span>Fra enkel puss til full oppussing</span></div>
+  </div>
+</div>
+
+<section id="baat" class="baat-seksjon">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Pek på båten, se hva vi gjør</h2>
+      <p>Velg en sone på båten, eller bruk knappene, og se hvilke tjenester som hører til.</p>
+    </div>
+    <figure class="baat-ramme">
+      <svg viewBox="0 0 640 300" role="img" aria-label="Sideprofil av motorbåt med fire klikkbare soner: skrog, dekk og teak, interiør og motor">
+        <line class="vannlinje" x1="20" y1="262" x2="620" y2="262"/>
+        <path id="sone-motor" class="sone" d="M52,168 Q48,164 54,162 L86,162 Q92,162 92,168 L92,218 L78,218 L74,244 Q73,250 67,250 L63,250 Q58,250 58,244 L60,218 L52,218 Z"/>
+        <path id="sone-skrog" class="sone" d="M96,196 L560,196 Q604,198 592,224 L578,246 Q572,256 558,256 L128,256 Q106,256 101,236 Z"/>
+        <path id="sone-dekk" class="sone" d="M96,196 L100,182 L385,182 L560,182 Q574,182 570,190 L560,196 Z"/>
+        <path id="sone-interior" class="sone" d="M205,182 L205,132 Q205,122 217,122 L330,122 Q341,122 347,130 L388,178 Q391,182 385,182 Z"/>
+        <line class="baat-detalj" x1="230" y1="150" x2="320" y2="150"/>
+        <path class="baat-detalj" d="M120,225 L545,225"/>
+        <line class="baat-detalj" x1="217" y1="122" x2="217" y2="106"/>
+      </svg>
+      <figcaption class="baat-tekst">Sideprofil, sone for sone</figcaption>
+    </figure>
+    <div class="sone-knapper" role="group" aria-label="Velg sone på båten">
+      <button type="button" class="sone-knapp" data-sone="skrog" aria-pressed="true">Skrog</button>
+      <button type="button" class="sone-knapp" data-sone="dekk" aria-pressed="false">Dekk og teak</button>
+      <button type="button" class="sone-knapp" data-sone="interior" aria-pressed="false">Interiør</button>
+      <button type="button" class="sone-knapp" data-sone="motor" aria-pressed="false">Motor og utstyr</button>
+    </div>
+    <div class="sone-panel" aria-live="polite">
+      <h3 id="sone-tittel">Skrog</h3>
+      <p id="sone-tekst">Skroget tar imot alt sjøen byr på. Vi bygger glansen opp igjen og beskytter den, slik at båten holder seg finere lenger.</p>
+      <ul id="sone-liste">
+        <li>Polering av skrog og fribord</li>
+        <li>Gelcoat-reparasjon og påføring</li>
+        <li>Keramisk coating</li>
+        <li>Skrogvedlikehold gjennom sesongen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra henvendelse til levert båt</h2>
+    </div>
+    <div class="kort-grid">
+      <div class="kort"><span class="nr">STEG 1</span><h3>Fortell om båten</h3><p>Ring oss og beskriv båten og hva du ønsker gjort. Vi gir deg en ærlig vurdering av hva som trengs.</p></div>
+      <div class="kort"><span class="nr">STEG 2</span><h3>Vi henter, du slapper av</h3><p>Vi kan hente og transportere båten til anlegget vårt, enten jobben er liten eller stor.</p></div>
+      <div class="kort"><span class="nr">STEG 3</span><h3>Ferdig levert</h3><p>Du får båten tilbake klargjort og gjennomgått, klar for sesongen eller for opplag.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="bil">
+  <div class="wrap">
+    <div class="bil-stripe">
+      <div>
+        <h3>Vi tar bilen også</h3>
+        <p>Samme håndlag, samme øye for detaljer: polering, keramisk coating og innvendig rens av bil. Spør oss om en pakke som passer din bil.<!-- PLACEHOLDER: bilpleie-tjenestene og ev. produktnavn bekreftes med kunden --></p>
+      </div>
+      <a class="knapp knapp-primar" href="tel:+4746354960">Spør om bilpleie</a>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler hentes fra Google-profilen og legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Henter dere båten der den ligger?</summary>
+      <div class="svar">Ja, vi tilbyr henting og transport av båt til anlegget vårt, og leverer den tilbake når jobben er gjort. Avtal på telefon, så finner vi en løsning.</div>
+    </details>
+    <details>
+      <summary>Hva er keramisk coating, og er det verdt det?</summary>
+      <div class="svar">Keramisk coating er et beskyttende lag som legges over gelcoaten eller lakken etter polering. Overflaten blir lettere å holde ren og beholder glansen betydelig lenger enn ubehandlet overflate.</div>
+    </details>
+    <details>
+      <summary>Kan dere reparere skader i gelcoaten?</summary>
+      <div class="svar">Ja, vi utfører både gelcoat-reparasjon og påføring, i tillegg til utbedring av lekkasje- og interiørskader.</div>
+    </details>
+    <details>
+      <summary>Tar dere oppdrag hele året?</summary>
+      <div class="svar">Ja, vi klargjør og utbedrer båter uavhengig av sesong. Vinterhalvåret er ofte et fint tidspunkt for større jobber, så båten er klar til våren.</div>
+    </details>
+    <details>
+      <summary>Hva koster det?</summary>
+      <div class="svar">Prisen avhenger av båtens størrelse og tilstand. [Prisliste eller prisintervaller legges inn her.]<!-- PLACEHOLDER: erstattes med ekte innhold --> Ring 463 54 960 for et uforpliktende tilbud.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta" id="kontakt">
+  <div class="wrap">
+    <h2>Klar for å få glansen tilbake?</h2>
+    <p>Ring oss og fortell om båten eller bilen din, så gir vi deg et uforpliktende tilbud.</p>
+    <a class="stor-tel" href="tel:+4746354960">463 54 960</a>
+    <p class="merknad">[E-postadresse og kontaktskjema legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Pro Detailing AS</h3>
+        <ul>
+          <li>[Besøksadresse legges inn her]<!-- PLACEHOLDER: foretaksadressen er registrert i Søreidgrend, profilene oppgir Askøy, bekreftes med kunden --></li>
+          <li>Org.nr 920 171 842</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4746354960">463 54 960</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#baat">Polering og coating</a></li>
+          <li><a href="#baat">Gelcoat og skrog</a></li>
+          <li><a href="#baat">Teak og dekk</a></li>
+          <li><a href="#bil">Bilpleie</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Pro Detailing AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar">
+  <a class="m-ring" href="tel:+4746354960">Ring 463 54 960</a>
+  <a class="m-mer" href="#baat">Se tjenestene</a>
+</div>
+
+<script>
+(function () {
+  var innhold = {
+    skrog: {
+      tittel: 'Skrog',
+      tekst: 'Skroget tar imot alt sjøen byr på. Vi bygger glansen opp igjen og beskytter den, slik at båten holder seg finere lenger.',
+      punkter: ['Polering av skrog og fribord', 'Gelcoat-reparasjon og påføring', 'Keramisk coating', 'Skrogvedlikehold gjennom sesongen']
+    },
+    dekk: {
+      tittel: 'Dekk og teak',
+      tekst: 'Dekket er der du lever om bord. Vi renser, reparerer og friskar opp, fra teakbord til dørk.',
+      punkter: ['Teakrens og teakreparasjon', 'Polering av dekk', 'Rengjøring av dørk og cockpit', 'Oppfriskning før salg eller sesong']
+    },
+    interior: {
+      tittel: 'Interiør',
+      tekst: 'Innvendig handler det om lukt, tekstiler og detaljer. Vi tar interiøret ned til minste sprekk.',
+      punkter: ['Teppe- og møbelrens', 'Utbedring av lekkasje- og interiørskader', 'Bytte av belysning', 'Rens av lugar og salong']
+    },
+    motor: {
+      tittel: 'Motor og utstyr',
+      tekst: 'Et rent motorrom gjør det lettere å oppdage feil tidlig, og gir båten et løft ved salg.',
+      punkter: ['Rengjøring av motorrom', 'Bytte av utstyr', 'Gjennomgang ved klargjøring', 'Klargjøring for opplag']
+    }
+  };
+  var knapper = document.querySelectorAll('.sone-knapp');
+  var tittel = document.getElementById('sone-tittel');
+  var tekst = document.getElementById('sone-tekst');
+  var liste = document.getElementById('sone-liste');
+
+  function velg(sone) {
+    knapper.forEach(function (k) {
+      k.setAttribute('aria-pressed', String(k.dataset.sone === sone));
+    });
+    ['skrog', 'dekk', 'interior', 'motor'].forEach(function (navn) {
+      document.getElementById('sone-' + navn).classList.toggle('aktiv', navn === sone);
+    });
+    var data = innhold[sone];
+    tittel.textContent = data.tittel;
+    tekst.textContent = data.tekst;
+    liste.innerHTML = '';
+    data.punkter.forEach(function (p) {
+      var li = document.createElement('li');
+      li.textContent = p;
+      liste.appendChild(li);
+    });
+  }
+
+  knapper.forEach(function (k) {
+    k.addEventListener('click', function () { velg(k.dataset.sone); });
+  });
+  ['skrog', 'dekk', 'interior', 'motor'].forEach(function (navn) {
+    document.getElementById('sone-' + navn).addEventListener('click', function () { velg(navn); });
+  });
+  velg('skrog');
+})();
+</script>
+
+</body>
+</html>
