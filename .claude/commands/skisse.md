@@ -106,6 +106,15 @@ bruk komma, kolon eller parentes.
 uverifisert merkes i koden med `<!-- PLACEHOLDER: erstattes med ekte innhold -->`,
 men skal se ferdig ut visuelt. Ingen lorem ipsum.
 
+**Korrektur før levering.** Les all synlig tekst i skissen på nytt, setning for
+setning, også tekst som ligger i JS-datastrukturer for interaktive elementer,
+det er der glippene gjemmer seg. Se spesielt etter: nynorsk- eller
+dialektformer ("friskar", "ikkje"), feilskrevne sammensatte ord (tre like
+konsonanter forenkles: vegg + glans = vegglans), direkte oversatte engelske
+vendinger ("er bare så god som"), og ord brukt i feil betydning. Samme krav
+gjelder e-poster og meldinger som skrives til prospektet: korrekt bokmål, stor
+forbokstav etter hilsen, og les teksten høyt for deg selv før du leverer den.
+
 ## Steg 4: verifiser visuelt
 
 Ta skjermbilde i 390 px bredde og i 1440 px før du sier deg ferdig. Chromium og
