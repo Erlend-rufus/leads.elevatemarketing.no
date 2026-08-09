@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Malermester J.C Andreassen | Malerfirma i Bergen sør</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kritt:#F6F3EC;
+  --hvit:#FFFFFF;
+  --oliven:#39422F;
+  --oliven-dyp:#272E20;
+  --oker:#C8912E;
+  --oker-lys:#E0B15C;
+  --tekst:#2A2E24;
+  --dus:#6B7060;
+  --strek:#E2DDD0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--kritt);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Newsreader',Georgia,serif;line-height:1.12;font-weight:600;letter-spacing:0}
+a{color:inherit}
+.wrap{max-width:1110px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--oker);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--oliven-dyp);color:#CFD4C4;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:var(--oker-lys);text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--kritt);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.1}
+.merke b{font-family:'Newsreader',serif;font-weight:700;font-size:21px;color:var(--oliven)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--oker);font-weight:700;font-family:'DM Sans',sans-serif}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px}
+nav.hoved a:hover{color:var(--oker)}
+.ring-knapp{background:var(--oliven);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:3px;white-space:nowrap}
+.ring-knapp:hover{background:var(--oliven-dyp)}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{border-bottom:1px solid var(--strek);background:linear-gradient(180deg,var(--kritt) 55%,#EFEADF 100%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center;padding:66px 20px 74px}
+.hero h1{font-size:clamp(32px,4.6vw,54px);color:var(--oliven)}
+.hero h1 em{font-style:italic;color:var(--oker)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:3px;font-size:17px}
+.knapp-primar{background:var(--oliven);color:#fff}
+.knapp-primar:hover{background:var(--oliven-dyp)}
+.knapp-sekundar{background:transparent;color:var(--oliven);border:2px solid var(--oliven)}
+.knapp-sekundar:hover{background:var(--oliven);color:#fff}
+.hero-kort{background:var(--oliven);color:#E9ECE2;border-radius:4px;padding:30px 28px;position:relative}
+.hero-kort::before{content:"";position:absolute;inset:8px;border:1px solid rgba(224,177,92,.4);border-radius:2px;pointer-events:none}
+.hero-kort h2{font-family:'DM Sans',sans-serif;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--oker-lys);font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:16px;display:flex;gap:12px;align-items:baseline}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";width:8px;height:8px;background:var(--oker);flex-shrink:0;transform:rotate(45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:var(--oliven);color:#CFD4C4}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:var(--oker-lys);font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--oker)}
+.seksjonstittel h2{font-size:clamp(27px,3.5vw,40px);color:var(--oliven);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:4px;padding:26px 24px}
+.tjeneste .strok{width:44px;height:10px;margin-bottom:16px;border-radius:5px 2px 2px 5px;background:linear-gradient(90deg,var(--oker) 70%,transparent 70%),repeating-linear-gradient(90deg,var(--oker) 0 3px,transparent 3px 6px)}
+.tjeneste h3{font-size:21px;color:var(--oliven);margin-bottom:8px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Glansvelger */
+.glans-seksjon{background:var(--oliven-dyp);color:#E9ECE2}
+.glans-seksjon .seksjonstittel h2{color:#fff}
+.glans-seksjon .seksjonstittel p{color:#A9B098}
+.glans-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:stretch}
+.vegg{position:relative;border-radius:6px;overflow:hidden;border:1px solid rgba(224,177,92,.3);min-height:340px;background:#8A9179}
+.vegg .lysflekk{position:absolute;inset:0;background:radial-gradient(ellipse 60% 75% at 30% 25%,rgba(255,255,255,var(--glans-styrke,.06)) 0%,rgba(255,255,255,0) 60%);transition:opacity .4s}
+.vegg .list{position:absolute;left:0;right:0;bottom:0;height:34px;background:#EFEADF;border-top:4px solid #DED8C8}
+.vegg .glans-navn{position:absolute;left:22px;bottom:52px;font-family:'Newsreader',serif;font-size:30px;font-weight:600;color:rgba(255,255,255,.92);text-shadow:0 1px 8px rgba(0,0,0,.25)}
+.glans-hoyre{display:flex;flex-direction:column;gap:18px}
+.glans-knapper{display:flex;flex-wrap:wrap;gap:10px}
+.glans-knapp{font-family:'DM Sans',sans-serif;font-weight:700;font-size:15px;padding:11px 18px;border-radius:3px;border:2px solid #55604A;background:transparent;color:#E9ECE2;cursor:pointer}
+.glans-knapp[aria-pressed="true"]{background:var(--oker);border-color:var(--oker);color:var(--oliven-dyp)}
+.glans-knapp:hover{border-color:var(--oker)}
+.glans-panel{background:rgba(255,255,255,.06);border:1px solid rgba(224,177,92,.3);border-radius:4px;padding:24px 26px;flex:1}
+.glans-panel h3{font-size:24px;color:#fff;margin-bottom:8px}
+.glans-panel p{color:#C4CAB6;font-size:15.5px}
+.glans-panel .brukes{margin-top:14px;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--oker-lys);font-weight:700;font-family:'DM Sans',sans-serif}
+.glans-panel .brukes-tekst{color:#C4CAB6;font-size:15.5px;margin-top:4px}
+.glans-fot{margin-top:20px;font-size:14px;color:#A9B098;max-width:72ch}
+@media (max-width:900px){.glans-flex{grid-template-columns:1fr}.vegg{min-height:260px}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:4px;padding:26px 24px}
+.hvorfor-kort h3{font-size:21px;color:var(--oliven);margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:#EFEADF}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:4px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:counter(steg);font-family:'Newsreader',serif;font-weight:700;font-size:34px;color:var(--oker);display:block;margin-bottom:6px}
+.steg h3{font-size:19px;color:var(--oliven);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--oker);border-radius:4px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:600;color:var(--oliven);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:16px;width:11px;height:11px;background:var(--oker);transform:rotate(45deg)}
+.mester-kort{background:var(--oliven);color:#E9ECE2;border-radius:4px;padding:30px 28px}
+.mester-kort h3{color:var(--oker-lys);font-size:23px;margin-bottom:10px}
+.mester-kort p{font-size:15.5px;color:#C4CAB6}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:4px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--oliven);list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:'Newsreader',serif;font-size:26px;color:var(--oker);line-height:1}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:var(--oliven-dyp);color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,42px);color:#fff}
+.slutt-cta h2 em{font-style:italic;color:var(--oker-lys)}
+.slutt-cta p{color:#A9B098;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Newsreader',serif;font-size:clamp(30px,5vw,46px);font-weight:700;color:var(--oker-lys);text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px;color:#A9B098}
+
+/* Footer */
+footer{background:var(--oliven-dyp);color:#A9B098;border-top:1px solid rgba(255,255,255,.12);padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:18px;margin-bottom:12px}
+footer a{color:var(--oker-lys)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--oliven-dyp);border-top:2px solid var(--oker);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:3px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--oker);color:var(--oliven-dyp)}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Malermester i Rådal, Bergen sør</span>
+    <span>Ring: <a href="tel:+4791779740">91 77 97 40</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>J.C Andreassen</b>
+      <small>Malermester</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#glans">Glansvelgeren</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4791779740">91 77 97 40</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Håndverk som sitter i <em>veggene</em></h1>
+      <p class="ingress">Malermester J.C Andreassen er et av Bergens større malerfirma, med rundt 22 ansatte og base i Rådal. Vi maler for private, borettslag og bedrifter i hele Bergen sør.</p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4791779740">Ring 91 77 97 40</a>
+        <a class="knapp knapp-sekundar" href="#glans">Prøv glansvelgeren</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Mesterbedrift med malermester Jan Cato Andreassen i spissen</li>
+        <li>Rundt 22 ansatte malere og fagfolk</li>
+        <li>Oppdrag for private, borettslag og næring</li>
+        <li>Base i Rådal, kort vei i hele Bergen sør</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Mesterbedrift</b><span>Malermester i Mesterregisteret</span></div>
+    <div><b>22 ansatte</b><span>Kapasitet til store oppdrag</span></div>
+    <div><b>Rådal, Bergen</b><span>Lokale fagfolk i Bergen sør</span></div>
+    <div><b>Privat og proff</b><span>Fra stue til borettslag</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Malerarbeid, ute og inne</h2>
+      <p>Med et stort lag av fagfolk tar vi både de små hjemmeoppdragene og de store prosjektene for borettslag og næringsbygg.<!-- PLACEHOLDER: tjenestelisten bekreftes med kunden --></p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><div class="strok" aria-hidden="true"></div><h3>Innvendig maling</h3><p>Vegger, tak, dører og listverk. Rene linjer og flater som tåler å bli sett på i dagslys.</p></div>
+      <div class="tjeneste"><div class="strok" aria-hidden="true"></div><h3>Utvendig maling</h3><p>Fasader og utvendig treverk, med grundig forarbeid som gjør at resultatet varer.</p></div>
+      <div class="tjeneste"><div class="strok" aria-hidden="true"></div><h3>Sparkling og forarbeid</h3><p>Et godt malerresultat starter under malingen: sparkling, sliping og grunning.</p></div>
+      <div class="tjeneste"><div class="strok" aria-hidden="true"></div><h3>Borettslag og sameier</h3><p>Oppganger, fellesarealer og fasader, planlagt så beboerne merker minst mulig.</p></div>
+      <div class="tjeneste"><div class="strok" aria-hidden="true"></div><h3>Næringsbygg</h3><p>Kontorer, butikker og offentlige bygg, gjerne utenfor åpningstid.</p></div>
+      <div class="tjeneste"><div class="strok" aria-hidden="true"></div><h3>Tapet og overflater</h3><p>Tapetsering og andre overflatebehandlinger etter ønske og behov.<!-- PLACEHOLDER: erstattes med ekte innhold --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="glans" class="glans-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Samme farge, helt forskjellig vegg</h2>
+      <p>Glansgraden avgjør hvordan fargen oppleves og hvor mye veggen tåler. Velg en glans og se hvordan lyset svarer.</p>
+    </div>
+    <div class="glans-flex">
+      <div class="vegg" id="glans-vegg" role="img" aria-label="Vegg som viser valgt glansgrad">
+        <div class="lysflekk" aria-hidden="true"></div>
+        <div class="glans-navn" id="glans-navn">Helmatt</div>
+        <div class="list" aria-hidden="true"></div>
+      </div>
+      <div class="glans-hoyre">
+        <div class="glans-knapper" role="group" aria-label="Velg glansgrad">
+          <button type="button" class="glans-knapp" data-glans="helmatt" aria-pressed="true">Helmatt</button>
+          <button type="button" class="glans-knapp" data-glans="matt" aria-pressed="false">Matt</button>
+          <button type="button" class="glans-knapp" data-glans="silkematt" aria-pressed="false">Silkematt</button>
+          <button type="button" class="glans-knapp" data-glans="halvblank" aria-pressed="false">Halvblank</button>
+          <button type="button" class="glans-knapp" data-glans="blank" aria-pressed="false">Blank</button>
+        </div>
+        <div class="glans-panel" aria-live="polite">
+          <h3 id="glans-tittel">Helmatt</h3>
+          <p id="glans-tekst">Absorberer lyset og skjuler småfeil i underlaget. Gir rolige, dype flater, men tåler mindre vask.</p>
+          <div class="brukes">Typisk brukt til</div>
+          <p class="brukes-tekst" id="glans-brukes">Tak og vegger i stue og soverom, der lyset skal falle rolig.</p>
+        </div>
+      </div>
+    </div>
+    <p class="glans-fot">Hvilken glans som passer, avhenger av rommet, underlaget og bruken. Det er en av tingene en malermester hjelper deg å velge riktig.</p>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Stort nok til jobben, nært nok til å bry seg</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Mesterbrev i bunn</h3><p>Malermester Jan Cato Andreassen står faglig ansvarlig. Mesterbrevet er ditt kvalitetsstempel på at arbeidet utføres etter faget.</p></div>
+      <div class="hvorfor-kort"><h3>Kapasitet som holder</h3><p>Med rundt 22 ansatte kan vi bemanne store prosjekter og fortsatt holde fremdriften på de små.</p></div>
+      <div class="hvorfor-kort"><h3>Forarbeidet tas på alvor</h3><p>Det du ikke ser når jobben er ferdig, avgjør hvor lenge den holder. Vi hopper ikke over grunnarbeidet.</p></div>
+      <div class="hvorfor-kort"><h3>Ryddig fra start til slutt</h3><p>Tildekking, rene overganger og opprydding etter oss. Du skal merke at det har vært fagfolk i huset, ikke se det på gulvet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra befaring til ferdig flate</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ta kontakt</h3><p>Ring og beskriv oppdraget, stort eller lite.</p></div>
+      <div class="steg"><h3>Befaring</h3><p>Vi ser på jobben, vurderer underlaget og gir råd om løsning.</p></div>
+      <div class="steg"><h3>Tilbud</h3><p>Du får en tydelig pris og en plan for gjennomføringen.</p></div>
+      <div class="steg"><h3>Utførelse</h3><p>Vi gjør jobben som avtalt, rydder opp og går gjennom resultatet med deg.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler hentes fra Google-profilen og legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Bergen sør er hjemmebane</h2>
+          <p>Base i Rådal, oppdrag i hele Bergen etter avtale.</p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Rådal</li>
+          <li>Lagunen og Nordås</li>
+          <li>Fana</li>
+          <li>Nesttun</li>
+          <li>Søreide og Ytrebygda</li>
+          <li>Bergen sentrum</li>
+        </ul>
+      </div>
+      <div class="mester-kort morkflate">
+        <h3>Hva betyr mesterbedrift?</h3>
+        <p>Mesterbrevet er den høyeste utdanningen i håndverksfagene. Når du bruker en mesterbedrift, vet du at arbeidet ledes av en malermester med dokumentert fagkompetanse, og at bedriften står inne for det som leveres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Tar dere små private oppdrag?</summary>
+      <div class="svar">Ja. Vi maler alt fra enkeltrom hjemme hos folk til hele borettslag. Ingen jobb er for liten til å ringe om.</div>
+    </details>
+    <details>
+      <summary>Kan dere ta oppdrag for borettslag og sameier?</summary>
+      <div class="svar">Ja, det er en viktig del av det vi gjør. Med rundt 22 ansatte har vi kapasitet til oppganger, fellesarealer og fasader, og vi planlegger arbeidet så det forstyrrer beboerne minst mulig.</div>
+    </details>
+    <details>
+      <summary>Hjelper dere med farge- og glansvalg?</summary>
+      <div class="svar">Ja. Riktig farge og riktig glansgrad til rommet og bruken er en del av faget, og vi gir råd før vi setter i gang.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris på en jobb?</summary>
+      <div class="svar">Ring 91 77 97 40 og beskriv oppdraget. Ved de fleste jobber tar vi en kort befaring før vi gir en fast pris.</div>
+    </details>
+    <details>
+      <summary>Hvor holder dere til?</summary>
+      <div class="svar">Vi har base i Rådal i Bergen sør og tar oppdrag i hele Bergensområdet.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Klar for nymalte <em>flater?</em></h2>
+    <p>Ring oss og fortell om jobben, så tar vi en befaring og gir deg et uforpliktende tilbud.</p>
+    <a class="stor-tel" href="tel:+4791779740">91 77 97 40</a>
+    <p class="merknad">[E-postadresse legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Malermester J.C Andreassen AS</h3>
+        <ul>
+          <li>[Besøksadresse legges inn her]<!-- PLACEHOLDER: Nordåsvegen 72, 5235 Rådal iflg. katalogtreff, bekreftes med kunden --></li>
+          <li>Rådal, Bergen</li>
+          <li>Org.nr 998 002 249</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4791779740">91 77 97 40</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Innvendig maling</a></li>
+          <li><a href="#tjenester">Utvendig maling</a></li>
+          <li><a href="#tjenester">Borettslag og sameier</a></li>
+          <li><a href="#tjenester">Næringsbygg</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Malermester J.C Andreassen AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4791779740">Ring 91 77 97 40</a>
+  <a class="m-mer" href="#glans">Prøv glansvelgeren</a>
+</div>
+
+<script>
+(function () {
+  var innhold = {
+    helmatt: {
+      styrke: 0.06,
+      tittel: 'Helmatt',
+      tekst: 'Absorberer lyset og skjuler småfeil i underlaget. Gir rolige, dype flater, men tåler mindre vask.',
+      brukes: 'Tak og vegger i stue og soverom, der lyset skal falle rolig.'
+    },
+    matt: {
+      styrke: 0.13,
+      tittel: 'Matt',
+      tekst: 'Den vanligste veggglansen. Fortsatt rolig uttrykk, men med noe bedre vaskbarhet enn helmatt.',
+      brukes: 'Oppholdsrom, gang og soverom i de fleste hjem.'
+    },
+    silkematt: {
+      styrke: 0.22,
+      tittel: 'Silkematt',
+      tekst: 'Et mykt skjær av glans som gir litt liv i flaten og tåler mer rengjøring.',
+      brukes: 'Rom med mer bruk, som gang, trapperom og barnerom.'
+    },
+    halvblank: {
+      styrke: 0.38,
+      tittel: 'Halvblank',
+      tekst: 'Tydelig glans og slitesterk overflate som tåler hyppig vask, men viser mer av ujevnheter i underlaget.',
+      brukes: 'Kjøkken, vaskerom og andre rom med fukt og søl.'
+    },
+    blank: {
+      styrke: 0.55,
+      tittel: 'Blank',
+      tekst: 'Maksimal glans og styrke. Krever godt forarbeid, for blanke flater avslører alt under seg.',
+      brukes: 'Dører, listverk, vinduskarmer og møbler.'
+    }
+  };
+  var vegg = document.getElementById('glans-vegg');
+  var navn = document.getElementById('glans-navn');
+  var knapper = document.querySelectorAll('.glans-knapp');
+  var tittel = document.getElementById('glans-tittel');
+  var tekst = document.getElementById('glans-tekst');
+  var brukes = document.getElementById('glans-brukes');
+
+  knapper.forEach(function (k) {
+    k.addEventListener('click', function () {
+      knapper.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === k));
+      });
+      var data = innhold[k.dataset.glans];
+      vegg.style.setProperty('--glans-styrke', data.styrke);
+      navn.textContent = data.tittel;
+      tittel.textContent = data.tittel;
+      tekst.textContent = data.tekst;
+      brukes.textContent = data.brukes;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

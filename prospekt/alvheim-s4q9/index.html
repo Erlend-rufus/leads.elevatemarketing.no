@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Stig Alvheim Utemiljø | Anleggsgartner på Sotra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gronn:#2F6B3C;
+  --gronn-dyp:#1E4728;
+  --skifer:#37404A;
+  --skifer-dyp:#252C34;
+  --sand:#F4EFE6;
+  --hvit:#FFFFFF;
+  --tekst:#2B3128;
+  --dus:#66705F;
+  --strek:#E0DACB;
+  --jord:#6B4F35;
+  --pukk:#8D9298;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Nunito Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--sand);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Epilogue',sans-serif;line-height:1.12;font-weight:700;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--gronn);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--skifer-dyp);color:#C3CBC0;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:#9FD3A8;text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--sand);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.05}
+.merke b{font-family:'Epilogue',sans-serif;font-weight:800;font-size:20px;color:var(--skifer)}
+.merke b span{color:var(--gronn)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dus);font-weight:700}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:700;font-size:15px}
+nav.hoved a:hover{color:var(--gronn)}
+.ring-knapp{background:var(--gronn);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:6px;white-space:nowrap}
+.ring-knapp:hover{background:var(--gronn-dyp)}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{border-bottom:1px solid var(--strek);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:repeating-linear-gradient(90deg,var(--gronn) 0 34px,var(--gronn-dyp) 34px 68px);opacity:.85}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 78px}
+.hero h1{font-size:clamp(31px,4.5vw,52px);color:var(--skifer)}
+.hero h1 span{color:var(--gronn)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:6px;font-size:17px}
+.knapp-primar{background:var(--gronn);color:#fff}
+.knapp-primar:hover{background:var(--gronn-dyp)}
+.knapp-sekundar{background:transparent;color:var(--skifer);border:2px solid var(--skifer)}
+.knapp-sekundar:hover{background:var(--skifer);color:#fff}
+.hero-kort{background:var(--skifer);color:#E5E9E3;border-radius:10px;padding:30px 28px}
+.hero-kort h2{font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:#9FD3A8;font-weight:800;margin-bottom:14px;font-family:'Epilogue',sans-serif}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,.12)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:15px;width:14px;height:14px;border-radius:50% 50% 50% 0;background:var(--gronn);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 60px}}
+
+/* Trust-strip */
+.trust{background:var(--gronn-dyp);color:#CDE4D1}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:#fff;font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--gronn);font-family:'Epilogue',sans-serif}
+.seksjonstittel h2{font-size:clamp(26px,3.4vw,38px);color:var(--skifer);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;padding:26px 24px}
+.tjeneste h3{font-size:19px;color:var(--skifer);margin-bottom:8px}
+.tjeneste h3::before{content:"";display:block;width:38px;height:6px;border-radius:3px;background:var(--gronn);margin-bottom:14px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Tverrsnitt */
+.lag-seksjon{background:var(--skifer-dyp);color:#E5E9E3}
+.lag-seksjon .seksjonstittel h2{color:#fff}
+.lag-seksjon .seksjonstittel p{color:#9AA5A0}
+.lag-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:stretch}
+.snitt{border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,.15);display:flex;flex-direction:column;min-height:380px}
+.lag{position:relative;border:none;display:flex;align-items:center;width:100%;cursor:pointer;text-align:left;transition:flex-grow .35s;color:#fff;font-family:'Epilogue',sans-serif;font-weight:700;font-size:15px;padding:0 0 0 18px}
+.lag .lag-navn{position:relative;z-index:2;text-shadow:0 1px 6px rgba(0,0,0,.55)}
+.lag:hover{filter:brightness(1.12)}
+.lag[aria-pressed="true"]{outline:3px solid #9FD3A8;outline-offset:-3px}
+.lag-stein{flex:1.3;background:repeating-linear-gradient(90deg,#A8ADB4 0 46px,#7E848C 46px 50px),linear-gradient(#A8ADB4,#8D9298)}
+.lag-sette{flex:0.7;background:repeating-linear-gradient(90deg,#D9C08F 0 6px,#C9AE7C 6px 12px)}
+.lag-baere{flex:1.2;background:radial-gradient(circle at 12% 40%,#9AA0A7 0 7px,transparent 8px),radial-gradient(circle at 34% 70%,#868C94 0 6px,transparent 7px),radial-gradient(circle at 55% 30%,#9AA0A7 0 8px,transparent 9px),radial-gradient(circle at 76% 62%,#868C94 0 6px,transparent 7px),radial-gradient(circle at 92% 35%,#9AA0A7 0 7px,transparent 8px),#70767E}
+.lag-duk{flex:0.55;background:repeating-linear-gradient(45deg,#4E585F 0 10px,#434C53 10px 20px)}
+.lag-grunn{flex:1.1;background:linear-gradient(#6B4F35,#543D28)}
+.lag-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:4px solid var(--gronn);border-radius:10px;padding:26px 28px;display:flex;flex-direction:column}
+.lag-panel .etikett{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#9FD3A8;font-weight:800;font-family:'Epilogue',sans-serif}
+.lag-panel h3{font-size:24px;color:#fff;margin:6px 0 10px}
+.lag-panel p{color:#BFC8C2;font-size:15.5px}
+.lag-panel ul{list-style:none;margin-top:14px}
+.lag-panel li{padding:6px 0 6px 24px;position:relative;color:#BFC8C2;font-size:15px}
+.lag-panel li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:2.5px;background:#9FD3A8}
+.lag-fot{margin-top:20px;font-size:14px;color:#9AA5A0;max-width:72ch}
+@media (max-width:900px){.lag-flex{grid-template-columns:1fr}.snitt{min-height:300px}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;padding:26px 24px}
+.hvorfor-kort h3{font-size:19px;color:var(--skifer);margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:#EBE4D5}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:10px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:counter(steg);display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:var(--gronn);color:#fff;font-family:'Epilogue',sans-serif;font-weight:800;font-size:18px;margin-bottom:12px}
+.steg h3{font-size:17.5px;color:var(--skifer);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--gronn);border-radius:10px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:700;color:var(--skifer);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:13px;height:13px;border-radius:50% 50% 50% 0;background:var(--gronn);transform:rotate(-45deg)}
+.domene-kort{background:var(--gronn-dyp);color:#E5E9E3;border-radius:10px;padding:30px 28px}
+.domene-kort h3{color:#9FD3A8;font-size:21px;margin-bottom:10px}
+.domene-kort p{font-size:15.5px;color:#CDE4D1}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--skifer);list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Epilogue',sans-serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--gronn);line-height:1;font-weight:500}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(160deg,var(--gronn-dyp),var(--gronn));color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,40px);color:#fff}
+.slutt-cta p{color:#CDE4D1;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Epilogue',sans-serif;font-size:clamp(30px,5vw,46px);font-weight:800;color:#fff;text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .knapp-hvit{background:#fff;color:var(--gronn-dyp)}
+
+/* Footer */
+footer{background:var(--skifer-dyp);color:#9AA5A0;padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:#9FD3A8}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid #39434D;margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--skifer-dyp);border-top:2px solid var(--gronn);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:6px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--gronn);color:#fff}
+.mobil-bar .m-post{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Anleggsgartner på Sotra: Nordvikavegen 37A, Fjell</span>
+    <span>Ring: <a href="tel:+4740460966">40 46 09 66</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>ALVHEIM <span>UTEMILJØ</span></b>
+      <small>Anleggsgartner, Sotra</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#lagene">Under steinen</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4740460966">40 46 09 66</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Uterom som er <span>bygget for å vare</span></h1>
+      <p class="ingress">Stig Alvheim Utemiljø er anleggsgartneren på Sotra. Vi bygger og beplanter uterom for private og bedrifter: fra plen og busker til stein, murer og grunnarbeid.<!-- PLACEHOLDER: tjenesteomfang bekreftes med kunden --></p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4740460966">Ring 40 46 09 66</a>
+        <a class="knapp knapp-sekundar" href="mailto:stig@alvheimutemiljo.no">Send oss en e-post</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Anleggsgartnerfirma med 7 ansatte</li>
+        <li>Base i Nordvikavegen på Fjell, Sotra</li>
+        <li>Beplantning, stein og grunnarbeid</li>
+        <li>Oppdrag for private og bedrifter</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>7 ansatte</b><span>Fagfolk på laget</span></div>
+    <div><b>Sotra og omegn</b><span>Lokalkjent i Øygarden</span></div>
+    <div><b>Hele uterommet</b><span>Fra grunnarbeid til beplantning</span></div>
+    <div><b>Direkte kontakt</b><span>Du snakker med Stig</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Alt som skal på plass utenfor husveggen</h2>
+      <p>Vi tar hele uterommet, fra planering og drenering til ferdig beplantet hage.<!-- PLACEHOLDER: tjenestelisten bekreftes med kunden --></p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><h3>Belegningsstein</h3><p>Innkjørsler, gårdsplasser og gangveier med riktig oppbygging under, så steinen ligger like fint om ti år.</p></div>
+      <div class="tjeneste"><h3>Støttemurer og trapper</h3><p>Murer i naturstein og blokk som holder på skrånende tomter, og trapper som binder nivåene sammen.</p></div>
+      <div class="tjeneste"><h3>Beplantning og plen</h3><p>Ferdigplen, busker, trær og bed, valgt for å trives i vestlandsklimaet.</p></div>
+      <div class="tjeneste"><h3>Drenering og grunnarbeid</h3><p>Vannet skal ledes bort, ikke inn. Vi tar grunnarbeidet som resten av hagen hviler på.</p></div>
+      <div class="tjeneste"><h3>Uteplasser</h3><p>Terrasser og sittegrupper i stein og tre, formet etter tomten og bruken.</p></div>
+      <div class="tjeneste"><h3>Vedlikehold</h3><p>Stell av grøntanlegg for borettslag og bedrifter gjennom sesongen.<!-- PLACEHOLDER: erstattes med ekte innhold --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="lagene" class="lag-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Det viktigste arbeidet ser du aldri</h2>
+      <p>En innkjørsel i belegningsstein er bare så god som lagene under den. Klikk deg gjennom tverrsnittet og se hva som skal til.</p>
+    </div>
+    <div class="lag-flex">
+      <div class="snitt" role="group" aria-label="Tverrsnitt av oppbygging under belegningsstein, klikk et lag for forklaring">
+        <button type="button" class="lag lag-stein" data-lag="stein" aria-pressed="true"><span class="lag-navn">Belegningsstein</span></button>
+        <button type="button" class="lag lag-sette" data-lag="sette" aria-pressed="false"><span class="lag-navn">Settelag</span></button>
+        <button type="button" class="lag lag-baere" data-lag="baere" aria-pressed="false"><span class="lag-navn">Bærelag</span></button>
+        <button type="button" class="lag lag-duk" data-lag="duk" aria-pressed="false"><span class="lag-navn">Fiberduk og drenering</span></button>
+        <button type="button" class="lag lag-grunn" data-lag="grunn" aria-pressed="false"><span class="lag-navn">Grunnen</span></button>
+      </div>
+      <div class="lag-panel" aria-live="polite">
+        <span class="etikett">Lag for lag</span>
+        <h3 id="lag-tittel">Belegningsstein</h3>
+        <p id="lag-tekst">Det eneste laget du ser, og det siste vi legger. Mønster, fall og fuger settes med omhu, men det er lagene under som avgjør om resultatet holder seg.</p>
+        <ul id="lag-liste">
+          <li>Legges med riktig fall så vannet renner bort</li>
+          <li>Fuges og komprimeres til en stabil flate</li>
+          <li>Kantstein låser flaten på plass</li>
+        </ul>
+      </div>
+    </div>
+    <p class="lag-fot">Riktig oppbygging tilpasses grunnforholdene på hver enkelt tomt. Det er derfor vi alltid starter med en befaring.</p>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Lokale fagfolk som gjør jobben ordentlig</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Grundig under overflaten</h3><p>Vi bygger nedenfra og opp. Drenering og bærelag gjøres riktig første gang, så slipper du setninger og svanker etterpå.</p></div>
+      <div class="hvorfor-kort"><h3>Kjenner forholdene på Sotra</h3><p>Berg, myr og vestlandsvær stiller egne krav. Vi jobber i dette terrenget hver dag.</p></div>
+      <div class="hvorfor-kort"><h3>Ett lag, hele jobben</h3><p>Fra graving til ferdig beplantning slipper du å koordinere flere firma. Vi tar helheten.</p></div>
+      <div class="hvorfor-kort"><h3>Kort vei til beslutning</h3><p>Du snakker direkte med Stig, som både gir pris og er med på jobben. Ingen mellomledd.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra idé til ferdig uterom</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ta kontakt</h3><p>Ring eller send e-post og fortell hva du ønsker deg.</p></div>
+      <div class="steg"><h3>Befaring</h3><p>Vi ser på tomten, vurderer grunnforholdene og diskuterer løsninger.</p></div>
+      <div class="steg"><h3>Tilbud og plan</h3><p>Du får pris og en fremdriftsplan tilpasset sesongen.</p></div>
+      <div class="steg"><h3>Utførelse</h3><p>Vi bygger som avtalt og leverer et uterom som er klart til bruk.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler hentes fra Google-profilen og legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Sotra er hjemmebane</h2>
+          <p>Base på Fjell, oppdrag i hele Øygarden og Bergensområdet.</p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Fjell og Straume</li>
+          <li>Ågotnes</li>
+          <li>Skogsvåg og Sund</li>
+          <li>Rong og Nordre Øygarden</li>
+          <li>Askøy</li>
+          <li>Bergen etter avtale</li>
+        </ul>
+      </div>
+      <div class="domene-kort morkflate">
+        <h3>Prosjekter fra hverdagen</h3>
+        <p>Her viser vi frem ferdige prosjekter: innkjørsler, murer og hager vi har bygget på Sotra.</p>
+        <p style="margin-top:12px">[Prosjektbilder legges inn her ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Tar dere små hageoppdrag, eller bare store prosjekter?</summary>
+      <div class="svar">Begge deler. Et bed som skal beplantes er like velkomment som en full opparbeidelse av tomt.</div>
+    </details>
+    <details>
+      <summary>Kan dere ta hele jobben, inkludert graving?</summary>
+      <div class="svar">Ja, vi tar grunnarbeid, drenering, stein og beplantning under ett, så du slipper å koordinere flere firma.<!-- PLACEHOLDER: maskinpark og gravekapasitet bekreftes med kunden --></div>
+    </details>
+    <details>
+      <summary>Når på året bør jeg bestille?</summary>
+      <div class="svar">Ta gjerne kontakt i god tid før sesongen. Grunnarbeid og stein kan gjøres store deler av året, mens beplantning og plen er sesongavhengig.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris på et prosjekt?</summary>
+      <div class="svar">Ring 40 46 09 66 eller send en e-post til stig@alvheimutemiljo.no. Vi tar en befaring på tomten før vi gir pris.</div>
+    </details>
+    <details>
+      <summary>Jobber dere utenfor Sotra?</summary>
+      <div class="svar">Ja, vi tar oppdrag i hele Øygarden, på Askøy og i Bergensområdet etter avtale.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Klar for å ta uterommet på alvor?</h2>
+    <p>Ring eller send en e-post, så tar vi en befaring og gir deg et uforpliktende tilbud.</p>
+    <a class="stor-tel" href="tel:+4740460966">40 46 09 66</a>
+    <div>
+      <a class="knapp knapp-hvit" href="mailto:stig@alvheimutemiljo.no">stig@alvheimutemiljo.no</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Stig Alvheim Utemiljø AS</h3>
+        <ul>
+          <li>Nordvikavegen 37A</li>
+          <li>5357 Fjell</li>
+          <li>Org.nr 926 489 577</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4740460966">40 46 09 66</a></li>
+          <li>E-post: <a href="mailto:stig@alvheimutemiljo.no">stig@alvheimutemiljo.no</a></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Belegningsstein</a></li>
+          <li><a href="#tjenester">Støttemurer</a></li>
+          <li><a href="#tjenester">Beplantning</a></li>
+          <li><a href="#tjenester">Drenering</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Stig Alvheim Utemiljø AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4740460966">Ring 40 46 09 66</a>
+  <a class="m-post" href="mailto:stig@alvheimutemiljo.no">Send e-post</a>
+</div>
+
+<script>
+(function () {
+  var innhold = {
+    stein: {
+      tittel: 'Belegningsstein',
+      tekst: 'Det eneste laget du ser, og det siste vi legger. Mønster, fall og fuger settes med omhu, men det er lagene under som avgjør om resultatet holder seg.',
+      punkter: ['Legges med riktig fall så vannet renner bort', 'Fuges og komprimeres til en stabil flate', 'Kantstein låser flaten på plass']
+    },
+    sette: {
+      tittel: 'Settelag',
+      tekst: 'Et jevnt lag av finkornet masse som steinen settes i. Det gir en plan flate og lar hver stein sette seg riktig.',
+      punkter: ['Avrettes nøyaktig før steinen legges', 'Jevner ut småforskjeller i bærelaget', 'Riktig tykkelse hindrer setninger']
+    },
+    baere: {
+      tittel: 'Bærelag',
+      tekst: 'Komprimert pukk som tar imot vekten av alt som skal stå og kjøre på flaten. For tynt eller dårlig komprimert bærelag er grunnen til at innkjørsler synker.',
+      punkter: ['Dimensjoneres etter bruken, bil krever mer enn gangvei', 'Komprimeres lagvis med riktig utstyr', 'Her spares det aldri hos oss']
+    },
+    duk: {
+      tittel: 'Fiberduk og drenering',
+      tekst: 'Fiberduken skiller massene fra grunnen under, og dreneringen leder vannet dit det skal. Vann som blir stående er den største fienden til alt vi bygger.',
+      punkter: ['Hindrer at massene blandes med grunnen', 'Vannet ledes bort fra flaten og huset', 'Ekstra viktig i vestlandsnedbøren']
+    },
+    grunn: {
+      tittel: 'Grunnen',
+      tekst: 'Berg, jord eller myr: grunnforholdene på tomten bestemmer hvordan alt over må bygges opp. Det er her befaringen vår starter.',
+      punkter: ['Vurderes på befaring før vi gir pris', 'Utskifting av dårlige masser ved behov', 'Riktig start gir et resultat som varer']
+    }
+  };
+  var knapper = document.querySelectorAll('.lag');
+  var tittel = document.getElementById('lag-tittel');
+  var tekst = document.getElementById('lag-tekst');
+  var liste = document.getElementById('lag-liste');
+
+  knapper.forEach(function (k) {
+    k.addEventListener('click', function () {
+      knapper.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === k));
+      });
+      var data = innhold[k.dataset.lag];
+      tittel.textContent = data.tittel;
+      tekst.textContent = data.tekst;
+      liste.innerHTML = '';
+      data.punkter.forEach(function (p) {
+        var li = document.createElement('li');
+        li.textContent = p;
+        liste.appendChild(li);
+      });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
