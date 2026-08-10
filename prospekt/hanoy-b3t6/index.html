@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Hanøy Riggboring | Boring, sprengning og grunnarbeid på Askøy siden 1986</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --granitt:#2F3437;
+  --granitt-dyp:#24282B;
+  --oransje:#E8681C;
+  --oransje-mork:#C55412;
+  --signal:#F5C518;
+  --stein:#EDEDEA;
+  --stein-dyp:#DEDED9;
+  --hvit:#FFFFFF;
+  --tekst:#2B2F32;
+  --tekst-dus:#5F6569;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Heebo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--stein);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Teko',Impact,sans-serif;font-weight:600;line-height:1.02;color:var(--granitt);letter-spacing:.015em}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--oransje);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--granitt);color:#fff;border-bottom:3px solid var(--oransje)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Teko',sans-serif;font-weight:700;font-size:1.5rem;letter-spacing:.04em;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1}
+.logo-merke{width:28px;height:28px;flex:none}
+.logo span{color:var(--signal)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:#D9DBDC}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--oransje);color:#fff;text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--oransje-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:1.25rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--granitt);color:#fff}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:64px 22px 74px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(245,197,24,.55);color:var(--signal);font-weight:600;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(2.4rem,5.4vw,3.8rem);margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--oransje);filter:brightness(1.2)}
+.hero-tekst{color:#D9DBDC;font-size:1.07rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--oransje);color:#fff}
+.knapp-primar:hover{background:var(--oransje-mork);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(217,219,220,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:48px;padding-bottom:54px}}
+
+/* Boreriggen, signaturelementet */
+.fjell{background:var(--granitt-dyp);border:1px solid rgba(245,197,24,.3);border-radius:14px;padding:24px 22px 22px}
+.fjell-tittel{font-family:'Teko',sans-serif;font-weight:600;font-size:1.35rem;letter-spacing:.04em;color:var(--signal);margin-bottom:0}
+.fjell-hint{font-size:.87rem;color:rgba(217,219,220,.75);margin-bottom:14px}
+#bor-gruppe{transition:transform .5s ease}
+#salve-gruppe{opacity:0;transition:opacity .25s ease}
+#salve-gruppe.smell{opacity:1}
+#grop{opacity:0;transition:opacity .5s ease}
+#grop.synlig{opacity:1}
+#fjell-hel{transition:opacity .3s ease}
+#fjell-hel.borte{opacity:0}
+@keyframes rist{
+  0%,100%{transform:translate(0,0)}
+  25%{transform:translate(-3px,1px)}
+  50%{transform:translate(3px,-1px)}
+  75%{transform:translate(-2px,-1px)}
+}
+#fjell-svg.rister{animation:rist .35s linear 2}
+.fjell-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.bor-knapp{
+  font-family:'Teko',sans-serif;font-weight:600;font-size:1.2rem;letter-spacing:.05em;
+  background:var(--signal);color:var(--granitt-dyp);border:none;border-radius:8px;
+  padding:9px 22px 7px;cursor:pointer;transition:background .15s ease;line-height:1.2;
+}
+.bor-knapp:hover{background:#FFD84A}
+.bor-knapp:disabled{background:rgba(217,219,220,.25);color:rgba(217,219,220,.6);cursor:not-allowed}
+.salve-knapp{
+  font-family:'Teko',sans-serif;font-weight:600;font-size:1.2rem;letter-spacing:.05em;
+  background:var(--oransje);color:#fff;border:none;border-radius:8px;
+  padding:9px 22px 7px;cursor:pointer;transition:background .15s ease;line-height:1.2;
+}
+.salve-knapp:hover{background:var(--oransje-mork)}
+.salve-knapp:disabled{background:rgba(217,219,220,.25);color:rgba(217,219,220,.6);cursor:not-allowed}
+.nytt-fjell{
+  font-family:'Heebo',sans-serif;font-weight:500;font-size:.88rem;
+  background:transparent;color:#D9DBDC;border:1.5px solid rgba(217,219,220,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.nytt-fjell:hover{border-color:#fff;color:#fff}
+.fjell-status-rad{margin-top:12px;background:rgba(232,104,28,.14);border-left:3px solid var(--oransje);border-radius:0 8px 8px 0;padding:10px 14px}
+.fjell-steg{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--signal)}
+.fjell-status{font-size:.95rem;color:#EFF0F0}
+
+/* Fakta-stripe */
+.stripe{background:var(--oransje);color:#fff}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Teko',sans-serif;font-weight:700;font-size:2.3rem;line-height:1}
+.stripe-navn{font-size:.88rem;font-weight:500;opacity:.95}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--oransje);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.seksjon h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:12px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Om */
+.om{background:var(--hvit)}
+.om-indre{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.om-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.om-tekst p strong{color:var(--tekst)}
+.om-kort{background:var(--granitt);color:#fff;border-radius:14px;padding:32px 30px;border-bottom:5px solid var(--signal)}
+.om-kort h3{color:var(--signal);font-size:1.5rem;margin-bottom:16px}
+.om-kort ul{list-style:none;display:grid;gap:13px}
+.om-kort li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:#D9DBDC}
+.om-kort .punkt{width:9px;height:9px;background:var(--oransje);flex:none;transform:translateY(-1px)}
+@media(max-width:860px){.om-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tjeneste{background:var(--hvit);border-radius:12px;padding:26px 24px;border:1px solid var(--stein-dyp);border-left:5px solid var(--granitt);transition:transform .15s ease,box-shadow .15s ease}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(47,52,55,.12);border-left-color:var(--oransje)}
+.tjeneste h3{font-size:1.45rem;margin-bottom:6px}
+.tjeneste p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.tjenester-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{max-width:44rem;background:var(--stein);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--oransje)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--granitt);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:12px}
+.cta p{color:#D9DBDC;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--granitt-dyp);border:1px solid rgba(245,197,24,.3);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.5rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#D9DBDC}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--granitt-dyp);color:#C7C9CA;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1.3rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#C7C9CA}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(199,201,202,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(199,201,202,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--granitt-dyp);border-top:2px solid var(--oransje)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--oransje);color:#fff}
+.mobilbar .epost{background:rgba(217,219,220,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Hanøy Riggboring, til toppen">
+      <svg class="logo-merke" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M6 24 L14 4 L22 24" fill="none" stroke="#F5C518" stroke-width="2.6" stroke-linejoin="round"/>
+        <line x1="14" y1="10" x2="14" y2="24" stroke="#E8681C" stroke-width="2.6"/>
+      </svg>
+      Hanøy <span>Riggboring</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#fjellet">Fjellet</a></li>
+        <li><a href="#om">Om oss</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4790047029">900 47 029</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Grunnarbeid, Askøy</p>
+        <h1>Der tomten din er <em>fast fjell</em>, starter vi</h1>
+        <p class="hero-tekst">
+          AS Hanøy Riggboring er totalleverandør av grunnarbeid fra Hanøytangen på
+          Askøy. Boring, sprengning, graving og massetransport, for private,
+          byggefirma og offentlige byggherrer i hele Vestland siden 1986.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4790047029">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#fjellet">Bor og spreng selv</a>
+        </div>
+      </div>
+
+      <div class="fjell" id="fjellet" aria-label="Interaktiv borerigg">
+        <p class="fjell-tittel">Fra fast fjell til byggeklar tomt</p>
+        <p class="fjell-hint">Bor hullene, tenn salven og se fjellet gi etter.</p>
+
+        <svg id="fjell-svg" viewBox="0 0 460 250" role="img" aria-labelledby="fjell-tittel-svg">
+          <title id="fjell-tittel-svg">Borerigg som borer i fjell før sprengning</title>
+          <!-- Himmel-linje / bakke -->
+          <line x1="10" y1="98" x2="450" y2="98" stroke="#5F6569" stroke-width="2"/>
+          <!-- Fjellmasse -->
+          <rect x="10" y="98" width="440" height="140" fill="#41474B"/>
+          <g stroke="#3A3F43" stroke-width="1.6" opacity=".7">
+            <path d="M40 130 L90 150 M120 115 L170 140 M210 125 L260 112 M300 140 L350 120 M380 150 L420 130 M60 190 L110 210 M160 180 L210 200 M260 170 L310 195 M350 185 L410 205"/>
+          </g>
+          <!-- Fjell som forsvinner ved salve -->
+          <g id="fjell-hel">
+            <path d="M120 98 L340 98 L340 190 L120 190 Z" fill="#4A5155"/>
+            <path d="M140 120 L190 140 M220 110 L270 135 M290 145 L320 125 M150 165 L200 180 M240 160 L300 175" stroke="#3A3F43" stroke-width="1.6"/>
+          </g>
+          <!-- Borehull -->
+          <g>
+            <rect id="hull-1" x="152" y="98" width="8" height="0" fill="#1B1E20"/>
+            <rect id="hull-2" x="222" y="98" width="8" height="0" fill="#1B1E20"/>
+            <rect id="hull-3" x="292" y="98" width="8" height="0" fill="#1B1E20"/>
+          </g>
+          <!-- Grop etter salve -->
+          <g id="grop">
+            <path d="M120 98 L150 150 L200 172 L260 172 L310 150 L340 98 Z" fill="#24282B"/>
+            <path d="M150 150 L175 158 M230 172 L255 166 M285 158 L305 145" stroke="#41474B" stroke-width="2"/>
+            <circle cx="190" cy="130" r="7" fill="#41474B"/>
+            <circle cx="262" cy="142" r="9" fill="#41474B"/>
+            <circle cx="228" cy="120" r="5" fill="#41474B"/>
+          </g>
+          <!-- Salve-effekt -->
+          <g id="salve-gruppe">
+            <path d="M200 96 L192 66 M230 94 L230 58 M260 96 L270 64 M215 92 L204 74 M245 92 L256 72" stroke="#F5C518" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="230" cy="84" r="12" fill="#E8681C"/>
+          </g>
+          <!-- Borerigg -->
+          <g id="bor-gruppe">
+            <rect x="96" y="58" width="60" height="26" rx="4" fill="#E8681C"/>
+            <rect x="104" y="40" width="26" height="20" rx="3" fill="#C55412"/>
+            <rect x="110" y="45" width="13" height="10" rx="2" fill="#EDEDEA"/>
+            <circle cx="110" cy="90" r="9" fill="#24282B" stroke="#5F6569" stroke-width="2"/>
+            <circle cx="142" cy="90" r="9" fill="#24282B" stroke="#5F6569" stroke-width="2"/>
+            <!-- Mast og borstang -->
+            <rect x="152" y="18" width="10" height="70" fill="#5F6569"/>
+            <rect id="borstang" x="154" y="30" width="6" height="66" fill="#F5C518"/>
+          </g>
+        </svg>
+
+        <div class="fjell-panel">
+          <button class="bor-knapp" id="bor-knapp" type="button">Bor et hull</button>
+          <button class="salve-knapp" id="salve-knapp" type="button" disabled>Tenn salven</button>
+          <button class="nytt-fjell" id="nytt-fjell-knapp" type="button">Nytt fjell</button>
+        </div>
+        <div class="fjell-status-rad" aria-live="polite">
+          <div class="fjell-steg" id="fjell-steg">0 av 3 hull boret</div>
+          <div class="fjell-status" id="fjell-status">Riggen står klar. Bor det første hullet i fjellet.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">1986</div>
+        <div class="stripe-navn">Grunnlagt på Askøy, fremdeles på Hanøytangen</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Totalleverandør</div>
+        <div class="stripe-navn">Boring, sprengning, graving og massetransport</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Hele Vestland</div>
+        <div class="stripe-navn">For private, byggefirma og offentlige</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon om" id="om">
+    <div class="ramme">
+      <div class="om-indre">
+        <div class="om-tekst">
+          <p class="overtittel">Om oss</p>
+          <h2>Førti år med fjell</h2>
+          <p>
+            AS Hanøy Riggboring ble grunnlagt i <strong>1986</strong> og har base på
+            Hanøytangen på Askøy. Vi er et lag av erfarne maskinførere og
+            anleggsarbeidere med bred kompetanse på boring, sprengning, graving og
+            grunnarbeid.
+          </p>
+          <p>
+            Vi tar oppdrag uavhengig av størrelse og kompleksitet: hyttetomten som
+            trenger én salve, boligfeltet som skal planeres, og industri- og
+            offentlige prosjekter med strenge krav til dokumentasjon og sikkerhet.
+          </p>
+          <p>
+            På Vestlandet er det sjelden langt til fast fjell. Vi sørger for at det
+            ikke stopper prosjektet ditt.
+          </p>
+        </div>
+        <div class="om-kort morkflate">
+          <h3>Derfor velger byggherrer oss</h3>
+          <ul>
+            <li><span class="punkt"></span>Erfaring fra fire tiår med grunnarbeid</li>
+            <li><span class="punkt"></span>Egen maskinpark for boring, sprengning og graving<!-- PLACEHOLDER: maskinparkdetaljer bekreftes med kunden --></li>
+            <li><span class="punkt"></span>Oppdrag i alle størrelser, fra hyttetomt til boligfelt</li>
+            <li><span class="punkt"></span>Ett firma for hele grunnarbeidet</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Alt under grunnmuren</h2>
+        <p>Vi tar hele jobben fra urørt tomt til byggeklar grunn.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Fjellboring</h3>
+          <p>Riggboring i alle dimensjoner, for salver, fundamentering og sikring.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Sprengning</h3>
+          <p>Kontrollert sprengning utført av erfarne folk, også tett på bebyggelse.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Graving og planering</h3>
+          <p>Utgraving av tomter, grøfter og veier, klargjort for neste fag.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Massetransport</h3>
+          <p>Bortkjøring og levering av masser, koordinert med resten av jobben.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Muring</h3>
+          <p>Natursteinsmurer og forstøtningsmurer som holder på massene.<!-- PLACEHOLDER: tjenesteomfang bekreftes med kunden --></p>
+        </article>
+        <article class="tjeneste">
+          <h3>Komplett grunnarbeid</h3>
+          <p>Hele pakken fra første borehull til byggeklar tomt, med ett kontaktpunkt.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva byggherrene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en byggherre eller privatkunde som har brukt Hanøy Riggboring.»</p>
+        <p class="omtale-kilde">Navn og prosjekt settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--signal)">Kontakt</p>
+        <h2>Står tomten din på fast fjell?</h2>
+        <p>
+          Send oss kart eller bilder av tomten, så gir vi deg en faglig vurdering
+          av hva grunnarbeidet krever, og hva det koster.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4790047029">Ring 900 47 029</a>
+          <a class="knapp knapp-sekundar" href="mailto:post@hanoyrigg.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>AS Hanøy Riggboring</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#D9DBDC" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#E8681C"/></svg>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Fullstendig gateadresse bekreftes med kunden. -->
+          <span>Hanøytangen, Askøy</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#D9DBDC" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4790047029">900 47 029</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#D9DBDC" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#E8681C" stroke-width="1.6"/></svg>
+          <a href="mailto:post@hanoyrigg.no">post@hanoyrigg.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#D9DBDC" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#E8681C" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Askøy, Bergen og hele Vestland</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>AS Hanøy Riggboring</h3>
+        <p>Totalleverandør av grunnarbeid siden 1986. Boring, sprengning, graving og massetransport fra Hanøytangen på Askøy.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Hanøytangen, Askøy</li>
+          <li><a href="tel:+4790047029">900 47 029</a></li>
+          <li><a href="mailto:post@hanoyrigg.no">post@hanoyrigg.no</a></li>
+          <li>Org.nr. 939 746 412</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#fjellet">Fjellet</a></li>
+          <li><a href="#om">Om oss</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4790047029">Ring 900 47 029</a>
+  <a class="epost" href="mailto:post@hanoyrigg.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var hull = 0;
+  var sprengt = false;
+  var borKnapp = document.getElementById('bor-knapp');
+  var salveKnapp = document.getElementById('salve-knapp');
+  var nyttKnapp = document.getElementById('nytt-fjell-knapp');
+  var stegEl = document.getElementById('fjell-steg');
+  var statusEl = document.getElementById('fjell-status');
+  var svg = document.getElementById('fjell-svg');
+  var borGruppe = document.getElementById('bor-gruppe');
+
+  var posisjoner = [0, 0, 70, 140];
+
+  function oppdater(){
+    if (sprengt) {
+      stegEl.textContent = 'Salven er tent';
+      statusEl.textContent = 'Fjellet ga etter. Nå graver vi ut og kjører bort massene. Tomten er snart byggeklar.';
+      borKnapp.disabled = true;
+      salveKnapp.disabled = true;
+      return;
+    }
+    stegEl.textContent = hull + ' av 3 hull boret';
+    if (hull === 0) statusEl.textContent = 'Riggen står klar. Bor det første hullet i fjellet.';
+    else if (hull < 3) statusEl.textContent = 'Hull ' + hull + ' er boret. Riggen flytter seg til neste posisjon.';
+    else statusEl.textContent = 'Alle hullene er boret og ladet. Klar til å tenne salven.';
+    borKnapp.disabled = hull >= 3;
+    salveKnapp.disabled = hull < 3;
+  }
+
+  borKnapp.addEventListener('click', function(){
+    if (hull >= 3 || sprengt) return;
+    hull++;
+    document.getElementById('hull-' + hull).setAttribute('height', '64');
+    if (hull < 3) borGruppe.setAttribute('transform', 'translate(' + posisjoner[hull + 1] + ' 0)');
+    oppdater();
+  });
+
+  salveKnapp.addEventListener('click', function(){
+    if (hull < 3 || sprengt) return;
+    sprengt = true;
+    var salve = document.getElementById('salve-gruppe');
+    salve.classList.add('smell');
+    svg.classList.add('rister');
+    setTimeout(function(){
+      salve.classList.remove('smell');
+      svg.classList.remove('rister');
+      document.getElementById('fjell-hel').classList.add('borte');
+      document.getElementById('grop').classList.add('synlig');
+      for (var i = 1; i <= 3; i++) document.getElementById('hull-' + i).setAttribute('height', '0');
+    }, 700);
+    oppdater();
+  });
+
+  nyttKnapp.addEventListener('click', function(){
+    hull = 0;
+    sprengt = false;
+    for (var i = 1; i <= 3; i++) document.getElementById('hull-' + i).setAttribute('height', '0');
+    document.getElementById('fjell-hel').classList.remove('borte');
+    document.getElementById('grop').classList.remove('synlig');
+    document.getElementById('salve-gruppe').classList.remove('smell');
+    borGruppe.setAttribute('transform', 'translate(0 0)');
+    oppdater();
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>

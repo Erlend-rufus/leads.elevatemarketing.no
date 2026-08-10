@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Murmester Aastvedt | Mur, puss og tegl i Bergen siden 1964</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aleo:wght@600;700;800&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blaagraa:#3A4750;
+  --blaagraa-dyp:#2C363D;
+  --tegl:#A64B35;
+  --tegl-mork:#8A3A27;
+  --kalk:#F1EFEA;
+  --kalk-dyp:#E2DED5;
+  --mortel:#C9C5BE;
+  --hvit:#FFFFFF;
+  --tekst:#2E3338;
+  --tekst-dus:#5E666D;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--kalk);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Aleo',Georgia,serif;font-weight:700;line-height:1.12;color:var(--blaagraa)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--tegl);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--blaagraa);color:#fff;border-bottom:3px solid var(--tegl)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Aleo',serif;font-weight:800;font-size:1.1rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-merke{width:30px;height:30px;flex:none}
+.logo span{color:var(--mortel)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:#D9DDE1}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--tegl);color:#fff;text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--tegl-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:.96rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--blaagraa);color:#fff}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:68px 22px 78px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(201,197,190,.5);color:var(--mortel);font-weight:600;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(1.9rem,4.2vw,2.9rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--tegl);filter:brightness(1.4)}
+.hero-tekst{color:#D9DDE1;font-size:1.06rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--tegl);color:#fff}
+.knapp-primar:hover{background:var(--tegl-mork);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(217,221,225,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:50px;padding-bottom:56px}}
+
+/* Teglmuren, signaturelementet */
+.mur{background:var(--blaagraa-dyp);border:1px solid rgba(201,197,190,.25);border-radius:14px;padding:24px 22px 22px}
+.mur-tittel{font-family:'Aleo',serif;font-weight:700;font-size:1.05rem;color:var(--mortel);margin-bottom:2px}
+.mur-hint{font-size:.87rem;color:rgba(217,221,225,.75);margin-bottom:14px}
+.skift{opacity:0;transform:translateY(-10px);transition:opacity .45s ease,transform .45s ease}
+.skift.lagt{opacity:1;transform:translateY(0)}
+#vater{opacity:0;transition:opacity .5s ease}
+#vater.synlig{opacity:1}
+.mur-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.mur-knapp{
+  font-family:'Aleo',serif;font-weight:700;font-size:.98rem;
+  background:var(--tegl);color:#fff;border:none;border-radius:8px;
+  padding:11px 20px;cursor:pointer;transition:background .15s ease;
+}
+.mur-knapp:hover{background:var(--tegl-mork)}
+.mur-knapp:disabled{background:rgba(217,221,225,.25);color:rgba(217,221,225,.6);cursor:not-allowed}
+.riv-knapp{
+  font-family:'Jost',sans-serif;font-weight:500;font-size:.88rem;
+  background:transparent;color:#D9DDE1;border:1.5px solid rgba(217,221,225,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.riv-knapp:hover{border-color:#fff;color:#fff}
+.mur-status-rad{margin-top:12px;background:rgba(166,75,53,.14);border-left:3px solid var(--tegl);border-radius:0 8px 8px 0;padding:10px 14px}
+.mur-steg{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mortel)}
+.mur-status{font-size:.95rem;color:#EDEFF1}
+
+/* Fakta-stripe */
+.stripe{background:var(--tegl);color:#fff}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Aleo',serif;font-weight:800;font-size:1.9rem;line-height:1.1}
+.stripe-navn{font-size:.88rem;font-weight:500;opacity:.94}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--tegl);font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.seksjon h2{font-size:clamp(1.55rem,3.1vw,2.15rem);margin-bottom:14px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Historie */
+.historie{background:var(--hvit)}
+.historie-indre{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start}
+.historie-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.historie-tekst p strong{color:var(--tekst)}
+.aarstall-kort{background:var(--blaagraa);color:#fff;border-radius:14px;padding:32px 30px;border-bottom:5px solid var(--tegl)}
+.aarstall-kort h3{color:var(--mortel);font-size:1.15rem;margin-bottom:18px}
+.aarstall-kort ol{list-style:none;display:grid;gap:0}
+.aarstall-kort li{position:relative;padding:0 0 20px 26px;font-size:.94rem;color:#D9DDE1}
+.aarstall-kort li::before{content:'';position:absolute;left:6px;top:7px;width:9px;height:9px;background:var(--tegl)}
+.aarstall-kort li:not(:last-child)::after{content:'';position:absolute;left:10px;top:18px;bottom:-2px;width:1.5px;background:rgba(217,221,225,.3)}
+.aarstall-kort li b{color:#fff;display:block}
+@media(max-width:860px){.historie-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tjeneste{background:var(--hvit);border-radius:12px;padding:26px 24px;border:1px solid var(--kalk-dyp);border-top:4px solid var(--blaagraa);transition:transform .15s ease,box-shadow .15s ease}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(58,71,80,.12);border-top-color:var(--tegl)}
+.tjeneste h3{font-size:1.08rem;margin-bottom:8px}
+.tjeneste p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.tjenester-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Kompetanse */
+.kompetanse{background:var(--hvit)}
+.komp-nett{display:flex;gap:12px;flex-wrap:wrap}
+.komp{background:var(--kalk);border:1px solid var(--kalk-dyp);border-radius:999px;padding:9px 18px;font-weight:500;font-size:.95rem}
+.komp b{color:var(--tegl)}
+
+/* Omtale */
+.omtale-kort{max-width:44rem;background:var(--hvit);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--tegl)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--blaagraa);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:14px}
+.cta p{color:#D9DDE1;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--blaagraa-dyp);border:1px solid rgba(201,197,190,.25);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.08rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#D9DDE1}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--blaagraa-dyp);color:#C6CCD1;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#C6CCD1}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(198,204,209,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(198,204,209,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--blaagraa-dyp);border-top:2px solid var(--tegl)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--tegl);color:#fff}
+.mobilbar .epost{background:rgba(217,221,225,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Murmester Aastvedt, til toppen">
+      <svg class="logo-merke" viewBox="0 0 30 30" aria-hidden="true">
+        <rect x="3" y="6" width="11" height="5" fill="#A64B35"/>
+        <rect x="16" y="6" width="11" height="5" fill="#A64B35"/>
+        <rect x="9" y="13" width="11" height="5" fill="#C9C5BE"/>
+        <rect x="3" y="20" width="11" height="5" fill="#A64B35"/>
+        <rect x="16" y="20" width="11" height="5" fill="#A64B35"/>
+      </svg>
+      Murmester <span>Aastvedt</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#muren">Muren</a></li>
+        <li><a href="#historie">Historien</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4755175050">55 17 50 50</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Murmester, Bergen</p>
+        <h1>Murt opp <em>skift for skift</em> siden 1964</h1>
+        <p class="hero-tekst">
+          Murmester Aastvedt leverer mur-, puss- og betongarbeid i Bergen, i både
+          nybygg og rehabilitering. En mesterbedrift der håndverket har gått i arv
+          gjennom seksti år, fra teglfasader til ildfast muring.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4755175050">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#muren">Mur et skift selv</a>
+        </div>
+      </div>
+
+      <div class="mur" id="muren" aria-label="Interaktiv teglmur">
+        <p class="mur-tittel">Legg muren selv</p>
+        <p class="mur-hint">Fem skift i løperforbandt. Slik bygges en teglvegg som står.</p>
+
+        <svg id="mur-svg" viewBox="0 0 460 230" role="img" aria-labelledby="mur-tittel-svg">
+          <title id="mur-tittel-svg">Teglmur som mures opp skift for skift</title>
+          <!-- Planlagt mur, stiplet omriss -->
+          <g fill="none" stroke="#C9C5BE" stroke-width="1.6" stroke-dasharray="6 6" opacity=".45">
+            <rect x="50" y="36" width="346" height="156"/>
+            <line x1="50" y1="164" x2="396" y2="164"/>
+            <line x1="50" y1="132" x2="396" y2="132"/>
+            <line x1="50" y1="100" x2="396" y2="100"/>
+            <line x1="50" y1="68" x2="396" y2="68"/>
+          </g>
+          <!-- Saale/fundament -->
+          <rect x="40" y="196" width="380" height="16" fill="#5E666D"/>
+          <!-- Skift 1 (nederst) -->
+          <g id="skift-1" class="skift">
+            <rect x="50" y="164" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="120" y="164" width="66" height="28" fill="#9E4530" stroke="#2C363D" stroke-width="2"/>
+            <rect x="190" y="164" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="260" y="164" width="66" height="28" fill="#AB523B" stroke="#2C363D" stroke-width="2"/>
+            <rect x="330" y="164" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+          </g>
+          <!-- Skift 2 -->
+          <g id="skift-2" class="skift">
+            <rect x="50" y="132" width="31" height="28" fill="#9E4530" stroke="#2C363D" stroke-width="2"/>
+            <rect x="85" y="132" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="155" y="132" width="66" height="28" fill="#AB523B" stroke="#2C363D" stroke-width="2"/>
+            <rect x="225" y="132" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="295" y="132" width="66" height="28" fill="#9E4530" stroke="#2C363D" stroke-width="2"/>
+            <rect x="365" y="132" width="31" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+          </g>
+          <!-- Skift 3 -->
+          <g id="skift-3" class="skift">
+            <rect x="50" y="100" width="66" height="28" fill="#AB523B" stroke="#2C363D" stroke-width="2"/>
+            <rect x="120" y="100" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="190" y="100" width="66" height="28" fill="#9E4530" stroke="#2C363D" stroke-width="2"/>
+            <rect x="260" y="100" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="330" y="100" width="66" height="28" fill="#AB523B" stroke="#2C363D" stroke-width="2"/>
+          </g>
+          <!-- Skift 4 -->
+          <g id="skift-4" class="skift">
+            <rect x="50" y="68" width="31" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="85" y="68" width="66" height="28" fill="#9E4530" stroke="#2C363D" stroke-width="2"/>
+            <rect x="155" y="68" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="225" y="68" width="66" height="28" fill="#AB523B" stroke="#2C363D" stroke-width="2"/>
+            <rect x="295" y="68" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="365" y="68" width="31" height="28" fill="#9E4530" stroke="#2C363D" stroke-width="2"/>
+          </g>
+          <!-- Skift 5 (øverst) -->
+          <g id="skift-5" class="skift">
+            <rect x="50" y="36" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="120" y="36" width="66" height="28" fill="#AB523B" stroke="#2C363D" stroke-width="2"/>
+            <rect x="190" y="36" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+            <rect x="260" y="36" width="66" height="28" fill="#9E4530" stroke="#2C363D" stroke-width="2"/>
+            <rect x="330" y="36" width="66" height="28" fill="#A64B35" stroke="#2C363D" stroke-width="2"/>
+          </g>
+          <!-- Vaterpass -->
+          <g id="vater">
+            <rect x="150" y="14" width="160" height="14" rx="3" fill="#F5C518" stroke="#2C363D" stroke-width="2"/>
+            <rect x="218" y="17" width="24" height="8" rx="4" fill="#EDEFF1"/>
+            <circle cx="230" cy="21" r="3" fill="#4F9E52"/>
+          </g>
+        </svg>
+
+        <div class="mur-panel">
+          <button class="mur-knapp" id="mur-knapp" type="button">Legg et skift</button>
+          <button class="riv-knapp" id="riv-mur-knapp" type="button">Riv og mur på nytt</button>
+        </div>
+        <div class="mur-status-rad" aria-live="polite">
+          <div class="mur-steg" id="mur-steg">Skift 0 av 5</div>
+          <div class="mur-status" id="mur-status">Sålen er støpt. Legg det første skiftet.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">1964</div>
+        <div class="stripe-navn">Etablert, aksjeselskap fra 1978</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Mesterbedrift</div>
+        <div class="stripe-navn">Medlem av Murmestrenes Landsforening</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Mur og puss</div>
+        <div class="stripe-navn">Nybygg og rehabilitering i hele Bergen</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon historie" id="historie">
+    <div class="ramme">
+      <div class="historie-indre">
+        <div class="historie-tekst">
+          <p class="overtittel">Historien</p>
+          <h2>Et murerfirma bygget som en mur</h2>
+          <p>
+            Murmester Aastvedt ble etablert i <strong>1964</strong> og har vært
+            drevet som familiebedrift gjennom to generasjoner Aastvedt. I 2012 kom
+            mangeårig medarbeider <strong>Christer Landaas</strong> inn på eiersiden,
+            og han leder firmaet i dag.
+          </p>
+          <p>
+            Fagkunnskapen er den samme som før: bærende murverk, teglfasader,
+            pussarbeid og ildfast muring. Det er håndverk som krever mesterbrev,
+            og erfaring du ikke kan lese deg til.
+          </p>
+          <p>
+            Fra Ytre Arna tar vi oppdrag i hele bergensområdet, for byggherrer,
+            borettslag og private.
+          </p>
+        </div>
+        <div class="aarstall-kort morkflate">
+          <h3>Seksti år i faget</h3>
+          <ol>
+            <li><b>1964</b>Firmaet etableres i Bergen</li>
+            <li><b>1978</b>Omdannes til aksjeselskap</li>
+            <li><b>2012</b>Christer Landaas inn på eiersiden etter mange år i firmaet</li>
+            <li><b>I dag</b>Mesterbedrift med base i Ytre Arna</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Mur, puss og betong</h2>
+        <p>Fra teglfasader til peiser, i nybygg og rehabilitering.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Teglfasader</h3>
+          <p>Forblending og bærende murverk i tegl, murt i forbandt som tåler vestlandsværet.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Puss og fasade</h3>
+          <p>Pussarbeid og puss- og isolasjonssystemer som beskytter og fornyer fasaden.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Flis og naturstein</h3>
+          <p>Flislegging og natursteinsarbeid, ute og inne.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Ildfast muring</h3>
+          <p>Peiser, piper og annet ildfast murverk, utført med dokumentert kompetanse.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Kalk og gips</h3>
+          <p>Tradisjonsmaterialer til eldre bygg, der moderne løsninger ikke hører hjemme.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Betongarbeid</h3>
+          <p>Betongarbeid i forbindelse med mur- og rehabiliteringsprosjekter.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon kompetanse">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kvalifikasjoner</p>
+        <h2>Dokumentert, ikke bare påstått</h2>
+      </div>
+      <div class="komp-nett">
+        <span class="komp"><b>Mesterbedrift</b> i murerfaget</span>
+        <span class="komp">Medlem av <b>Murmestrenes Landsforening</b></span>
+        <span class="komp">Medlem av <b>Mester Alliansen</b></span>
+        <span class="komp">Godkjent for <b>ansvarsrett</b></span>
+        <span class="komp"><b>Våtromssertifisert</b><!-- PLACEHOLDER: sertifiseringsdetaljer bekreftes med kunden --></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva kundene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en byggherre eller huseier som har brukt Murmester Aastvedt.»</p>
+        <p class="omtale-kilde">Navn og prosjekt settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--mortel)">Kontakt</p>
+        <h2>Har du et murprosjekt?</h2>
+        <p>
+          Ring oss eller send en e-post, så avtaler vi en befaring. Du får en
+          faglig vurdering fra folk som har murt i Bergen i seksti år.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4755175050">Ring 55 17 50 50</a>
+          <a class="knapp knapp-sekundar" href="mailto:firmapost@aastvedt.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Murmester Aastvedt AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#D9DDE1" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#A64B35"/></svg>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Fullstendig gateadresse bekreftes med kunden. -->
+          <span>Ytre Arna, Bergen</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#D9DDE1" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4755175050">55 17 50 50</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#D9DDE1" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#A64B35" stroke-width="1.6"/></svg>
+          <a href="mailto:firmapost@aastvedt.no">firmapost@aastvedt.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#D9DDE1" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#A64B35" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Hele bergensområdet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Murmester Aastvedt AS</h3>
+        <p>Mesterbedrift i murerfaget siden 1964. Mur, puss og betong i nybygg og rehabilitering, i hele bergensområdet.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Ytre Arna, Bergen</li>
+          <li><a href="tel:+4755175050">55 17 50 50</a></li>
+          <li><a href="mailto:firmapost@aastvedt.no">firmapost@aastvedt.no</a></li>
+          <li>Org.nr. 981 059 433</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#muren">Muren</a></li>
+          <li><a href="#historie">Historien</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4755175050">Ring 55 17 50 50</a>
+  <a class="epost" href="mailto:firmapost@aastvedt.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var status = [
+    'Sålen er støpt. Legg det første skiftet.',
+    'Første skift ligger. Fugene fylles med mørtel.',
+    'Skift to på plass, forskjøvet en halv stein. Det er løperforbandt.',
+    'Halvveis. Muren begynner å ta form.',
+    'Fjerde skift lagt. Ett igjen til topps.',
+    'Fem skift i forbandt, og vateret viser rett. Muren står.'
+  ];
+  var skift = 0;
+  var knapp = document.getElementById('mur-knapp');
+  var rivKnapp = document.getElementById('riv-mur-knapp');
+  var stegEl = document.getElementById('mur-steg');
+  var statusEl = document.getElementById('mur-status');
+  var vater = document.getElementById('vater');
+
+  function oppdater(){
+    stegEl.textContent = 'Skift ' + skift + ' av 5';
+    statusEl.textContent = status[skift];
+    knapp.disabled = skift >= 5;
+    knapp.textContent = skift >= 5 ? 'Muren står' : 'Legg et skift';
+    vater.classList.toggle('synlig', skift >= 5);
+  }
+
+  knapp.addEventListener('click', function(){
+    if (skift >= 5) return;
+    skift++;
+    document.getElementById('skift-' + skift).classList.add('lagt');
+    oppdater();
+  });
+
+  rivKnapp.addEventListener('click', function(){
+    skift = 0;
+    for (var i = 1; i <= 5; i++) document.getElementById('skift-' + i).classList.remove('lagt');
+    oppdater();
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>
