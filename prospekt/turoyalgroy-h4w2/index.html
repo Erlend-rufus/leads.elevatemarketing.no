@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Turøy &amp; Algrøy Entreprenør AS | Entreprenør på Sotra siden 1986</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#34456B;
+  --indigo-dyp:#273353;
+  --indigo-natt:#1D2740;
+  --varmgul:#F0A830;
+  --varmgul-mork:#D18F1B;
+  --papir:#F6F4EE;
+  --hvit:#FFFFFF;
+  --tekst:#2A3348;
+  --tekst-dus:#5A6478;
+  --strek:#DDD8CC;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Mukta',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--papir);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Staatliches',Impact,sans-serif;font-weight:400;line-height:1.05;color:var(--indigo);letter-spacing:.03em}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--varmgul);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--indigo);color:#fff}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Staatliches',sans-serif;font-size:1.35rem;letter-spacing:.05em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-merke{width:28px;height:28px;flex:none}
+.logo span{color:var(--varmgul)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:#D8DEEC}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--varmgul);color:var(--indigo-natt);text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--varmgul-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:1.15rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--indigo);color:#fff;overflow:hidden;position:relative}
+.hero-indre{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:70px 22px 80px;max-width:1140px;margin:0 auto;position:relative}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(240,168,48,.65);color:var(--varmgul);font-weight:600;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(2.3rem,5.2vw,3.6rem);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--varmgul)}
+.hero-tekst{color:#D8DEEC;font-size:1.08rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--varmgul);color:var(--indigo-natt)}
+.knapp-primar:hover{background:var(--varmgul-mork);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(216,222,236,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:52px;padding-bottom:58px}}
+
+/* Reis huset, signaturelementet */
+.byggeplass{
+  background:var(--indigo-natt);
+  border:1px solid rgba(216,222,236,.22);
+  border-radius:14px;
+  padding:24px 22px 22px;
+  background-image:
+    linear-gradient(rgba(216,222,236,.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(216,222,236,.07) 1px, transparent 1px);
+  background-size:26px 26px;
+}
+.byggeplass-tittel{font-family:'Staatliches',sans-serif;font-size:1.15rem;letter-spacing:.06em;color:var(--varmgul);margin-bottom:2px}
+.byggeplass-hint{font-size:.86rem;color:rgba(216,222,236,.75);margin-bottom:14px}
+.hus-holder{border-radius:10px;overflow:hidden}
+.del{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.del.synlig{opacity:1;transform:translateY(0)}
+.bygg-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.bygg-knapp{
+  font-family:'Staatliches',sans-serif;font-size:1.05rem;letter-spacing:.06em;
+  background:var(--varmgul);color:var(--indigo-natt);border:none;border-radius:8px;
+  padding:11px 22px;cursor:pointer;transition:background .15s ease;
+}
+.bygg-knapp:hover{background:var(--varmgul-mork)}
+.bygg-knapp:disabled{background:rgba(216,222,236,.25);color:rgba(216,222,236,.6);cursor:not-allowed}
+.riv-knapp{
+  font-family:'Mukta',sans-serif;font-weight:600;font-size:.88rem;
+  background:transparent;color:#D8DEEC;border:1.5px solid rgba(216,222,236,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.riv-knapp:hover{border-color:#fff;color:#fff}
+.bygg-status-rad{margin-top:12px;background:rgba(240,168,48,.1);border-left:3px solid var(--varmgul);border-radius:0 8px 8px 0;padding:10px 14px}
+.bygg-steg{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--varmgul)}
+.bygg-status{font-size:.95rem;color:#EDEFF5}
+
+/* Fakta-stripe */
+.stripe{background:var(--varmgul);color:var(--indigo-natt)}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Staatliches',sans-serif;font-size:2.1rem;line-height:1.05}
+.stripe-navn{font-size:.9rem;font-weight:600}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--varmgul-mork);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.seksjon h2{font-size:clamp(1.9rem,3.8vw,2.6rem);margin-bottom:12px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Historie */
+.historie{background:var(--hvit)}
+.historie-indre{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.historie-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.historie-tekst p strong{color:var(--tekst)}
+.grunnleggere{
+  background:var(--indigo);color:#fff;border-radius:14px;padding:32px 30px;
+  border-bottom:5px solid var(--varmgul);
+}
+.grunnleggere .aarstall{font-family:'Staatliches',sans-serif;font-size:3.6rem;color:var(--varmgul);line-height:1}
+.grunnleggere .under{font-size:.95rem;color:#D8DEEC;margin-top:4px;margin-bottom:20px}
+.grunnleggere ul{list-style:none;display:grid;gap:13px}
+.grunnleggere li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:#D8DEEC}
+.grunnleggere .punkt{width:9px;height:9px;background:var(--varmgul);flex:none;transform:translateY(-1px)}
+@media(max-width:860px){.historie-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.tjeneste{
+  background:var(--hvit);border-radius:12px;padding:28px 26px;
+  border:1px solid var(--strek);border-left:5px solid var(--indigo);
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(52,69,107,.12);border-left-color:var(--varmgul)}
+.tjeneste h3{font-size:1.35rem;margin-bottom:8px}
+.tjeneste p{font-size:.95rem;color:var(--tekst-dus)}
+@media(max-width:700px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Lærling */
+.laerling{background:var(--indigo);color:#fff}
+.laerling-indre{max-width:1140px;margin:0 auto;padding:64px 22px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.laerling h2{color:#fff}
+.laerling p{color:#D8DEEC;font-size:1.02rem;margin-bottom:14px}
+.laerling-kort{background:var(--indigo-natt);border:1px solid rgba(216,222,236,.22);border-radius:12px;padding:28px 26px;text-align:center}
+.laerling-kort .stort{font-family:'Staatliches',sans-serif;font-size:2.6rem;color:var(--varmgul);line-height:1.1}
+.laerling-kort p{font-size:.95rem;margin-bottom:0}
+@media(max-width:860px){.laerling-indre{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{max-width:44rem;background:var(--papir);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--varmgul)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--indigo);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:12px}
+.cta p{color:#D8DEEC;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--indigo-natt);border:1px solid rgba(216,222,236,.22);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.3rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#D8DEEC}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--indigo-natt);color:#C7CEDF;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1.15rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#C7CEDF}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(199,206,223,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(199,206,223,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--indigo-natt);border-top:2px solid var(--varmgul)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--varmgul);color:var(--indigo-natt)}
+.mobilbar .epost{background:rgba(216,222,236,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Turøy og Algrøy Entreprenør, til toppen">
+      <svg class="logo-merke" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M3 24 L3 12 L14 4 L25 12 L25 24" fill="none" stroke="#F0A830" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M9 24 L9 15 L19 15 L19 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+      </svg>
+      Turøy <span>&amp;</span> Algrøy
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#reis-huset">Reis huset</a></li>
+        <li><a href="#historie">Historien</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4756320270">56 32 02 70</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Entreprenør på Sotra</p>
+        <h1>Vi har reist hus her ute <em>siden 1986</em></h1>
+        <p class="hero-tekst">
+          Turøy &amp; Algrøy Entreprenør bygger nye hus og hytter, renoverer og tar
+          totalentrepriser i Bergen, på Sotra og Askøy. Egne tømrere, ryddige avtaler
+          og et håndverk som har vokst gjennom fire tiår.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4756320270">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#reis-huset">Prøv å reise huset</a>
+        </div>
+      </div>
+
+      <div class="byggeplass" id="reis-huset" aria-label="Interaktiv husbygging">
+        <p class="byggeplass-tittel">Reis huset</p>
+        <p class="byggeplass-hint">Fire klikk fra grunnmur til tett bygg. Slik reiser tømrerne et bindingsverk.</p>
+
+        <div class="hus-holder">
+          <svg id="hus-svg" viewBox="0 0 460 300" role="img" aria-labelledby="hus-tittel-svg">
+            <title id="hus-tittel-svg">Bindingsverkshus som reises steg for steg</title>
+            <!-- Bakke -->
+            <line x1="20" y1="266" x2="440" y2="266" stroke="#8A94AC" stroke-width="2"/>
+            <!-- Blåkopi-silhuett av det ferdige huset, alltid synlig -->
+            <g id="blaakopi" fill="none" stroke="#8A94AC" stroke-width="1.6" stroke-dasharray="6 6" opacity=".5">
+              <path d="M120 240 L120 116 L230 44 L340 116 L340 240"/>
+              <line x1="120" y1="116" x2="340" y2="116"/>
+              <line x1="230" y1="44" x2="230" y2="6"/>
+            </g>
+            <!-- Grunnmur, alltid synlig -->
+            <g id="grunnmur">
+              <rect x="120" y="240" width="220" height="26" fill="#5A6478" stroke="#D8DEEC" stroke-width="2"/>
+              <line x1="175" y1="240" x2="175" y2="266" stroke="#D8DEEC" stroke-width="1" opacity=".5"/>
+              <line x1="230" y1="240" x2="230" y2="266" stroke="#D8DEEC" stroke-width="1" opacity=".5"/>
+              <line x1="285" y1="240" x2="285" y2="266" stroke="#D8DEEC" stroke-width="1" opacity=".5"/>
+            </g>
+            <!-- Steg 1: bunnsvill og stendere -->
+            <g id="steg-1" class="del">
+              <rect x="120" y="228" width="220" height="12" fill="#F0A830"/>
+              <rect x="124" y="128" width="10" height="100" fill="#EDEFF5"/>
+              <rect x="176" y="128" width="10" height="100" fill="#EDEFF5"/>
+              <rect x="225" y="128" width="10" height="100" fill="#EDEFF5"/>
+              <rect x="274" y="128" width="10" height="100" fill="#EDEFF5"/>
+              <rect x="326" y="128" width="10" height="100" fill="#EDEFF5"/>
+            </g>
+            <!-- Steg 2: toppsvill -->
+            <g id="steg-2" class="del">
+              <rect x="120" y="116" width="220" height="12" fill="#F0A830"/>
+            </g>
+            <!-- Steg 3: sperrer -->
+            <g id="steg-3" class="del">
+              <path d="M120 116 L230 44 L340 116" fill="none" stroke="#EDEFF5" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+              <path d="M160 116 L230 70 M300 116 L230 70" fill="none" stroke="#EDEFF5" stroke-width="6" stroke-linecap="round"/>
+              <line x1="230" y1="44" x2="230" y2="116" stroke="#EDEFF5" stroke-width="6" stroke-linecap="round"/>
+            </g>
+            <!-- Steg 4: tett tak og markering -->
+            <g id="steg-4" class="del">
+              <path d="M108 124 L230 34 L352 124" fill="none" stroke="#F0A830" stroke-width="11" stroke-linejoin="round" stroke-linecap="round"/>
+              <g id="flagg">
+                <line x1="230" y1="34" x2="230" y2="6" stroke="#EDEFF5" stroke-width="3"/>
+                <path d="M230 6 L258 13 L230 20 Z" fill="#F0A830"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="bygg-panel">
+          <button class="bygg-knapp" id="reis-knapp" type="button">Neste steg</button>
+          <button class="riv-knapp" id="riv-knapp" type="button">Start på nytt</button>
+        </div>
+        <div class="bygg-status-rad" aria-live="polite">
+          <div class="bygg-steg" id="bygg-steg">Steg 0 av 4</div>
+          <div class="bygg-status" id="bygg-status">Grunnmuren er støpt og klar. Klikk for å heise opp bindingsverket.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">1986</div>
+        <div class="stripe-navn">Grunnlagt av Jens Gunnar Turøy og Atle Algrøy</div>
+      </div>
+      <div>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Nettsiden oppgir 25 ansatte pluss innleide. Verifiser tallet. -->
+        <div class="stripe-tall">25 ansatte</div>
+        <div class="stripe-navn">Egne tømrere, pluss innleide fagfolk ved behov</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Lærebedrift</div>
+        <div class="stripe-navn">Har utdannet lærlinger helt siden starten</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon historie" id="historie">
+    <div class="ramme">
+      <div class="historie-indre">
+        <div class="historie-tekst">
+          <p class="overtittel">Historien</p>
+          <h2>To navn, ett byggefirma</h2>
+          <p>
+            <strong>Jens Gunnar Turøy og Atle Algrøy</strong> startet firmaet i 1986,
+            og navnene deres står fortsatt på døren. Fra base på Kolltveit har bedriften
+            bygget og renovert hus over hele Sotra, i Bergen og på Askøy.
+          </p>
+          <p>
+            Vi tror på å utdanne egne folk. Helt siden starten har firmaet vært lærebedrift,
+            med nye lærlinger i arbeid hvert år.
+          </p>
+          <p>
+            Det gir en arbeidsstokk som kjenner både håndverket og måten vi jobber på,
+            og kunder som møter de samme folkene gjennom hele prosjektet.
+          </p>
+        </div>
+        <div class="grunnleggere morkflate">
+          <div class="aarstall">1986</div>
+          <p class="under">Etablert på Sotra</p>
+          <ul>
+            <li><span class="punkt"></span>Grunnlagt av Jens Gunnar Turøy og Atle Algrøy</li>
+            <li><span class="punkt"></span>Holder til i Bildøybakken 105 på Kolltveit</li>
+            <li><span class="punkt"></span>Lærebedrift med lærlinger i arbeid hvert år</li>
+            <li><span class="punkt"></span>Bygger i Bergen, på Sotra og Askøy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi bygger</p>
+        <h2>Fra tomt til nøkkelferdig</h2>
+        <p>Vi tar hele jobben eller deler av den, alt etter hva prosjektet ditt trenger.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Totalentreprise</h3>
+          <p>Vi tar ansvar for hele byggeprosessen, fra planlegging og søknader til overlevering. Du forholder deg til én kontakt hos oss hele veien.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Nybygg av hus og hytter</h3>
+          <p>Eneboliger og hytter bygget av egne tømrere, tilpasset tomten, været og måten du skal bruke bygget på.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Renovering og tilbygg</h3>
+          <p>Vi løfter eldre boliger til dagens standard, bygger på og bygger om. Godt håndverk der nytt skal møte gammelt.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Vinduer og dører</h3>
+          <p>Utskifting av vinduer og dører som gir mindre trekk, lavere strømregning og et løft for hele fasaden.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="laerling morkflate">
+    <div class="laerling-indre">
+      <div>
+        <p class="overtittel" style="color:var(--varmgul)">Lærebedrift</p>
+        <h2>Vi utdanner tømrerne vi bygger med</h2>
+        <p>
+          Turøy &amp; Algrøy har vært lærebedrift siden starten i 1986. Lærlingene går
+          side om side med erfarne tømrere ute på prosjektene, helt fram til fagprøven.
+        </p>
+        <p>
+          For deg som kunde betyr det fagfolk som er lært opp i vår måte å bygge på,
+          med de kravene vi stiller til utførelse og orden på byggeplassen.
+        </p>
+      </div>
+      <div class="laerling-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Nettsiden oppgir 2 til 3 lærlinger i året. Verifiser tallet. -->
+        <div class="stort">2 til 3</div>
+        <p>lærlinger i arbeid hos oss hvert år</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva byggherrene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en kunde som har bygget eller renovert med Turøy &amp; Algrøy Entreprenør.»</p>
+        <p class="omtale-kilde">Navn og sted settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--varmgul)">Kontakt</p>
+        <h2>Skal vi ta en prat om prosjektet ditt?</h2>
+        <p>
+          Fortell oss hva du planlegger, så avtaler vi gjerne en befaring.
+          Du får ærlige svar på hva som er mulig, og en ryddig pris på jobben.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="mailto:post@turoyogalgroy.no">Send e-post</a>
+          <a class="knapp knapp-sekundar" href="tel:+4756320270">Ring 56 32 02 70</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Turøy &amp; Algrøy Entreprenør AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#D8DEEC" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#F0A830"/></svg>
+          <span>Bildøybakken 105, 5360 Kolltveit</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#D8DEEC" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4756320270">56 32 02 70</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#D8DEEC" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#F0A830" stroke-width="1.6"/></svg>
+          <a href="mailto:post@turoyogalgroy.no">post@turoyogalgroy.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#D8DEEC" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#F0A830" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Bergen, Sotra og Askøy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Turøy &amp; Algrøy Entreprenør AS</h3>
+        <p>Entreprenør på Sotra siden 1986. Nybygg, renovering og totalentreprise i Bergen, på Sotra og Askøy.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Bildøybakken 105, 5360 Kolltveit</li>
+          <li><a href="tel:+4756320270">56 32 02 70</a></li>
+          <li><a href="mailto:post@turoyogalgroy.no">post@turoyogalgroy.no</a></li>
+          <li>Org.nr. 993 070 912</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#reis-huset">Reis huset</a></li>
+          <li><a href="#historie">Historien</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4756320270">Ring 56 32 02 70</a>
+  <a class="epost" href="mailto:post@turoyogalgroy.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var steg = [
+    'Grunnmuren er støpt og klar. Klikk for å heise opp bindingsverket.',
+    'Bunnsvill og stendere er på plass. Reisverket står.',
+    'Toppsvillen låser veggene sammen i toppen.',
+    'Sperrene er heist opp og takformen står.',
+    'Taket er tett og flagget er oppe. Huset er reist!'
+  ];
+  var indeks = 0;
+  var reisKnapp = document.getElementById('reis-knapp');
+  var rivKnapp = document.getElementById('riv-knapp');
+  var stegEl = document.getElementById('bygg-steg');
+  var statusEl = document.getElementById('bygg-status');
+
+  function oppdater(){
+    for (var i = 1; i <= 4; i++) {
+      var del = document.getElementById('steg-' + i);
+      if (indeks >= i) del.classList.add('synlig');
+      else del.classList.remove('synlig');
+    }
+    stegEl.textContent = 'Steg ' + indeks + ' av 4';
+    statusEl.textContent = steg[indeks];
+    reisKnapp.disabled = indeks >= 4;
+    reisKnapp.textContent = indeks >= 4 ? 'Huset er reist' : 'Neste steg';
+  }
+
+  reisKnapp.addEventListener('click', function(){
+    if (indeks < 4) { indeks++; oppdater(); }
+  });
+  rivKnapp.addEventListener('click', function(){
+    indeks = 0;
+    oppdater();
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>

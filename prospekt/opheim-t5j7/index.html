@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Sigurd Opheim AS | Blikkenslagerverksted i Bergen siden 1959</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500;600;700;800&family=Radio+Canada:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marine:#1C3144;
+  --marine-dyp:#142433;
+  --solv:#C5CDD6;
+  --solv-lys:#E6EAEF;
+  --sienna:#C1502E;
+  --sienna-mork:#A03F22;
+  --bakgrunn:#F4F6F8;
+  --hvit:#FFFFFF;
+  --tekst:#22303D;
+  --tekst-dus:#576874;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Radio Canada',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--bakgrunn);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Hepta Slab',Georgia,serif;line-height:1.15;color:var(--marine)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--sienna);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{
+  position:sticky;top:0;z-index:50;
+  background:var(--marine);
+  color:#fff;
+  border-bottom:3px solid var(--sienna);
+}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Hepta Slab',serif;font-weight:800;font-size:1.18rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-merke{width:30px;height:30px;flex:none}
+.logo span{color:var(--solv)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--solv-lys)}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{
+  background:var(--sienna);color:#fff;text-decoration:none;font-weight:700;
+  padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap;
+}
+.topp-tlf:hover{background:var(--sienna-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:1.02rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--marine);color:#fff;overflow:hidden}
+.hero-indre{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;
+  padding:72px 22px 84px;max-width:1140px;margin:0 auto;
+}
+.hero-stikk{
+  display:inline-block;background:rgba(197,205,214,.14);border:1px solid rgba(197,205,214,.4);
+  color:var(--solv);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 14px;border-radius:4px;margin-bottom:22px;
+}
+.hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--solv)}
+.hero-tekst{color:var(--solv-lys);font-size:1.08rem;max-width:33rem;margin-bottom:30px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{
+  display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;
+  padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease;
+}
+.knapp-primar{background:var(--sienna);color:#fff}
+.knapp-primar:hover{background:var(--sienna-mork);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(197,205,214,.55)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:52px;padding-bottom:60px}}
+
+/* Metallvelgeren, signaturelementet */
+.velger{
+  background:var(--marine-dyp);
+  border:1px solid rgba(197,205,214,.25);
+  border-radius:14px;
+  padding:26px 24px 24px;
+}
+.velger-tittel{
+  font-family:'Hepta Slab',serif;font-weight:700;font-size:1.02rem;color:var(--solv);
+  margin-bottom:4px;
+}
+.velger-hint{font-size:.86rem;color:rgba(230,234,239,.75);margin-bottom:16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{
+  font-family:'Radio Canada',sans-serif;font-weight:600;font-size:.88rem;
+  color:var(--solv-lys);background:transparent;
+  border:1.5px solid rgba(197,205,214,.45);border-radius:999px;
+  padding:8px 16px;cursor:pointer;transition:all .15s ease;
+}
+.chip:hover{border-color:#fff;color:#fff}
+.chip[aria-pressed="true"]{
+  background:var(--sienna);border-color:var(--sienna);color:#fff;
+}
+.profil-holder{background:rgba(197,205,214,.07);border-radius:10px;padding:18px 14px 10px}
+.egenskaper{
+  margin-top:16px;background:rgba(197,205,214,.09);border-left:3px solid var(--sienna);
+  border-radius:0 8px 8px 0;padding:14px 16px;
+}
+.egenskaper h3{color:#fff;font-size:1rem;margin-bottom:6px}
+.egenskaper p{color:var(--solv-lys);font-size:.9rem;margin-bottom:10px}
+.egenskap-rad{display:flex;gap:8px;flex-wrap:wrap}
+.egenskap-merke{
+  font-size:.76rem;font-weight:600;letter-spacing:.04em;
+  background:rgba(197,205,214,.16);color:var(--solv);
+  padding:4px 10px;border-radius:4px;
+}
+
+/* Fakta-stripe */
+.stripe{background:var(--sienna);color:#fff}
+.stripe-indre{
+  max-width:1140px;margin:0 auto;padding:26px 22px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center;
+}
+.stripe-tall{font-family:'Hepta Slab',serif;font-weight:800;font-size:1.9rem;line-height:1.1}
+.stripe-navn{font-size:.88rem;font-weight:500;opacity:.92}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{
+  color:var(--sienna);font-weight:700;font-size:.85rem;letter-spacing:.14em;
+  text-transform:uppercase;margin-bottom:10px;
+}
+.seksjon h2{font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:800;margin-bottom:14px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Historie */
+.historie{background:var(--hvit)}
+.historie-indre{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.historie-kort{
+  background:var(--marine);color:#fff;border-radius:14px;padding:34px 30px;
+  border-bottom:5px solid var(--sienna);
+}
+.historie-kort .aarstall{
+  font-family:'Hepta Slab',serif;font-weight:800;font-size:3.4rem;color:var(--solv);line-height:1;
+}
+.historie-kort .aarstall-tekst{font-size:.95rem;color:var(--solv-lys);margin-top:6px;margin-bottom:22px}
+.tidslinje{list-style:none;display:grid;gap:14px}
+.tidslinje li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:var(--solv-lys)}
+.tidslinje .punkt{width:9px;height:9px;border-radius:50%;background:var(--sienna);flex:none;transform:translateY(-1px)}
+.historie-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.historie-tekst p strong{color:var(--tekst)}
+@media(max-width:860px){.historie-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tjeneste{
+  background:var(--hvit);border-radius:12px;padding:26px 24px;
+  border:1px solid #E1E6EC;border-top:4px solid var(--marine);
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(28,49,68,.1)}
+.tjeneste svg{width:38px;height:38px;margin-bottom:14px}
+.tjeneste h3{font-size:1.08rem;margin-bottom:8px}
+.tjeneste p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.tjenester-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{
+  max-width:44rem;background:var(--bakgrunn);border-radius:12px;
+  padding:30px 30px 26px;border-left:4px solid var(--sienna);
+}
+.omtale-kort p{font-size:1.02rem;color:var(--tekst);margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--marine);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:14px}
+.cta p{color:var(--solv-lys);font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--marine-dyp);border:1px solid rgba(197,205,214,.25);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.05rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:var(--solv-lys)}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--marine-dyp);color:var(--solv);padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem;color:var(--solv)}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:var(--solv)}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(197,205,214,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(197,205,214,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{
+  position:fixed;bottom:0;left:0;right:0;z-index:60;
+  display:none;gap:10px;padding:10px 14px;
+  background:var(--marine-dyp);border-top:2px solid var(--sienna);
+}
+.mobilbar a{
+  flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;
+  padding:12px 8px;border-radius:8px;
+}
+.mobilbar .ring{background:var(--sienna);color:#fff}
+.mobilbar .epost{background:rgba(197,205,214,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Sigurd Opheim AS, til toppen">
+      <svg class="logo-merke" viewBox="0 0 30 30" aria-hidden="true">
+        <path d="M2 22 L2 12 L15 4 L28 12 L28 22" fill="none" stroke="#C5CDD6" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M8 22 L8 15 L15 10.5 L22 15 L22 22" fill="none" stroke="#C1502E" stroke-width="2.4" stroke-linejoin="round"/>
+      </svg>
+      Sigurd&nbsp;Opheim <span>AS</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#metaller">Metaller</a></li>
+        <li><a href="#historie">Historien</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4755125012">55 12 50 12</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Blikkenslagerverksted på Kokstad</p>
+        <h1>Håndverk i metall <em>siden 1959</em></h1>
+        <p class="hero-tekst">
+          Sigurd Opheim AS former, knekker og monterer beslag i alle typer metall.
+          Fra eget verksted i Kokstaddalen leverer vi platearbeid til fasader og tak,
+          for byggherrer og entreprenører i hele bergensområdet.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4755125012">Ring verkstedet</a>
+          <a class="knapp knapp-sekundar" href="#metaller">Utforsk metallene</a>
+        </div>
+      </div>
+
+      <div class="velger" id="metaller" aria-label="Interaktiv metallvelger">
+        <p class="velger-tittel">Samme beslag, fire metaller</p>
+        <p class="velger-hint">Velg materiale og se hvordan profilen endrer karakter.</p>
+        <div class="chips" role="group" aria-label="Velg metall">
+          <button class="chip" id="chip-kobber" data-metall="kobber" aria-pressed="true">Kobber</button>
+          <button class="chip" id="chip-sink" data-metall="sink" aria-pressed="false">Sink</button>
+          <button class="chip" id="chip-lakkert" data-metall="lakkert" aria-pressed="false">Lakkert stål</button>
+          <button class="chip" id="chip-rustfri" data-metall="rustfri" aria-pressed="false">Rustfritt stål</button>
+        </div>
+
+        <div class="profil-holder">
+          <svg id="beslag-svg" viewBox="0 0 460 210" role="img" aria-labelledby="beslag-tittel-svg">
+            <title id="beslag-tittel-svg">Tverrsnitt av knekt beslagprofil</title>
+            <defs>
+              <linearGradient id="grad-kobber" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#E8965A"/>
+                <stop offset=".45" stop-color="#C1652E"/>
+                <stop offset="1" stop-color="#8F4520"/>
+              </linearGradient>
+              <linearGradient id="grad-sink" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#BFC9CE"/>
+                <stop offset=".5" stop-color="#8E9BA3"/>
+                <stop offset="1" stop-color="#6E7A82"/>
+              </linearGradient>
+              <linearGradient id="grad-lakkert" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#3D5A75"/>
+                <stop offset=".5" stop-color="#2A4258"/>
+                <stop offset="1" stop-color="#1C2F40"/>
+              </linearGradient>
+              <linearGradient id="grad-rustfri" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#EDF1F4"/>
+                <stop offset=".35" stop-color="#B9C2C9"/>
+                <stop offset=".55" stop-color="#E4E9ED"/>
+                <stop offset="1" stop-color="#98A3AB"/>
+              </linearGradient>
+            </defs>
+            <!-- Skygge under profilen -->
+            <ellipse cx="230" cy="188" rx="180" ry="10" fill="#0E1B27" opacity=".45"/>
+            <!-- Knekt beslagprofil: fotplate, to knekk opp, falset topp -->
+            <path id="beslag-flate" d="M40 170 L150 170 L150 96 L170 78 L290 78 L310 96 L310 170 L420 170 L420 156 L324 156 L324 102 L296 64 L164 64 L136 102 L136 156 L40 156 Z"
+                  fill="url(#grad-kobber)" stroke="#0E1B27" stroke-width="2" stroke-linejoin="round"/>
+            <!-- Falskant på toppen -->
+            <path d="M164 64 L164 50 L182 50 L182 64" fill="none" stroke="#0E1B27" stroke-width="2" stroke-linejoin="round"/>
+            <path id="fals-flate" d="M164 50 L182 50 L182 64 L164 64 Z" fill="url(#grad-kobber)" stroke="#0E1B27" stroke-width="2"/>
+            <!-- Lysstripe som gir metallfølelse -->
+            <path d="M156 92 L174 74 L286 74" fill="none" stroke="#FFFFFF" stroke-width="3" opacity=".28" stroke-linecap="round"/>
+            <!-- Knekkmarkeringer -->
+            <g fill="none" stroke="#C5CDD6" stroke-width="1.4" stroke-dasharray="4 4" opacity=".55">
+              <path d="M150 170 L150 96"/>
+              <path d="M310 96 L310 170"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="egenskaper" aria-live="polite">
+          <h3 id="metall-navn">Kobber</h3>
+          <p id="metall-tekst">Lyst og blankt ved montering, mørkner med årene og kan til slutt få den grønne patinaen. Et klassisk valg på spir, tårn og eldre bygg.</p>
+          <div class="egenskap-rad" id="metall-merker">
+            <span class="egenskap-merke">Lang levetid</span>
+            <span class="egenskap-merke">Levende patina</span>
+            <span class="egenskap-merke">Tradisjonsrikt</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">1959</div>
+        <div class="stripe-navn">Startet i en ombygd løe på Nesttun</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Alle metaller</div>
+        <div class="stripe-navn">Kobber, sink, stål, aluminium og mer</div>
+      </div>
+      <div>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Nettsiden oppgir rundt 20 medarbeidere, leadlisten 17. Verifiser tallet. -->
+        <div class="stripe-tall">Eget verksted</div>
+        <div class="stripe-navn">Kokstaddalen 6, med moderne maskinpark</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon historie" id="historie">
+    <div class="ramme">
+      <div class="historie-indre">
+        <div class="historie-tekst">
+          <p class="overtittel">Historien</p>
+          <h2>Fra løe på Nesttun til verksted på Kokstad</h2>
+          <p>
+            Verkstedet ble startet av <strong>Sigurd Opheim i 1959</strong>, i en ombygd løe på
+            Nesttun. Siden den gang har bedriften vokst med Bergen, og holder i dag til i egne
+            lokaler i Kokstaddalen med verksted og maskinpark under samme tak.
+          </p>
+          <p>
+            Faget er det samme som den gangen. Plater skal måles, kuttes, knekkes og falses,
+            og til slutt sitte nøyaktig der de skal på bygget. Forskjellen er verktøyene,
+            og alt vi har lært på veien.
+          </p>
+          <p>
+            I dag leverer Sigurd Opheim AS platearbeid og beslag til alt fra eneboliger til
+            store nærings- og fasadeprosjekter i bergensområdet.
+          </p>
+        </div>
+        <div class="historie-kort morkflate">
+          <div class="aarstall">1959</div>
+          <p class="aarstall-tekst">Grunnlagt av Sigurd Opheim</p>
+          <ul class="tidslinje">
+            <li><span class="punkt"></span>Startet i en ombygd løe på Nesttun</li>
+            <li><span class="punkt"></span>Flyttet til eget verksted i Kokstaddalen 6</li>
+            <li><span class="punkt"></span>Arbeider i alle typer metall, fra kobber til rustfritt stål</li>
+            <li><span class="punkt"></span>Leverer til bolig, næring og offentlige bygg</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Platearbeid fra første mål til ferdig montering</h2>
+        <p>Hele produksjonen skjer i eget verksted. Det gir kontroll på kvalitet, presisjon og leveringstid.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <svg viewBox="0 0 38 38" aria-hidden="true"><rect x="4" y="10" width="30" height="18" rx="2" fill="none" stroke="#1C3144" stroke-width="2.4"/><path d="M4 19 H34" stroke="#C1502E" stroke-width="2.4"/></svg>
+          <h3>Platearbeid</h3>
+          <p>Tilpassede plater og profiler i kobber, sink, stål og aluminium, formet etter tegning eller mal.</p>
+        </article>
+        <article class="tjeneste">
+          <svg viewBox="0 0 38 38" aria-hidden="true"><path d="M6 30 L32 8" stroke="#1C3144" stroke-width="2.4" stroke-linecap="round"/><path d="M6 8 L32 30" stroke="#C1502E" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <h3>Kutting og stansing</h3>
+          <p>Nøyaktig tilskjæring i maskinpark som håndterer både enkeltbeslag og større serier.</p>
+        </article>
+        <article class="tjeneste">
+          <svg viewBox="0 0 38 38" aria-hidden="true"><path d="M5 28 L19 28 L19 12 L33 12" fill="none" stroke="#1C3144" stroke-width="2.4" stroke-linejoin="round"/><circle cx="19" cy="28" r="3" fill="#C1502E"/></svg>
+          <h3>Knekking</h3>
+          <p>Skarpe, rette knekk som får beslaget til å passe perfekt mot bygget. Selve kjernen i faget.</p>
+        </article>
+        <article class="tjeneste">
+          <svg viewBox="0 0 38 38" aria-hidden="true"><path d="M8 30 C14 18 24 18 30 8" fill="none" stroke="#1C3144" stroke-width="2.4" stroke-linecap="round"/><circle cx="30" cy="8" r="4" fill="none" stroke="#C1502E" stroke-width="2.4"/></svg>
+          <h3>Sveising og lodding</h3>
+          <p>Tette og varige sammenføyninger, tilpasset metallet og bruksområdet.</p>
+        </article>
+        <article class="tjeneste">
+          <svg viewBox="0 0 38 38" aria-hidden="true"><path d="M4 32 L4 18 L19 8 L34 18 L34 32" fill="none" stroke="#1C3144" stroke-width="2.4" stroke-linejoin="round"/><path d="M12 32 L12 22 L26 22 L26 32" fill="none" stroke="#C1502E" stroke-width="2.4" stroke-linejoin="round"/></svg>
+          <h3>Fasade og tak</h3>
+          <p>Beslag, båndtekking og platekledning som beskytter bygget og gir det karakter.</p>
+        </article>
+        <article class="tjeneste">
+          <svg viewBox="0 0 38 38" aria-hidden="true"><path d="M10 34 L10 22 L6 22 L6 14 L16 14 L16 22 L12 22" fill="none" stroke="#1C3144" stroke-width="2.4" stroke-linejoin="round"/><path d="M22 14 L32 14 M27 9 L27 19 M22 26 L32 26 L32 34 L22 34 Z" fill="none" stroke="#C1502E" stroke-width="2.4" stroke-linejoin="round"/></svg>
+          <h3>Montering</h3>
+          <p>Egne montører følger arbeidet ut på bygget, slik at det som ble målt og produsert også sitter riktig.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva samarbeidspartnerne sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en byggherre eller entreprenør som har brukt Sigurd Opheim AS på et konkret prosjekt.»</p>
+        <p class="omtale-kilde">Navn og firma settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--solv)">Kontakt</p>
+        <h2>Har du et prosjekt som trenger beslag?</h2>
+        <p>
+          Send oss tegninger eller en beskrivelse, så kommer vi tilbake med forslag til
+          løsning og materialvalg. Vi hjelper deg gjerne med å velge riktig metall til
+          riktig sted.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="mailto:post@sigurd-opheim.no">Send e-post</a>
+          <a class="knapp knapp-sekundar" href="tel:+4755125012">Ring 55 12 50 12</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Sigurd Opheim AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#C5CDD6" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#C1502E"/></svg>
+          <span>Kokstaddalen 6, 5257 Kokstad</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#C5CDD6" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4755125012">55 12 50 12</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#C5CDD6" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#C1502E" stroke-width="1.6"/></svg>
+          <a href="mailto:post@sigurd-opheim.no">post@sigurd-opheim.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7" fill="none" stroke="#C5CDD6" stroke-width="1.6"/><path d="M10 6 L10 10 L13 12" fill="none" stroke="#C1502E" stroke-width="1.6" stroke-linecap="round"/></svg>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Verifiser åpningstidene med bedriften. -->
+          <span>Åpningstider settes inn her</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Sigurd Opheim AS</h3>
+        <p>Blikkenslagerverksted grunnlagt i 1959. Platearbeid, beslag og montering i alle typer metall, fra eget verksted på Kokstad.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Kokstaddalen 6, 5257 Kokstad</li>
+          <li><a href="tel:+4755125012">55 12 50 12</a></li>
+          <li><a href="mailto:post@sigurd-opheim.no">post@sigurd-opheim.no</a></li>
+          <li>Org.nr. 884 492 122</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#metaller">Metallvelgeren</a></li>
+          <li><a href="#historie">Historien</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4755125012">Ring 55 12 50 12</a>
+  <a class="epost" href="mailto:post@sigurd-opheim.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var metaller = {
+    kobber: {
+      navn: 'Kobber',
+      tekst: 'Lyst og blankt ved montering, mørkner med årene og kan til slutt få den grønne patinaen. Et klassisk valg på spir, tårn og eldre bygg.',
+      merker: ['Lang levetid', 'Levende patina', 'Tradisjonsrikt']
+    },
+    sink: {
+      navn: 'Sink',
+      tekst: 'Matt, grålig overflate som utvikler et beskyttende patinalag. Krever lite vedlikehold og er blitt et favorittvalg på moderne fasader.',
+      merker: ['Lite vedlikehold', 'Matt uttrykk', 'Moderne fasader']
+    },
+    lakkert: {
+      navn: 'Lakkert stål',
+      tekst: 'Leveres i mange farger og holder uttrykket over tid. Et kostnadseffektivt valg for tak, beslag og renner.',
+      merker: ['Fargevalg', 'Kostnadseffektivt', 'Allsidig']
+    },
+    rustfri: {
+      navn: 'Rustfritt stål',
+      tekst: 'Beholder overflaten år etter år og tåler tøft kystklima. Brukes der kravene til bestandighet er aller høyest.',
+      merker: ['Svært bestandig', 'Tåler kystklima', 'Blank overflate']
+    }
+  };
+
+  var chips = document.querySelectorAll('.chip');
+  var beslag = document.getElementById('beslag-flate');
+  var fals = document.getElementById('fals-flate');
+  var navnEl = document.getElementById('metall-navn');
+  var tekstEl = document.getElementById('metall-tekst');
+  var merkerEl = document.getElementById('metall-merker');
+
+  function velg(nokkel){
+    var m = metaller[nokkel];
+    if (!m) return;
+    beslag.setAttribute('fill', 'url(#grad-' + nokkel + ')');
+    fals.setAttribute('fill', 'url(#grad-' + nokkel + ')');
+    navnEl.textContent = m.navn;
+    tekstEl.textContent = m.tekst;
+    merkerEl.innerHTML = '';
+    for (var i = 0; i < m.merker.length; i++) {
+      var s = document.createElement('span');
+      s.className = 'egenskap-merke';
+      s.textContent = m.merker[i];
+      merkerEl.appendChild(s);
+    }
+    chips.forEach(function(c){
+      c.setAttribute('aria-pressed', c.getAttribute('data-metall') === nokkel ? 'true' : 'false');
+    });
+  }
+
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){ velg(c.getAttribute('data-metall')); });
+  });
+})();
+</script>
+
+</body>
+</html>
