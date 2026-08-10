@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<title>MCTY Eiendom | Nettside-prospekt (svart v3)</title>
+<title>MCTY Eiendom | Nettside-prospekt (video-hero v4)</title>
 <style>
   :root {
     --bakgrunn: #0B0A09;
@@ -99,6 +99,13 @@
     color: rgba(33,31,28,0.78); background: rgba(242,240,234,0.85); padding: 0.35rem 0.7rem; margin: 0.8rem;
   }
   .hero .foto { min-height: 420px; }
+  .hero-cine { position: relative; min-height: 82vh; display: flex; align-items: center; overflow: hidden; }
+  .hero-cine video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero-cine .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,10,9,0.78) 0%, rgba(11,10,9,0.5) 42%, rgba(11,10,9,0.9) 85%, #0B0A09 100%); }
+  .hero-cine .innhold { position: relative; z-index: 1; padding-top: 3.5rem; padding-bottom: 4.5rem; }
+  .hero-cine h1 { font-size: clamp(3rem, 7vw, 5.2rem); }
+  .hero-cine .under { font-size: 1.15rem; }
+  .hero-cine .video-knapp { position: absolute; z-index: 2; }
   .hero-video { position: relative; height: 500px; overflow: hidden; border: 1px solid var(--linje); background: #000; }
   @media (max-width: 900px) { .hero-video { height: 420px; } }
   .hero-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -227,7 +234,7 @@
 </head>
 <body>
 
-<div class="skisse-banner">Skisse v3 &middot; svart utgave &middot; Alle foto og tall i klammer er plassholdere &mdash; byttes med innhold fra @mctyeiendom og originalfiler</div>
+<div class="skisse-banner">Skisse v4 &middot; fullbredde video-hero &middot; Alle foto og tall i klammer er plassholdere &mdash; byttes med innhold fra @mctyeiendom og originalfiler</div>
 
 <div class="wrap">
   <header class="site">
@@ -311,24 +318,24 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div>
-      <span class="eyebrow">Eiendomsutvikling &middot; Hele Norge</span>
-      <h1 class="serif">Vi ser hva det kan&nbsp;bli.</h1>
-      <p class="under">MCTY Eiendom kjøper tomter og boliger med potensial, utvikler dem med håndverk &mdash; og selger eller leier ut. Dokumentert, prosjekt for prosjekt.</p>
-      <div class="ctaer">
-        <a class="btn btn--primar" href="#selg">Få en uforpliktende vurdering</a>
-        <a class="btn btn--ghost" href="#prosjekter">Se prosjektene</a>
-      </div>
-    </div>
-    <div class="hero-video">
-      <video autoplay muted loop playsinline preload="auto" aria-label="Film fra et av MCTYs prosjekter — hovedetasjen">
-        <source src="hero.mp4" type="video/mp4">
-      </video>
-      <button class="video-knapp" type="button" aria-label="Pause filmen">&#10074;&#10074;</button>
-    </div>
-  </section>
 </div>
+
+<section class="hero-cine">
+  <video autoplay muted loop playsinline preload="auto" aria-label="Film fra et av MCTYs prosjekter — hovedetasjen">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="overlay" aria-hidden="true"></div>
+  <div class="wrap innhold">
+    <span class="eyebrow">Eiendomsutvikling &middot; Hele Norge</span>
+    <h1 class="serif">Vi ser hva det kan&nbsp;bli.</h1>
+    <p class="under">MCTY Eiendom kjøper tomter og boliger med potensial, utvikler dem med håndverk &mdash; og selger eller leier ut. Dokumentert, prosjekt for prosjekt.</p>
+    <div class="ctaer">
+      <a class="btn btn--primar" href="#selg">Få en uforpliktende vurdering</a>
+      <a class="btn btn--ghost" href="#prosjekter">Se prosjektene</a>
+    </div>
+  </div>
+  <button class="video-knapp" type="button" aria-label="Pause filmen">&#10074;&#10074;</button>
+</section>
 
 <div class="proof">
   <div class="wrap">
@@ -568,12 +575,12 @@
         <li><a href="#">Personvern</a></li>
       </ul>
     </div>
-    <p class="jur">© MCTY Eiendom AS &middot; Skisse v3 (svart) &middot; Illustrasjonsflater er plassholdere og merkes «Illustrasjon» ved publisering &middot; Bygges med cookiefri analyse</p>
+    <p class="jur">© MCTY Eiendom AS &middot; Skisse v4 (video-hero) &middot; Illustrasjonsflater er plassholdere og merkes «Illustrasjon» ved publisering &middot; Bygges med cookiefri analyse</p>
   </div>
 </footer>
 
 <script>
-  var vid = document.querySelector('.hero-video video');
+  var vid = document.querySelector('.hero-cine video, .hero-video video');
   var knapp = document.querySelector('.video-knapp');
   if (vid && knapp) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
