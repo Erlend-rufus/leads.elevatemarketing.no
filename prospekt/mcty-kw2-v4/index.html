@@ -93,6 +93,7 @@
     display: flex; align-items: flex-end; min-height: 300px;
   }
   .foto--etter { background: linear-gradient(160deg, #CFC9BA 0%, #ABA894 55%, #86907C 100%); }
+  .foto--bilde { background-size: cover; background-position: center; }
   .foto--for { background: linear-gradient(160deg, #8E8574 0%, #746C5C 55%, #575142 100%); }
   .foto .merk {
     font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
@@ -201,6 +202,7 @@
     display: flex; align-items: center; justify-content: center;
     font-family: "Playfair Display", "Didot", Georgia, serif; font-size: 1.3rem; color: var(--sand-mork); flex-shrink: 0;
   }
+  .kontaktkort img.portrett { object-fit: cover; object-position: center 15%; }
   .kontaktkort strong { display: block; color: #211F1C; }
   .kontaktkort span { font-size: 0.85rem; color: #6E6A60; }
 
@@ -217,6 +219,7 @@
     display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;
     font-family: "Playfair Display", "Didot", Georgia, serif; font-size: 2.4rem; color: var(--sand);
   }
+  .person img.portrett { object-fit: cover; }
   .person strong { display: block; font-size: 1.05rem; color: var(--lys); }
   .person .rolle { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--note); }
   .person p { font-size: 0.88rem; margin: 0.6rem 0 0; }
@@ -359,8 +362,8 @@
     </div>
 
     <div class="sammenlign" style="--pos: 50%;">
-      <div class="foto foto--etter"><span class="merk">Etter: [prosjektnavn], originalfoto leveres</span></div>
-      <div class="lag-for"><div class="foto foto--for"><span class="merk">Før: samme motiv</span></div></div>
+      <div class="foto foto--bilde" style="background-image:url('etter.jpg');"><span class="merk">Etter</span></div>
+      <div class="lag-for"><div class="foto foto--bilde" style="background-image:url('for.jpg');"><span class="merk">Før</span></div></div>
       <input type="range" min="0" max="100" value="50" aria-label="Sammenlign før- og etter-bilde" />
       <div class="handtak" aria-hidden="true">⇤⇥</div>
     </div>
@@ -369,7 +372,7 @@
       <span class="fakta-linje serif" style="font-size:1.3rem; color:var(--lys);">[Prosjektnavn, f.eks. gatenavn]</span>
       <span class="fakta-linje">[Boligtype] &middot; [Totalrenovering] &middot; Kjøpt [år] → Solgt [år] &middot; [sted]</span>
     </div>
-    <span class="ph-note">Case hentes fra @mctyeiendom. Dra i glideren (eller bruk piltaster) for før/etter</span>
+    <span class="ph-note">Dra i glideren (eller bruk piltaster) for å sammenligne før og etter</span>
 
     <div class="case-grid">
       <article class="case-kort">
@@ -438,7 +441,7 @@
           <li><span class="pnr">3</span><p><strong>Tilbud og trygt oppgjør</strong>Direktekjøp, opsjonsavtale eller samarbeidsprosjekt. Oppgjør via megler/advokat.</p></li>
         </ol>
         <div class="kontaktkort">
-          <div class="portrett" aria-hidden="true">AM</div>
+          <img class="portrett" src="anders.jpg" alt="">
           <div>
             <strong>Anders McIntyre</strong>
             <span class="ph">[Tittel &middot; direkte e-post / telefon. Plassholder]</span>
@@ -471,13 +474,13 @@
       </div>
       <div class="folk">
         <div class="person">
-          <div class="portrett" aria-hidden="true">AM</div>
+          <img class="portrett" src="anders.jpg" alt="Anders McIntyre">
           <strong>Anders McIntyre</strong>
           <span class="rolle ph">[Rolle. Plassholder]</span>
           <p class="ph">[Kort biografi: bakgrunn, fag, antall prosjekter. Plassholder.]</p>
         </div>
         <div class="person">
-          <div class="portrett" aria-hidden="true">MM</div>
+          <img class="portrett" src="marie.jpg" alt="Marie McIntyre">
           <strong>Marie McIntyre</strong>
           <span class="rolle ph">[Rolle. Plassholder]</span>
           <p class="ph">[Kort biografi: bakgrunn, fag, ansvarsområde. Plassholder.]</p>
