@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Andersen og Dingsør | Blikkenslager og taktekker på Sotra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@600;700;800&family=Red+Hat+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grafitt:#23272B;
+  --grafitt-lys:#2E3338;
+  --kobber:#B87333;
+  --kobber-lys:#D89258;
+  --sink:#AEB6BD;
+  --tekst:#E9ECEE;
+  --dus:#9AA3AB;
+  --strek:#3A4046;
+  --regn:#6FA8C9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Red Hat Text',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--grafitt);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Big Shoulders','Arial Narrow',sans-serif;line-height:1.05;font-weight:700;letter-spacing:.01em}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--kobber-lys);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:#1A1D20;color:var(--dus);font-size:14px;padding:7px 0;border-bottom:1px solid var(--strek)}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:var(--kobber-lys);text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(35,39,43,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.merke{text-decoration:none;line-height:1}
+.merke b{font-family:'Big Shoulders',sans-serif;font-weight:800;font-size:24px;letter-spacing:.04em;color:#fff}
+.merke b span{color:var(--kobber-lys)}
+.merke small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dus);font-weight:600;margin-top:2px}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px;color:var(--tekst)}
+nav.hoved a:hover{color:var(--kobber-lys)}
+.ring-knapp{background:var(--kobber);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:4px;white-space:nowrap}
+.ring-knapp:hover{background:#9A5D26}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,#1A1D20 0%,var(--grafitt) 70%);border-bottom:1px solid var(--strek)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:64px 20px 72px}
+.hero h1{font-size:clamp(38px,5.6vw,66px);color:#fff;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--kobber-lys)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:4px;font-size:17px}
+.knapp-primar{background:var(--kobber);color:#fff}
+.knapp-primar:hover{background:#9A5D26}
+.knapp-sekundar{background:transparent;color:var(--tekst);border:2px solid var(--strek)}
+.knapp-sekundar:hover{border-color:var(--kobber-lys);color:var(--kobber-lys)}
+.hero-kort{background:var(--grafitt-lys);border:1px solid var(--strek);border-radius:8px;padding:30px 28px}
+.hero-kort h2{font-family:'Red Hat Text',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--kobber-lys);font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid var(--strek)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:15px;width:14px;height:9px;background:var(--kobber);clip-path:polygon(0 100%,50% 0,100% 100%)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:#1A1D20;border-bottom:1px solid var(--strek)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:var(--kobber-lys);font-size:15px}
+.trust span{font-size:13.5px;color:var(--dus)}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:76px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--kobber-lys)}
+.seksjonstittel h2{font-size:clamp(30px,4vw,46px);color:#fff;margin-top:8px;text-transform:uppercase}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--grafitt-lys);border:1px solid var(--strek);border-top:4px solid var(--kobber);border-radius:6px;padding:26px 24px}
+.tjeneste h3{font-size:24px;color:#fff;margin-bottom:8px;text-transform:uppercase}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Regn-seksjon */
+.regn-seksjon{background:#1A1D20;border-top:1px solid var(--strek);border-bottom:1px solid var(--strek)}
+.regn-flex{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.hus-ramme{background:linear-gradient(180deg,#22262B 0%,#1D2126 100%);border:1px solid var(--strek);border-radius:10px;padding:24px 16px 10px;text-align:center;position:relative;overflow:hidden}
+.hus-ramme figcaption{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dus);font-weight:700;padding:10px 0 8px}
+.regndraape{stroke:var(--regn);stroke-width:2.5;stroke-linecap:round;opacity:0}
+.regner .regndraape{opacity:.7;animation:fall 1.1s linear infinite}
+@keyframes fall{
+  from{transform:translateY(-40px)}
+  to{transform:translateY(320px)}
+}
+.kobberdel{stroke:#6E5138;transition:stroke .4s,filter .4s}
+.regner .kobberdel{stroke:var(--kobber-lys);filter:drop-shadow(0 0 6px rgba(216,146,88,.55))}
+.vannvei{stroke:var(--regn);stroke-width:3;stroke-dasharray:8 8;fill:none;opacity:0;transition:opacity .4s}
+.regner .vannvei{opacity:.85;animation:renn 1s linear infinite}
+@keyframes renn{
+  from{stroke-dashoffset:16}
+  to{stroke-dashoffset:0}
+}
+.merkelapp{opacity:0;transition:opacity .4s;font-family:'Red Hat Text',sans-serif;font-weight:700;font-size:13px;fill:var(--kobber-lys)}
+.regner .merkelapp{opacity:1}
+.regn-knapp{font-family:'Red Hat Text',sans-serif;font-weight:700;font-size:16px;padding:13px 24px;border-radius:4px;border:none;background:var(--kobber);color:#fff;cursor:pointer;margin-top:6px}
+.regn-knapp:hover{background:#9A5D26}
+.regn-knapp[aria-pressed="true"]{background:var(--regn);color:#0F2733}
+.regn-panel{background:var(--grafitt-lys);border:1px solid var(--strek);border-left:4px solid var(--kobber);border-radius:8px;padding:26px 28px}
+.regn-panel h3{font-size:26px;color:#fff;margin-bottom:10px;text-transform:uppercase}
+.regn-panel p{color:var(--dus);font-size:15.5px}
+.regn-panel ul{list-style:none;margin-top:14px}
+.regn-panel li{padding:6px 0 6px 24px;position:relative;color:#C6CDD3;font-size:15px}
+.regn-panel li::before{content:"";position:absolute;left:0;top:13px;width:12px;height:2.5px;background:var(--kobber-lys)}
+@media (max-width:900px){.regn-flex{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--grafitt-lys);border:1px solid var(--strek);border-radius:6px;padding:26px 24px}
+.hvorfor-kort h3{font-size:23px;color:#fff;margin-bottom:8px;text-transform:uppercase}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--grafitt-lys);border-radius:6px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:"0" counter(steg);font-family:'Big Shoulders',sans-serif;font-weight:800;font-size:32px;color:var(--kobber-lys);display:block;margin-bottom:8px}
+.steg h3{font-size:21px;color:#fff;margin-bottom:6px;text-transform:uppercase}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--grafitt-lys);border:1px dashed var(--kobber);border-radius:6px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:600;color:#fff;break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:14px;height:9px;background:var(--kobber);clip-path:polygon(0 100%,50% 0,100% 100%)}
+.mester-kort{background:var(--grafitt-lys);border:1px solid var(--strek);border-radius:8px;padding:30px 28px}
+.mester-kort h3{color:var(--kobber-lys);font-size:24px;margin-bottom:10px;text-transform:uppercase}
+.mester-kort p{font-size:15.5px;color:var(--dus)}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--grafitt-lys);border:1px solid var(--strek);border-radius:6px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--kobber-lys);line-height:1;font-weight:500}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(150deg,#1A1D20,#3A2A1A);text-align:center;border-top:1px solid var(--strek)}
+.slutt-cta h2{font-size:clamp(30px,4.2vw,50px);color:#fff;text-transform:uppercase}
+.slutt-cta p{color:var(--dus);max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Big Shoulders',sans-serif;font-size:clamp(34px,5.4vw,52px);font-weight:800;color:var(--kobber-lys);text-decoration:none;display:inline-block;margin-bottom:14px;letter-spacing:.03em}
+.slutt-cta .merknad{font-size:14px;color:var(--dus)}
+
+/* Footer */
+footer{background:#1A1D20;color:var(--dus);padding:48px 0 110px;font-size:15px;border-top:1px solid var(--strek)}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:var(--kobber-lys)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid var(--strek);margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#1A1D20;border-top:2px solid var(--kobber);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:4px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--kobber);color:#fff}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid var(--strek)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+<!-- PLACEHOLDER: telefonnummeret 932 49 512 forekommer 7 steder (inkl. tel:-lenker). Arket oppgir 932 52 952. Bekreftes med kunden og byttes overalt samtidig. -->
+<div class="topplinje">
+  <div class="wrap">
+    <span>Nygårdsvegen 157, Brattholmen på Sotra</span>
+    <span>Ring: <a href="tel:+4793249512">932 49 512</a><!-- PLACEHOLDER: katalognummer (1881/180.no); arket oppgir ogsaa 932 52 952, bekreftes med kunden --></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>ANDERSEN <span>&amp; DINGSØR</span></b>
+      <small>Blikkenslager og taktekker</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#regn">Regntesten</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4793249512">932 49 512</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Vann skal <em>ledes,</em> ikke stoppes</h1>
+      <p class="ingress">Andersen og Dingsør er mesterbedrift i kobber- og blikkenslagerfaget, med base på Sotra. Vi tekker tak og former beslagene som leder vestlandsregnet dit det skal: vekk fra huset ditt.</p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4793249512">Ring 932 49 512</a>
+        <a class="knapp knapp-sekundar" href="#regn">Send regnet på taket</a>
+      </div>
+    </div>
+    <div class="hero-kort">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Mesterbedrift i kobber- og blikkenslagerfaget</li>
+        <li>Taktekking og alt av beslag</li>
+        <li>Base på Brattholmen, midt på Sotra</li>
+        <li>Oppdrag for private og proffkunder<!-- PLACEHOLDER: kundetyper bekreftes med kunden --></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Mesterbedrift</b><span>Oppført i Mesterregisteret</span></div>
+    <div><b>Stort faglag</b><span>Kapasitet til store tak<!-- PLACEHOLDER: ansattetall spriker i kildene (17/23), bekreftes med kunden --></span></div>
+    <div><b>Tak og beslag</b><span>To fag under samme hjelm</span></div>
+    <div><b>Brattholmen</b><span>Midt i Øygarden kommune</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Alt som holder været ute</h2>
+      <p>Taktekking og blikkenslagerarbeid henger sammen: Tekkingen holder tett på flatene, beslagene tar overgangene der vannet vil inn.<!-- PLACEHOLDER: tjenestelisten bekreftes med kunden --></p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><h3>Taktekking</h3><p>Nye tak og omtekking av gamle, utført av fagfolk som kjenner vestlandsværet.</p></div>
+      <div class="tjeneste"><h3>Beslag</h3><p>Pipebeslag, vindusbeslag, gesimser og alle overgangene der taket møter resten av huset.</p></div>
+      <div class="tjeneste"><h3>Takrenner og nedløp</h3><p>Renner og nedløp som er dimensjonert for regnmengdene her ute, montert så de holder.</p></div>
+      <div class="tjeneste"><h3>Kobberarbeid</h3><p>Beslag og detaljer i kobber, faget vi har mesterbrev i. Vakkert nytt, vakrere med årene.</p></div>
+      <div class="tjeneste"><h3>Reparasjon</h3><p>Lekkasjer, løse beslag og renner som har gitt seg. Vi finner feilen og utbedrer den.</p></div>
+      <div class="tjeneste"><h3>Proffoppdrag</h3><p>Tak- og beslagarbeid for borettslag, byggefirmaer og næringsbygg.<!-- PLACEHOLDER: erstattes med ekte innhold --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="regn" class="regn-seksjon">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Send regnet på taket</h2>
+      <p>Et tett tak er bare halve jobben. Skru på regnet og se hvordan beslag, renner og nedløp leder vannet trygt forbi huset.</p>
+    </div>
+    <div class="regn-flex">
+      <figure class="hus-ramme" id="hus-ramme">
+        <svg viewBox="0 0 560 340" role="img" aria-label="Hus i regnvær der pipebeslag, takrenner og nedløp lyser opp og leder vannet bort">
+          <g aria-hidden="true">
+            <line class="regndraape" x1="70" y1="10" x2="66" y2="26" style="animation-delay:0s"/>
+            <line class="regndraape" x1="140" y1="-20" x2="136" y2="-4" style="animation-delay:.3s"/>
+            <line class="regndraape" x1="210" y1="0" x2="206" y2="16" style="animation-delay:.6s"/>
+            <line class="regndraape" x1="280" y1="-30" x2="276" y2="-14" style="animation-delay:.15s"/>
+            <line class="regndraape" x1="350" y1="-10" x2="346" y2="6" style="animation-delay:.45s"/>
+            <line class="regndraape" x1="420" y1="-25" x2="416" y2="-9" style="animation-delay:.75s"/>
+            <line class="regndraape" x1="490" y1="5" x2="486" y2="21" style="animation-delay:.25s"/>
+            <line class="regndraape" x1="105" y1="-40" x2="101" y2="-24" style="animation-delay:.55s"/>
+            <line class="regndraape" x1="245" y1="-45" x2="241" y2="-29" style="animation-delay:.85s"/>
+            <line class="regndraape" x1="385" y1="-50" x2="381" y2="-34" style="animation-delay:.05s"/>
+            <line class="regndraape" x1="455" y1="-40" x2="451" y2="-24" style="animation-delay:.65s"/>
+            <line class="regndraape" x1="175" y1="-55" x2="171" y2="-39" style="animation-delay:.4s"/>
+          </g>
+          <line x1="30" y1="315" x2="530" y2="315" stroke="#3A4046" stroke-width="3"/>
+          <rect x="150" y="185" width="260" height="130" fill="#2E3338" stroke="#454C53" stroke-width="2"/>
+          <rect x="255" y="235" width="50" height="80" fill="#23272B" stroke="#454C53" stroke-width="2"/>
+          <rect x="180" y="215" width="44" height="40" fill="#1D2933" stroke="#454C53" stroke-width="2"/>
+          <rect x="336" y="215" width="44" height="40" fill="#1D2933" stroke="#454C53" stroke-width="2"/>
+          <path d="M132,190 L280,85 L428,190 Z" fill="#383F46" stroke="#454C53" stroke-width="2"/>
+          <rect x="330" y="98" width="34" height="60" fill="#2E3338" stroke="#454C53" stroke-width="2"/>
+          <path class="kobberdel" d="M326,128 L368,128" fill="none" stroke-width="7" stroke-linecap="round"/>
+          <path class="kobberdel" d="M128,190 L432,190" fill="none" stroke-width="7" stroke-linecap="round"/>
+          <path class="kobberdel" d="M432,190 L432,312" fill="none" stroke-width="7" stroke-linecap="round"/>
+          <path class="vannvei" d="M280,95 L420,185 L428,186 L428,308 L470,308" aria-hidden="true"/>
+          <text class="merkelapp" x="382" y="120">Pipebeslag</text>
+          <text class="merkelapp" x="60" y="182">Takrenne</text>
+          <text class="merkelapp" x="445" y="255">Nedløp</text>
+        </svg>
+        <figcaption id="regn-status">Oppholdsvær</figcaption>
+        <button type="button" class="regn-knapp" id="regn-knapp" aria-pressed="false">Skru på regnet</button>
+      </figure>
+      <div class="regn-panel" aria-live="polite">
+        <h3 id="regn-tittel">Huset i oppholdsvær</h3>
+        <p id="regn-tekst">Ser rolig ut. Men her ute kommer regnet sjelden rett ovenfra, og det kommer ofte. Skru på regnet og se hvilke deler av huset som gjør jobben.</p>
+        <ul>
+          <li>Pipebeslaget tetter overgangen mellom pipe og tak</li>
+          <li>Takrennen samler alt vannet fra takflaten</li>
+          <li>Nedløpet leder det trygt ned og vekk fra grunnmuren</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>To fag, ett ansvar</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Mesterbrev i bunn</h3><p>Vi er mesterbedrift i kobber- og blikkenslagerfaget. Det er dokumentert fagkompetanse, ikke bare lang erfaring.</p></div>
+      <div class="hvorfor-kort"><h3>Tak og beslag samlet</h3><p>Lekkasjer oppstår oftest i overgangene. Når samme firma har ansvar for både tekking og beslag, blir ingen overgang glemt.</p></div>
+      <div class="hvorfor-kort"><h3>Bygget for vestlandsvær</h3><p>Vi jobber på Sotra hele året. Løsningene våre er valgt for vind, salt luft og regn i mengder.</p></div>
+      <div class="hvorfor-kort"><h3>Kapasitet når det gjelder</h3><p>Med et stort faglag tar vi både eneboligen og de større takprosjektene, uten at fremdriften stopper.<!-- PLACEHOLDER: ansattetall spriker i kildene (17/23), bekreftes med kunden --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra takstige til tett tak</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ta kontakt</h3><p>Ring og beskriv taket eller problemet, gjerne med bilder.</p></div>
+      <div class="steg"><h3>Befaring</h3><p>Vi ser på taket, gjerne fra stigen, og vurderer tilstanden ærlig.</p></div>
+      <div class="steg"><h3>Tilbud</h3><p>Du får en tydelig pris og en plan som tar høyde for været.</p></div>
+      <div class="steg"><h3>Utførelse</h3><p>Vi gjør jobben fagmessig og går over alt før vi rigger ned.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Sotra og Bergensområdet</h2><!-- PLACEHOLDER: dekningsomraade bekreftes med kunden -->
+          <p>Base på Brattholmen, kort vei til hele Øygarden og Bergen.</p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Brattholmen og Straume</li>
+          <li>Ågotnes</li>
+          <li>Skogsvåg og Sund</li>
+          <li>Rong og Nordre Øygarden</li>
+          <li>Askøy</li>
+          <li>Bergen</li>
+        </ul>
+      </div>
+      <div class="mester-kort">
+        <h3>Hva betyr mesterbedrift?</h3>
+        <p>Mesterbrevet er håndverksfagenes høyeste utdanning. Når du velger en mesterbedrift i kobber- og blikkenslagerfaget, vet du at arbeidet ledes av folk med dokumentert kompetanse, og at bedriften står inne for det som leveres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Taket mitt lekker. Hvor fort kan dere komme?</summary>
+      <div class="svar">Ring oss med en gang, så finner vi raskeste mulighet. En lekkasje blir sjelden mindre av å vente, og en midlertidig sikring kan ofte gjøres raskt.</div>
+    </details>
+    <details>
+      <summary>Tar dere små jobber, som et beslag eller en takrenne?</summary>
+      <div class="svar">Ja. Et enkelt pipebeslag eller en renne som har løsnet, er også en jobb for oss.</div>
+    </details>
+    <details>
+      <summary>Hva er fordelen med kobber?</summary>
+      <div class="svar">Kobber er svært holdbart, krever lite vedlikehold og utvikler en patina som mange synes bare blir finere med årene. Vi hjelper deg å vurdere kobber mot andre materialer for ditt prosjekt.</div>
+    </details>
+    <details>
+      <summary>Jobber dere for borettslag og bedrifter?</summary>
+      <div class="svar">Ja, vi tar tak- og beslagarbeid for både private, borettslag og næringskunder.<!-- PLACEHOLDER: kundetyper bekreftes med kunden --></div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris på en takjobb?</summary>
+      <div class="svar">Ring 932 49 512 og beskriv taket. Vi tar en befaring før vi gir pris, slik at tilbudet stemmer med det taket faktisk trenger.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta" id="kontakt">
+  <div class="wrap">
+    <h2>Regnet gir seg ikke. Taket bør holde.</h2>
+    <p>Ring oss for en ærlig vurdering av taket ditt, før høststormene tar vurderingen for deg.</p>
+    <a class="stor-tel" href="tel:+4793249512">932 49 512</a>
+    <p class="merknad">[E-postadresse legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Andersen og Dingsør AS</h3>
+        <ul>
+          <li>Nygårdsvegen 157</li>
+          <li>5350 Brattholmen</li>
+          <li>Org.nr 984 191 995</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4793249512">932 49 512</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Taktekking</a></li>
+          <li><a href="#tjenester">Beslag</a></li>
+          <li><a href="#tjenester">Takrenner og nedløp</a></li>
+          <li><a href="#tjenester">Kobberarbeid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Andersen og Dingsør AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar">
+  <a class="m-ring" href="tel:+4793249512">Ring 932 49 512</a>
+  <a class="m-mer" href="#regn">Prøv regntesten</a>
+</div>
+
+<script>
+(function () {
+  var knapp = document.getElementById('regn-knapp');
+  var ramme = document.getElementById('hus-ramme');
+  var status = document.getElementById('regn-status');
+  var tittel = document.getElementById('regn-tittel');
+  var tekst = document.getElementById('regn-tekst');
+  var regner = false;
+
+  knapp.addEventListener('click', function () {
+    regner = !regner;
+    ramme.classList.toggle('regner', regner);
+    knapp.setAttribute('aria-pressed', String(regner));
+    knapp.textContent = regner ? 'Skru av regnet' : 'Skru på regnet';
+    status.textContent = regner ? 'Vestlandsregn' : 'Oppholdsvær';
+    if (regner) {
+      tittel.textContent = 'Nå jobber beslagene';
+      tekst.textContent = 'Følg vannet: fra takflaten, forbi pipebeslaget, ned i rennen og ut gjennom nedløpet. Hver overgang er formet i metall for at vannet aldri skal finne veien inn.';
+    } else {
+      tittel.textContent = 'Huset i oppholdsvær';
+      tekst.textContent = 'Ser rolig ut. Men her ute kommer regnet sjelden rett ovenfra, og det kommer ofte. Skru på regnet og se hvilke deler av huset som gjør jobben.';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
