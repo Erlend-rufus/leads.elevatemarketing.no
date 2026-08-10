@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Blikkenslager Vidar Haugjord | Tak og beslag i Øygarden og Bergen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;600;700&family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --patina:#3E9B85;
+  --patina-dyp:#20574A;
+  --kobber:#B87333;
+  --kobber-lys:#D89258;
+  --krem:#FAF7F1;
+  --hvit:#FFFFFF;
+  --tekst:#2C332F;
+  --dus:#67716C;
+  --strek:#E3DDD1;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Cabin',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--krem);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Spectral',Georgia,serif;line-height:1.15;font-weight:600}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1110px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--kobber);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--patina-dyp);color:#C8DAD4;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:var(--kobber-lys);text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--krem);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.1}
+.merke b{font-family:'Spectral',serif;font-weight:700;font-size:20px;color:var(--patina-dyp)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--kobber);font-weight:700;font-family:'Cabin',sans-serif}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px}
+nav.hoved a:hover{color:var(--kobber)}
+.ring-knapp{background:var(--patina-dyp);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:5px;white-space:nowrap}
+.ring-knapp:hover{background:#164137}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 72px}
+.hero h1{font-size:clamp(31px,4.4vw,50px);color:var(--patina-dyp)}
+.hero h1 em{font-style:italic;color:var(--kobber)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:5px;font-size:17px}
+.knapp-primar{background:var(--patina-dyp);color:#fff}
+.knapp-primar:hover{background:#164137}
+.knapp-sekundar{background:transparent;color:var(--patina-dyp);border:2px solid var(--patina-dyp)}
+.knapp-sekundar:hover{background:var(--patina-dyp);color:#fff}
+.hero-kort{background:var(--patina-dyp);color:#E7F0EC;border-radius:8px;padding:30px 28px}
+.hero-kort h2{font-family:'Cabin',sans-serif;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--kobber-lys);font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:16px;width:15px;height:8px;border-left:3px solid var(--kobber-lys);border-bottom:3px solid var(--kobber-lys);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:var(--patina-dyp);color:#C8DAD4}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:#fff;font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-family:'Cabin',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--kobber)}
+.seksjonstittel h2{font-size:clamp(27px,3.5vw,40px);color:var(--patina-dyp);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:8px;padding:26px 24px;border-top:4px solid var(--kobber)}
+.tjeneste h3{font-size:20px;color:var(--patina-dyp);margin-bottom:8px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Patina-tidslinjen */
+.patina-seksjon{background:var(--patina-dyp);color:#E7F0EC}
+.patina-seksjon .seksjonstittel h2{color:#fff}
+.patina-seksjon .seksjonstittel p{color:#9DB8AF}
+.patina-flex{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.tak-ramme{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:28px 20px 16px;text-align:center}
+.tak-ramme figcaption{font-family:'Cabin',sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#9DB8AF;font-weight:700;padding:12px 0 8px}
+#kobbertak,#kobberspir{transition:fill .3s linear}
+.aar-verdi{font-family:'Spectral',serif;font-weight:700;font-size:34px;color:#fff}
+.aar-verdi small{font-size:16px;color:#9DB8AF;font-weight:600;font-family:'Cabin',sans-serif}
+.aar-slider{width:100%;max-width:420px;accent-color:var(--kobber-lys);height:34px;cursor:pointer}
+.patina-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-left:4px solid var(--kobber);border-radius:8px;padding:26px 28px}
+.patina-panel h3{font-size:23px;color:#fff;margin-bottom:10px}
+.patina-panel p{color:#C8DAD4;font-size:15.5px}
+.patina-fot{margin-top:20px;font-size:14px;color:#9DB8AF;max-width:74ch}
+@media (max-width:900px){.patina-flex{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:8px;padding:26px 24px}
+.hvorfor-kort h3{font-size:20px;color:var(--patina-dyp);margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:#EFEAE0}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:8px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:counter(steg);font-family:'Spectral',serif;font-weight:700;font-size:32px;color:var(--kobber);display:block;margin-bottom:6px}
+.steg h3{font-size:18px;color:var(--patina-dyp);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--kobber);border-radius:8px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:600;color:var(--patina-dyp);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:13px;height:13px;border-radius:50%;background:var(--kobber)}
+.historie-kort{background:var(--patina-dyp);color:#E7F0EC;border-radius:8px;padding:30px 28px}
+.historie-kort h3{color:var(--kobber-lys);font-size:22px;margin-bottom:10px}
+.historie-kort p{font-size:15.5px;color:#C8DAD4}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:8px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--patina-dyp);list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Spectral',serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--kobber);line-height:1}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(150deg,#164137,var(--patina-dyp));color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,40px);color:#fff}
+.slutt-cta p{color:#9DB8AF;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Spectral',serif;font-size:clamp(30px,5vw,46px);font-weight:700;color:var(--kobber-lys);text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px}
+.slutt-cta .merknad a{color:var(--kobber-lys)}
+
+/* Footer */
+footer{background:#164137;color:#9DB8AF;padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:var(--kobber-lys)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid #235349;margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#164137;border-top:2px solid var(--kobber);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:5px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--kobber);color:#fff}
+.mobil-bar .m-post{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Møllestykket 21, Kolltveit på Sotra</span>
+    <span>Ring: <a href="tel:+4793254953">932 54 953</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>Blikkenslager Vidar Haugjord</b>
+      <small>Tak og beslag, Sotra</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#patina">Kobberet</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4793254953">932 54 953</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Håndverk som blir <em>vakrere med årene</em></h1>
+      <p class="ingress">Blikkenslager Vidar Haugjord holder til på Kolltveit og utfører tak- og beslagarbeid for private og bedrifter i Øygarden og Bergen. Fra pipebeslag og takrenner til taksikring og ventilasjon.</p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4793254953">Ring 932 54 953</a>
+        <a class="knapp knapp-sekundar" href="#patina">Se kobberet eldes</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Blikkenslagerfirma med lang fartstid<!-- PLACEHOLDER: etablert 1982 iflg. kartleggingen, bekreftes med kunden --></li>
+        <li>Base på Kolltveit, midt i Øygarden</li>
+        <li>Tak, beslag, renner og taksikring</li>
+        <li>Oppdrag for private og bedrifter</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Lang fartstid</b><span>Faget i generasjoner<!-- PLACEHOLDER: historikk bekreftes med kunden --></span></div>
+    <div><b>Kolltveit, Sotra</b><span>Lokale i Øygarden</span></div>
+    <div><b>Bredt fagfelt</b><span>Fra beslag til ventilasjon</span></div>
+    <div><b>Privat og bedrift</b><span>Små og store oppdrag</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Alt av blikkenslagerarbeid</h2>
+      <p>Vi former, monterer og sikrer metallet som beskytter huset ditt.</p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><h3>Taktekking</h3><p>Tekking og omlegging av tak, utført for vestlandsforhold.</p></div>
+      <div class="tjeneste"><h3>Pipebeslag og beslag</h3><p>Beslagene som tetter overgangene der vannet prøver seg inn.</p></div>
+      <div class="tjeneste"><h3>Takrenner</h3><p>Renner og nedløp som samler og leder regnet trygt vekk fra huset.</p></div>
+      <div class="tjeneste"><h3>Taksikring og snøfangere</h3><p>Sikring som beskytter folk, inngangspartier og takrenner om vinteren.</p></div>
+      <div class="tjeneste"><h3>Ventilasjon</h3><p>Ventilasjonshetter og gjennomføringer, montert tett og riktig.</p></div>
+      <div class="tjeneste"><h3>Stigtrinn og fasade</h3><p>Stigtrinn for trygg adkomst og fasadearbeid som fullfører helheten.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="patina" class="patina-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Kobber teller ikke år, det samler dem</h2>
+      <p>Nytt kobber skinner. Så mørkner det, og med årene utvikler det den grønne patinaen som pryder kirkespir og bygårder. Dra i tidslinjen og se det skje.</p>
+    </div>
+    <div class="patina-flex">
+      <figure class="tak-ramme">
+        <svg viewBox="0 0 460 250" role="img" aria-label="Tak med kobberbeslag og spir som endrer farge fra blankt kobber til groenn patina naar aarene gaar">
+          <line x1="30" y1="228" x2="430" y2="228" stroke="#2E6458" stroke-width="3"/>
+          <rect x="120" y="140" width="220" height="88" fill="#33453F" stroke="#48605A" stroke-width="2"/>
+          <rect x="205" y="172" width="50" height="56" fill="#22332E" stroke="#48605A" stroke-width="2"/>
+          <path id="kobbertak" d="M100,148 L230,58 L360,148 L338,148 L230,74 L122,148 Z" fill="#C87533"/>
+          <path d="M100,148 L230,58 L360,148" fill="none" stroke="#1A2A26" stroke-width="3"/>
+          <rect id="kobberspir" x="222" y="30" width="16" height="34" rx="3" fill="#C87533"/>
+          <circle cx="230" cy="26" r="7" fill="#1A2A26"/>
+        </svg>
+        <div class="aar-verdi"><span id="aar-tall">0</span> <small>år på taket</small></div>
+        <div>
+          <label for="aar-slider" style="display:block;font-size:13.5px;color:#9DB8AF;margin:10px 0 2px">Dra for å la årene gå</label>
+          <input type="range" id="aar-slider" class="aar-slider" min="0" max="60" value="0" step="1" aria-valuetext="0 år">
+        </div>
+        <figcaption>Kobberbeslag og spir, fulgt gjennom tiårene</figcaption>
+      </figure>
+      <div class="patina-panel" aria-live="polite">
+        <h3 id="patina-tittel">Nytt og blankt</h3>
+        <p id="patina-tekst">Nylagt kobber har en varm, blank glød. Allerede nå er metallet i gang med å danne det beskyttende laget som gjør at det holder i generasjoner.</p>
+      </div>
+    </div>
+    <p class="patina-fot">Patinaen er ikke slitasje, men kobberets egen beskyttelse: et lag som gjør metallet nesten vedlikeholdsfritt. Derfor står kobberarbeid fra forrige århundre fortsatt på tak rundt Bergen.</p>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Fag som er bygget for å vare</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Materialer med lang horisont</h3><p>Vi jobber med metaller som måler levetiden i tiår. Da må håndverket gjøres deretter, første gang.</p></div>
+      <div class="hvorfor-kort"><h3>Lokale i Øygarden</h3><p>Fra Kolltveit er det kort vei til hele Sotra og videre til Bergen. Vi kjenner været beslagene skal tåle.</p></div>
+      <div class="hvorfor-kort"><h3>Hele taket, ett ansvar</h3><p>Tekking, beslag, renner og sikring henger sammen. Hos oss har helheten ett telefonnummer.</p></div>
+      <div class="hvorfor-kort"><h3>Ryddig og ærlig</h3><p>Tydelig pris før vi starter, og ærlige råd om hva taket faktisk trenger, og hva det ikke trenger.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra befaring til ferdig tak</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ta kontakt</h3><p>Ring eller send e-post og beskriv jobben, gjerne med bilder.</p></div>
+      <div class="steg"><h3>Befaring</h3><p>Vi ser på taket og vurderer tilstand og løsning.</p></div>
+      <div class="steg"><h3>Tilbud</h3><p>Du får en tydelig pris før vi setter i gang.</p></div>
+      <div class="steg"><h3>Utførelse</h3><p>Vi utfører fagmessig og rydder etter oss.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Øygarden og Bergen</h2>
+          <p>Base på Kolltveit, oppdrag i Bergen og omegn for både privat- og bedriftsmarkedet.</p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Kolltveit og Straume</li>
+          <li>Ågotnes</li>
+          <li>Skogsvåg og Sund</li>
+          <li>Rong og Nordre Øygarden</li>
+          <li>Askøy</li>
+          <li>Bergen</li>
+        </ul>
+      </div>
+      <div class="historie-kort morkflate">
+        <h3>Et navn å kjenne igjen</h3>
+        <p>Blikkenslager Vidar Haugjord har vært et begrep på Sotra i en mannsalder.<!-- PLACEHOLDER: etablert 1982 iflg. kartleggingen, historikk bekreftes med kunden --> Håndverket føres videre med samme krav til utførelse som navnet er bygget på.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Taket lekker. Hva gjør jeg?</summary>
+      <div class="svar">Ring oss på 932 54 953 med en gang. En midlertidig sikring kan ofte ordnes raskt, før den varige utbedringen planlegges.</div>
+    </details>
+    <details>
+      <summary>Bør jeg velge kobber eller lakkert stål?</summary>
+      <div class="svar">Begge er gode valg til ulike hus og budsjetter. Kobber koster mer, men er nesten vedlikeholdsfritt og eldes vakkert. Vi hjelper deg å vurdere hva som passer.</div>
+    </details>
+    <details>
+      <summary>Trenger taket mitt snøfangere?</summary>
+      <div class="svar">Faller snøen mot inngang, gangvei eller parkering, er svaret som regel ja. Vi vurderer behovet på befaring.</div>
+    </details>
+    <details>
+      <summary>Tar dere små jobber?</summary>
+      <div class="svar">Ja. Et enkelt beslag, et stigtrinn eller en renne som har løsnet, er også en jobb for oss.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris?</summary>
+      <div class="svar">Ring 932 54 953 eller send en e-post til <a href="mailto:post@blikkenslagerhaugjord.no">post@blikkenslagerhaugjord.no</a>, så avtaler vi en befaring.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Et tak skal vare. La oss sørge for det.</h2>
+    <p>Ring oss for en ærlig vurdering av taket, beslagene eller rennene dine.</p>
+    <a class="stor-tel" href="tel:+4793254953">932 54 953</a>
+    <p class="merknad"><a href="mailto:post@blikkenslagerhaugjord.no">post@blikkenslagerhaugjord.no</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Blikkenslager Vidar Haugjord AS</h3>
+        <ul>
+          <li>Møllestykket 21</li>
+          <li>5360 Kolltveit</li>
+          <li>Org.nr 931 597 833</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4793254953">932 54 953</a></li>
+          <li>E-post: <a href="mailto:post@blikkenslagerhaugjord.no">post@blikkenslagerhaugjord.no</a></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Taktekking</a></li>
+          <li><a href="#tjenester">Beslag</a></li>
+          <li><a href="#tjenester">Takrenner</a></li>
+          <li><a href="#tjenester">Taksikring</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Blikkenslager Vidar Haugjord AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4793254953">Ring 932 54 953</a>
+  <a class="m-post" href="mailto:post@blikkenslagerhaugjord.no">Send e-post</a>
+</div>
+
+<script>
+(function () {
+  var slider = document.getElementById('aar-slider');
+  var tall = document.getElementById('aar-tall');
+  var tak = document.getElementById('kobbertak');
+  var spir = document.getElementById('kobberspir');
+  var tittel = document.getElementById('patina-tittel');
+  var tekst = document.getElementById('patina-tekst');
+
+  var stopp = [
+    { aar: 0,  farge: [200, 117, 51] },
+    { aar: 8,  farge: [130, 84, 52] },
+    { aar: 20, farge: [82, 66, 54] },
+    { aar: 35, farge: [76, 106, 92] },
+    { aar: 60, farge: [95, 168, 147] }
+  ];
+
+  function fargeVed(aar) {
+    var i;
+    for (i = 0; i < stopp.length - 1; i++) {
+      var a = stopp[i], b = stopp[i + 1];
+      if (aar >= a.aar && aar <= b.aar) {
+        var t = (aar - a.aar) / (b.aar - a.aar);
+        return 'rgb(' + Math.round(a.farge[0] + (b.farge[0] - a.farge[0]) * t) + ',' +
+                        Math.round(a.farge[1] + (b.farge[1] - a.farge[1]) * t) + ',' +
+                        Math.round(a.farge[2] + (b.farge[2] - a.farge[2]) * t) + ')';
+      }
+    }
+    var s = stopp[stopp.length - 1];
+    return 'rgb(' + s.farge.join(',') + ')';
+  }
+
+  function faseVed(aar) {
+    if (aar < 5) {
+      return { tittel: 'Nytt og blankt', tekst: 'Nylagt kobber har en varm, blank glød. Allerede nå er metallet i gang med å danne det beskyttende laget som gjør at det holder i generasjoner.' };
+    }
+    if (aar < 18) {
+      return { tittel: 'Gløden mørkner', tekst: 'Overflaten oksiderer og blir dypere brun. Det er ikke forfall, men første steg i kobberets egen beskyttelse.' };
+    }
+    if (aar < 35) {
+      return { tittel: 'Mørkt og verdig', tekst: 'Kobberet står nå i sin mørke fase. Beslagene gjør jobben sin i stillhet, år etter år, uten vedlikehold.' };
+    }
+    return { tittel: 'Patinaen er her', tekst: 'Den grønne patinaen har utviklet seg, laget som pryder kirkespir og gamle bygårder. Herfra endrer kobberet seg knapt på en mannsalder.' };
+  }
+
+  function oppdater() {
+    var aar = Number(slider.value);
+    tall.textContent = aar;
+    slider.setAttribute('aria-valuetext', aar + ' år');
+    var farge = fargeVed(aar);
+    tak.setAttribute('fill', farge);
+    spir.setAttribute('fill', farge);
+    var fase = faseVed(aar);
+    tittel.textContent = fase.tittel;
+    tekst.textContent = fase.tekst;
+  }
+
+  slider.addEventListener('input', oppdater);
+  oppdater();
+})();
+</script>
+
+</body>
+</html>
