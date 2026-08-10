@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Hjem Dekk | Dekksenter og dekkhotell på Sotra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sort:#17191C;
+  --sort-lys:#22252A;
+  --gul:#F5C518;
+  --gul-dyp:#D4A80A;
+  --tekst:#EBEDEF;
+  --dus:#9BA1A8;
+  --strek:#33373D;
+  --groenn:#3E9B5F;
+  --amber:#D99A2B;
+  --roed:#D64541;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'PT Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--sort);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Exo 2',sans-serif;line-height:1.1;font-weight:800;letter-spacing:-.01em}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--gul);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:#101214;color:var(--dus);font-size:14px;padding:7px 0;border-bottom:1px solid var(--strek)}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:var(--gul);text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(23,25,28,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.merke{text-decoration:none;line-height:1.05}
+.merke b{font-family:'Exo 2',sans-serif;font-weight:800;font-size:23px;color:#fff;font-style:italic}
+.merke b span{color:var(--gul)}
+.merke small{display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dus);font-weight:700}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:700;font-size:15px;color:var(--tekst)}
+nav.hoved a:hover{color:var(--gul)}
+.ring-knapp{background:var(--gul);color:#17191C;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:5px;white-space:nowrap}
+.ring-knapp:hover{background:var(--gul-dyp)}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,#101214 0%,var(--sort) 75%);border-bottom:1px solid var(--strek);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-100px;bottom:-180px;width:380px;height:380px;border-radius:50%;border:44px solid #22252A;pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:64px 20px 72px;position:relative;z-index:1}
+.hero h1{font-size:clamp(33px,4.8vw,56px);color:#fff}
+.hero h1 em{font-style:normal;color:var(--gul)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:5px;font-size:17px}
+.knapp-primar{background:var(--gul);color:#17191C}
+.knapp-primar:hover{background:var(--gul-dyp)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid var(--strek)}
+.knapp-sekundar:hover{border-color:var(--gul);color:var(--gul)}
+.hero-kort{background:var(--sort-lys);border:1px solid var(--strek);border-radius:10px;padding:30px 28px}
+.hero-kort h2{font-family:'Exo 2',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--gul);font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid var(--strek)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:16px;width:15px;height:8px;border-left:3px solid var(--gul);border-bottom:3px solid var(--gul);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:#101214;border-bottom:1px solid var(--strek)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:var(--gul);font-size:15px}
+.trust span{font-size:13.5px;color:var(--dus)}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:74px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-family:'Exo 2',sans-serif;font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gul)}
+.seksjonstittel h2{font-size:clamp(28px,3.6vw,42px);color:#fff;margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--sort-lys);border:1px solid var(--strek);border-radius:10px;padding:26px 24px;border-left:4px solid var(--gul)}
+.tjeneste h3{font-size:20px;color:#fff;margin-bottom:8px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Mønsterdybde */
+.monster-seksjon{background:#101214;border-top:1px solid var(--strek);border-bottom:1px solid var(--strek)}
+.monster-flex{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.dekk-ramme{background:var(--sort-lys);border:1px solid var(--strek);border-radius:12px;padding:28px 22px 18px;text-align:center}
+.dekk-ramme figcaption{font-family:'Exo 2',sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dus);font-weight:700;padding:10px 0 14px}
+.rille{transition:height .25s ease}
+.dybde-slider{width:100%;max-width:420px;accent-color:var(--gul);height:34px;cursor:pointer}
+.dybde-verdi{font-family:'Exo 2',sans-serif;font-weight:800;font-size:34px;color:#fff}
+.dybde-verdi small{font-size:16px;color:var(--dus);font-weight:700}
+.dybde-status{font-family:'Exo 2',sans-serif;font-weight:700;font-size:16px;padding:9px 18px;border-radius:6px;display:inline-block;margin-top:10px}
+.dybde-status.god{background:#1C4A2E;color:#BFE8CD}
+.dybde-status.snart{background:#5C4413;color:#F7E3AE}
+.dybde-status.ulovlig{background:#5C1F1C;color:#FBD0CD}
+.monster-panel{background:var(--sort-lys);border:1px solid var(--strek);border-left:4px solid var(--gul);border-radius:10px;padding:26px 28px}
+.monster-panel h3{font-size:23px;color:#fff;margin-bottom:10px}
+.monster-panel p{color:var(--dus);font-size:15.5px}
+.monster-panel p + p{margin-top:10px}
+.monster-fot{margin-top:20px;font-size:14px;color:var(--dus);max-width:74ch}
+@media (max-width:900px){.monster-flex{grid-template-columns:1fr}}
+
+/* Avdelinger */
+.avd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.avd-kort{background:var(--sort-lys);border:1px solid var(--strek);border-radius:10px;padding:26px 24px;text-align:center}
+.avd-kort .nål{width:34px;height:34px;margin:0 auto 14px;border-radius:50% 50% 50% 0;background:var(--gul);transform:rotate(-45deg)}
+.avd-kort h3{font-size:21px;color:#fff;margin-bottom:6px}
+.avd-kort p{font-size:14.5px;color:var(--dus)}
+@media (max-width:760px){.avd-grid{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--sort-lys);border:1px solid var(--strek);border-radius:10px;padding:26px 24px}
+.hvorfor-kort h3{font-size:20px;color:#fff;margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--sort-lys);border-radius:10px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:"0" counter(steg);font-family:'Exo 2',sans-serif;font-weight:800;font-size:28px;color:var(--gul);display:block;margin-bottom:8px}
+.steg h3{font-size:18px;color:#fff;margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--sort-lys);border:1px dashed var(--gul);border-radius:10px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* FAQ */
+details{background:var(--sort-lys);border:1px solid var(--strek);border-radius:10px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:#fff;list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Exo 2',sans-serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--gul);line-height:1;font-weight:500}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(150deg,#101214,#2E2A14);text-align:center;border-top:1px solid var(--strek)}
+.slutt-cta h2{font-size:clamp(28px,3.8vw,44px);color:#fff}
+.slutt-cta p{color:var(--dus);max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Exo 2',sans-serif;font-size:clamp(32px,5.2vw,48px);font-weight:800;color:var(--gul);text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px;color:var(--dus)}
+
+/* Footer */
+footer{background:#101214;color:var(--dus);padding:48px 0 110px;font-size:15px;border-top:1px solid var(--strek)}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:var(--gul)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid var(--strek);margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#101214;border-top:2px solid var(--gul);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:5px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--gul);color:#17191C}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid var(--strek)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Grønamyrvegen 8, Straume &middot; Avdelinger: Straume, Skogsvåg og Godvik<!-- PLACEHOLDER: avdelingsliste fra kataloger, bekreftes med kunden --></span>
+    <span>Ring: <a href="tel:+4740491683">40 49 16 83</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>HJEM <span>DEKK</span></b>
+      <small>Dekksenter og dekkhotell</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#monster">Sjekk dekkene</a>
+      <a href="#avdelinger">Avdelinger</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4740491683">40 49 16 83</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Dekkservice, <em>slik det skal være</em></h1>
+      <p class="ingress">Hjem Dekk er dekksenteret på Sotra, med kjente merker som Michelin, Nokian og Continental, eget dekkhotell og tre avdelinger å velge mellom. Dekkskift uten kø og styr.</p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4740491683">Ring 40 49 16 83</a>
+        <a class="knapp knapp-sekundar" href="#monster">Sjekk mønsterdybden din</a>
+      </div>
+    </div>
+    <div class="hero-kort">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Dekk fra Michelin, Nokian og Continental</li>
+        <li>Dekkhotell: vi lagrer hjulene mellom sesongene</li>
+        <li>Tre avdelinger: Straume, Skogsvåg og Godvik<!-- PLACEHOLDER: avdelingsliste bekreftes med kunden --></li>
+        <li>Nettbutikk for dekk hele døgnet<!-- PLACEHOLDER: dekkshop-integrasjon avklares med kunden --></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Kjente merker</b><span>Michelin, Nokian, Continental</span></div>
+    <div><b>Dekkhotell</b><span>Trygg lagring mellom sesongene</span></div>
+    <div><b>Tre avdelinger</b><span>Straume, Skogsvåg og Godvik</span></div>
+    <div><b>Sotra</b><span>Kort vei for hele Øygarden</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Alt som handler om hjulene dine</h2>
+      <p>Fra sesongskift til nye dekk, på tre steder i Øygarden.<!-- PLACEHOLDER: tjenestelisten bekreftes med kunden --></p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><h3>Dekkskift</h3><p>Sesongskift gjort raskt og riktig, med moment og trykk etter bilens spesifikasjoner.</p></div>
+      <div class="tjeneste"><h3>Dekkhotell</h3><p>Vi lagrer hjulene dine mellom sesongene, så slipper du bæringen og lagringsplassen.</p></div>
+      <div class="tjeneste"><h3>Nye dekk</h3><p>Sommer- og vinterdekk fra Michelin, Nokian, Continental og flere, tilpasset bilen og kjøringen din.</p></div>
+      <div class="tjeneste"><h3>Avbalansering</h3><p>Vibrasjoner i rattet? Vi avbalanserer hjulene så bilen ruller jevnt igjen.</p></div>
+      <div class="tjeneste"><h3>Reparasjon</h3><p>Punktering og småskader vurderes og repareres når dekket er trygt å reparere.</p></div>
+      <div class="tjeneste"><h3>Felger</h3><p>Nye felger og hjelp til å finne riktig kombinasjon av felg og dekk.<!-- PLACEHOLDER: erstattes med ekte innhold --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="monster" class="monster-seksjon">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Hvor mye mønster har du igjen?</h2>
+      <p>Dra i glidebryteren og se hva mønsterdybden betyr. Loven krever minst 1,6 mm på sommerdekk og 3 mm på vinterdekk, men grepet forsvinner lenge før du er der.</p>
+    </div>
+    <div class="monster-flex">
+      <figure class="dekk-ramme">
+        <svg viewBox="0 0 460 190" role="img" aria-label="Tverrsnitt av dekk der mønsterrillene blir grunnere når mønsterdybden synker">
+          <rect x="20" y="150" width="420" height="14" rx="4" fill="#3A3F45"/>
+          <rect x="30" y="46" width="400" height="104" rx="10" fill="#2A2E33"/>
+          <rect x="30" y="46" width="400" height="18" rx="8" fill="#33383E"/>
+          <g id="riller">
+            <rect class="rille" x="70"  y="86" width="26" height="64" fill="#101214"/>
+            <rect class="rille" x="140" y="86" width="26" height="64" fill="#101214"/>
+            <rect class="rille" x="210" y="86" width="26" height="64" fill="#101214"/>
+            <rect class="rille" x="280" y="86" width="26" height="64" fill="#101214"/>
+            <rect class="rille" x="350" y="86" width="26" height="64" fill="#101214"/>
+          </g>
+          <text x="230" y="30" text-anchor="middle" fill="#9BA1A8" font-family="'Exo 2',sans-serif" font-weight="700" font-size="13" letter-spacing="2">DEKKET DITT, SETT FRA SIDEN</text>
+        </svg>
+        <div class="dybde-verdi"><span id="dybde-tall">8,0</span> <small>mm mønsterdybde</small></div>
+        <div>
+          <label for="dybde-slider" style="display:block;font-size:13.5px;color:var(--dus);margin:10px 0 2px">Dra for å endre mønsterdybde</label>
+          <input type="range" id="dybde-slider" class="dybde-slider" min="0" max="80" value="80" step="5" aria-valuetext="8,0 millimeter">
+        </div>
+        <div><span class="dybde-status god" id="dybde-status" aria-live="polite">God sikkerhetsmargin</span></div>
+        <figcaption>Nye dekk har rundt 8 mm mønster</figcaption>
+      </figure>
+      <div class="monster-panel" aria-live="polite">
+        <h3 id="monster-tittel">Full kontroll</h3>
+        <p id="monster-tekst">Med godt mønster har dekket kanaler som frakter vannet vekk, og grepet er der når du trenger det. Slik skal det kjennes.</p>
+        <p id="monster-raad">Sjekk gjerne mønsteret ved hvert sesongskift, så kommer bytte aldri som en overraskelse.</p>
+      </div>
+    </div>
+    <p class="monster-fot">Minstekravene i forskriften er 1,6 mm for sommerdekk og 3 mm for vinterdekk. Usikker på hvor du står? Stikk innom en av avdelingene, så måler vi mønsterdybden for deg på et minutt.</p>
+  </div>
+</section>
+
+<section id="avdelinger">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Avdelinger</span>
+      <h2>Tre steder, samme service</h2>
+      <p>Velg avdelingen som passer deg best.<!-- PLACEHOLDER: adresser og aapningstider per avdeling bekreftes med kunden --></p>
+    </div>
+    <div class="avd-grid">
+      <div class="avd-kort"><div class="nål" aria-hidden="true"></div><h3>Straume</h3><p>Grønamyrvegen 8, 5353 Straume</p></div>
+      <div class="avd-kort"><div class="nål" aria-hidden="true"></div><h3>Skogsvåg</h3><p>[Adresse legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></p></div>
+      <div class="avd-kort"><div class="nål" aria-hidden="true"></div><h3>Godvik</h3><p>[Adresse legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Dekk er alt vi driver med</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Spesialister, ikke sidegeskjeft</h3><p>Hos oss er ikke dekk noe som gjøres ved siden av verkstedtimene. Det er hele faget vårt.</p></div>
+      <div class="hvorfor-kort"><h3>Kjente merker</h3><p>Vi leverer dekk fra produsenter som Michelin, Nokian og Continental, med råd om hva som passer din bil og kjøring.</p></div>
+      <div class="hvorfor-kort"><h3>Dekkhotellet tar jobben</h3><p>Ingen bæring, ingen lagring i boden. Hjulene står trygt hos oss til neste sesong, klare når du kommer.</p></div>
+      <div class="hvorfor-kort"><h3>Nær deg på Sotra</h3><p>Tre avdelinger i Øygarden betyr kort vei og raskere time, spesielt i sesongrushet.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik fungerer det</span>
+      <h2>Dekkskift uten venting</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Bestill time</h3><p>Ring oss og velg avdelingen som passer deg.</p></div>
+      <div class="steg"><h3>Kom innom</h3><p>Vi skifter, avbalanserer og sjekker dekkene mens du venter.</p></div>
+      <div class="steg"><h3>Hotell eller heim</h3><p>Hjulene settes på dekkhotellet, eller legges i bilen om du lagrer selv.</p></div>
+      <div class="steg"><h3>Neste sesong</h3><p>Vi tar kontakt når det nærmer seg tid for å skifte tilbake.<!-- PLACEHOLDER: varslingsrutine bekreftes med kunden --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Hva koster dekkhotell?</summary>
+      <div class="svar">[Pris på dekkhotell legges inn her.]<!-- PLACEHOLDER: erstattes med ekte innhold --> Ring oss, så får du pris med en gang.</div>
+    </details>
+    <details>
+      <summary>Når bør jeg bytte til vinterdekk?</summary>
+      <div class="svar">Følg føret, ikke kalenderen. Når temperaturen kryper mot null og veiene blir våte og kalde, er det på tide. Bestill time i god tid før første frostnatt, så slipper du rushet.</div>
+    </details>
+    <details>
+      <summary>Hvor mye mønster må jeg ha?</summary>
+      <div class="svar">Lovens minstekrav er 1,6 mm på sommerdekk og 3 mm på vinterdekk. Vi anbefaler å planlegge bytte i god tid før du er nede på minstekravet, for grepet svekkes gradvis. Stikk innom, så måler vi for deg.</div>
+    </details>
+    <details>
+      <summary>Kan jeg kjøpe dekk på nett hos dere?</summary>
+      <div class="svar">Ja, nettbutikken vår er åpen hele døgnet, og du kan få dekkene montert hos en av avdelingene våre.<!-- PLACEHOLDER: dekkshop-detaljer bekreftes med kunden --></div>
+    </details>
+    <details>
+      <summary>Reparerer dere punktering?</summary>
+      <div class="svar">Ja, vi vurderer skaden og reparerer når dekket er trygt å reparere. Er skaden i mønsterflaten, går det som regel bra.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta" id="kontakt">
+  <div class="wrap">
+    <h2>Klar for sesongen?</h2>
+    <p>Ring oss og bestill time ved avdelingen som passer deg best. Det tar to minutter.</p>
+    <a class="stor-tel" href="tel:+4740491683">40 49 16 83</a>
+    <p class="merknad">[E-postadresse legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Hjem Dekk AS</h3>
+        <ul>
+          <li>Grønamyrvegen 8</li>
+          <li>5353 Straume</li>
+          <li>Org.nr 914 055 644</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4740491683">40 49 16 83</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Dekkskift</a></li>
+          <li><a href="#tjenester">Dekkhotell</a></li>
+          <li><a href="#tjenester">Nye dekk</a></li>
+          <li><a href="#avdelinger">Avdelinger</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Hjem Dekk AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar">
+  <a class="m-ring" href="tel:+4740491683">Ring 40 49 16 83</a>
+  <a class="m-mer" href="#monster">Sjekk dekkene</a>
+</div>
+
+<script>
+(function () {
+  var slider = document.getElementById('dybde-slider');
+  var tall = document.getElementById('dybde-tall');
+  var status = document.getElementById('dybde-status');
+  var tittel = document.getElementById('monster-tittel');
+  var tekst = document.getElementById('monster-tekst');
+  var raad = document.getElementById('monster-raad');
+  var riller = document.querySelectorAll('.rille');
+  var maksHoyde = 64;
+  var bunn = 150;
+
+  function oppdater() {
+    var mm = slider.value / 10;
+    var visning = mm.toFixed(1).replace('.', ',');
+    tall.textContent = visning;
+    slider.setAttribute('aria-valuetext', visning + ' millimeter');
+    var hoyde = Math.max(2, Math.round((mm / 8) * maksHoyde));
+    riller.forEach(function (r) {
+      r.setAttribute('height', hoyde);
+      r.setAttribute('y', bunn - hoyde);
+    });
+    status.classList.remove('god', 'snart', 'ulovlig');
+    if (mm >= 4) {
+      status.classList.add('god');
+      status.textContent = 'God sikkerhetsmargin';
+      tittel.textContent = 'Full kontroll';
+      tekst.textContent = 'Med godt mønster har dekket kanaler som frakter vannet vekk, og grepet er der når du trenger det. Slik skal det kjennes.';
+      raad.textContent = 'Sjekk gjerne mønsteret ved hvert sesongskift, så kommer bytte aldri som en overraskelse.';
+    } else if (mm >= 3) {
+      status.classList.add('snart');
+      status.textContent = 'Planlegg bytte';
+      tittel.textContent = 'Grepet er på hell';
+      tekst.textContent = 'Dekket er fortsatt lovlig som sommerdekk, men kanalene som skal lede bort vann er blitt grunne. På våt vei merkes forskjellen godt.';
+      raad.textContent = 'For vinterdekk er du nå helt nede på lovens minstekrav. Dette er tidspunktet å bestille nye på.';
+    } else if (mm >= 1.6) {
+      status.classList.add('snart');
+      status.textContent = 'Under vinterkravet';
+      tittel.textContent = 'På lånt tid';
+      tekst.textContent = 'Under 3 mm er dekket ulovlig som vinterdekk, og bremselengden på vått underlag øker merkbart selv om sommerdekk fortsatt er innenfor kravet.';
+      raad.textContent = 'Kjører du mye, bør nye dekk stå øverst på listen nå.';
+    } else {
+      status.classList.add('ulovlig');
+      status.textContent = 'Under lovens minstekrav';
+      tittel.textContent = 'Nå er det stopp';
+      tekst.textContent = 'Under 1,6 mm er dekket ulovlig uansett sesong. Mønsteret som skulle grepet veien og ledet bort vannet, er i praksis borte.';
+      raad.textContent = 'Ikke vent: Ring oss i dag, så finner vi dekk som passer bilen din.';
+    }
+  }
+
+  slider.addEventListener('input', oppdater);
+  oppdater();
+})();
+</script>
+
+</body>
+</html>
