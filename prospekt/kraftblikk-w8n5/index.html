@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Kraft Blikk | Taktekker og blikkenslager i Bergen sør</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#0F5257;
+  --teal-dyp:#0A3A3E;
+  --messing:#D9A62B;
+  --messing-dyp:#B5861A;
+  --lys:#F4F6F6;
+  --hvit:#FFFFFF;
+  --tekst:#1F2E30;
+  --dus:#5C6E70;
+  --strek:#DBE3E3;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Noto Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--lys);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Geologica',sans-serif;line-height:1.12;font-weight:700;letter-spacing:-.01em}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--messing);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--teal-dyp);color:#B8CACB;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:var(--messing);text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.05}
+.merke b{font-family:'Geologica',sans-serif;font-weight:800;font-size:22px;color:var(--teal)}
+.merke b span{color:var(--messing-dyp)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dus);font-weight:600}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px}
+nav.hoved a:hover{color:var(--teal)}
+.ring-knapp{background:var(--teal);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:6px;white-space:nowrap}
+.ring-knapp:hover{background:var(--teal-dyp)}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 72px}
+.hero h1{font-size:clamp(31px,4.4vw,50px);color:var(--teal-dyp)}
+.hero h1 em{font-style:normal;color:var(--messing-dyp)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:6px;font-size:17px}
+.knapp-primar{background:var(--teal);color:#fff}
+.knapp-primar:hover{background:var(--teal-dyp)}
+.knapp-sekundar{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+.knapp-sekundar:hover{background:var(--teal);color:#fff}
+.hero-kort{background:var(--teal);color:#E4EEEE;border-radius:10px;padding:30px 28px}
+.hero-kort h2{font-family:'Noto Sans',sans-serif;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--messing);font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:16px;width:15px;height:8px;border-left:3px solid var(--messing);border-bottom:3px solid var(--messing);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:var(--teal);color:#B8CACB}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:#fff;font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-family:'Noto Sans',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--messing-dyp)}
+.seksjonstittel h2{font-size:clamp(26px,3.4vw,38px);color:var(--teal-dyp);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;padding:26px 24px;border-bottom:4px solid var(--messing)}
+.tjeneste h3{font-size:20px;color:var(--teal-dyp);margin-bottom:8px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Knekkeren */
+.knekk-seksjon{background:var(--teal-dyp);color:#E4EEEE}
+.knekk-seksjon .seksjonstittel h2{color:#fff}
+.knekk-seksjon .seksjonstittel p{color:#8FAAAB}
+.knekk-flex{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.plate-ramme{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:28px 20px 14px;text-align:center}
+.plate-ramme figcaption{font-family:'Noto Sans',sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#8FAAAB;font-weight:700;padding:12px 0 8px}
+#plate-form{transition:d .5s ease}
+.knekk-knapper{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.knekk-knapp{font-family:'Noto Sans',sans-serif;font-weight:700;font-size:16px;padding:12px 24px;border-radius:6px;border:none;background:var(--messing);color:var(--teal-dyp);cursor:pointer}
+.knekk-knapp:hover{background:#E8BC53}
+.knekk-knapp[disabled]{opacity:.45;cursor:not-allowed}
+.flat-knapp{font-family:'Noto Sans',sans-serif;font-weight:700;font-size:16px;padding:12px 24px;border-radius:6px;border:2px solid #2E6468;background:transparent;color:#E4EEEE;cursor:pointer}
+.flat-knapp:hover{border-color:var(--messing)}
+.knekk-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-left:4px solid var(--messing);border-radius:10px;padding:26px 28px}
+.knekk-panel .steg-etikett{font-family:'Noto Sans',sans-serif;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--messing);font-weight:700}
+.knekk-panel h3{font-size:23px;color:#fff;margin:6px 0 10px}
+.knekk-panel p{color:#B8CACB;font-size:15.5px}
+@media (max-width:900px){.knekk-flex{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;padding:26px 24px}
+.hvorfor-kort h3{font-size:19px;color:var(--teal-dyp);margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:#E7ECEC}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:10px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:counter(steg);display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:var(--teal);color:#fff;font-family:'Geologica',sans-serif;font-weight:700;font-size:18px;margin-bottom:12px}
+.steg h3{font-size:17.5px;color:var(--teal-dyp);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--messing-dyp);border-radius:10px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:600;color:var(--teal-dyp);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:13px;height:13px;border-radius:3px;background:var(--messing)}
+.info-kort{background:var(--teal);color:#E4EEEE;border-radius:10px;padding:30px 28px}
+.info-kort h3{color:var(--messing);font-size:21px;margin-bottom:10px}
+.info-kort p{font-size:15.5px;color:#B8CACB}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--teal-dyp);list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Geologica',sans-serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--messing-dyp);line-height:1;font-weight:500}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(150deg,var(--teal-dyp),var(--teal));color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,40px);color:#fff}
+.slutt-cta p{color:#8FAAAB;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Geologica',sans-serif;font-size:clamp(30px,5vw,46px);font-weight:800;color:var(--messing);text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px;color:#8FAAAB}
+
+/* Footer */
+footer{background:var(--teal-dyp);color:#8FAAAB;padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:var(--messing)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid #164A4E;margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--teal-dyp);border-top:2px solid var(--messing);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:6px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--messing);color:var(--teal-dyp)}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Fanavegen 198, Rådal i Bergen</span>
+    <span>Ring: <a href="tel:+4796864756">96 86 47 56</a><!-- PLACEHOLDER: nummer fra kartleggingen, bekreftes med kunden --></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>KRAFT <span>BLIKK</span></b>
+      <small>Taktekker og blikkenslager</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#knekk">Verkstedet</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4796864756">96 86 47 56</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Tak og beslag, <em>formet etter huset ditt</em></h1>
+      <p class="ingress">Kraft Blikk er taktekker- og blikkenslagerfirmaet i Rådal. Vi tekker tak og former beslagene som holder bergensværet ute, for boligeiere og bedrifter i Bergen sør.<!-- PLACEHOLDER: tjenesteomfang bekreftes med kunden --></p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4796864756">Ring 96 86 47 56</a>
+        <a class="knapp knapp-sekundar" href="#knekk">Se hvordan beslag blir til</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Taktekking og blikkenslagerarbeid samlet</li>
+        <li>Base i Fanavegen i Rådal</li>
+        <li>I faget som eget firma siden 2013</li>
+        <li>Oppdrag for private og bedrifter<!-- PLACEHOLDER: kundetyper bekreftes med kunden --></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>To fag samlet</b><span>Tak og beslag fra samme lag</span></div>
+    <div><b>Siden 2013</b><span>Registrert firma i over ti år</span></div>
+    <div><b>Rådal, Bergen</b><span>Kort vei i hele Bergen sør</span></div>
+    <div><b>Skreddersøm</b><span>Beslag formes etter mål</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Alt som holder taket tett</h2>
+      <p>Tekkingen holder flatene tette, beslagene tar overgangene. Vi leverer begge deler.<!-- PLACEHOLDER: tjenestelisten bekreftes med kunden --></p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><h3>Taktekking</h3><p>Nye tak og omtekking, utført fagmessig og dimensjonert for vestlandsvær.</p></div>
+      <div class="tjeneste"><h3>Beslag</h3><p>Pipebeslag, vindusbeslag og gesimser, formet etter mål i eget verksted.</p></div>
+      <div class="tjeneste"><h3>Takrenner og nedløp</h3><p>Renner og nedløp som leder regnet dit det skal: vekk fra huset.</p></div>
+      <div class="tjeneste"><h3>Taksikring</h3><p>Snøfangere og sikring som beskytter både folk og takrenner om vinteren.</p></div>
+      <div class="tjeneste"><h3>Reparasjon</h3><p>Lekkasjer, løse beslag og skader etter uvær utbedres raskt og ordentlig.</p></div>
+      <div class="tjeneste"><h3>Spesialarbeid</h3><p>Detaljer og spesialbeslag til prosjekter som krever noe utenom standard.<!-- PLACEHOLDER: erstattes med ekte innhold --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="knekk" class="knekk-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Fra flat plate til ferdig beslag</h2>
+      <p>Hvert beslag starter som en flat metallplate. Knekk platen selv og se profilen ta form, slik den gjør i verkstedet vårt.</p>
+    </div>
+    <div class="knekk-flex">
+      <figure class="plate-ramme">
+        <svg viewBox="0 0 460 240" role="img" aria-label="Metallplate som knekkes trinn for trinn til et ferdig pipebeslag">
+          <line x1="30" y1="210" x2="430" y2="210" stroke="#2E6468" stroke-width="3"/>
+          <path id="plate-form" d="M70,160 L390,160" fill="none" stroke="#C8D4D4" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+          <text x="230" y="40" text-anchor="middle" fill="#8FAAAB" font-family="Geologica,sans-serif" font-weight="700" font-size="13" letter-spacing="2" id="plate-etikett">FLAT PLATE, 0 KNEKK</text>
+        </svg>
+        <figcaption>Knekkbenken, sett fra siden</figcaption>
+        <div class="knekk-knapper">
+          <button type="button" class="knekk-knapp" id="knekk-knapp">Knekk platen</button>
+          <button type="button" class="flat-knapp" id="flat-knapp">Rett ut og start på nytt</button>
+        </div>
+      </figure>
+      <div class="knekk-panel" aria-live="polite">
+        <span class="steg-etikett" id="knekk-steg">Steg 0 av 4</span>
+        <h3 id="knekk-tittel">Alt starter flatt</h3>
+        <p id="knekk-tekst">En metallplate rett fra lageret. Det som skiller et godt beslag fra et dårlig, er knekkene som kommer nå, hver av dem målt mot taket det skal sitte på.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Beslag er håndverk, ikke hyllevare</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Formet etter mål</h3><p>Standardbeslag passer standardhus. Vi måler og knekker beslagene etter taket ditt, så overgangene blir tette første gang.</p></div>
+      <div class="hvorfor-kort"><h3>Tak og beslag i sammenheng</h3><p>Lekkasjer oppstår i overgangene. Når samme firma tekker og beslår, er det ingen skjøter mellom ansvarsområder.</p></div>
+      <div class="hvorfor-kort"><h3>Lokale i Bergen sør</h3><p>Fra Fanavegen er det kort vei til Rådal, Fana, Nesttun og resten av Bergen. Befaring uten lang ventetid.</p></div>
+      <div class="hvorfor-kort"><h3>Ryddig gjennomføring</h3><p>Tydelig pris før vi starter, sikret byggeplass underveis og opprydding når vi er ferdige.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra befaring til tett tak</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ta kontakt</h3><p>Ring og beskriv taket eller problemet, gjerne med bilder.</p></div>
+      <div class="steg"><h3>Befaring</h3><p>Vi ser på taket og måler opp det som skal formes.</p></div>
+      <div class="steg"><h3>Tilbud</h3><p>Du får en tydelig pris og en plan for gjennomføringen.</p></div>
+      <div class="steg"><h3>Utførelse</h3><p>Vi tekker, beslår og går over alt før vi rigger ned.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Bergen sør er hjemmebane</h2>
+          <p>Base i Rådal, oppdrag i hele Bergensområdet.<!-- PLACEHOLDER: dekningsomraade bekreftes med kunden --></p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Rådal og Lagunen</li>
+          <li>Fana</li>
+          <li>Nesttun</li>
+          <li>Søreide og Ytrebygda</li>
+          <li>Bergen sentrum</li>
+          <li>Bergen ellers</li>
+        </ul>
+      </div>
+      <div class="info-kort morkflate">
+        <h3>Prosjekter fra verkstedet</h3>
+        <p>Her viser vi frem ferdige tak og beslagarbeid ved lansering.</p>
+        <p style="margin-top:12px">[Prosjektbilder legges inn her.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Taket lekker. Hvor raskt kan dere komme?</summary>
+      <div class="svar">Ring med en gang, så finner vi raskeste mulighet. En midlertidig sikring kan ofte gjøres raskt, før den varige utbedringen planlegges.</div>
+    </details>
+    <details>
+      <summary>Lager dere beslag etter mål?</summary>
+      <div class="svar">Ja, det er kjernen i blikkenslagerfaget. Vi måler på stedet og knekker beslagene så de passer taket ditt, ikke et gjennomsnittstak.</div>
+    </details>
+    <details>
+      <summary>Tar dere små jobber?</summary>
+      <div class="svar">Ja. Et enkelt pipebeslag eller en renne som har løsnet, er også en jobb for oss.<!-- PLACEHOLDER: tjenestetilbud bekreftes med kunden --></div>
+    </details>
+    <details>
+      <summary>Trenger taket mitt snøfangere?</summary>
+      <div class="svar">Har taket fall mot inngangsparti, gangvei eller parkering, er svaret som regel ja. Vi vurderer behovet på befaring.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris?</summary>
+      <div class="svar">Ring 96 86 47 56 og beskriv jobben. Vi tar en befaring før vi gir pris, så tilbudet stemmer med det taket faktisk trenger.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Taket ditt fortjener skreddersøm</h2>
+    <p>Ring oss for en ærlig vurdering, før småfeil på taket blir store skader i huset.</p>
+    <a class="stor-tel" href="tel:+4796864756">96 86 47 56</a>
+    <p class="merknad">[E-postadresse legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Kraft Blikk AS</h3>
+        <ul>
+          <li>Fanavegen 198</li>
+          <li>5239 Rådal</li>
+          <li>Org.nr 912 861 554</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4796864756">96 86 47 56</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Taktekking</a></li>
+          <li><a href="#tjenester">Beslag</a></li>
+          <li><a href="#tjenester">Takrenner og nedløp</a></li>
+          <li><a href="#tjenester">Taksikring</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Kraft Blikk AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4796864756">Ring 96 86 47 56</a>
+  <a class="m-mer" href="#knekk">Se knekkbenken</a>
+</div>
+
+<script>
+(function () {
+  var former = [
+    'M70,160 L390,160',
+    'M70,160 L330,160 L370,120',
+    'M70,160 L150,160 L190,120 L330,120 L370,80',
+    'M110,200 L150,160 L190,120 L330,120 L370,80',
+    'M110,200 L150,160 L190,120 L330,120 L350,100 L390,110'
+  ];
+  var etiketter = [
+    'FLAT PLATE, 0 KNEKK',
+    'FØRSTE KNEKK',
+    'ANDRE KNEKK',
+    'TREDJE KNEKK',
+    'FERDIG BESLAGPROFIL'
+  ];
+  var innhold = [
+    { tittel: 'Alt starter flatt', tekst: 'En metallplate rett fra lageret. Det som skiller et godt beslag fra et dårlig, er knekkene som kommer nå, hver av dem målt mot taket det skal sitte på.' },
+    { tittel: 'Første knekk setter vinkelen', tekst: 'Oppkanten som skal ligge an mot pipen eller veggen. Vinkelen leses ut av taket, ikke av en tabell.' },
+    { tittel: 'Andre knekk gir profilen', tekst: 'Nå begynner platen å ligne et beslag. Flaten i midten skal følge takfallet, kanten skal opp mot det som gjennombryter taket.' },
+    { tittel: 'Tredje knekk låser vannet ute', tekst: 'Underkanten brettes så vannet ledes utover og ned på tekkingen, aldri innover. Det er denne detaljen som skiller tett fra nesten tett.' },
+    { tittel: 'Ferdig: skreddersydd for ett tak', tekst: 'En dryppkant til slutt, og beslaget er klart for montering. Formet for akkurat ditt tak, slik hvert beslag fra verkstedet vårt er.' }
+  ];
+  var steg = 0;
+  var maks = 4;
+  var form = document.getElementById('plate-form');
+  var etikett = document.getElementById('plate-etikett');
+  var knekk = document.getElementById('knekk-knapp');
+  var flat = document.getElementById('flat-knapp');
+  var stegTekst = document.getElementById('knekk-steg');
+  var tittel = document.getElementById('knekk-tittel');
+  var tekst = document.getElementById('knekk-tekst');
+
+  function vis() {
+    form.setAttribute('d', former[steg]);
+    etikett.textContent = etiketter[steg];
+    stegTekst.textContent = 'Steg ' + steg + ' av ' + maks;
+    tittel.textContent = innhold[steg].tittel;
+    tekst.textContent = innhold[steg].tekst;
+    knekk.disabled = steg >= maks;
+  }
+
+  knekk.addEventListener('click', function () {
+    if (steg < maks) { steg++; vis(); }
+  });
+  flat.addEventListener('click', function () {
+    steg = 0;
+    vis();
+  });
+  vis();
+})();
+</script>
+
+</body>
+</html>
