@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Drengenes Tak og Blikk | Taktekking, blikkenslagerarbeid og ildsteder i Bergen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sot:#2B2B2E;
+  --sot-dyp:#1F1F22;
+  --ild:#E25822;
+  --ild-mork:#C04415;
+  --glo:#F5A623;
+  --royk:#F2F0EC;
+  --royk-dyp:#E4E1DA;
+  --hvit:#FFFFFF;
+  --tekst:#2C2C2F;
+  --tekst-dus:#5F5F63;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--royk);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Fjalla One',Impact,sans-serif;font-weight:400;line-height:1.08;color:var(--sot)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--ild);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--sot);color:#fff;border-bottom:3px solid var(--ild)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Fjalla One',sans-serif;font-size:1.25rem;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1}
+.logo-merke{width:28px;height:28px;flex:none}
+.logo span{color:var(--glo)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:400;font-size:.95rem;color:#DBD9D4}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--ild);color:#fff;text-decoration:none;font-weight:600;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--ild-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:1.02rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--sot);color:#fff}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:66px 22px 76px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(245,166,35,.55);color:var(--glo);font-weight:500;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(2rem,4.6vw,3.1rem);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--glo)}
+.hero-tekst{color:#DBD9D4;font-size:1.06rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:600;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--ild);color:#fff}
+.knapp-primar:hover{background:var(--ild-mork);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(219,217,212,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:48px;padding-bottom:54px}}
+
+/* Pipa, signaturelementet */
+.stua{background:var(--sot-dyp);border:1px solid rgba(245,166,35,.3);border-radius:14px;padding:24px 22px 22px}
+.stua-tittel{font-family:'Fjalla One',sans-serif;font-size:1.15rem;color:var(--glo);margin-bottom:2px}
+.stua-hint{font-size:.87rem;color:rgba(219,217,212,.75);margin-bottom:14px}
+.pipe-del{opacity:0;transition:opacity .5s ease}
+.pipe-del.montert{opacity:1}
+#flammer{opacity:0;transition:opacity .4s ease}
+#flammer.brenner{opacity:1}
+.flamme{transform-origin:center bottom;animation:flakke 1.1s ease-in-out infinite alternate}
+.flamme.f2{animation-delay:.35s}
+@keyframes flakke{
+  0%{transform:scaleY(1) scaleX(1)}
+  100%{transform:scaleY(1.12) scaleX(.94)}
+}
+#royk-gruppe{opacity:0;transition:opacity .6s ease}
+#royk-gruppe.stiger{opacity:1}
+.stua-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.pipe-knapp{
+  font-family:'Fjalla One',sans-serif;font-size:1.02rem;
+  background:var(--glo);color:var(--sot-dyp);border:none;border-radius:8px;
+  padding:11px 20px;cursor:pointer;transition:background .15s ease;
+}
+.pipe-knapp:hover{background:#FFB84D}
+.pipe-knapp:disabled{background:rgba(219,217,212,.25);color:rgba(219,217,212,.6);cursor:not-allowed}
+.slukk-knapp{
+  font-family:'Readex Pro',sans-serif;font-weight:400;font-size:.88rem;
+  background:transparent;color:#DBD9D4;border:1.5px solid rgba(219,217,212,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.slukk-knapp:hover{border-color:#fff;color:#fff}
+.stua-status-rad{margin-top:12px;background:rgba(226,88,34,.14);border-left:3px solid var(--ild);border-radius:0 8px 8px 0;padding:10px 14px}
+.stua-steg{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--glo)}
+.stua-status{font-size:.95rem;color:#F0EFEC}
+
+/* Fakta-stripe */
+.stripe{background:var(--ild);color:#fff}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Fjalla One',sans-serif;font-size:2rem;line-height:1.05}
+.stripe-navn{font-size:.88rem;font-weight:400;opacity:.95}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--ild);font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.seksjon h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:12px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Om */
+.om{background:var(--hvit)}
+.om-indre{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.om-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.om-tekst p strong{color:var(--tekst)}
+.om-kort{background:var(--sot);color:#fff;border-radius:14px;padding:32px 30px;border-bottom:5px solid var(--glo)}
+.om-kort h3{color:var(--glo);font-size:1.25rem;margin-bottom:16px}
+.om-kort ul{list-style:none;display:grid;gap:13px}
+.om-kort li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:#DBD9D4}
+.om-kort .punkt{width:9px;height:9px;border-radius:50%;background:var(--ild);flex:none;transform:translateY(-1px)}
+@media(max-width:860px){.om-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tjeneste{background:var(--hvit);border-radius:12px;padding:26px 24px;border:1px solid var(--royk-dyp);border-top:4px solid var(--sot);transition:transform .15s ease,box-shadow .15s ease}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(43,43,46,.12);border-top-color:var(--ild)}
+.tjeneste h3{font-size:1.2rem;margin-bottom:8px}
+.tjeneste p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.tjenester-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{max-width:44rem;background:var(--royk);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--ild)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--sot);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:12px}
+.cta p{color:#DBD9D4;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--sot-dyp);border:1px solid rgba(245,166,35,.3);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.25rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#DBD9D4}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--sot-dyp);color:#C9C7C2;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1.1rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#C9C7C2}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(201,199,194,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(201,199,194,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--sot-dyp);border-top:2px solid var(--ild)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:600;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--ild);color:#fff}
+.mobilbar .epost{background:rgba(219,217,212,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Drengenes Tak og Blikk, til toppen">
+      <svg class="logo-merke" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M3 16 L14 5 L25 16" fill="none" stroke="#F5A623" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="17" y="7" width="4" height="7" fill="#E25822"/>
+        <path d="M6 16 L6 25 L22 25 L22 16" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+      </svg>
+      Drengenes <span>Tak og Blikk</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#pipa">Pipa</a></li>
+        <li><a href="#om">Om oss</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4799312222">993 12 222</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Taktekker og blikkenslager, Laksevåg</p>
+        <h1>Tett tak ute, <em>varm peis inne</em></h1>
+        <p class="hero-tekst">
+          Drengenes Tak og Blikk skifter alle typer tak, former beslag og monterer
+          stålpiper og ildsteder. Vi tar deg hele veien fra tett tak til tent
+          peis, med samme lag på hele jobben.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4799312222">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#pipa">Monter pipa og tenn opp</a>
+        </div>
+      </div>
+
+      <div class="stua" id="pipa" aria-label="Interaktiv pipemontering">
+        <p class="stua-tittel">Fra ildsted til røyk over taket</p>
+        <p class="stua-hint">Monter stålpipa steg for steg, og tenn opp til slutt.</p>
+
+        <svg id="hus-svg" viewBox="0 0 460 260" role="img" aria-labelledby="hus-tittel-svg">
+          <title id="hus-tittel-svg">Hus i snitt der stålpipe monteres og peisen tennes</title>
+          <!-- Husets snitt -->
+          <path d="M60 110 L230 30 L400 110 L400 240 L60 240 Z" fill="#3A3A3E"/>
+          <path d="M60 110 L230 30 L400 110" fill="none" stroke="#DBD9D4" stroke-width="6" stroke-linejoin="round"/>
+          <rect x="60" y="238" width="340" height="8" fill="#1F1F22"/>
+          <!-- Stue-interiør -->
+          <rect x="84" y="150" width="60" height="90" fill="#2F2F33"/>
+          <rect x="320" y="170" width="56" height="70" rx="4" fill="#4A4A50"/>
+          <!-- Planlagt pipeløp, stiplet -->
+          <g fill="none" stroke="#DBD9D4" stroke-width="1.6" stroke-dasharray="6 6" opacity=".4">
+            <rect x="196" y="184" width="68" height="56" rx="6"/>
+            <line x1="230" y1="184" x2="230" y2="40"/>
+          </g>
+          <!-- Steg 1: ildsted -->
+          <g id="del-1" class="pipe-del">
+            <rect x="196" y="184" width="68" height="56" rx="6" fill="#2B2B2E" stroke="#DBD9D4" stroke-width="3"/>
+            <rect x="206" y="196" width="48" height="36" rx="4" fill="#141416"/>
+          </g>
+          <!-- Flammer -->
+          <g id="flammer">
+            <path class="flamme" d="M222 230 C216 218 222 210 228 202 C230 210 236 212 236 220 C236 227 230 230 222 230 Z" fill="#E25822"/>
+            <path class="flamme f2" d="M234 230 C232 222 236 216 240 210 C242 216 246 219 245 224 C244 229 240 230 234 230 Z" fill="#F5A623"/>
+          </g>
+          <!-- Steg 2: pipe opp til taket -->
+          <g id="del-2" class="pipe-del">
+            <rect x="220" y="88" width="20" height="96" fill="#8E8E96" stroke="#1F1F22" stroke-width="2"/>
+            <rect x="214" y="170" width="32" height="10" rx="3" fill="#6E6E76"/>
+          </g>
+          <!-- Steg 3: gjennom tak med beslag og hatt -->
+          <g id="del-3" class="pipe-del">
+            <rect x="220" y="40" width="20" height="50" fill="#8E8E96" stroke="#1F1F22" stroke-width="2"/>
+            <path d="M208 62 L252 62 L244 46 L216 46 Z" fill="#E25822"/>
+            <rect x="212" y="34" width="36" height="8" rx="3" fill="#6E6E76"/>
+          </g>
+          <!-- Røyk -->
+          <g id="royk-gruppe" fill="#DBD9D4" opacity="0">
+            <circle cx="232" cy="24" r="7" opacity=".8"/>
+            <circle cx="242" cy="14" r="9" opacity=".6"/>
+            <circle cx="254" cy="6" r="11" opacity=".4"/>
+          </g>
+        </svg>
+
+        <div class="stua-panel">
+          <button class="pipe-knapp" id="pipe-knapp" type="button">Monter ildstedet</button>
+          <button class="slukk-knapp" id="slukk-knapp" type="button">Riv og start på nytt</button>
+        </div>
+        <div class="stua-status-rad" aria-live="polite">
+          <div class="stua-steg" id="stua-steg">Steg 0 av 4</div>
+          <div class="stua-status" id="stua-status">Stuen er kald og pipeløpet mangler. Start med ildstedet.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">Alle typer tak</div>
+        <div class="stripe-navn">Store og små, skiftet til avtalt tid</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Tak + ildsted</div>
+        <div class="stripe-navn">Stålpiper og ildsteder montert av samme lag</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Laksevåg</div>
+        <div class="stripe-navn">Base i Gravdalsveien, oppdrag i hele Bergen</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon om" id="om">
+    <div class="ramme">
+      <div class="om-indre">
+        <div class="om-tekst">
+          <p class="overtittel">Om oss</p>
+          <h2>Familiefirmaet som kan hele taket</h2>
+          <p>
+            <strong>Drengenes Tak og Blikk</strong> drives av familien Drengenes fra
+            Laksevåg. Vi skifter tak, former beslag og monterer stålpiper og
+            ildsteder, for boliger og næringsbygg i hele Bergen.
+          </p>
+          <p>
+            Kombinasjonen er poenget: taket skal holde været ute, og pipa skal lede
+            røyken trygt gjennom det. Når samme lag gjør begge deler, blir
+            gjennomføringene tette og ansvaret samlet på ett sted.
+          </p>
+          <p>
+            Arbeidet utføres etter gjeldende bransjestandarder, med varige løsninger
+            som holder taket tett år etter år.
+          </p>
+        </div>
+        <div class="om-kort morkflate">
+          <h3>Derfor velger kundene oss</h3>
+          <ul>
+            <li><span class="punkt"></span>Tak og ildsted fra samme lag, ett ansvar</li>
+            <li><span class="punkt"></span>Familiedrevet firma med kort vei til beslutninger</li>
+            <li><span class="punkt"></span>Arbeid etter gjeldende bransjestandarder</li>
+            <li><span class="punkt"></span>Ferdig til avtalt tid</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Fra takstein til stålpipe</h2>
+        <p>Vi tar hele taket, og det som skal gjennom det.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Taktekking</h3>
+          <p>Utskifting av alle typer tak, store og små, ferdig til avtalt tid.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Blikkenslagerarbeid</h3>
+          <p>Beslag, renner og nedløp som leder vannet dit det skal.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Stålpiper</h3>
+          <p>Montering av stålpiper med tette og trygge gjennomføringer i taket.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Ildsteder</h3>
+          <p>Montering av ildsteder som gir varme og kos, koblet riktig til pipa.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Reparasjoner</h3>
+          <p>Lekkasjer og skader utbedres raskt, før smått blir stort.<!-- PLACEHOLDER: tjenesteomfang bekreftes med kunden --></p>
+        </article>
+        <article class="tjeneste">
+          <h3>Befaring</h3>
+          <p>Taktekkerne våre kommer til deg, vurderer taket og gir en tydelig pris.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva kundene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en huseier som har brukt Drengenes Tak og Blikk.»</p>
+        <p class="omtale-kilde">Navn og bydel settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--glo)">Kontakt</p>
+        <h2>Trenger taket eller pipa tilsyn?</h2>
+        <p>
+          Ring oss eller send en e-post, så kommer vi på befaring. Du får en
+          ærlig vurdering og en tydelig pris før vi starter.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4799312222">Ring 993 12 222</a>
+          <a class="knapp knapp-sekundar" href="mailto:post@drengenes.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Drengenes Tak og Blikk AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#DBD9D4" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#E25822"/></svg>
+          <span>Gravdalsveien 3, 5165 Laksevåg</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#DBD9D4" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4799312222">993 12 222</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#DBD9D4" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#E25822" stroke-width="1.6"/></svg>
+          <a href="mailto:post@drengenes.no">post@drengenes.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#DBD9D4" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#E25822" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Bergen og omegn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Drengenes Tak og Blikk AS</h3>
+        <p>Familiedrevet taktekker- og blikkenslagerfirma på Laksevåg. Tak, beslag, stålpiper og ildsteder i hele Bergen.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Gravdalsveien 3, 5165 Laksevåg</li>
+          <li><a href="tel:+4799312222">993 12 222</a></li>
+          <li><a href="mailto:post@drengenes.no">post@drengenes.no</a></li>
+          <li>Org.nr. 921 379 919</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#pipa">Pipa</a></li>
+          <li><a href="#om">Om oss</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4799312222">Ring 993 12 222</a>
+  <a class="epost" href="mailto:post@drengenes.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var knappTekster = ['Monter ildstedet', 'Reis pipa', 'Gjennom taket', 'Tenn opp', 'Peisen brenner'];
+  var status = [
+    'Stuen er kald og pipeløpet mangler. Start med ildstedet.',
+    'Ildstedet står. Nå skal stålpipa reises gjennom etasjen.',
+    'Pipa står til takhøyde. Neste steg er gjennomføringen i taket.',
+    'Beslaget er tett og pipehatten på plass. Klar til å tenne opp.',
+    'Peisen brenner og røyken stiger trygt over taket. Tett ute, varmt inne.'
+  ];
+  var steg = 0;
+  var knapp = document.getElementById('pipe-knapp');
+  var slukkKnapp = document.getElementById('slukk-knapp');
+  var stegEl = document.getElementById('stua-steg');
+  var statusEl = document.getElementById('stua-status');
+
+  function oppdater(){
+    stegEl.textContent = 'Steg ' + steg + ' av 4';
+    statusEl.textContent = status[steg];
+    knapp.disabled = steg >= 4;
+    knapp.textContent = knappTekster[steg];
+  }
+
+  knapp.addEventListener('click', function(){
+    if (steg >= 4) return;
+    steg++;
+    if (steg <= 3) document.getElementById('del-' + steg).classList.add('montert');
+    if (steg === 4) {
+      document.getElementById('flammer').classList.add('brenner');
+      document.getElementById('royk-gruppe').classList.add('stiger');
+      document.getElementById('royk-gruppe').setAttribute('opacity', '1');
+    }
+    oppdater();
+  });
+
+  slukkKnapp.addEventListener('click', function(){
+    steg = 0;
+    for (var i = 1; i <= 3; i++) document.getElementById('del-' + i).classList.remove('montert');
+    document.getElementById('flammer').classList.remove('brenner');
+    var royk = document.getElementById('royk-gruppe');
+    royk.classList.remove('stiger');
+    royk.setAttribute('opacity', '0');
+    oppdater();
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>
