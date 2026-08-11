@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Entreprenør Jostein Oen | Graving, drenering og grunnarbeid i Øygarden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mold:#4A3B2A;
+  --mold-dyp:#382C1E;
+  --maskingul:#F0B429;
+  --maskingul-mork:#D69E14;
+  --grus:#F0EDE6;
+  --grus-dyp:#E2DDD1;
+  --himmel:#CFE3EE;
+  --hvit:#FFFFFF;
+  --tekst:#33302A;
+  --tekst-dus:#6A6459;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Wix Madefor Text',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--grus);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;font-weight:400;line-height:1;color:var(--mold);letter-spacing:.03em}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--maskingul-mork);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--mold);color:#fff;border-bottom:3px solid var(--maskingul)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.05em;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1}
+.logo-merke{width:28px;height:28px;flex:none}
+.logo span{color:var(--maskingul)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:#E4DDD2}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--maskingul);color:var(--mold-dyp);text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--maskingul-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:1.22rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--mold);color:#fff}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:64px 22px 74px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(240,180,41,.6);color:var(--maskingul);font-weight:600;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(2.4rem,5.4vw,3.8rem);margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--maskingul)}
+.hero-tekst{color:#E4DDD2;font-size:1.07rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--maskingul);color:var(--mold-dyp)}
+.knapp-primar:hover{background:var(--maskingul-mork);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(228,221,210,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:48px;padding-bottom:54px}}
+
+/* Grøfta, signaturelementet */
+.tomta{background:var(--mold-dyp);border:1px solid rgba(240,180,41,.35);border-radius:14px;padding:24px 22px 22px}
+.tomta-tittel{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.04em;color:var(--maskingul);margin-bottom:0}
+.tomta-hint{font-size:.87rem;color:rgba(228,221,210,.75);margin-bottom:14px}
+.lag-del{opacity:0;transition:opacity .5s ease}
+.lag-del.synlig{opacity:1}
+.tomta-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.grav-knapp{
+  font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;
+  background:var(--maskingul);color:var(--mold-dyp);border:none;border-radius:8px;
+  padding:9px 22px 7px;cursor:pointer;transition:background .15s ease;line-height:1.2;
+}
+.grav-knapp:hover{background:var(--maskingul-mork)}
+.grav-knapp:disabled{background:rgba(228,221,210,.25);color:rgba(228,221,210,.6);cursor:not-allowed}
+.fyll-knapp{
+  font-family:'Wix Madefor Text',sans-serif;font-weight:500;font-size:.88rem;
+  background:transparent;color:#E4DDD2;border:1.5px solid rgba(228,221,210,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.fyll-knapp:hover{border-color:#fff;color:#fff}
+.tomta-status-rad{margin-top:12px;background:rgba(240,180,41,.13);border-left:3px solid var(--maskingul);border-radius:0 8px 8px 0;padding:10px 14px}
+.tomta-steg{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--maskingul)}
+.tomta-status{font-size:.95rem;color:#F2EEE7}
+
+/* Fakta-stripe */
+.stripe{background:var(--maskingul);color:var(--mold-dyp)}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Bebas Neue',sans-serif;font-size:2.3rem;line-height:1}
+.stripe-navn{font-size:.88rem;font-weight:600;opacity:.92}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--maskingul-mork);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.seksjon h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:12px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Om */
+.om{background:var(--hvit)}
+.om-indre{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.om-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.om-tekst p strong{color:var(--tekst)}
+.om-kort{background:var(--mold);color:#fff;border-radius:14px;padding:32px 30px;border-bottom:5px solid var(--maskingul)}
+.om-kort h3{color:var(--maskingul);font-size:1.5rem;margin-bottom:16px}
+.om-kort ul{list-style:none;display:grid;gap:13px}
+.om-kort li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:#E4DDD2}
+.om-kort .punkt{width:9px;height:9px;background:var(--maskingul);flex:none;transform:translateY(-1px)}
+@media(max-width:860px){.om-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tjeneste{background:var(--hvit);border-radius:12px;padding:26px 24px;border:1px solid var(--grus-dyp);border-left:5px solid var(--mold);transition:transform .15s ease,box-shadow .15s ease}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(74,59,42,.12);border-left-color:var(--maskingul)}
+.tjeneste h3{font-size:1.45rem;margin-bottom:6px}
+.tjeneste p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.tjenester-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{max-width:44rem;background:var(--grus);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--maskingul)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--mold);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:12px}
+.cta p{color:#E4DDD2;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--mold-dyp);border:1px solid rgba(240,180,41,.35);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.5rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#E4DDD2}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--mold-dyp);color:#CFC7B9;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1.3rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#CFC7B9}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(207,199,185,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(207,199,185,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--mold-dyp);border-top:2px solid var(--maskingul)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--maskingul);color:var(--mold-dyp)}
+.mobilbar .epost{background:rgba(228,221,210,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Entreprenør Jostein Oen, til toppen">
+      <svg class="logo-merke" viewBox="0 0 28 28" aria-hidden="true">
+        <path d="M4 22 L24 22" stroke="#F0B429" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M7 22 L7 14 L14 8 L21 14 L21 22" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M11 22 L11 17 L17 17 L17 22" fill="none" stroke="#F0B429" stroke-width="2"/>
+      </svg>
+      Jostein <span>Oen</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#grofta">Grøfta</a></li>
+        <li><a href="#om">Om oss</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4792088415">920 88 415</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Graveentreprenør, Rong i Øygarden</p>
+        <h1>Godt grunnarbeid <em>synes ikke</em>, det varer</h1>
+        <p class="hero-tekst">
+          Entreprenør Jostein Oen graver, drenerer, sprenger og planerer i Øygarden
+          og omegn. Et lokalt maskinlag som har gjort grunnjobben for hus, hytter
+          og veier her ute i flere tiår.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4792088415">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#grofta">Legg dreneringen selv</a>
+        </div>
+      </div>
+
+      <div class="tomta" id="grofta" aria-label="Interaktiv dreneringsgrøft">
+        <p class="tomta-tittel">Slik legges en drenering</p>
+        <p class="tomta-hint">Fire steg fra våt kjeller til tørr grunnmur.</p>
+
+        <svg id="groft-svg" viewBox="0 0 460 250" role="img" aria-labelledby="groft-tittel-svg">
+          <title id="groft-tittel-svg">Tverrsnitt av dreneringsgrøft som bygges opp steg for steg</title>
+          <!-- Terreng -->
+          <rect x="10" y="60" width="440" height="180" fill="#5E4C36"/>
+          <line x1="10" y1="60" x2="450" y2="60" stroke="#F0EDE6" stroke-width="2"/>
+          <!-- Grunnmur til venstre -->
+          <rect x="40" y="28" width="70" height="180" fill="#8D8478"/>
+          <rect x="40" y="28" width="70" height="34" fill="#B8B0A3"/>
+          <line x1="40" y1="62" x2="110" y2="62" stroke="#4A3B2A" stroke-width="2"/>
+          <!-- Planlagt grøft, stiplet omriss -->
+          <path d="M110 60 L110 208 L210 208 L210 100 L250 60" fill="none" stroke="#F0EDE6" stroke-width="1.6" stroke-dasharray="6 6" opacity=".45"/>
+          <!-- Fukt ved muren -->
+          <g fill="none" stroke="#CFE3EE" stroke-width="3" stroke-linecap="round" opacity=".7">
+            <path d="M116 84 C116 92 108 94 108 100"/>
+            <path d="M124 130 C124 138 116 140 116 146"/>
+          </g>
+          <!-- Steg 1: utgravd grøft -->
+          <g id="steg-groft" class="lag-del">
+            <path d="M110 60 L110 208 L210 208 L210 100 L250 60 Z" fill="#382C1E"/>
+            <path d="M110 208 L210 208" stroke="#F0B429" stroke-width="3" stroke-dasharray="6 5"/>
+          </g>
+          <!-- Steg 2: drensrør -->
+          <g id="steg-ror" class="lag-del">
+            <circle cx="160" cy="192" r="14" fill="#2B2B2E" stroke="#F0B429" stroke-width="3"/>
+            <circle cx="160" cy="192" r="6" fill="#382C1E"/>
+          </g>
+          <!-- Steg 3: pukk -->
+          <g id="steg-pukk" class="lag-del">
+            <path d="M110 208 L110 150 L210 150 L210 208 Z" fill="#9A938A"/>
+            <g fill="#B8B0A3">
+              <circle cx="128" cy="168" r="5"/><circle cx="150" cy="160" r="4"/><circle cx="172" cy="170" r="5"/>
+              <circle cx="192" cy="158" r="4"/><circle cx="138" cy="188" r="4"/><circle cx="184" cy="190" r="5"/>
+            </g>
+          </g>
+          <!-- Steg 4: gjenfylt og ferdig -->
+          <g id="steg-fyll" class="lag-del">
+            <path d="M110 150 L110 60 L250 60 L210 100 L210 150 Z" fill="#5E4C36"/>
+            <path d="M110 60 L250 60" stroke="#8FBC5A" stroke-width="6" stroke-linecap="round"/>
+            <!-- Vanndråper ledes bort -->
+            <path d="M126 92 C126 100 118 102 118 108 M150 110 C150 118 142 120 142 126" fill="none" stroke="#CFE3EE" stroke-width="3" stroke-linecap="round"/>
+            <path d="M160 178 L160 192" stroke="#CFE3EE" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 4"/>
+          </g>
+        </svg>
+
+        <div class="tomta-panel">
+          <button class="grav-knapp" id="grav-knapp" type="button">Neste steg</button>
+          <button class="fyll-knapp" id="fyll-knapp" type="button">Start på nytt</button>
+        </div>
+        <div class="tomta-status-rad" aria-live="polite">
+          <div class="tomta-steg" id="tomta-steg">Steg 0 av 4</div>
+          <div class="tomta-status" id="tomta-status">Grunnmuren står fuktig. Klikk for å grave grøften.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Nettsiden oppgir historikk fra 1981, bekreftes med kunden. -->
+        <div class="stripe-tall">Siden 1981</div>
+        <div class="stripe-navn">Grunnarbeid i Øygarden gjennom flere tiår</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Egen maskinpark</div>
+        <div class="stripe-navn">Graving, planering, drenering og sprengning</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Rong</div>
+        <div class="stripe-navn">Lokal base, kort vei til hele Øygarden</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon om" id="om">
+    <div class="ramme">
+      <div class="om-indre">
+        <div class="om-tekst">
+          <p class="overtittel">Om oss</p>
+          <h2>Vi kjenner grunnen her ute</h2>
+          <p>
+            <strong>Entreprenør Jostein Oen</strong> holder til på Rong og har gjort
+            grunnarbeid i Øygarden i flere tiår. Vi kjenner grunnen her ute, hvor
+            fjellet ligger, hvor vannet vil renne og hva som kreves for at tomten
+            skal holde seg tørr.
+          </p>
+          <p>
+            Det meste av det vi gjør, blir aldri synlig. Men det er grunnarbeidet
+            som avgjør om kjelleren holder seg tørr og om plenen ligger like fint
+            om ti år.
+          </p>
+          <p>
+            Vi tar oppdrag for private, hyttefolk og utbyggere, fra den lille
+            grøften til hel tomteutgraving.
+          </p>
+        </div>
+        <div class="om-kort morkflate">
+          <h3>Derfor velger naboene oss</h3>
+          <ul>
+            <li><span class="punkt"></span>Lokal entreprenør med base på Rong</li>
+            <li><span class="punkt"></span>Flere tiår med grunnarbeid i samme landskap</li>
+            <li><span class="punkt"></span>Egen maskinpark, riktig maskin til jobben<!-- PLACEHOLDER: maskinparkdetaljer bekreftes med kunden --></li>
+            <li><span class="punkt"></span>Ryddig pris og tydelig avtale før vi starter</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Grunnarbeidet som bærer alt annet</h2>
+        <p>Fra første spadetak til klargjort tomt.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Graving</h3>
+          <p>Tomter, grøfter og byggegroper, gravd med riktig maskin for jobben.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Drenering</h3>
+          <p>Drenering rundt grunnmur som holder kjelleren tørr, lagt lag for lag.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Sprengning</h3>
+          <p>Fjell som står i veien, fjernes kontrollert og trygt.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Planering</h3>
+          <p>Tomter og uteområder planert klare for bygging eller beplantning.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Grøftearbeid</h3>
+          <p>Grøfter for vann, avløp og kabler, gravd og gjenfylt riktig.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Tomteutgraving</h3>
+          <p>Hele jobben fra urørt tomt til byggeklar grunn, med ett kontaktpunkt.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva naboene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en huseier eller utbygger som har brukt Entreprenør Jostein Oen.»</p>
+        <p class="omtale-kilde">Navn og sted settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--maskingul)">Kontakt</p>
+        <h2>Har du en jobb som starter i bakken?</h2>
+        <p>
+          Ring oss eller send noen bilder av tomten, så gir vi deg en ærlig
+          vurdering av hva jobben krever, og hva den koster.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4792088415">Ring 920 88 415</a>
+          <a class="knapp knapp-sekundar" href="mailto:post@entreprenorjosteinoen.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Entreprenør Jostein Oen AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#E4DDD2" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#F0B429"/></svg>
+          <span>Skorane 5, 5337 Rong</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#E4DDD2" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4792088415">920 88 415</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#E4DDD2" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#F0B429" stroke-width="1.6"/></svg>
+          <a href="mailto:post@entreprenorjosteinoen.no">post@entreprenorjosteinoen.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#E4DDD2" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#F0B429" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Øygarden og omegn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Entreprenør Jostein Oen AS</h3>
+        <p>Graveentreprenør på Rong i Øygarden. Graving, drenering, sprengning og planering for private og utbyggere.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Skorane 5, 5337 Rong</li>
+          <li><a href="tel:+4792088415">920 88 415</a></li>
+          <li><a href="mailto:post@entreprenorjosteinoen.no">post@entreprenorjosteinoen.no</a></li>
+          <li>Org.nr. 830 105 492</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#grofta">Grøfta</a></li>
+          <li><a href="#om">Om oss</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4792088415">Ring 920 88 415</a>
+  <a class="epost" href="mailto:post@entreprenorjosteinoen.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var deler = ['steg-groft', 'steg-ror', 'steg-pukk', 'steg-fyll'];
+  var status = [
+    'Grunnmuren står fuktig. Klikk for å grave grøften.',
+    'Grøften er gravd ned til riktig dybde, med fall bort fra muren.',
+    'Drensrøret ligger med fall, klart til å lede vannet bort.',
+    'Pukken er på plass rundt røret, så vannet finner veien ned.',
+    'Gjenfylt og planert. Vannet ledes trygt bort, og kjelleren holder seg tørr.'
+  ];
+  var steg = 0;
+  var knapp = document.getElementById('grav-knapp');
+  var fyllKnapp = document.getElementById('fyll-knapp');
+  var stegEl = document.getElementById('tomta-steg');
+  var statusEl = document.getElementById('tomta-status');
+
+  function oppdater(){
+    stegEl.textContent = 'Steg ' + steg + ' av 4';
+    statusEl.textContent = status[steg];
+    knapp.disabled = steg >= 4;
+    knapp.textContent = steg >= 4 ? 'Dreneringen ligger' : 'Neste steg';
+  }
+
+  knapp.addEventListener('click', function(){
+    if (steg >= 4) return;
+    steg++;
+    document.getElementById(deler[steg - 1]).classList.add('synlig');
+    oppdater();
+  });
+
+  fyllKnapp.addEventListener('click', function(){
+    steg = 0;
+    deler.forEach(function(id){ document.getElementById(id).classList.remove('synlig'); });
+    oppdater();
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>
