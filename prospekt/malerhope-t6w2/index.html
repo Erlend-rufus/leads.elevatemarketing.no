@@ -179,6 +179,44 @@ section{padding:56px 0}
 .steg h3{margin-bottom:6px}
 .steg p{font-size:14.5px;color:#4A443C}
 
+/* ---------- Referanser ---------- */
+.ref-nett{display:grid;gap:20px}
+@media (min-width:700px){.ref-nett{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.ref-nett{grid-template-columns:repeat(3,1fr)}}
+.ref-kort{
+  background:#fff;border:1px solid var(--linje);border-radius:12px;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.ref-bilde{
+  aspect-ratio:4/3;background:#EFEAE2;border-bottom:1px solid var(--linje);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  color:var(--dempet);text-align:center;padding:16px;position:relative;
+}
+.ref-bilde::after{
+  content:"";position:absolute;inset:10px;border:1.5px dashed #C9C0B2;border-radius:8px;
+}
+.ref-bilde svg{width:34px;height:34px;opacity:.55;position:relative;z-index:1}
+.ref-bilde span{font-size:12.5px;font-weight:600;letter-spacing:.04em;position:relative;z-index:1}
+.ref-tekst{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ref-merke{
+  font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--vegg-dyp);
+}
+.ref-tekst h3{font-size:17.5px}
+.ref-tekst p{font-size:14.5px;color:#4A443C}
+.ref-lenke{
+  margin-top:auto;padding-top:10px;font-weight:700;font-size:14px;
+  color:var(--kull);text-decoration:none;border-bottom:2px solid var(--vegg);
+  align-self:flex-start;
+}
+.ref-forklaring{
+  margin-top:24px;background:#fff;border:1px dashed #CFC8BC;border-radius:12px;
+  padding:20px 22px;
+}
+.ref-forklaring p{font-size:14.5px;color:#4A443C;max-width:62ch}
+.ref-forklaring p + p{margin-top:8px}
+.ref-forklaring b{color:var(--kull)}
+
 /* ---------- Omtaler ---------- */
 .omtaler-boks{
   background:#fff;border:1px dashed #CFC8BC;border-radius:12px;padding:36px 22px;text-align:center;
@@ -397,6 +435,114 @@ footer a:hover{color:#fff;text-decoration:underline}
             merke resultatet.</p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- Referansesider: det Stein etterlyste. Fem prosjektsider inngår i leveransen.
+       PLACEHOLDER: alle bilder og prosjektdetaljer leveres av kunden. Ingenting her
+       er diktet opp: kortene viser strukturen, ikke ferdige prosjekter. -->
+  <section id="referanser" aria-labelledby="ref-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Referanser</span>
+        <h2 id="ref-tittel">Jobber vi har gjort</h2>
+        <p>Hvert prosjekt får sin egen side med bilder, beskrivelse og fakta.
+          Slik ser en besøkende hva du faktisk leverer, ikke bare hva du sier.</p>
+      </div>
+
+      <div class="ref-nett">
+        <article class="ref-kort">
+          <div class="ref-bilde">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <circle cx="8.5" cy="10" r="1.6"/>
+              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
+            </svg>
+            <span>PROSJEKTBILDE</span>
+          </div>
+          <div class="ref-tekst">
+            <span class="ref-merke">Enebolig</span>
+            <h3>Fasademaling</h3>
+            <p>Bilder før og etter, hvilke produkter som ble brukt, og hvor lang tid jobben tok.</p>
+            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+          </div>
+        </article>
+
+        <article class="ref-kort">
+          <div class="ref-bilde">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <circle cx="8.5" cy="10" r="1.6"/>
+              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
+            </svg>
+            <span>PROSJEKTBILDE</span>
+          </div>
+          <div class="ref-tekst">
+            <span class="ref-merke">Borettslag</span>
+            <h3>Oppussing av fellesarealer</h3>
+            <p>Store flater, mange beboere og en fremdriftsplan som holdt. Bilder fra hele prosessen.</p>
+            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+          </div>
+        </article>
+
+        <article class="ref-kort">
+          <div class="ref-bilde">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <circle cx="8.5" cy="10" r="1.6"/>
+              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
+            </svg>
+            <span>PROSJEKTBILDE</span>
+          </div>
+          <div class="ref-tekst">
+            <span class="ref-merke">Leilighet</span>
+            <h3>Maling og tapetsering</h3>
+            <p>Rom for rom, med detaljbilder av listverk og overganger der håndverket vises.</p>
+            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+          </div>
+        </article>
+
+        <article class="ref-kort">
+          <div class="ref-bilde">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <circle cx="8.5" cy="10" r="1.6"/>
+              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
+            </svg>
+            <span>PROSJEKTBILDE</span>
+          </div>
+          <div class="ref-tekst">
+            <span class="ref-merke">Næringsbygg</span>
+            <h3>Innvendig oppussing</h3>
+            <p>Utført utenfor åpningstid, slik at driften gikk som normalt underveis.</p>
+            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+          </div>
+        </article>
+
+        <article class="ref-kort">
+          <div class="ref-bilde">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <rect x="3" y="5" width="18" height="14" rx="2"/>
+              <circle cx="8.5" cy="10" r="1.6"/>
+              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
+            </svg>
+            <span>PROSJEKTBILDE</span>
+          </div>
+          <div class="ref-tekst">
+            <span class="ref-merke">Gulv</span>
+            <h3>Legging av nytt gulv</h3>
+            <p>Fra gammelt underlag til ferdig lagt gulv, med bilder av oppbyggingen underveis.</p>
+            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="ref-forklaring">
+        <p><b>Slik fylles disse.</b> Fem referansesider inngår i leveransen. Du sender
+          bildene og forteller kort om jobben, så setter vi opp sidene.</p>
+        <p>Bildene trenger ikke være profesjonelle. Mobilbilder tatt før og etter
+          fungerer godt, så lenge de viser ekte arbeid dere har utført.</p>
+      </div>
     </div>
   </section>
 
