@@ -188,15 +188,25 @@ section{padding:56px 0}
   display:flex;flex-direction:column;
 }
 .ref-bilde{
-  aspect-ratio:4/3;background:#EFEAE2;border-bottom:1px solid var(--linje);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-  color:var(--dempet);text-align:center;padding:16px;position:relative;
+  margin:0;aspect-ratio:4/3;background:#EFEAE2;border-bottom:1px solid var(--linje);
+  position:relative;overflow:hidden;
 }
-.ref-bilde::after{
+.ref-bilde img{width:100%;height:100%;object-fit:cover}
+.ref-plass{
+  display:none;position:absolute;inset:0;flex-direction:column;align-items:center;
+  justify-content:center;gap:7px;color:var(--dempet);text-align:center;padding:16px;
+}
+.ref-plass::after{
   content:"";position:absolute;inset:10px;border:1.5px dashed #C9C0B2;border-radius:8px;
 }
-.ref-bilde svg{width:34px;height:34px;opacity:.55;position:relative;z-index:1}
-.ref-bilde span{font-size:12.5px;font-weight:600;letter-spacing:.04em;position:relative;z-index:1}
+.ref-plass svg{width:30px;height:30px;opacity:.5;position:relative;z-index:1}
+.ref-plass b{font-size:12px;letter-spacing:.06em;position:relative;z-index:1;color:#5A544B}
+.ref-plass span{
+  font-size:11.5px;position:relative;z-index:1;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+.ref-bilde.tom img{display:none}
+.ref-bilde.tom .ref-plass{display:flex}
 .ref-tekst{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .ref-merke{
   font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
@@ -452,96 +462,101 @@ footer a:hover{color:#fff;text-decoration:underline}
 
       <div class="ref-nett">
         <article class="ref-kort">
-          <div class="ref-bilde">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <circle cx="8.5" cy="10" r="1.6"/>
-              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
-            </svg>
-            <span>PROSJEKTBILDE</span>
-          </div>
+          <figure class="ref-bilde">
+            <img src="bilder/fasademaling.jpg" alt="Utvendig malerarbeid utført av Malermester Hope"
+                 onerror="this.closest('.ref-bilde').classList.add('tom')">
+            <figcaption class="ref-plass">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/></svg>
+              <b>LEGG BILDET HER</b>
+              <span>bilder/fasademaling.jpg</span>
+            </figcaption>
+          </figure>
           <div class="ref-tekst">
-            <span class="ref-merke">Enebolig</span>
-            <h3>Fasademaling</h3>
-            <p>Bilder før og etter, hvilke produkter som ble brukt, og hvor lang tid jobben tok.</p>
-            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+            <span class="ref-merke">Utvendig</span>
+            <h3>Utvendig maling av bolig</h3>
+            <p>Vask, skraping, grunning og to strøk. Forarbeidet avgjør hvor lenge fargen står.</p>
+            <a class="ref-lenke" href="referanser/fasademaling/">Se referansesiden</a>
           </div>
         </article>
 
         <article class="ref-kort">
-          <div class="ref-bilde">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <circle cx="8.5" cy="10" r="1.6"/>
-              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
-            </svg>
-            <span>PROSJEKTBILDE</span>
-          </div>
+          <figure class="ref-bilde">
+            <img src="bilder/murfasade.jpg" alt="Arbeid på murfasade utført av Malermester Hope"
+                 onerror="this.closest('.ref-bilde').classList.add('tom')">
+            <figcaption class="ref-plass">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/></svg>
+              <b>LEGG BILDET HER</b>
+              <span>bilder/murfasade.jpg</span>
+            </figcaption>
+          </figure>
           <div class="ref-tekst">
-            <span class="ref-merke">Borettslag</span>
-            <h3>Oppussing av fellesarealer</h3>
-            <p>Store flater, mange beboere og en fremdriftsplan som holdt. Bilder fra hele prosessen.</p>
-            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+            <span class="ref-merke">Mur</span>
+            <h3>Vedlikehold av murfasade</h3>
+            <p>Sprekker og skader utbedres før flaten males, ellers kommer problemet tilbake.</p>
+            <a class="ref-lenke" href="referanser/murfasade/">Se referansesiden</a>
           </div>
         </article>
 
         <article class="ref-kort">
-          <div class="ref-bilde">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <circle cx="8.5" cy="10" r="1.6"/>
-              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
-            </svg>
-            <span>PROSJEKTBILDE</span>
-          </div>
+          <figure class="ref-bilde">
+            <img src="bilder/innvendig.jpg" alt="Innvendig malerarbeid utført av Malermester Hope"
+                 onerror="this.closest('.ref-bilde').classList.add('tom')">
+            <figcaption class="ref-plass">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/></svg>
+              <b>LEGG BILDET HER</b>
+              <span>bilder/innvendig.jpg</span>
+            </figcaption>
+          </figure>
           <div class="ref-tekst">
-            <span class="ref-merke">Leilighet</span>
+            <span class="ref-merke">Innvendig</span>
             <h3>Maling og tapetsering</h3>
-            <p>Rom for rom, med detaljbilder av listverk og overganger der håndverket vises.</p>
-            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+            <p>Sparkling, jevne flater og rene overganger mot listverk.</p>
+            <a class="ref-lenke" href="referanser/innvendig/">Se referansesiden</a>
           </div>
         </article>
 
         <article class="ref-kort">
-          <div class="ref-bilde">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <circle cx="8.5" cy="10" r="1.6"/>
-              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
-            </svg>
-            <span>PROSJEKTBILDE</span>
-          </div>
-          <div class="ref-tekst">
-            <span class="ref-merke">Næringsbygg</span>
-            <h3>Innvendig oppussing</h3>
-            <p>Utført utenfor åpningstid, slik at driften gikk som normalt underveis.</p>
-            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
-          </div>
-        </article>
-
-        <article class="ref-kort">
-          <div class="ref-bilde">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <circle cx="8.5" cy="10" r="1.6"/>
-              <path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/>
-            </svg>
-            <span>PROSJEKTBILDE</span>
-          </div>
+          <figure class="ref-bilde">
+            <img src="bilder/gulv.jpg" alt="Gulvlegging utført av Malermester Hope"
+                 onerror="this.closest('.ref-bilde').classList.add('tom')">
+            <figcaption class="ref-plass">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/></svg>
+              <b>LEGG BILDET HER</b>
+              <span>bilder/gulv.jpg</span>
+            </figcaption>
+          </figure>
           <div class="ref-tekst">
             <span class="ref-merke">Gulv</span>
-            <h3>Legging av nytt gulv</h3>
-            <p>Fra gammelt underlag til ferdig lagt gulv, med bilder av oppbyggingen underveis.</p>
-            <a class="ref-lenke" href="#referanser">Se prosjektet</a>
+            <h3>Legging av gulv</h3>
+            <p>Parkett, belegg og teppefliser, lagt på et underlag vi har kontrollert.</p>
+            <a class="ref-lenke" href="referanser/gulv/">Se referansesiden</a>
+          </div>
+        </article>
+
+        <article class="ref-kort">
+          <figure class="ref-bilde">
+            <img src="bilder/dekormaling.jpg" alt="Dekormaling utført av Malermester Hope"
+                 onerror="this.closest('.ref-bilde').classList.add('tom')">
+            <figcaption class="ref-plass">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.6"/><path d="M21 16l-5-5-4.5 4.5L9 13l-6 6"/></svg>
+              <b>LEGG BILDET HER</b>
+              <span>bilder/dekormaling.jpg</span>
+            </figcaption>
+          </figure>
+          <div class="ref-tekst">
+            <span class="ref-merke">Dekor</span>
+            <h3>Dekormaling og logo</h3>
+            <p>Motiv, profil og effektvegger malt direkte på veggen.</p>
+            <a class="ref-lenke" href="referanser/dekormaling/">Se referansesiden</a>
           </div>
         </article>
       </div>
 
       <div class="ref-forklaring">
-        <p><b>Slik fylles disse.</b> Fem referansesider inngår i leveransen. Du sender
-          bildene og forteller kort om jobben, så setter vi opp sidene.</p>
-        <p>Bildene trenger ikke være profesjonelle. Mobilbilder tatt før og etter
-          fungerer godt, så lenge de viser ekte arbeid dere har utført.</p>
+        <p><b>Klikk deg inn på en av dem.</b> Hver referanse er en egen side med bilder,
+          fakta om jobben og plass til et sitat fra kunden. Fem slike sider inngår.</p>
+        <p>Sidene er satt opp som eksempler: feltene i klammer og bilderammene fyller
+          du selv. Vi dikter aldri opp prosjekter, kundenavn eller årstall.</p>
       </div>
     </div>
   </section>
