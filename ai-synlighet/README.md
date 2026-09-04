@@ -119,13 +119,16 @@ Ordren vinner over `design/*.dc.html` der de er uenige (ARBEIDSORDRE punkt 0).
 understrek. Sidene følger referansebildet. Skal teksten også være grønn på
 desktop, fjern `color:inherit` i regelen `.uthev` i `site.css` (én linje).
 
-## Kontrast, til orientering
+## Kontrast
 
-Grønnfargen `#00A862` er avklart og bevisst (punkt 3) og er ikke rørt. Den
-består likevel ikke WCAG AA mot papir eller med hvit tekst: hvit på grønn
-(knappene) måler 3,1:1 mot kravet 4,5:1 for vanlig tekst, og grønn tekst på
-papir (H1 på mobil, tallene i «Hva vi faktisk gjør», «Ditt byrå») måler
-2,8:1 mot kravet 3:1 for stor tekst. Blekk og grå er som ordren sier (AAA/AA).
+Ordrens grønne `#00A862` er beholdt som dekor (aksentstreker, understreken i
+H1, prikken ved AI-SVAR, rammen rundt rad 6, pillene). Der grønn er tekst eller
+knappefyll på papir brukes `--gronn-tekst: #00804C`, samme tone, mørkere:
+H1-uthevingen på mobil, tallene 1 til 4, «Ditt byrå», begge knappene og
+fokusringen. Grunn: hvit på `#00A862` måler 3,1:1 og `#00A862` på papir 2,8:1,
+under WCAG AA (4,5:1). Hvit på `#00804C` måler 5,0:1 og `#00804C` på papir
+4,6:1. Avklart med Erlend 4. september 2026. Vil du tilbake til referansen,
+sett `--gronn-tekst` lik `--gronn` i `site.css`.
 
 ## Testet
 
