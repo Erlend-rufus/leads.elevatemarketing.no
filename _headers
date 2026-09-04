@@ -8,3 +8,21 @@
 # arbeidsfiler som vises i møter, ikke offentlige sider.
 /prospekt/*
   X-Robots-Tag: noindex, nofollow
+
+# Kampanjen «AI-synlighet for regnskapsbyråer» (ai-synlighet/). Fire sider som
+# aldri skal indekseres (ARBEIDSORDRE punkt 9): et oppdiktet AI-svar har
+# ingenting i søkeresultater å gjøre. Bevisst ikke i robots.txt, av samme
+# grunn som over: Disallow hindrer crawling, ikke indeksering.
+/ai-synlighet/*
+  X-Robots-Tag: noindex
+
+# Fonter og logo i mappen endrer seg ikke. CSS og JS har ingen innholdshash,
+# så kort levetid: en rettelse er ute hos alle innen ti minutter.
+/ai-synlighet/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/ai-synlighet/assets/img/*
+  Cache-Control: public, max-age=31536000, immutable
+/ai-synlighet/assets/css/*
+  Cache-Control: public, max-age=600, must-revalidate
+/ai-synlighet/assets/js/*
+  Cache-Control: public, max-age=600, must-revalidate
