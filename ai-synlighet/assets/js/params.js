@@ -84,7 +84,7 @@
       ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
         .forEach(function (k) { legg(k, param(k)); });
       deler.push('hide_gdpr_banner=1');      /* eget samtykkebånd, punkt 8 */
-      deler.push('primary_color=00a862');
+      deler.push('primary_color=00804c');
 
       var url = 'https://calendly.com/' + konto + '/' + slug + '?' + deler.join('&');
       var w = document.createElement('div');
