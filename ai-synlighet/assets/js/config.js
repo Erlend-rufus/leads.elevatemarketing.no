@@ -19,6 +19,9 @@ window.EM_CONFIG = {
   /* Meta Pixel-ID (bare sifre). Lastes først etter «Godta». */
   metaPixelId: 'META_PIXEL_ID',
 
-  /* Full adresse til personvernerklæringen. Lenkes fra samtykkebåndet. */
+  /* Adresse til personvernerklæringen. Lenkes fra samtykkebåndet; så lenge
+     dette er en plassholder, viser båndet ingen lenke. Et utkast ligger på
+     /ai-synlighet/personvern/ (se KONFIG.md punkt 4). Når du har lest det:
+     personvernUrl: '/ai-synlighet/personvern/' */
   personvernUrl: 'PERSONVERN_URL'
 };

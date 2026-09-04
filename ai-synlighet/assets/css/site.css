@@ -77,7 +77,10 @@ button{font:inherit}
 
 /* ---------- Typografi ---------- */
 h1,h2,h3{margin:0;font-family:var(--serif);letter-spacing:-0.025em;line-height:1.02;text-wrap:pretty}
-h1{font-weight:900;font-size:clamp(38px,4.2vw,60px)}
+/* Ordren sier 38→60px. Ved 60px brakk H1 i seks linjer med «nevner» alene
+   (punchliste 4. sep, punkt 3). Med 3.4vw/50px og bredere tekstkolonne blir
+   det fire linjer uten ettordslinjer på 1280, 1440 og 1920. Målt. */
+h1{font-weight:900;font-size:clamp(38px,3.4vw,50px)}
 h1.h1-side{font-size:clamp(38px,4vw,56px)}   /* S2–S4 */
 h2{font-weight:700;font-size:clamp(30px,3vw,44px)}
 .ingress{font-size:clamp(19px,1.5vw,22px);line-height:1.5;text-wrap:pretty}
@@ -141,13 +144,13 @@ h2{font-weight:700;font-size:clamp(30px,3vw,44px)}
    ===================================================================== */
 .hero{padding:clamp(24px,3vw,56px) 0 var(--seksjon-pad)}
 .hero .wrap{display:flex;flex-wrap:wrap-reverse;align-items:center;gap:clamp(40px,4vw,64px) 64px}
-.hero-tekst{flex:1 1 560px;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
+.hero-tekst{flex:1 1 620px;min-width:0;display:flex;flex-direction:column;align-items:flex-start}
 .hero-tekst h1{margin-top:20px}
 .hero-ingress{margin-top:24px;max-width:600px}
 .hero-knapp{margin-top:32px}
 .hero-note{margin-top:14px;font-size:18px;line-height:1.5;color:var(--gra)}
 
-.hero-demo{flex:1 1 360px;max-width:480px;min-width:0;display:flex;flex-direction:column}
+.hero-demo{flex:1 1 360px;max-width:440px;min-width:0;display:flex;flex-direction:column}
 
 /* Søkefeltet */
 /* <label> rundt hele feltet: trykk hvor som helst i de 56 px fokuserer byfeltet. */
@@ -294,10 +297,10 @@ html:not(.js) .faq-ikon{display:none}
 /* =====================================================================
    Det faste knappebåndet (11.4). Papirfarge, topplinje, skygge. Vises
    først når hero-knappen er scrollet ut av syne, forsvinner når
-   skjemaseksjonen nås. Ligger over samtykkebåndet om begge vises.
+   skjemaseksjonen nås. Skjult mens samtykkebåndet vises.
    ===================================================================== */
 .baand{
-  position:fixed;left:0;right:0;bottom:var(--samtykke-h);z-index:20;
+  position:fixed;left:0;right:0;bottom:0;z-index:20;
   background:var(--papir);border-top:1px solid var(--linje-fast);
   box-shadow:0 -12px 24px -16px rgba(16,20,28,0.18);
   padding:14px clamp(20px,3.4vw,48px) calc(16px + env(safe-area-inset-bottom));
@@ -305,8 +308,9 @@ html:not(.js) .faq-ikon{display:none}
   transition:transform .25s ease,bottom .25s ease,visibility 0s linear .25s;
 }
 .baand.er-synlig{transform:none;visibility:visible;transition:transform .25s ease,bottom .25s ease,visibility 0s linear 0s}
-/* Ligger båndet oppå samtykkebåndet, har det båndet allerede safe-area. */
-.samtykke-vises .baand{padding-bottom:16px}
+/* Aldri to faste bånd samtidig: vises samtykkebåndet, er CTA-båndet borte.
+   Når samtykket er avgjort, fjerner consent.js klassen og CTA-båndet overtar. */
+.samtykke-vises .baand{transform:translateY(110%);visibility:hidden}
 .baand-knapp{max-width:520px;min-height:56px;margin:0 auto;padding:12px 24px;font-size:17px}
 
 /* =====================================================================
@@ -316,23 +320,27 @@ html:not(.js) .faq-ikon{display:none}
 .samtykke{
   position:fixed;left:0;right:0;bottom:0;z-index:30;
   background:var(--marine);color:#fff;border-top:1px solid rgba(255,255,255,0.12);
-  padding:18px var(--side-pad) calc(18px + env(safe-area-inset-bottom));
-  font-size:inherit;line-height:1.5;   /* samme gulv som brødteksten: 18px på mobil */
+  padding:9px var(--side-pad) calc(10px + env(safe-area-inset-bottom));
+  font-size:15px;line-height:1.3;
 }
-.samtykke-inn{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px}
-.samtykke p{flex:1 1 360px;min-width:0;max-width:640px;color:rgba(255,255,255,0.88);text-wrap:pretty}
+/* Én rad: tekst til venstre, to like knapper til høyre. 1 + 9 + 44 + 10 = 64px
+   på 390 (punchliste 4. sep, punkt 2), pluss safe-area under. Hele setningen
+   er lenken til personvernerklæringen når den er satt, så ingen ekstra ord. */
+.samtykke-inn{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px 24px}
+.samtykke p{flex:1 1 auto;min-width:0;margin:0;color:rgba(255,255,255,0.88)}
 .samtykke a{color:#fff;text-decoration:underline;text-underline-offset:0.15em}
 .samtykke a:hover{color:var(--gronn-mork)}
-.samtykke-knapper{display:flex;flex-wrap:wrap;gap:12px;flex:0 0 auto}
+.samtykke-knapper{display:flex;gap:8px;flex:0 0 auto}
 .samtykke-knapp{
-  appearance:none;cursor:pointer;min-height:44px;padding:10px 18px;border-radius:8px;
+  appearance:none;cursor:pointer;min-height:44px;padding:0 14px;border-radius:8px;
   border:1.5px solid rgba(255,255,255,0.7);background:transparent;color:#fff;
-  font-family:inherit;font-weight:500;font-size:17px;line-height:1.25;white-space:nowrap;
+  font-family:inherit;font-weight:500;font-size:15px;line-height:1.2;white-space:nowrap;
 }
 .samtykke-knapp:hover{background:rgba(255,255,255,0.1)}
 @media (max-width:599px){
-  .samtykke-knapper{width:100%}
-  .samtykke-knapp{flex:1 1 auto}
+  .samtykke{padding-left:16px;padding-right:16px;font-size:13px}
+  .samtykke-inn{gap:10px}
+  .samtykke-knapp{padding:0 8px;font-size:14px}
 }
 
 /* =====================================================================
@@ -352,3 +360,39 @@ html:not(.js) .faq-ikon{display:none}
 .hake-sirkel{width:64px;height:64px;border-radius:50%;border:2px solid var(--gronn);display:flex;align-items:center;justify-content:center}
 .hake-sirkel svg{display:block;width:32px;height:32px}
 .hake-sirkel + h1{margin-top:28px}
+
+/* ---------- Figurer: plass til demonstrasjonsbildene (punchliste punkt 5) ----------
+   Eksplisitt aspect-ratio, så ingenting hopper når bildet settes inn. Til
+   bildet finnes viser rammen et nøytralt ikon. Sett inn <img> i .figur-ramme
+   og fjern klassen figur--tom, så forsvinner ikonet. */
+.figur{margin:0;max-width:680px}
+.figur-ramme{position:relative;width:100%;background:var(--papir);border:1px solid var(--linje);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.figur--4x3 .figur-ramme{aspect-ratio:4/3}
+.figur--3x4{max-width:400px}
+.figur--3x4 .figur-ramme{aspect-ratio:3/4}
+.figur-ramme img{display:block;width:100%;height:100%;object-fit:cover}
+.figur-ikon{width:40px;height:40px;stroke:var(--linje);fill:none;stroke-width:1.5}
+.figur:not(.figur--tom) .figur-ikon{display:none}
+.figur figcaption{margin-top:10px;font-size:15px;line-height:1.5;color:var(--gra);text-wrap:pretty}
+.steg .figur{margin-top:16px}
+.mote .figur{margin-top:8px}
+@supports not (aspect-ratio:1){
+  .figur--4x3 .figur-ramme{padding-top:75%}
+  .figur--3x4 .figur-ramme{padding-top:133.33%}
+  .figur-ramme img,.figur-ramme .figur-ikon{position:absolute;top:0;left:0}
+  .figur-ramme .figur-ikon{top:50%;left:50%;transform:translate(-50%,-50%)}
+}
+/* Ett stort tall i den mørke seksjonen (punchliste punkt 5). Blokken står
+   skjult i HTML-en til tallet finnes; da erstatter den det andre avsnittet. */
+.stort-tall{margin:0;font-family:var(--serif);font-weight:900;font-size:clamp(64px,7vw,112px);line-height:0.9;letter-spacing:-0.03em;color:var(--gronn-mork)}
+.stort-tall-tekst{margin:12px 0 0;font-size:clamp(19px,1.5vw,22px);line-height:1.5;text-wrap:pretty}
+
+/* Personvernsiden */
+.personvern-inn{max-width:680px;margin:0 auto}
+.personvern-inn h1{overflow-wrap:anywhere;hyphens:manual}
+.personvern-inn p{overflow-wrap:anywhere}
+.personvern-inn h2{font-size:clamp(24px,2vw,30px);margin-top:40px}
+.personvern-inn h2 + p{margin-top:14px}
+.personvern-inn p + p{margin-top:14px}
+.personvern-inn .knapp{margin-top:18px;max-width:320px;min-height:52px}
+.personvern-inn .sist{margin-top:40px;color:var(--gra);font-size:16px}

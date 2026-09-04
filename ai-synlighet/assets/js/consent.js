@@ -71,15 +71,21 @@
     if (v === GODTA) lastPixel();
   }
   function visBaand() {
-    var url = erPlassholder(cfg.personvernUrl) ? 'PERSONVERN_URL' : String(cfg.personvernUrl).trim();
+    if (baand || les() === GODTA || les() === NODVENDIGE) return;
+    /* Lenken rendres bare når personvernUrl faktisk er satt. En død lenke i
+       et samtykkebånd er verre enn ingen lenke (punchliste punkt 1). */
+    var url = erPlassholder(cfg.personvernUrl) ? '' : String(cfg.personvernUrl).trim();
     baand = document.createElement('div');
     baand.className = 'samtykke';
     baand.setAttribute('role', 'region');
     baand.setAttribute('aria-label', 'Samtykke til informasjonskapsler');
     baand.innerHTML =
       '<div class="samtykke-inn">' +
-        '<p>Vi bruker informasjonskapsler fra Meta til å måle om annonsene våre virker. Du velger selv. ' +
-        '<a href="' + url + '">Personvernerklæring</a></p>' +
+        '<p>' +
+        (url
+          ? '<a href="' + url.replace(/"/g, '&quot;') + '">Informasjonskapsler fra Meta måler annonsene.<span class="sr-only"> Les personvernerklæringen.</span></a>'
+          : 'Informasjonskapsler fra Meta måler annonsene.') +
+        '</p>' +
         '<div class="samtykke-knapper">' +
           '<button type="button" class="samtykke-knapp" data-valg="' + GODTA + '">Godta</button>' +
           '<button type="button" class="samtykke-knapp" data-valg="' + NODVENDIGE + '">Bare nødvendige</button>' +
@@ -96,13 +102,34 @@
     window.addEventListener('resize', settHoyde);
   }
 
+  /* På landingssiden vises båndet først når hero-sekvensen er ferdig: 6,2 s
+     etter last, eller ved første scroll, det som kommer først. Ingen sporing
+     fyrer før «Godta», så utsettelsen koster ingenting. Andre sider: straks. */
+  function visBaandNaarKlart() {
+    if (!document.getElementById('hero-demo')) { visBaand(); return; }
+    var vist = false;
+    var naa = function () {
+      if (vist) return;
+      vist = true;
+      window.removeEventListener('scroll', naa);
+      visBaand();
+    };
+    window.addEventListener('scroll', naa, { passive: true });
+    setTimeout(naa, 6200);
+  }
+
   window.EMSamtykke = {
     godta: function () { velg(GODTA); },
     bareNodvendige: function () { velg(NODVENDIGE); },
+    /* Personvernsiden: fjern lagret valg og vis båndet på nytt. */
+    nullstill: function () {
+      try { localStorage.removeItem(NOKKEL); } catch (e) {}
+      visBaand();
+    },
     status: les
   };
 
   var valg = les();
   if (valg === GODTA) lastPixel();
-  else if (valg !== NODVENDIGE) visBaand();
+  else if (valg !== NODVENDIGE) visBaandNaarKlart();
 })();
