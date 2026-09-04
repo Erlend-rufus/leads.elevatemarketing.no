@@ -95,17 +95,29 @@ ligge bak det samme samtykket.
 
 ## 4. Personvernerklæring
 
-Samtykkebåndet lenker til `personvernUrl`. Den finnes ikke ennå. Den må dekke
-det disse sidene faktisk gjør: Meta Pixel etter samtykke, Typeform (skjema),
-Calendly (booking), valget lagret i nettleseren (`localStorage`, nøkkel
-`em_consent`) og EngeCo AS som behandlingsansvarlig. Databehandleravtaler med
-Typeform og Calendly er nevnt i ARBEIDSORDRE punkt 14 og er heller ikke kode.
+**Et utkast ligger på `/ai-synlighet/personvern/` (filen `personvern/index.html`).
+Det er skrevet av Claude Code 4. september 2026 og er IKKE lest av Erlend.**
+Les det gjennom før båndet lenker til det. Sjekk særlig:
 
-Teksten i samtykkebåndet er skrevet av meg, ikke hentet fra TEKST.md, og bør
-leses gjennom. Den ligger i `assets/js/consent.js`:
+- kontaktadressen `post@elevatemarketing.no` (fra punchlisten)
+- lagringstid: teksten sier «så lenge vi følger opp henvendelsen», uten tall.
+  Har dere en fast rutine, skriv den inn
+- overføring ut av EØS: teksten sier «godkjent overføringsgrunnlag», uten å
+  navngi ordning. Sjekk hva Typeform, Calendly, Meta og Netlify faktisk bruker
+- at listen over databehandlere stemmer når Zapier eller SMS-utsending kommer
 
-> Vi bruker informasjonskapsler fra Meta til å måle om annonsene våre virker.
-> Du velger selv. Personvernerklæring · Godta · Bare nødvendige
+Så lenge `personvernUrl` i `assets/js/config.js` er en plassholder, viser
+samtykkebåndet **ingen lenke** (en død lenke er verre enn ingen). Når utkastet
+er godkjent, sett:
+
+```js
+personvernUrl: '/ai-synlighet/personvern/'
+```
+
+Siden har `noindex`, samme bunntekst som de andre, og en knapp «Endre valget
+ditt» som nullstiller samtykket og viser båndet på nytt.
+
+---
 
 ## 5. SVG-versjon av logoen
 

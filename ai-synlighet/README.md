@@ -17,6 +17,7 @@ leads/
 ├── book/index.html          S2  /book           Calendly
 ├── takk/index.html          S3  /takk           booket
 ├── ikke-aktuelt/index.html  S4  /ikke-aktuelt   ikke kvalifisert
+├── personvern/index.html        /personvern     personvernerklæring, utkast (KONFIG.md punkt 4)
 ├── assets/
 │   ├── css/site.css         én delt stilfil, tokens øverst
 │   ├── js/config.js         ← alle verdier som skal fylles inn
@@ -118,6 +119,26 @@ Ordren vinner over `design/*.dc.html` der de er uenige (ARBEIDSORDRE punkt 0).
 600px». Designfilen og referansebildet viser blekkfarget tekst med grønn
 understrek. Sidene følger referansebildet. Skal teksten også være grønn på
 desktop, fjern `color:inherit` i regelen `.uthev` i `site.css` (én linje).
+
+## Punchliste 4. september 2026
+
+Etter lansering kom en punchliste målt på den live siden. Gjort:
+
+- **Samtykkebåndet** er én rad på 64px (pluss safe-area), viser ingen lenke så
+  lenge `personvernUrl` er en plassholder, og vises på landingssiden først
+  6,2 s etter last eller ved første scroll. Aldri to faste bånd samtidig: mens
+  samtykkebåndet står, er CTA-båndet skjult (`.samtykke-vises .baand`).
+- **H1 på desktop** er `clamp(38px, 3.4vw, 50px)` med tekstkolonne
+  `flex: 1 1 620px` og demokolonne `max-width: 440px`. Ved ordrens 60px brakk
+  overskriften i seks linjer med «nevner» alene. Nå fire linjer på 1280, 1440
+  og 1920, målt.
+- **`/personvern/`** finnes som utkast. Se KONFIG.md punkt 4.
+- **Figurer** med eksplisitt `aspect-ratio` står klare to steder: steg 2 i «Hva
+  vi faktisk gjør» (4:3) og «Hva du får på møtet» (3:4). Til bildene kommer
+  viser rammen et nøytralt ikon. Sett inn `<img>` i `.figur-ramme` og fjern
+  klassen `figur--tom`. Den mørke seksjonen har en skjult blokk for ett stort
+  tall (`.stort-tall-blokk`); fyll inn, fjern `hidden`, fjern avsnittet over.
+  Ingen oppdiktede tall eller bilder.
 
 ## Kontrast
 
