@@ -134,18 +134,18 @@ Etter lansering kom en punchliste målt på den live siden. Gjort:
   og 1920, målt.
 - **`/personvern/`** finnes som utkast. Se KONFIG.md punkt 4.
 - **Figurer** med eksplisitt `aspect-ratio` to steder, begge fylt med ekte
-  materiale fra Headvisor-gjennomgangen 24. august 2026 (`Elevate-leadgen/audits/
-  headvisor-trond-henanger-v2-w4nq8`), anonymisert:
-  - steg 2 i «Hva vi faktisk gjør» (4:3): Google AI Mode-svaret på spørsmålet
-    om ny daglig leder på Vestlandet, beskåret 520 × 390 fra 1x-kilden, med
-    byrånavn, kildechips og kort sladdet i Pillow. Derfor `max-width: 520px`,
-    så det aldri oppskaleres.
-  - «Hva du får på møtet» (3:4): rapportens forside rendret fra
-    `public/report/…/index.html` med kundenavnet sladdet i DOM-en før
-    skjermbildet, beskåret under «GEO-rapport»-etiketten (ordet GEO skal ikke
-    forekomme på siden). 810 × 1080.
-  Bildetekstene sier at det er en annen bransje. Vil du bytte til et
-  regnskapseksempel: samme `<picture>`, samme mål.
+  materiale fra riktig bransje (regnskap), anonymisert:
+  - steg 2 i «Hva vi faktisk gjør» (4:3): Google AI Mode, norsk, 5. september
+    2026, søket «beste regnskapsfører i Bergen», beskåret 1045 × 784 til 4:3.
+    Byrånavn og alle identifiserende detaljer (bydeler, etableringsår,
+    erfaringsår, medarbeidertall, stjernevurderinger) sladdet i DOM-en før
+    skjermbildet, med heldekkende felt. `max-width: 520px` i CSS.
+  - «Hva du får på møtet» (3:4): forsiden av en revisjon levert september
+    2026, rendret fra `Elevate-leadgen/public/report/…/index.html` med
+    kundenavnet sladdet i DOM-en før skjermbildet, med heldekkende felt.
+    900 × 1200.
+  Ingen av bildetekstene sier «en annen bransje» lenger, og skal ikke gjøre
+  det igjen: enten er beviset relevant, eller så skal det ikke stå på siden.
   Den mørke seksjonen har fortsatt en skjult blokk for ett stort tall
   (`.stort-tall-blokk`); fyll inn, fjern `hidden`, fjern avsnittet over. Ingen
   oppdiktede tall.
