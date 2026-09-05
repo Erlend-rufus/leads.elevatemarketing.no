@@ -12,8 +12,8 @@ innstillinger i Typeform, Calendly og Netlify.
 | Plassholder      | Hvor i koden                            | Hva som skal inn |
 |------------------|-----------------------------------------|------------------|
 | `TYPEFORM_ID`    | `assets/js/config.js` → `typeformId`    | ID-en til skjemaet (punkt 1) |
-| `CALENDLY_KONTO` | `assets/js/config.js` → `calendlyKonto` | Kontodelen av Calendly-adressen (punkt 2) |
-| `CALENDLY_SLUG`  | `assets/js/config.js` → `calendlySlug`  | Event-delen av Calendly-adressen (punkt 2) |
+| ~~`CALENDLY_KONTO`~~ | `assets/js/config.js` → `calendlyKonto` | **Fylt inn** 5. september (punkt 2) |
+| ~~`CALENDLY_SLUG`~~  | `assets/js/config.js` → `calendlySlug`  | **Fylt inn** 5. september (punkt 2) |
 | ~~`META_PIXEL_ID`~~  | `assets/js/config.js` → `metaPixelId`   | **Fylt inn** 4. september: samme pixel som roten (punkt 3) |
 | ~~`PERSONVERN_URL`~~ | `assets/js/config.js` → `personvernUrl` | **Fylt inn** 4. september: utkastet er godkjent (punkt 4) |
 
@@ -63,27 +63,35 @@ Logikken for hvem som er kvalifisert settes i Typeform (Logic → avslutning),
 ikke i koden. Er skjemaet innstilt slik at det åpner i fullskjerm på mobil,
 overstyrer koden det med `data-tf-inline-on-mobile`: alltid inline, aldri popup.
 
-## 2. Calendly: konto, event og rekkefølgen på spørsmålene
+## 2. Calendly — fylt inn, ikke fullt verifisert
 
-**Oppsett steg for steg: se `CALENDLY-OPPSETT.md` i denne mappen.**
+`calendlyKonto` og `calendlySlug` er satt fra den korte lenken
+`calendly.com/d/d2jt-xw6-hwn/regnskapsforer-ai-synlighet` (5. september 2026).
 
-Bookingadressen til eventet ser slik ut: `https://calendly.com/<konto>/<event>`.
-Kontodelen inn i `calendlyKonto`, eventdelen inn i `calendlySlug`. Har eventet
-en kort adresse på formen `calendly.com/d/xxx-yyy/event`, går `d/xxx-yyy` inn
-i `calendlyKonto`.
+**Ikke bekreftet herfra, sjekk selv (se `CALENDLY-OPPSETT.md` for hvordan):**
 
-I Calendly-eventet:
+- At **selskapsnavn er det første egendefinerte spørsmålet** i eventet.
+  Koden fyller det inn som `a1`. Ligger et annet spørsmål først, havner
+  selskapsnavnet feil sted. `calendly.com` er blokkert fra byggemiljøet, så
+  dette kunne ikke sjekkes herfra.
+- At **redirect etter booking** peker til
+  `https://leads.elevatemarketing.no/ai-synlighet/takk`. Koden har en reserve
+  (sender selv til `/takk` 1,5 s etter at Calendly melder om en booking, om
+  Calendlys egen videresending ikke har skjedd), men reserven skal ikke være
+  det som normalt gjør jobben.
 
-- **Første egendefinerte spørsmål må være selskapsnavn.** Koden fyller det inn
-  som `a1`. Ligger det et annet spørsmål først, havner selskapsnavnet feil sted.
-- **Etter booking:** «Redirect to an external site» → `https://leads.elevatemarketing.no/ai-synlighet/takk`.
-  Koden har i tillegg en reserve: får siden melding fra Calendly om at et møte
-  er booket, og Calendlys egen videresending ikke har skjedd innen 1,5 s,
-  sendes brukeren til `/takk` av koden.
-- Calendlys eget GDPR-banner er skrudd av i adressen (`hide_gdpr_banner=1`),
-  fordi sidene har eget samtykkebånd.
-- Koden setter `primary_color=00a862` (grønnfargen) på kalenderen. Skal
-  eventets egne farger vinne, fjern den linjen i `assets/js/params.js`.
+**Allerede riktig, ingen handling nødvendig:**
+
+- Calendly-embedens egne innstillinger («Hide Page Details», «Hide Cookie
+  Banner») er skrudd på i kontoen, og koden setter uansett sitt eget
+  `hide_gdpr_banner=1` i URL-en den bygger, siden sidene har eget
+  samtykkebånd. `hide_event_type_details=1` settes ikke av koden per i dag —
+  legg den til i `assets/js/params.js` også, hvis den skal stå på i alle
+  tilfeller (koden bygger URL-en fra `konto`/`slug` alene, ikke fra
+  embed-koden i Calendly-dialogen).
+- Koden setter `primary_color=00804c` (siden knappefargen), ikke kontoens
+  standardblå. Skal eventets egne farger vinne, fjern den linjen i
+  `assets/js/params.js`.
 
 ## 3. Meta Pixel-ID — fylt inn
 
