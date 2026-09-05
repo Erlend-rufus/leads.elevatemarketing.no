@@ -14,8 +14,8 @@ innstillinger i Typeform, Calendly og Netlify.
 | `TYPEFORM_ID`    | `assets/js/config.js` → `typeformId`    | ID-en til skjemaet (punkt 1) |
 | `CALENDLY_KONTO` | `assets/js/config.js` → `calendlyKonto` | Kontodelen av Calendly-adressen (punkt 2) |
 | `CALENDLY_SLUG`  | `assets/js/config.js` → `calendlySlug`  | Event-delen av Calendly-adressen (punkt 2) |
-| `META_PIXEL_ID`  | `assets/js/config.js` → `metaPixelId`   | Pixel-ID, bare sifre (punkt 3) |
-| `PERSONVERN_URL` | `assets/js/config.js` → `personvernUrl` | Full adresse til personvernerklæringen (punkt 4) |
+| ~~`META_PIXEL_ID`~~  | `assets/js/config.js` → `metaPixelId`   | **Fylt inn** 4. september: samme pixel som roten (punkt 3) |
+| ~~`PERSONVERN_URL`~~ | `assets/js/config.js` → `personvernUrl` | **Fylt inn** 4. september: utkastet er godkjent (punkt 4) |
 
 Plassholderne gjenkjennes på formen `STORE_BOKSTAVER_MED_UNDERSTREK`. En ekte
 Typeform-ID som `01KYF20M5CAMYSVACWPM3AMY4S` har ingen understrek og går fint.
@@ -23,6 +23,12 @@ Typeform-ID som `01KYF20M5CAMYSVACWPM3AMY4S` har ingen understrek og går fint.
 ---
 
 ## 1. Typeform: ID og de syv spørsmålene
+
+**Brief til Typeforms AI-bygger: se `TYPEFORM-BRIEF.md` i denne mappen**, med
+forslag til de sju spørsmålene, kvalifiseringslogikk og de to avslutningene
+ferdig utfylt. Kopier den inn i Typeform, juster spørsmålene om ønskelig, og
+sett `question reference` nøyaktig som brief-en sier for `navn`, `epost` og
+`selskap`.
 
 **ID.** Typeform → Share → Embed → «Inline». Kodesnutten inneholder
 `data-tf-live="01…"` (26 tegn). Den korte form-ID-en fra adressen
@@ -59,6 +65,8 @@ overstyrer koden det med `data-tf-inline-on-mobile`: alltid inline, aldri popup.
 
 ## 2. Calendly: konto, event og rekkefølgen på spørsmålene
 
+**Oppsett steg for steg: se `CALENDLY-OPPSETT.md` i denne mappen.**
+
 Bookingadressen til eventet ser slik ut: `https://calendly.com/<konto>/<event>`.
 Kontodelen inn i `calendlyKonto`, eventdelen inn i `calendlySlug`. Har eventet
 en kort adresse på formen `calendly.com/d/xxx-yyy/event`, går `d/xxx-yyy` inn
@@ -77,13 +85,12 @@ I Calendly-eventet:
 - Koden setter `primary_color=00a862` (grønnfargen) på kalenderen. Skal
   eventets egne farger vinne, fjern den linjen i `assets/js/params.js`.
 
-## 3. Meta Pixel-ID
+## 3. Meta Pixel-ID — fylt inn
 
-Events Manager → datakilden → ID (bare sifre). Inn i `metaPixelId`.
-Produksjonssidene på roten av dette repoet bruker pixel `2054301445970035`
-(se `CLAUDE.md`). Skal samme pixel lære av denne kampanjen, er det tallet som
-skal inn; kampanjen bruker standardhendelsene `Lead` og `Schedule`, ikke de
-egendefinerte hendelsene fra den gamle siden.
+Satt til `2054301445970035`, samme pixel som roten av dette repoet (avklart
+4. september 2026). Kampanjen bruker standardhendelsene `Lead` og `Schedule`,
+ikke de egendefinerte hendelsene fra den gamle siden, så de to funnelene skiller
+seg i Events Manager på hendelsesnavn selv om de deler datasett.
 
 Pixelen lastes først når brukeren trykker «Godta». Hendelser: `PageView` på
 alle sider, `Lead` på `/book`, `Schedule` på `/takk`, ingen på `/ikke-aktuelt`.
@@ -93,11 +100,11 @@ Optimaliser kampanjen mot `Lead`, ikke `Schedule` (ARBEIDSORDRE punkt 8).
 Conversions API er ikke satt opp i denne koden. Settes det opp senere, må det
 ligge bak det samme samtykket.
 
-## 4. Personvernerklæring
+## 4. Personvernerklæring — godkjent, fylt inn
 
-**Et utkast ligger på `/ai-synlighet/personvern/` (filen `personvern/index.html`).
-Det er skrevet av Claude Code 4. september 2026 og er IKKE lest av Erlend.**
-Les det gjennom før båndet lenker til det. Sjekk særlig:
+`personvernUrl` peker nå på `/ai-synlighet/personvern/`. Erlend godkjente
+utkastet 4. september 2026 som det står. Det som fortsatt bør sjekkes ved
+neste revisjon, ikke blokkerende for lansering:
 
 - kontaktadressen `post@elevatemarketing.no` (fra punchlisten)
 - lagringstid: teksten sier «så lenge vi følger opp henvendelsen», uten tall.
@@ -136,12 +143,15 @@ Bruk samme relative sti som PNG-en allerede står med i den filen:
 Toppen bruker `logo-ink`, bunnen `logo-white`. Behold `width`/`height`
 (bildets faktiske sideforhold), så ingenting flytter seg mens den laster.
 
-## 6. Bekreftelse fra Calendly, eller Zapier med SMS først
+## 6. Bekreftelse — avgjort: Calendly selv
 
-Ikke kode. Men setningen på `/takk` forutsetter e-post:
-«Du får en bekreftelse på e-post med lenke til møtet.» Blir det SMS først,
-endres den i `takk/index.html`. Oppfølging av dem som fyller ut skjemaet uten
-å booke (ARBEIDSORDRE punkt 14) er heller ikke kode og finnes ikke ennå.
+**Avgjort 4. september 2026: Calendly sender bekreftelsen selv, ingen
+Zapier-pipeline med SMS.** Sett i Calendly-eventets egne varslingsinnstillinger
+(«Confirmation» → e-post til deltaker), ikke i denne koden. Setningen på
+`/takk` — «Du får en bekreftelse på e-post med lenke til møtet.» — stemmer som
+den står, ingen kodeendring. Oppfølging av dem som fyller ut skjemaet uten å
+booke (ARBEIDSORDRE punkt 14) er fortsatt ikke løst og finnes ikke ennå;
+det er en egen Zapier-jobb, ikke kode på disse sidene.
 
 ## 7. Rot eller undermappe på subdomenet
 
