@@ -9,8 +9,8 @@
    ===================================================================== */
 window.EM_CONFIG = {
   /* Typeform: ID-en fra Share → Embed. Live embed-ID (26 tegn) eller
-     klassisk form-ID, begge virker. */
-  typeformId: 'TYPEFORM_ID',
+     klassisk form-ID, begge virker. Fylt inn 5. september 2026. */
+  typeformId: '01M1RDJV3MB42C0DW33CDCNJ4T',
 
   /* Calendly: https://calendly.com/<calendlyKonto>/<calendlySlug> */
   calendlyKonto: 'CALENDLY_KONTO',

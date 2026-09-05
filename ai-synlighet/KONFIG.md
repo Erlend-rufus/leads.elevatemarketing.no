@@ -11,7 +11,7 @@ innstillinger i Typeform, Calendly og Netlify.
 
 | Plassholder      | Hvor i koden                            | Hva som skal inn |
 |------------------|-----------------------------------------|------------------|
-| `TYPEFORM_ID`    | `assets/js/config.js` → `typeformId`    | ID-en til skjemaet (punkt 1) |
+| ~~`TYPEFORM_ID`~~    | `assets/js/config.js` → `typeformId`    | **Fylt inn** 5. september: ID-en til skjemaet (punkt 1) |
 | `CALENDLY_KONTO` | `assets/js/config.js` → `calendlyKonto` | Kontodelen av Calendly-adressen (punkt 2) |
 | `CALENDLY_SLUG`  | `assets/js/config.js` → `calendlySlug`  | Event-delen av Calendly-adressen (punkt 2) |
 | ~~`META_PIXEL_ID`~~  | `assets/js/config.js` → `metaPixelId`   | **Fylt inn** 4. september: samme pixel som roten (punkt 3) |
@@ -22,13 +22,18 @@ Typeform-ID som `01KYF20M5CAMYSVACWPM3AMY4S` har ingen understrek og går fint.
 
 ---
 
-## 1. Typeform: ID og de syv spørsmålene
+## 1. Typeform: ID — fylt inn, ikke verifisert herfra
 
-**Brief til Typeforms AI-bygger: se `TYPEFORM-BRIEF.md` i denne mappen**, med
-forslag til de sju spørsmålene, kvalifiseringslogikk og de to avslutningene
-ferdig utfylt. Kopier den inn i Typeform, juster spørsmålene om ønskelig, og
-sett `question reference` nøyaktig som brief-en sier for `navn`, `epost` og
-`selskap`.
+`typeformId` er satt til `01M1RDJV3MB42C0DW33CDCNJ4T` (5. september 2026).
+`embed.typeform.com` og `form.typeform.com` er blokkert fra byggemiljøet, så
+verken at ID-en løser opp, at de sju skjulte feltene faktisk er lagt til, at
+`question reference` er satt riktig på `navn`/`epost`/`selskap`, eller at de
+to avslutningene peker dit de skal, kunne kontrolleres herfra.
+
+**Kjør sjekklisten nederst i `TYPEFORM-BRIEF.md` manuelt** (samme brief som
+ble brukt til å bygge skjemaet) før dere stoler på skjemaet i produksjon.
+Punkt 6 i denne filen tester hele kjeden på ekte telefon og fanger opp feil
+her uansett, men det er raskere å fange dem nå.
 
 **ID.** Typeform → Share → Embed → «Inline». Kodesnutten inneholder
 `data-tf-live="01…"` (26 tegn). Den korte form-ID-en fra adressen
