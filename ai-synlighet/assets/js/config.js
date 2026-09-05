@@ -16,12 +16,12 @@ window.EM_CONFIG = {
   calendlyKonto: 'CALENDLY_KONTO',
   calendlySlug: 'CALENDLY_SLUG',
 
-  /* Meta Pixel-ID (bare sifre). Lastes først etter «Godta». */
-  metaPixelId: 'META_PIXEL_ID',
+  /* Meta Pixel-ID (bare sifre). Lastes først etter «Godta». Samme pixel
+     som roten av dette repoet bruker (avklart med Erlend 4. september
+     2026), så kampanjen lærer inn i samme datasett. */
+  metaPixelId: '2054301445970035',
 
-  /* Adresse til personvernerklæringen. Lenkes fra samtykkebåndet; så lenge
-     dette er en plassholder, viser båndet ingen lenke. Et utkast ligger på
-     /ai-synlighet/personvern/ (se KONFIG.md punkt 4). Når du har lest det:
-     personvernUrl: '/ai-synlighet/personvern/' */
-  personvernUrl: 'PERSONVERN_URL'
+  /* Adresse til personvernerklæringen. Utkastet i /ai-synlighet/personvern/
+     er godkjent av Erlend 4. september 2026. */
+  personvernUrl: '/ai-synlighet/personvern/'
 };
