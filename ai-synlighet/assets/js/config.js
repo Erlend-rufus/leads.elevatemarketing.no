@@ -12,9 +12,11 @@ window.EM_CONFIG = {
      klassisk form-ID, begge virker. Fylt inn 5. september 2026. */
   typeformId: '01M1RDJV3MB42C0DW33CDCNJ4T',
 
-  /* Calendly: https://calendly.com/<calendlyKonto>/<calendlySlug> */
-  calendlyKonto: 'CALENDLY_KONTO',
-  calendlySlug: 'CALENDLY_SLUG',
+  /* Calendly: https://calendly.com/<calendlyKonto>/<calendlySlug>
+     Fylt inn 5. september 2026, fra den korte lenken
+     calendly.com/d/d2jt-xw6-hwn/regnskapsforer-ai-synlighet. */
+  calendlyKonto: 'd/d2jt-xw6-hwn',
+  calendlySlug: 'regnskapsforer-ai-synlighet',
 
   /* Meta Pixel-ID (bare sifre). Lastes først etter «Godta». Samme pixel
      som roten av dette repoet bruker (avklart med Erlend 4. september
