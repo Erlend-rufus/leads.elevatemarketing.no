@@ -367,7 +367,7 @@ html:not(.js) .faq-ikon{display:none}
    og fjern klassen figur--tom, så forsvinner ikonet. */
 .figur{margin:0;max-width:680px}
 .figur-ramme{position:relative;width:100%;background:var(--papir);border:1px solid var(--linje);border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.figur--4x3{max-width:520px}   /* kilden er 1x, 520px: aldri oppskalert */
+.figur--4x3{max-width:520px}   /* kilde 1045×784: vises retina-tett i 520px CSS-bredde */
 .figur--4x3 .figur-ramme{aspect-ratio:4/3}
 .figur--3x4{max-width:400px}
 .figur--3x4 .figur-ramme{aspect-ratio:3/4}
