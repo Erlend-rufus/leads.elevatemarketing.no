@@ -104,16 +104,34 @@
 <section id="kvalifiser"><div class="wrap">
   <p class="eb">Neste steg</p>
   <h2>Se om dere kvalifiserer.</h2>
-  <p class="lead">Ett spørsmål, så kan dere booke en gjennomgang på 45 minutter.</p>
+  <p class="lead">Fyll inn skjemaet, så velger dere tidspunkt for en gjennomgang på 45 minutter. Det tar rundt ett minutt.</p>
   <div class="qual">
-    <fieldset>
-      <legend>Hvor mye bruker dere på annonser i måneden i dag?</legend>
-      <div class="opts">
-        <button type="button" class="opt" data-q="nei">Under 30 000 kr</button>
-        <button type="button" class="opt" data-q="ja" data-b="30-100k">30 000 til 100 000 kr</button>
-        <button type="button" class="opt" data-q="ja" data-b="100k+">Over 100 000 kr</button>
+    <form id="skjema" name="google-ads-gjennomgang" method="POST" data-netlify="true" netlify-honeypot="bot-felt" novalidate>
+      <input type="hidden" name="form-name" value="google-ads-gjennomgang">
+      <p hidden><label>Ikke fyll ut: <input name="bot-felt"></label></p>
+      <div class="grid2">
+        <label class="f">Navn<input name="navn" autocomplete="name" required></label>
+        <label class="f">E-post<input name="epost" type="email" autocomplete="email" required></label>
+        <label class="f">Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
+        <label class="f">Firmanavn<input name="firma" autocomplete="organization" required></label>
+        <label class="f">Nettside<input name="nettside" type="text" inputmode="url" placeholder="firma.no" required></label>
+        <label class="f">Bransje<select name="bransje" required><option value="">Velg</option><option>Nettbutikk</option><option>Tjenester og håndverk</option><option>Helse og klinikk</option><option>B2B</option><option>Annet</option></select></label>
       </div>
-    </fieldset>
+      <fieldset class="rad"><legend>Hvor mye bruker dere på annonser i måneden i dag?</legend>
+        <label><input type="radio" name="budsjett" value="Under 30 000 kr" required>Under 30 000 kr</label>
+        <label><input type="radio" name="budsjett" value="30 000 til 100 000 kr">30 000 til 100 000 kr</label>
+        <label><input type="radio" name="budsjett" value="Over 100 000 kr">Over 100 000 kr</label>
+      </fieldset>
+      <fieldset class="rad"><legend>Kjører dere Google Ads i dag?</legend>
+        <label><input type="radio" name="google_ads_i_dag" value="Ja, selv" required>Ja, selv</label>
+        <label><input type="radio" name="google_ads_i_dag" value="Ja, via byrå">Ja, via byrå</label>
+        <label><input type="radio" name="google_ads_i_dag" value="Nei">Nei</label>
+      </fieldset>
+      <label class="f">Hva er viktigst for dere?<select name="maal" required><option value="">Velg</option><option>Flere henvendelser</option><option>Mer salg i nettbutikken</option><option>Lavere kostnad per kunde</option><option>Annet</option></select></label>
+      <label class="f">Noe vi bør vite før møtet? <span class="valg">(valgfritt)</span><textarea name="melding" rows="3"></textarea></label>
+      <button class="btn" type="submit">Gå videre til kalenderen</button>
+      <p class="pv">Vi bruker opplysningene bare til å forberede møtet. <a href="/ai-synlighet/personvern/">Personvern</a></p>
+    </form>
     <p class="msg" id="msg" aria-live="polite"></p>
     <div id="kalender"></div>
   </div>
@@ -166,17 +184,26 @@ var PIXEL_ID = '2054301445970035';            // samme pixel som resten av leads
   ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(q.get(k))utm.set(k,q.get(k))});
 
   var msg=document.getElementById('msg'), kal=document.getElementById('kalender'), done=false;
-  document.querySelector('.opts').addEventListener('click',function(e){
-    var b=e.target.closest('.opt'); if(!b)return;
-    if(b.dataset.q==='nei'){ location.href='ikke-aktuelt/'; return; }
-    if(!done){ done=true; emTrack('GoogleAdsKvalifisert',{budsjett:b.dataset.b}); if(ok&&window.fbq) fbq('track','Lead',{content_name:'google-ads-fastpris'}); }
-    msg.textContent='Bra. Velg et tidspunkt som passer for gjennomgangen.';
-    if(/^[A-Z_]+$/.test(CALENDLY_URL)){ msg.textContent='Kalenderen er ikke koblet på ennå. Send oss en e-post på post@elevatemarketing.no, så finner vi et tidspunkt.'; return; }
-    utm.set('hide_gdpr_banner','1'); utm.set('primary_color','00a3d6');
-    kal.innerHTML='<div class="calendly-inline-widget" data-url="'+CALENDLY_URL+'?'+utm.toString()+'"></div>';
-    kal.classList.add('on');
-    var s=document.createElement('script'); s.src='https://assets.calendly.com/assets/external/widget.js'; s.async=true; document.body.appendChild(s);
-    kal.scrollIntoView({behavior:'smooth',block:'start'});
+  var form=document.getElementById('skjema');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){ msg.textContent='Fyll inn alle feltene som mangler.'; form.reportValidity(); return; }
+    if(done)return; done=true;
+    var d=new FormData(form), body=new URLSearchParams(d).toString(), bud=d.get('budsjett');
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sender…';
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(){}).then(function(){
+      if(bud==='Under 30 000 kr'){ location.href='ikke-aktuelt/'; return; }
+      emTrack('GoogleAdsKvalifisert',{budsjett:bud}); if(ok&&window.fbq) fbq('track','Lead',{content_name:'google-ads-fastpris'});
+      form.hidden=true;
+      msg.textContent='Takk. Velg et tidspunkt som passer for gjennomgangen.';
+      if(/^[A-Z_]+$/.test(CALENDLY_URL)){ msg.textContent='Takk, vi tar kontakt på e-post innen én arbeidsdag.'; return; }
+      utm.set('name',d.get('navn')); utm.set('email',d.get('epost'));
+      utm.set('hide_gdpr_banner','1'); utm.set('primary_color','00a3d6');
+      kal.innerHTML='<div class="calendly-inline-widget" data-url="'+CALENDLY_URL+'?'+utm.toString()+'"></div>';
+      kal.classList.add('on');
+      var s=document.createElement('script'); s.src='https://assets.calendly.com/assets/external/widget.js'; s.async=true; document.body.appendChild(s);
+      kal.scrollIntoView({behavior:'smooth',block:'start'});
+    });
   });
   window.addEventListener('message',function(e){
     if(e.origin.indexOf('calendly.com')<0||!e.data||e.data.event!=='calendly.event_scheduled')return;
