@@ -114,10 +114,8 @@
       <div class="grid2">
         <label class="f">Navn<input name="navn" autocomplete="name" required></label>
         <label class="f">E-post<input name="epost" type="email" autocomplete="email" required></label>
-        <label class="f">Telefon<input name="telefon" type="tel" autocomplete="tel" required></label>
         <label class="f">Firmanavn<input name="firma" autocomplete="organization" required></label>
         <label class="f">Nettside<input name="nettside" type="text" inputmode="url" placeholder="firma.no" required></label>
-        <label class="f">Bransje<select name="bransje" required><option value="">Velg</option><option>Nettbutikk</option><option>Tjenester og håndverk</option><option>Helse og klinikk</option><option>B2B</option><option>Annet</option></select></label>
       </div>
       <fieldset class="rad"><legend>Hvor mye bruker dere på annonser i måneden i dag?</legend>
         <label><input type="radio" name="budsjett" value="Under 30 000 kr" required>Under 30 000 kr</label>
@@ -129,7 +127,6 @@
         <label><input type="radio" name="google_ads_i_dag" value="Ja, via byrå">Ja, via byrå</label>
         <label><input type="radio" name="google_ads_i_dag" value="Nei">Nei</label>
       </fieldset>
-      <label class="f">Hva er viktigst for dere?<select name="maal" required><option value="">Velg</option><option>Flere henvendelser</option><option>Mer salg i nettbutikken</option><option>Lavere kostnad per kunde</option><option>Annet</option></select></label>
       <label class="f">Noe vi bør vite før møtet? <span class="valg">(valgfritt)</span><textarea name="melding" rows="3"></textarea></label>
       <button class="btn" type="submit">Gå videre til kalenderen</button>
       <p class="pv">Vi bruker opplysningene bare til å forberede møtet. <a href="/ai-synlighet/personvern/">Personvern</a></p>
@@ -194,7 +191,7 @@ var PIXEL_ID = '2054301445970035';            // samme pixel som resten av leads
     var d=new FormData(form), body=new URLSearchParams(d).toString(), bud=d.get('budsjett');
     var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sender…';
     var zp=new URLSearchParams(d); zp.delete('form-name'); zp.set('kilde','google-ads'+(q.get('utm_campaign')?' / '+q.get('utm_campaign'):''));
-    try{fetch('https://hooks.zapier.com/hooks/catch/21716066/HNZje673pBmrCIYp/',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:zp.toString()})}catch(err){}
+    try{fetch('https://hooks.zapier.com/hooks/catch/21716066/HNZje673pBmrCIYp/',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:zp.toString()}).catch(function(){})}catch(err){}
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(){}).then(function(){
       if(bud==='Under 30 000 kr'){ location.href='ikke-aktuelt/'; return; }
       emTrack('GoogleAdsKvalifisert',{budsjett:bud}); if(ok&&window.fbq) fbq('track','Lead',{content_name:'google-ads-fastpris'});
