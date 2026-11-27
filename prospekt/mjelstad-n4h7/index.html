@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Mjelstad VVS | Rørlegger på Hylkje for Åsane og Bergen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --skifer:#232B33;
+  --skifer-dyp:#171D24;
+  --vann:#1789B8;
+  --vann-dyp:#0F5F82;
+  --vann-lys:#E3F2F8;
+  --bakgrunn:#F7F9FA;
+  --hvit:#FFFFFF;
+  --tekst:#232B33;
+  --dus:#5F6B75;
+  --strek:#DEE5E9;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Instrument Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--bakgrunn);line-height:1.6;font-size:17px}
+h1,h2,h3{line-height:1.15;font-weight:700;letter-spacing:-.01em}
+.aksent{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400;color:var(--vann)}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--vann);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--skifer-dyp);color:#C6D2DB;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:#fff;text-decoration:none;font-weight:600}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.1}
+.merke b{font-size:23px;color:var(--skifer);letter-spacing:-.02em}
+.merke b span{color:var(--vann)}
+.merke small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--dus);font-weight:600}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px}
+nav.hoved a:hover{color:var(--vann)}
+.ring-knapp{background:var(--vann);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:100px;white-space:nowrap}
+.ring-knapp:hover{background:var(--vann-dyp)}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:var(--hvit);border-bottom:1px solid var(--strek);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 72px}
+.hero h1{font-size:clamp(31px,4.4vw,50px);color:var(--skifer)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:100px;font-size:17px}
+.knapp-primar{background:var(--vann);color:#fff}
+.knapp-primar:hover{background:var(--vann-dyp)}
+.knapp-sekundar{background:transparent;color:var(--skifer);border:2px solid var(--skifer)}
+.knapp-sekundar:hover{background:var(--skifer);color:#fff}
+.hero-panel{background:var(--vann-lys);border:1px solid #C3E0EE;border-radius:14px;padding:30px 28px}
+.hero-panel h2{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--vann-dyp);margin-bottom:14px}
+.hero-panel ul{list-style:none}
+.hero-panel li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid #C3E0EE}
+.hero-panel li:last-child{border-bottom:none}
+.hero-panel li::before{content:"";position:absolute;left:0;top:17px;width:16px;height:8px;border-left:3px solid var(--vann);border-bottom:3px solid var(--vann);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:var(--skifer);color:#C6D2DB}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:#fff;font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--vann)}
+.seksjonstittel h2{font-size:clamp(26px,3.4vw,38px);color:var(--skifer);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:12px;padding:24px 22px}
+.tjeneste .drape{width:34px;height:34px;border-radius:50% 50% 50% 0;background:var(--vann-lys);border:2px solid var(--vann);transform:rotate(-45deg);margin-bottom:16px}
+.tjeneste h3{font-size:18px;color:var(--skifer);margin-bottom:8px}
+.tjeneste p{font-size:14.5px;color:var(--dus)}
+@media (max-width:980px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Tiårvelger */
+.tiaar-seksjon{background:var(--skifer);color:#DEE7ED}
+.tiaar-seksjon .seksjonstittel h2{color:#fff}
+.tiaar-seksjon .seksjonstittel p{color:#9FB0BC}
+.tiaar-knapper{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.tiaar-knapp{font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:15.5px;padding:12px 20px;border-radius:100px;border:2px solid #46586A;background:transparent;color:#DEE7ED;cursor:pointer}
+.tiaar-knapp[aria-pressed="true"]{background:var(--vann);border-color:var(--vann);color:#fff}
+.tiaar-knapp:hover{border-color:var(--vann)}
+.tiaar-panel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.tiaar-kort{background:rgba(255,255,255,.06);border:1px solid #3A4A5A;border-radius:12px;padding:24px 22px}
+.tiaar-kort h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#7FC3E0;margin-bottom:12px}
+.tiaar-kort p{font-size:15.5px;color:#C6D2DB}
+.tiaar-kort .stor{font-size:18px;color:#fff;font-weight:600;line-height:1.4}
+.tiaar-fot{margin-top:22px;font-size:14px;color:#9FB0BC;max-width:72ch}
+@media (max-width:880px){.tiaar-panel{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:12px;padding:26px 24px}
+.hvorfor-kort h3{font-size:19px;color:var(--skifer);margin-bottom:8px}
+.hvorfor-kort h3 span{color:var(--vann);margin-right:8px}
+.hvorfor-kort p{font-size:15.5px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:var(--vann-lys)}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:12px;padding:24px 22px;counter-increment:steg;border:1px solid #C3E0EE}
+.steg::before{content:counter(steg);display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--vann);color:#fff;font-weight:700;font-size:18px;margin-bottom:12px}
+.steg h3{font-size:17.5px;color:var(--skifer);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--vann);border-radius:12px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:600;color:var(--skifer);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:16px;width:12px;height:12px;border-radius:50% 50% 50% 0;background:var(--vann);transform:rotate(-45deg)}
+.medlem-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:14px;padding:30px 28px}
+.medlem-kort h3{font-size:21px;color:var(--skifer);margin-bottom:10px}
+.medlem-kort p{font-size:15.5px;color:var(--dus)}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:12px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--skifer);list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--vann);line-height:1;font-weight:400}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(135deg,var(--vann-dyp),var(--vann));color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,40px)}
+.slutt-cta p{color:#DFF1F9;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-size:clamp(30px,5vw,46px);font-weight:700;color:#fff;text-decoration:none;display:inline-block;margin-bottom:26px;letter-spacing:.02em}
+.slutt-cta .knapp-hvit{background:#fff;color:var(--vann-dyp)}
+
+/* Footer */
+footer{background:var(--skifer-dyp);color:#9FB0BC;padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:#7FC3E0}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid #2E3A46;margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--skifer-dyp);border-top:2px solid var(--vann);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:100px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--vann);color:#fff}
+.mobil-bar .m-post{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Hylkjeflaten 40, 5109 Hylkje &middot; Åpent hverdager 07.00 til 16.00</span>
+    <span>Ring: <a href="tel:+4755191100">55 19 11 00</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>Mjelstad <span>VVS</span></b>
+      <small>Rørlegger på Hylkje</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#tiaar">Boligen din</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4755191100">55 19 11 00</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Rørleggeren i <span class="aksent">Bergen nord</span>, fra bad til varmepumpe</h1>
+      <p class="ingress">Mjelstad VVS holder til på Hylkje og hjelper boligeiere og byggherrer i Åsane og resten av Bergen. Nytt bad, gulvvarme, varmepumpe eller frosne rør: ring, så tar vi det derfra.</p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4755191100">Ring 55 19 11 00</a>
+        <a class="knapp knapp-sekundar" href="mailto:post@mjelstadvvs.no">Beskriv jobben på e-post</a>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <h2>Dette hjelper vi deg med</h2>
+      <ul>
+        <li>Komplett bad og våtrom, fra riving til ferdig rom</li>
+        <li>Varmeanlegg, gulvvarme og varmepumper</li>
+        <li>Sanitæranlegg i nybygg og rehabilitering</li>
+        <li>Akutte behov som tining av frosne vannledninger</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Etablert 2012</b><span>Rørleggerfaget i over et tiår</span></div>
+    <div><b>VVS Eksperten</b><span>Medlem av landsdekkende kjede</span></div>
+    <div><b>Hylkje, Bergen</b><span>Kort vei i hele Bergen nord</span></div>
+    <div><b>07.00 til 16.00</b><span>Åpent alle hverdager</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Alt av rørleggerarbeid, stort og smått</h2>
+      <p>Vi jobber både med nybygg og rehabilitering, for private og proffkunder.</p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><div class="drape" aria-hidden="true"></div><h3>Bad og våtrom</h3><p>Komplette baderomsløsninger ved rehabilitering, fra planlegging til ferdig rom.</p></div>
+      <div class="tjeneste"><div class="drape" aria-hidden="true"></div><h3>Varme og gulvvarme</h3><p>Vannbårne varmeanlegg og gulvvarme som gir jevn og behagelig varme i boligen.</p></div>
+      <div class="tjeneste"><div class="drape" aria-hidden="true"></div><h3>Varmepumper</h3><p>Montering og service på varmepumper, med rørleggerfaget i bunn.</p></div>
+      <div class="tjeneste"><div class="drape" aria-hidden="true"></div><h3>Sanitæranlegg</h3><p>Nye sanitæranlegg i nybygg, og utskifting når det gamle har gjort sitt.</p></div>
+      <div class="tjeneste"><div class="drape" aria-hidden="true"></div><h3>Vannmålere og filtre</h3><p>Montering av vannmålere, trykkreduksjonsventiler og vannfiltre.</p></div>
+      <div class="tjeneste"><div class="drape" aria-hidden="true"></div><h3>Tining av vannledninger</h3><p>Frosne rør på vinteren? Vi tiner vannledninger og får vannet tilbake.</p></div>
+      <div class="tjeneste"><div class="drape" aria-hidden="true"></div><h3>Sentralstøvsuger</h3><p>Installasjon av sentralstøvsugeranlegg i nye og eksisterende boliger.</p></div>
+      <div class="tjeneste"><div class="drape" aria-hidden="true"></div><h3>Nybygg</h3><p>Komplett rørleggerarbeid i nybyggprosjekter, i samspill med de andre fagene.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tiaar" class="tiaar-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Hvilket tiår er boligen din fra?</h2>
+      <p>Rørene i norske boliger har sin egen historie. Velg når boligen din ble bygget, og se hva som er typisk for perioden og hva det kan være lurt å følge med på.</p>
+    </div>
+    <div class="tiaar-knapper" role="group" aria-label="Velg byggeperiode for boligen">
+      <button type="button" class="tiaar-knapp" data-tiaar="for1970" aria-pressed="true">Før 1970</button>
+      <button type="button" class="tiaar-knapp" data-tiaar="a70" aria-pressed="false">1970-tallet</button>
+      <button type="button" class="tiaar-knapp" data-tiaar="a8090" aria-pressed="false">1980- og 90-tallet</button>
+      <button type="button" class="tiaar-knapp" data-tiaar="a2000" aria-pressed="false">2000 til i dag</button>
+    </div>
+    <div class="tiaar-panel" aria-live="polite">
+      <div class="tiaar-kort">
+        <h3>Typisk for perioden</h3>
+        <p class="stor" id="tiaar-typisk">Kobberrør og avløp i støpejern var vanlig, og mange bad står fortsatt med opprinnelig rørføring i vegger og gulv.</p>
+      </div>
+      <div class="tiaar-kort">
+        <h3>Verdt å følge med på</h3>
+        <p id="tiaar-obs">Gamle rør og avløp har begrenset levetid. Ved oppussing er det ofte fornuftig å ta rørene samtidig, i stedet for å bygge nytt utenpå gammelt.</p>
+      </div>
+      <div class="tiaar-kort">
+        <h3>Slik hjelper vi deg</h3>
+        <p id="tiaar-hjelp">Vi vurderer tilstanden, gir råd om hva som bør skiftes nå og hva som kan vente, og tar hele utskiftingen når du er klar.</p>
+      </div>
+    </div>
+    <p class="tiaar-fot">Dette er generelle trekk for byggeperiodene, ikke en tilstandsvurdering av din bolig. Ring oss på 55 19 11 00, så tar vi en konkret vurdering hjemme hos deg.</p>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Lokal rørlegger, hele veien til ferdig jobb</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3><span>&#10003;</span>Vi er der du bor</h3><p>Fra Hylkje er det kort vei til hele Bergen nord. Du får en rørlegger som kjenner området og kommer når det er avtalt.</p></div>
+      <div class="hvorfor-kort"><h3><span>&#10003;</span>Ett firma, hele jobben</h3><p>Vi tar både planlegging, rørarbeid og oppfølging. Du forholder deg til oss, ikke til en liste av underleverandører.</p></div>
+      <div class="hvorfor-kort"><h3><span>&#10003;</span>Kjede i ryggen</h3><p>Som medlem av VVS Eksperten har vi tilgang på et bredt sortiment og gode betingelser, som kommer deg til gode.</p></div>
+      <div class="hvorfor-kort"><h3><span>&#10003;</span>Erfaring siden 2012</h3><p>Vi har levert rørleggerarbeid i Bergensområdet i over et tiår, i alt fra eneboliger til større byggeprosjekter.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra første telefon til ferdig jobb</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ta kontakt</h3><p>Ring eller send e-post og fortell kort hva du trenger hjelp til.</p></div>
+      <div class="steg"><h3>Befaring og råd</h3><p>Ved større jobber kommer vi hjem til deg, ser på forholdene og gir råd.</p></div>
+      <div class="steg"><h3>Tilbud</h3><p>Du får en tydelig pris og en plan for når jobben kan gjøres.</p></div>
+      <div class="steg"><h3>Utførelse</h3><p>Vi gjennomfører som avtalt og rydder opp etter oss.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler hentes fra Google-profilen og legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Vi kjører ut fra Hylkje</h2>
+          <p>Kort vei til hele Bergen nord, og resten av Bergen etter avtale.</p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Hylkje</li>
+          <li>Åsane</li>
+          <li>Nyborg</li>
+          <li>Eidsvåg</li>
+          <li>Salhus</li>
+          <li>Hordvik</li>
+          <li>Arna</li>
+          <li>Bergen sentrum</li>
+        </ul>
+      </div>
+      <div class="medlem-kort">
+        <h3>Medlem av VVS Eksperten</h3>
+        <p>Mjelstad VVS er medlem av VVS Eksperten, en landsdekkende kjede av selvstendige rørleggerbedrifter. For deg betyr det et lokalt firma med kort responstid, og samtidig tilgang til sortimentet og fagressursene til en stor kjede.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Tar dere små oppdrag, som en lekkasje eller et blandebatteri?</summary>
+      <div class="svar">Ja. Vi tar både små servicejobber og store prosjekter. Ingen jobb er for liten til å ringe om.</div>
+    </details>
+    <details>
+      <summary>Hjelper dere med frosne vannrør om vinteren?</summary>
+      <div class="svar">Ja, tining av vannledninger er en av tjenestene våre. Ring oss på 55 19 11 00 så snart du oppdager at vannet er borte.</div>
+    </details>
+    <details>
+      <summary>Kan dere ta hele badet, eller bare rørarbeidet?</summary>
+      <div class="svar">Vi leverer komplette løsninger for bad og våtrom ved rehabilitering. Ta kontakt, så ser vi på hva som passer for ditt prosjekt.</div>
+    </details>
+    <details>
+      <summary>Monterer dere varmepumper?</summary>
+      <div class="svar">Ja, vi utfører både montering og service på varmepumper.</div>
+    </details>
+    <details>
+      <summary>Hva koster det å få dere på befaring?</summary>
+      <div class="svar">[Pris- og befaringsvilkår legges inn her.]<!-- PLACEHOLDER: erstattes med ekte innhold --> Ring oss, så avtaler vi nærmere.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Klar til å ta rørene på alvor?</h2>
+    <p>Ring oss mellom 07.00 og 16.00 på hverdager, eller send en e-post når det passer deg. Vi svarer raskt.</p>
+    <a class="stor-tel" href="tel:+4755191100">55 19 11 00</a>
+    <div>
+      <a class="knapp knapp-hvit" href="mailto:post@mjelstadvvs.no">post@mjelstadvvs.no</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Mjelstad VVS AS</h3>
+        <ul>
+          <li>Hylkjeflaten 40</li>
+          <li>5109 Hylkje</li>
+          <li>Org.nr 997 948 297</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4755191100">55 19 11 00</a></li>
+          <li>E-post: <a href="mailto:post@mjelstadvvs.no">post@mjelstadvvs.no</a></li>
+          <li>Åpningstider: hverdager 07.00 til 16.00</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Bad og våtrom</a></li>
+          <li><a href="#tjenester">Varme og gulvvarme</a></li>
+          <li><a href="#tjenester">Varmepumper</a></li>
+          <li><a href="#tjenester">Sanitæranlegg</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Mjelstad VVS AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4755191100">Ring 55 19 11 00</a>
+  <a class="m-post" href="mailto:post@mjelstadvvs.no">Send e-post</a>
+</div>
+
+<script>
+(function () {
+  var innhold = {
+    for1970: {
+      typisk: 'Kobberrør og avløp i støpejern var vanlig, og mange bad står fortsatt med opprinnelig rørføring i vegger og gulv.',
+      obs: 'Gamle rør og avløp har begrenset levetid. Ved oppussing er det ofte fornuftig å ta rørene samtidig, i stedet for å bygge nytt utenpå gammelt.',
+      hjelp: 'Vi vurderer tilstanden, gir råd om hva som bør skiftes nå og hva som kan vente, og tar hele utskiftingen når du er klar.'
+    },
+    a70: {
+      typisk: 'Rør skjult i vegger og gulv, gjerne i kobber. Mange bad fra perioden har aldri vært totalrenovert.',
+      obs: 'Et bad fra 70-tallet nærmer seg femti år. Membraner, sluk og skjulte rør fra den tiden tilfredsstiller sjelden dagens krav til våtrom.',
+      hjelp: 'Vi bygger badet opp igjen etter dagens våtromskrav, med ny rørføring, nytt sluk og dokumentert arbeid.'
+    },
+    a8090: {
+      typisk: 'Overgangstid i rørfaget: kobber dominerte fortsatt, og utover 90-tallet kom de første rør-i-rør-løsningene i plast.',
+      obs: 'Varmtvannsberedere og utstyr fra denne perioden er ofte modne for utskifting, og tidlige plastløsninger bør sjekkes av fagfolk.',
+      hjelp: 'Vi går gjennom anlegget, skifter det som er utdatert og oppgraderer gjerne til vannbåren varme eller gulvvarme samtidig.'
+    },
+    a2000: {
+      typisk: 'Rør-i-rør-system er standard, med fordelerskap og utskiftbare rør. Lekkasjesikring og dokumentasjon er en del av faget.',
+      obs: 'Selv nye anlegg trenger jevnlig ettersyn, og behovene endrer seg: flere velger vannmåler, gulvvarme og varmepumpe for å få ned kostnadene.',
+      hjelp: 'Vi tar service, oppgraderinger og energitiltak som varmepumpe og gulvvarme, tilpasset et moderne anlegg.'
+    }
+  };
+  var knapper = document.querySelectorAll('.tiaar-knapp');
+  var typisk = document.getElementById('tiaar-typisk');
+  var obs = document.getElementById('tiaar-obs');
+  var hjelp = document.getElementById('tiaar-hjelp');
+
+  knapper.forEach(function (k) {
+    k.addEventListener('click', function () {
+      knapper.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b === k));
+      });
+      var data = innhold[k.dataset.tiaar];
+      typisk.textContent = data.typisk;
+      obs.textContent = data.obs;
+      hjelp.textContent = data.hjelp;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

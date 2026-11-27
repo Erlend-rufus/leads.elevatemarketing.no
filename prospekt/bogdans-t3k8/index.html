@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Bogdans Byggeservice | Tømrer på Sotra og i Øygarden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;600;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --petrol:#264653;
+  --petrol-dyp:#1A323C;
+  --honning:#D9A441;
+  --honning-dyp:#B5832A;
+  --krem:#FAF6EF;
+  --hvit:#FFFFFF;
+  --tekst:#29332E;
+  --dus:#64706B;
+  --strek:#E4DDD0;
+  --tre-lys:#C89B6C;
+  --tre-mork:#A9805A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Assistant',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--krem);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Bitter',Georgia,serif;line-height:1.15;font-weight:700}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1110px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--honning);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--petrol-dyp);color:#C2CDCA;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:var(--honning);text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--krem);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.1}
+.merke b{font-family:'Bitter',serif;font-weight:700;font-size:20px;color:var(--petrol)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--honning-dyp);font-weight:700;font-family:'Assistant',sans-serif}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:700;font-size:15px}
+nav.hoved a:hover{color:var(--honning-dyp)}
+.ring-knapp{background:var(--petrol);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:5px;white-space:nowrap}
+.ring-knapp:hover{background:var(--petrol-dyp)}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 72px}
+.hero h1{font-size:clamp(31px,4.4vw,49px);color:var(--petrol)}
+.hero h1 em{font-style:italic;color:var(--honning-dyp)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:5px;font-size:17px}
+.knapp-primar{background:var(--petrol);color:#fff}
+.knapp-primar:hover{background:var(--petrol-dyp)}
+.knapp-sekundar{background:transparent;color:var(--petrol);border:2px solid var(--petrol)}
+.knapp-sekundar:hover{background:var(--petrol);color:#fff}
+.hero-kort{background:var(--petrol);color:#E8ECEA;border-radius:8px;padding:30px 28px}
+.hero-kort h2{font-family:'Assistant',sans-serif;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--honning);font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,.12)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:14px;width:12px;height:12px;background:var(--honning);clip-path:polygon(20% 0,80% 0,100% 100%,0 100%)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:var(--petrol);color:#C2CDCA}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:var(--honning);font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-family:'Assistant',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--honning-dyp)}
+.seksjonstittel h2{font-size:clamp(26px,3.4vw,38px);color:var(--petrol);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:8px;padding:26px 24px}
+.tjeneste .plankebit{width:44px;height:10px;background:repeating-linear-gradient(90deg,var(--tre-lys) 0 10px,var(--tre-mork) 10px 12px);border-radius:2px;margin-bottom:16px}
+.tjeneste h3{font-size:19px;color:var(--petrol);margin-bottom:8px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Svalehale */
+.skjot-seksjon{background:var(--petrol-dyp);color:#E8ECEA}
+.skjot-seksjon .seksjonstittel h2{color:#fff}
+.skjot-seksjon .seksjonstittel p{color:#93A5A0}
+.skjot-flex{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.skjot-ramme{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:30px 20px 12px;text-align:center}
+.skjot-ramme figcaption{font-family:'Assistant',sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#93A5A0;font-weight:700;padding:12px 0 8px}
+#bit-venstre{transition:transform .7s cubic-bezier(.3,1.2,.45,1)}
+.skjot-knapp{font-family:'Assistant',sans-serif;font-weight:700;font-size:16px;padding:13px 24px;border-radius:5px;border:none;background:var(--honning);color:var(--petrol-dyp);cursor:pointer;margin-top:6px}
+.skjot-knapp:hover{background:#E8BC66}
+.skjot-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:4px solid var(--honning);border-radius:8px;padding:26px 28px}
+.skjot-panel h3{font-size:23px;color:#fff;margin-bottom:10px}
+.skjot-panel p{color:#C2CDCA;font-size:15.5px}
+.skjot-panel p + p{margin-top:10px}
+@media (max-width:900px){.skjot-flex{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:8px;padding:26px 24px}
+.hvorfor-kort h3{font-size:19px;color:var(--petrol);margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:#F0EAE0}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:8px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:counter(steg);font-family:'Bitter',serif;font-weight:700;font-size:32px;color:var(--honning-dyp);display:block;margin-bottom:8px}
+.steg h3{font-size:17.5px;color:var(--petrol);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--honning-dyp);border-radius:8px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:700;color:var(--petrol);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:13px;height:13px;background:var(--honning);clip-path:polygon(20% 0,80% 0,100% 100%,0 100%)}
+.direkte-kort{background:var(--petrol);color:#E8ECEA;border-radius:8px;padding:30px 28px}
+.direkte-kort h3{color:var(--honning);font-size:21px;margin-bottom:10px}
+.direkte-kort p{font-size:15.5px;color:#C2CDCA}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:8px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--petrol);list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Bitter',serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--honning-dyp);line-height:1;font-weight:500}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(150deg,var(--petrol-dyp),var(--petrol));color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,40px);color:#fff}
+.slutt-cta p{color:#93A5A0;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Bitter',serif;font-size:clamp(30px,5vw,46px);font-weight:700;color:var(--honning);text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px;color:#93A5A0}
+
+/* Footer */
+footer{background:var(--petrol-dyp);color:#93A5A0;padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:var(--honning)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid #2E4650;margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--petrol-dyp);border-top:2px solid var(--honning);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:5px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--honning);color:var(--petrol-dyp)}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Sundvegen 1461, Klokkarvik</span>
+    <span>Ring: <a href="tel:+4794715772">947 15 772</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>Bogdans Byggeservice</b>
+      <small>Tømrer, Sotra og Øygarden</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#skjot">Håndverket</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4794715772">947 15 772</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Tømrerarbeid som er laget for å <em>henge sammen</em></h1>
+      <p class="ingress">Bogdans Byggeservice er et lokalt tømrerlag i Klokkarvik. Vi bygger, utbedrer og fornyer for boligeiere på Sotra og i resten av Øygarden, med håndverk som tåler vestlandsværet.<!-- PLACEHOLDER: tjenesteomfang bekreftes med kunden --></p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4794715772">Ring 947 15 772</a>
+        <a class="knapp knapp-sekundar" href="#skjot">Se håndverket</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Lokalt tømrerlag med base i Klokkarvik</li>
+        <li>Oppdrag i hele Øygarden kommune<!-- PLACEHOLDER: dekningsomraade bekreftes med kunden --></li>
+        <li>Små og store jobber, ute og inne</li>
+        <li>Du snakker direkte med Bogdan</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Lokale tømrere</b><span>Base i Klokkarvik på Sotra</span></div>
+    <div><b>Hele Øygarden</b><span>Og Bergen etter avtale<!-- PLACEHOLDER: dekningsomraade bekreftes med kunden --></span></div>
+    <div><b>Ute og inne</b><span>Fra terrasse til kjøkken</span></div>
+    <div><b>Direkte kontakt</b><span>Kort vei til den som bygger</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Det meste som bygges i tre</h2>
+      <p>Vi tar både byggeprosjektene og vedlikeholdet, tilpasset huset ditt og været det står i.<!-- PLACEHOLDER: tjenestelisten bekreftes med kunden, Mittanbud-profilen kunne ikke leses --></p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><div class="plankebit" aria-hidden="true"></div><h3>Tilbygg og påbygg</h3><p>Mer plass til familien uten å flytte: tilbygg, påbygg og ombygging av det du har.</p></div>
+      <div class="tjeneste"><div class="plankebit" aria-hidden="true"></div><h3>Terrasser og uteplasser</h3><p>Terrasser, plattinger og levegger, dimensjonert for vind og vær ytterst i havgapet.</p></div>
+      <div class="tjeneste"><div class="plankebit" aria-hidden="true"></div><h3>Renovering</h3><p>Oppussing og rehabilitering, fra enkeltrom til større løft av hele boligen.</p></div>
+      <div class="tjeneste"><div class="plankebit" aria-hidden="true"></div><h3>Kledning og vinduer</h3><p>Ny ytterkledning, vindskier og utskifting av vinduer og dører.</p></div>
+      <div class="tjeneste"><div class="plankebit" aria-hidden="true"></div><h3>Innvendig snekring</h3><p>Lister, himlinger, innredning og andre snekkerjobber som løfter rommet.</p></div>
+      <div class="tjeneste"><div class="plankebit" aria-hidden="true"></div><h3>Småjobber</h3><p>De mindre jobbene som aldri blir gjort av seg selv. Ring, så tar vi dem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skjot" class="skjot-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Godt håndverk henger sammen</h2>
+      <p>Svalehalen er snekkerfagets klassiske sammenføyning: to deler som er skåret så presist at de låser hverandre. Prøv den.</p>
+    </div>
+    <div class="skjot-flex">
+      <figure class="skjot-ramme">
+        <svg viewBox="0 0 560 240" role="img" aria-label="Svalehalesammenføyning i tre, to deler som kan felles sammen og tas fra hverandre">
+          <g id="bit-hoyre">
+            <path d="M330,40 L520,40 L520,200 L330,200 L330,168 L294,180 L294,124 L330,136 L330,104 L294,116 L294,60 L330,72 Z" fill="#A9805A" stroke="#7A5A3C" stroke-width="2.5"/>
+            <line x1="350" y1="40" x2="350" y2="200" stroke="#936E4C" stroke-width="1.5"/>
+            <line x1="380" y1="40" x2="380" y2="200" stroke="#936E4C" stroke-width="1.5"/>
+            <line x1="415" y1="40" x2="415" y2="200" stroke="#936E4C" stroke-width="1.5"/>
+            <line x1="455" y1="40" x2="455" y2="200" stroke="#936E4C" stroke-width="1.5"/>
+          </g>
+          <g id="bit-venstre" style="transform:translateX(-120px)">
+            <path d="M40,40 L330,40 L330,72 L294,60 L294,116 L330,104 L330,136 L294,124 L294,180 L330,168 L330,200 L40,200 Z" fill="#C89B6C" stroke="#96733F" stroke-width="2.5"/>
+            <line x1="70" y1="40" x2="70" y2="200" stroke="#B5885A" stroke-width="1.5"/>
+            <line x1="110" y1="40" x2="110" y2="200" stroke="#B5885A" stroke-width="1.5"/>
+            <line x1="160" y1="40" x2="160" y2="200" stroke="#B5885A" stroke-width="1.5"/>
+            <line x1="215" y1="40" x2="215" y2="200" stroke="#B5885A" stroke-width="1.5"/>
+          </g>
+        </svg>
+        <figcaption id="skjot-status">Delene ligger klare</figcaption>
+        <button type="button" class="skjot-knapp" id="skjot-knapp" aria-pressed="false">Fell sammen</button>
+      </figure>
+      <div class="skjot-panel" aria-live="polite">
+        <h3 id="skjot-tittel">To deler, skåret for hverandre</h3>
+        <p id="skjot-tekst">En svalehale holder ikke fordi den er limt eller skrudd. Den holder fordi formene er skåret så nøyaktig at de låser hverandre.</p>
+        <p>Det er slik vi tenker om alt vi bygger: Presisjonen i det du ikke ser, avgjør hvor lenge det du ser holder seg.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Et lokalt lag du når direkte</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Kort vei til beslutning</h3><p>Du snakker direkte med Bogdan. Ingen mellomledd, ingen ventetid på svar.</p></div>
+      <div class="hvorfor-kort"><h3>Bygget for kysten</h3><p>Vind, regn og salt luft stiller egne krav til konstruksjon og materialvalg. Vi bygger for forholdene her ute.</p></div>
+      <div class="hvorfor-kort"><h3>Rydding hører med</h3><p>En byggeplass hjemme hos deg skal være trygg underveis og ryddet når vi drar.</p></div>
+      <div class="hvorfor-kort"><h3>Ærlige råd</h3><p>Vi sier fra hvis noe kan løses enklere og billigere enn du hadde tenkt. Det er slik man blir anbefalt videre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra idé til ferdig prosjekt</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ta kontakt</h3><p>Ring og fortell hva du vil ha gjort, stort eller smått.</p></div>
+      <div class="steg"><h3>Befaring</h3><p>Vi ser på jobben sammen med deg og diskuterer løsninger.</p></div>
+      <div class="steg"><h3>Tilbud</h3><p>Du får en tydelig pris og en realistisk fremdriftsplan.</p></div>
+      <div class="steg"><h3>Bygging</h3><p>Vi bygger som avtalt, holder deg oppdatert og rydder etter oss.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler hentes fra Mittanbud- og Google-profilen og legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Hele Øygarden er arbeidsplassen</h2><!-- PLACEHOLDER: dekningsomraade og tettstedsliste bekreftes med kunden -->
+          <p>Base i Klokkarvik sør på Sotra, oppdrag i hele kommunen.</p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Klokkarvik og Sund</li>
+          <li>Skogsvåg</li>
+          <li>Straume</li>
+          <li>Ågotnes</li>
+          <li>Rong og Nordre Øygarden</li>
+          <li>Bergen etter avtale</li>
+        </ul>
+      </div>
+      <div class="direkte-kort morkflate">
+        <h3>Prosjekter vi er stolte av</h3>
+        <p>Her viser vi frem ferdige jobber ved lansering: tilbygg, terrasser og renoveringer fra Sotra og Øygarden.<!-- PLACEHOLDER: prosjekttyper bekreftes med kunden --></p>
+        <p style="margin-top:12px">[Prosjektbilder legges inn her ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Tar dere små oppdrag?</summary>
+      <div class="svar">Ja. En dør som subber eller en list som mangler, er også en jobb. Ring, så finner vi et tidspunkt.<!-- PLACEHOLDER: tjenestetilbud bekreftes med kunden --></div>
+    </details>
+    <details>
+      <summary>Kan dere ta hele prosjektet, med andre fag?</summary>
+      <div class="svar">Vi tar tømrerarbeidet og samarbeider med andre håndverkere der prosjektet krever det. Avklar gjerne omfanget med oss på befaringen.<!-- PLACEHOLDER: samarbeidsmodell bekreftes med kunden --></div>
+    </details>
+    <details>
+      <summary>Når bør jeg bestille terrassejobben?</summary>
+      <div class="svar">Gjerne i god tid før våren. Bruk gjerne vinterhalvåret til innejobbene, så er kalenderen klar når utesesongen starter.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris?</summary>
+      <div class="svar">Ring 947 15 772 og beskriv jobben. Vi tar en befaring før vi gir pris på større prosjekter.</div>
+    </details>
+    <details>
+      <summary>Hvor holder dere til?</summary>
+      <div class="svar">I Sundvegen i Klokkarvik, helt sør på Sotra. Derfra dekker vi hele Øygarden kommune.<!-- PLACEHOLDER: dekningsomraade bekreftes med kunden --></div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Har du et prosjekt i tankene?</h2>
+    <p>Ring oss og fortell om det. Vi tar en befaring, gir deg ærlige råd og en pris du kan forholde deg til.</p>
+    <a class="stor-tel" href="tel:+4794715772">947 15 772</a>
+    <p class="merknad">[E-postadresse legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Bogdans Byggeservice AS</h3>
+        <ul>
+          <li>Sundvegen 1461</li>
+          <li>5378 Klokkarvik</li>
+          <li>Org.nr 916 900 511</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4794715772">947 15 772</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Tilbygg og påbygg</a></li>
+          <li><a href="#tjenester">Terrasser</a></li>
+          <li><a href="#tjenester">Renovering</a></li>
+          <li><a href="#tjenester">Kledning og vinduer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Bogdans Byggeservice AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4794715772">Ring 947 15 772</a>
+  <a class="m-mer" href="#skjot">Se håndverket</a>
+</div>
+
+<script>
+(function () {
+  var knapp = document.getElementById('skjot-knapp');
+  var bit = document.getElementById('bit-venstre');
+  var status = document.getElementById('skjot-status');
+  var tittel = document.getElementById('skjot-tittel');
+  var tekst = document.getElementById('skjot-tekst');
+  var sammen = false;
+
+  knapp.addEventListener('click', function () {
+    sammen = !sammen;
+    bit.style.transform = sammen ? 'translateX(0)' : 'translateX(-120px)';
+    knapp.setAttribute('aria-pressed', String(sammen));
+    knapp.textContent = sammen ? 'Ta fra hverandre' : 'Fell sammen';
+    status.textContent = sammen ? 'Skjøten er låst' : 'Delene ligger klare';
+    if (sammen) {
+      tittel.textContent = 'Låst, uten en eneste skrue';
+      tekst.textContent = 'Formene griper i hverandre og låser seg mot strekk. Jo mer du drar, desto hardere holder den.';
+    } else {
+      tittel.textContent = 'To deler, skåret for hverandre';
+      tekst.textContent = 'En svalehale holder ikke fordi den er limt eller skrudd. Den holder fordi formene er skåret så nøyaktig at de låser hverandre.';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

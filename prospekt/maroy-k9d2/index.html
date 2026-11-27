@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Malermester Geir Marøy | Malerfirma i Åsane og Bergen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Petrona:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --vinroed:#7B2D26;
+  --vinroed-dyp:#571C17;
+  --kalk:#F8F5F0;
+  --hvit:#FFFFFF;
+  --sand:#E9E2D6;
+  --tekst:#322B27;
+  --dus:#6E655E;
+  --strek:#E2DACE;
+  --gyllen:#C99B4A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Libre Franklin',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--kalk);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Petrona',Georgia,serif;line-height:1.15;font-weight:600}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--gyllen);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--vinroed-dyp);color:#E8D5CE;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:#F0C083;text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--kalk);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.1}
+.merke b{font-family:'Petrona',serif;font-weight:700;font-size:21px;color:var(--vinroed)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dus);font-weight:600;font-family:'Libre Franklin',sans-serif}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px}
+nav.hoved a:hover{color:var(--vinroed)}
+.ring-knapp{background:var(--vinroed);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:4px;white-space:nowrap}
+.ring-knapp:hover{background:var(--vinroed-dyp)}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 72px}
+.hero h1{font-size:clamp(32px,4.5vw,52px);color:var(--vinroed-dyp)}
+.hero h1 em{font-style:italic;color:var(--vinroed)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:4px;font-size:17px}
+.knapp-primar{background:var(--vinroed);color:#fff}
+.knapp-primar:hover{background:var(--vinroed-dyp)}
+.knapp-sekundar{background:transparent;color:var(--vinroed);border:2px solid var(--vinroed)}
+.knapp-sekundar:hover{background:var(--vinroed);color:#fff}
+.hero-kort{background:var(--vinroed);color:#F3E6E0;border-radius:6px;padding:30px 28px}
+.hero-kort h2{font-family:'Libre Franklin',sans-serif;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:#F0C083;font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,.15)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:16px;width:15px;height:8px;border-left:3px solid var(--gyllen);border-bottom:3px solid var(--gyllen);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:var(--vinroed);color:#E8D5CE}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:#F0C083;font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-family:'Libre Franklin',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--vinroed)}
+.seksjonstittel h2{font-size:clamp(27px,3.5vw,40px);color:var(--vinroed-dyp);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:6px;padding:26px 24px}
+.tjeneste .penselstrok{width:48px;height:9px;border-radius:4px 1px 1px 4px;background:linear-gradient(90deg,var(--vinroed) 0 82%,transparent 82%),repeating-linear-gradient(90deg,var(--vinroed) 0 2.5px,transparent 2.5px 5px);margin-bottom:16px}
+.tjeneste h3{font-size:20px;color:var(--vinroed-dyp);margin-bottom:8px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Skrapeveggen */
+.skrap-seksjon{background:var(--vinroed-dyp);color:#F3E6E0}
+.skrap-seksjon .seksjonstittel h2{color:#fff}
+.skrap-seksjon .seksjonstittel p{color:#C9A79E}
+.skrap-flex{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.skrap-ramme{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:24px 20px 14px;text-align:center}
+.skrap-ramme figcaption{font-family:'Libre Franklin',sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#C9A79E;font-weight:700;padding:12px 0 8px}
+.skrap-scene{position:relative;width:100%;max-width:440px;margin:0 auto;border-radius:6px;overflow:hidden;touch-action:none}
+.skrap-under{display:block;width:100%;border-radius:6px}
+#skrap-canvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
+.skrap-knapp{font-family:'Libre Franklin',sans-serif;font-weight:700;font-size:15.5px;padding:12px 22px;border-radius:4px;border:none;background:var(--gyllen);color:var(--vinroed-dyp);cursor:pointer;margin-top:12px}
+.skrap-knapp:hover{background:#E0B463}
+.skrap-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-left:4px solid var(--gyllen);border-radius:6px;padding:26px 28px}
+.skrap-panel h3{font-size:24px;color:#fff;margin-bottom:10px}
+.skrap-panel p{color:#DCC2B9;font-size:15.5px}
+.skrap-panel p + p{margin-top:10px}
+@media (max-width:900px){.skrap-flex{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:6px;padding:26px 24px}
+.hvorfor-kort h3{font-size:20px;color:var(--vinroed-dyp);margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:var(--sand)}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:6px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:counter(steg);font-family:'Petrona',serif;font-weight:700;font-size:32px;color:var(--gyllen);display:block;margin-bottom:6px}
+.steg h3{font-size:18px;color:var(--vinroed-dyp);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--gyllen);border-radius:6px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:600;color:var(--vinroed-dyp);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:12px;height:12px;border-radius:50%;background:var(--vinroed)}
+.mester-kort{background:var(--vinroed);color:#F3E6E0;border-radius:6px;padding:30px 28px}
+.mester-kort h3{color:#F0C083;font-size:22px;margin-bottom:10px}
+.mester-kort p{font-size:15.5px;color:#DCC2B9}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:6px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--vinroed-dyp);list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Petrona',serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--vinroed);line-height:1}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:var(--vinroed-dyp);color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,42px);color:#fff}
+.slutt-cta h2 em{font-style:italic;color:#F0C083}
+.slutt-cta p{color:#C9A79E;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Petrona',serif;font-size:clamp(30px,5vw,46px);font-weight:700;color:#F0C083;text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px;color:#C9A79E}
+
+/* Footer */
+footer{background:var(--vinroed-dyp);color:#C9A79E;border-top:1px solid rgba(255,255,255,.15);padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:#F0C083}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid rgba(255,255,255,.15);margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--vinroed-dyp);border-top:2px solid var(--gyllen);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:4px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--gyllen);color:var(--vinroed-dyp)}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Flaktveitsvingane 86, Flaktveit i Åsane</span>
+    <span>Ring: <a href="tel:+4793441887">93 44 18 87</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>Malermester Geir Marøy</b>
+      <small>Malerfirma, Åsane</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#skrap">Prøv selv</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4793441887">93 44 18 87</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Gamle vegger, <em>nytt liv</em></h1>
+      <p class="ingress">Malermester Geir Marøy er malerfirmaet på Flaktveit. Vi maler, sparkler og fornyer flater for boligeiere i Åsane og resten av Bergen, med mesterfaget i bunn.<!-- PLACEHOLDER: tjenesteomfang bekreftes med kunden --></p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4793441887">Ring 93 44 18 87</a>
+        <a class="knapp knapp-sekundar" href="#skrap">Skrap frem den nye veggen</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Malermester-tittelen forplikter</li>
+        <li>Base på Flaktveit i Åsane</li>
+        <li>Oppdrag i hele Bergensområdet<!-- PLACEHOLDER: dekningsomraade bekreftes med kunden --></li>
+        <li>Du snakker direkte med fagfolkene</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Malermester</b><span>Mesterfag i bunn</span></div>
+    <div><b>Flaktveit, Åsane</b><span>Lokale fagfolk i Bergen nord</span></div>
+    <div><b>Inne og ute</b><span>Fra stuevegg til fasade</span></div>
+    <div><b>Direkte kontakt</b><span>Ring, og du får svar</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Malerarbeid, ute og inne</h2>
+      <p>Godt malerarbeid handler mest om det som skjer før malingen kommer på.<!-- PLACEHOLDER: tjenestelisten bekreftes med kunden --></p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><div class="penselstrok" aria-hidden="true"></div><h3>Innvendig maling</h3><p>Vegger, tak, dører og listverk, med rene linjer og jevne flater.</p></div>
+      <div class="tjeneste"><div class="penselstrok" aria-hidden="true"></div><h3>Utvendig maling</h3><p>Fasader og utvendig treverk, med forarbeid som gjør at resultatet tåler vestlandsværet.</p></div>
+      <div class="tjeneste"><div class="penselstrok" aria-hidden="true"></div><h3>Sparkling og forarbeid</h3><p>Sparkling, sliping og grunning: grunnlaget som avgjør hvor fint sluttresultatet blir.</p></div>
+      <div class="tjeneste"><div class="penselstrok" aria-hidden="true"></div><h3>Tapetsering</h3><p>Tapet som henger rett og skjøter du ikke finner igjen.<!-- PLACEHOLDER: erstattes med ekte innhold --></p></div>
+      <div class="tjeneste"><div class="penselstrok" aria-hidden="true"></div><h3>Oppussing av rom</h3><p>Hele rommet fornyet, fra tak til gulvlist, planlagt så det forstyrrer minst mulig.</p></div>
+      <div class="tjeneste"><div class="penselstrok" aria-hidden="true"></div><h3>Råd om farger</h3><p>Riktig farge og glans til rommet og lyset, valgt sammen med deg før vi starter.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skrap" class="skrap-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Skrap frem den nye veggen</h2>
+      <p>Under enhver sliten vegg venter en ny. Dra over veggen med pekeren, eller fingeren, og se hva et malerlag utretter.</p>
+    </div>
+    <div class="skrap-flex">
+      <figure class="skrap-ramme">
+        <div class="skrap-scene" id="skrap-scene">
+          <svg class="skrap-under" viewBox="0 0 440 300" aria-hidden="true">
+            <rect width="440" height="300" fill="#B7C4B1"/>
+            <rect y="252" width="440" height="48" fill="#F3EFE7"/>
+            <rect y="248" width="440" height="6" fill="#DDD5C5"/>
+            <radialGradient id="lys" cx="30%" cy="20%" r="80%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".28"/>
+              <stop offset="60%" stop-color="#FFFFFF" stop-opacity="0"/>
+            </radialGradient>
+            <rect width="440" height="248" fill="url(#lys)"/>
+          </svg>
+          <canvas id="skrap-canvas" aria-hidden="true"></canvas>
+        </div>
+        <figcaption id="skrap-status">Slitt vegg. Skrap i vei.</figcaption>
+        <button type="button" class="skrap-knapp" id="skrap-vis">Vis ferdig resultat</button>
+      </figure>
+      <div class="skrap-panel" aria-live="polite">
+        <h3 id="skrap-tittel">Forvandlingen under</h3>
+        <p id="skrap-tekst">Flassende maling, gulnede felter og gamle merker forsvinner ikke av seg selv. Men med riktig forarbeid og to strøk er veggen som ny.</p>
+        <p>Det du skraper frem her, er det vi leverer: jevne, friske flater som løfter hele rommet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Mesterfaget merkes på resultatet</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Forarbeid framfor snarveier</h3><p>Vask, sparkling og grunning tar tid, og det er den tiden som avgjør om malingen sitter om fem år.</p></div>
+      <div class="hvorfor-kort"><h3>Lokale og tilgjengelige</h3><p>Vi holder til på Flaktveit og tar telefonen når du ringer. Kort vei til befaring i hele Bergen nord.</p></div>
+      <div class="hvorfor-kort"><h3>Rene linjer, ryddig jobb</h3><p>Tildekking før vi starter, skarpe overganger underveis og opprydding når vi er ferdige.</p></div>
+      <div class="hvorfor-kort"><h3>Ærlige råd</h3><p>Trenger veggen bare vask og flikk, sier vi det. Du skal male fordi det trengs, ikke fordi vi trenger jobben.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra befaring til ferdig flate</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ring oss</h3><p>Fortell hva som skal males, inne eller ute.</p></div>
+      <div class="steg"><h3>Befaring</h3><p>Vi ser på flatene, vurderer underlaget og gir råd.</p></div>
+      <div class="steg"><h3>Tilbud</h3><p>Du får en tydelig pris og en plan for jobben.</p></div>
+      <div class="steg"><h3>Utførelse</h3><p>Vi maler som avtalt, rydder opp og går gjennom resultatet med deg.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Åsane er hjemmebane</h2>
+          <p>Base på Flaktveit, oppdrag i hele Bergen.<!-- PLACEHOLDER: dekningsomraade bekreftes med kunden --></p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Flaktveit og Nyborg</li>
+          <li>Åsane</li>
+          <li>Eidsvåg</li>
+          <li>Arna</li>
+          <li>Bergen sentrum</li>
+          <li>Bergen ellers</li>
+        </ul>
+      </div>
+      <div class="mester-kort morkflate">
+        <h3>Hva betyr malermester?</h3>
+        <p>Mesterbrevet er den høyeste utdanningen i malerfaget. Det betyr dokumentert kompetanse på materialer, underlag og utførelse, og en bedrift som står inne for arbeidet sitt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Tar dere små oppdrag?</summary>
+      <div class="svar">Ja. Ett rom, en trapp eller en dør er også en jobb. Ring, så finner vi et tidspunkt som passer.<!-- PLACEHOLDER: tjenestetilbud bekreftes med kunden --></div>
+    </details>
+    <details>
+      <summary>Når på året bør fasaden males?</summary>
+      <div class="svar">Utvendig maling krever tørt underlag og plussgrader, så sesongen er gjerne fra sen vår til tidlig høst. Ta kontakt i god tid, så planlegger vi jobben etter været.</div>
+    </details>
+    <details>
+      <summary>Hjelper dere med fargevalg?</summary>
+      <div class="svar">Ja, vi gir råd om farge og glans tilpasset rommet, lyset og bruken før vi setter i gang.</div>
+    </details>
+    <details>
+      <summary>Må jeg flytte ut mens dere maler?</summary>
+      <div class="svar">Nei, som regel ikke. Vi planlegger arbeidet rom for rom og dekker til, så du kan bruke boligen underveis.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris?</summary>
+      <div class="svar">Ring 93 44 18 87 og beskriv jobben. Vi tar en befaring før vi gir pris, så tilbudet stemmer med det flatene faktisk trenger.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Klar for <em>nymalte flater?</em></h2>
+    <p>Ring oss, så tar vi en befaring og gir deg et uforpliktende tilbud.</p>
+    <a class="stor-tel" href="tel:+4793441887">93 44 18 87</a>
+    <p class="merknad">[E-postadresse legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Malermester Geir Marøy AS</h3>
+        <ul>
+          <li>Flaktveitsvingane 86</li>
+          <li>5135 Flaktveit</li>
+          <li>Org.nr 987 705 493</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4793441887">93 44 18 87</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Innvendig maling</a></li>
+          <li><a href="#tjenester">Utvendig maling</a></li>
+          <li><a href="#tjenester">Sparkling og forarbeid</a></li>
+          <li><a href="#tjenester">Oppussing av rom</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Malermester Geir Marøy AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4793441887">Ring 93 44 18 87</a>
+  <a class="m-mer" href="#skrap">Prøv skrapeveggen</a>
+</div>
+
+<script>
+(function () {
+  var scene = document.getElementById('skrap-scene');
+  var canvas = document.getElementById('skrap-canvas');
+  var status = document.getElementById('skrap-status');
+  var tittel = document.getElementById('skrap-tittel');
+  var tekst = document.getElementById('skrap-tekst');
+  var visKnapp = document.getElementById('skrap-vis');
+  var ctx = canvas.getContext('2d');
+  var ferdigMeldt = false;
+  var skrapt = 0;
+  var totalPiksler = 1;
+
+  function tegnGammelVegg() {
+    var b = canvas.width, h = canvas.height;
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = '#8A8378';
+    ctx.fillRect(0, 0, b, h);
+    var i;
+    for (i = 0; i < 34; i++) {
+      ctx.fillStyle = ['#7A7266', '#948B7E', '#6E675D', '#9C927F'][i % 4];
+      ctx.globalAlpha = 0.5;
+      var x = (i * 137) % b;
+      var y = (i * 89) % h;
+      ctx.beginPath();
+      ctx.ellipse(x, y, 24 + (i % 5) * 12, 14 + (i % 3) * 9, (i % 6) * 0.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 0.75;
+    for (i = 0; i < 12; i++) {
+      ctx.strokeStyle = '#5C5549';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      var sx = (i * 173) % b;
+      var sy = (i * 61) % (h - 60);
+      ctx.moveTo(sx, sy);
+      ctx.lineTo(sx + 18 - (i % 4) * 9, sy + 34 + (i % 3) * 12);
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function tilpass() {
+    var rekt = scene.getBoundingClientRect();
+    canvas.width = Math.max(1, Math.round(rekt.width));
+    canvas.height = Math.max(1, Math.round(rekt.height));
+    totalPiksler = canvas.width * canvas.height;
+    skrapt = 0;
+    ferdigMeldt = false;
+    tegnGammelVegg();
+  }
+
+  function skrap(x, y) {
+    var rekt = canvas.getBoundingClientRect();
+    var cx = x - rekt.left;
+    var cy = y - rekt.top;
+    var radius = Math.max(22, rekt.width / 12);
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.fill();
+    skrapt += Math.PI * radius * radius * 0.5;
+    if (!ferdigMeldt && skrapt > totalPiksler * 0.55) {
+      ferdigMeldt = true;
+      status.textContent = 'Sånn, ja. Som nymalt.';
+      tittel.textContent = 'Det tok deg noen sekunder';
+      tekst.textContent = 'Hos oss tar det litt lenger, for vasken, sparklingen og grunningen skal gjøres først. Men resultatet er det samme: en vegg som ser ny ut.';
+    }
+  }
+
+  var pekerNede = false;
+  canvas.addEventListener('pointerdown', function (e) { pekerNede = true; skrap(e.clientX, e.clientY); });
+  window.addEventListener('pointerup', function () { pekerNede = false; });
+  canvas.addEventListener('pointermove', function (e) { if (pekerNede) skrap(e.clientX, e.clientY); });
+
+  visKnapp.addEventListener('click', function () {
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    status.textContent = 'Sånn, ja. Som nymalt.';
+    tittel.textContent = 'Ferdig resultat';
+    tekst.textContent = 'Jevn, frisk flate fra tak til gulvlist. Det er dette riktig forarbeid og to strøk gjør med et rom.';
+    ferdigMeldt = true;
+  });
+
+  window.addEventListener('resize', tilpass);
+  tilpass();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Klevstad Rørservice | Rørlegger i Åsane og Bergen nord</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --dypblaa:#143B5C;
+  --dypblaa-morkere:#0D2A43;
+  --korall:#E4572E;
+  --korall-lys:#F07B57;
+  --lys:#F6F7F9;
+  --hvit:#FFFFFF;
+  --tekst:#1E2B36;
+  --dus:#5C6B77;
+  --strek:#DDE3E8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Atkinson Hyperlegible',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--lys);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Lexend',sans-serif;line-height:1.14;font-weight:700;letter-spacing:-.01em}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--korall);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--dypblaa-morkere);color:#B9C7D3;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:var(--korall-lys);text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.05}
+.merke b{font-family:'Lexend',sans-serif;font-weight:800;font-size:21px;color:var(--dypblaa)}
+.merke b span{color:var(--korall)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dus);font-weight:700}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:700;font-size:15px}
+nav.hoved a:hover{color:var(--korall)}
+.ring-knapp{background:var(--korall);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:8px;white-space:nowrap}
+.ring-knapp:hover{background:#C43F1B}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 72px}
+.hero h1{font-size:clamp(31px,4.4vw,50px);color:var(--dypblaa)}
+.hero h1 em{font-style:normal;color:var(--korall)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:8px;font-size:17px}
+.knapp-primar{background:var(--korall);color:#fff}
+.knapp-primar:hover{background:#C43F1B}
+.knapp-sekundar{background:transparent;color:var(--dypblaa);border:2px solid var(--dypblaa)}
+.knapp-sekundar:hover{background:var(--dypblaa);color:#fff}
+.hero-kort{background:var(--dypblaa);color:#E3EAF0;border-radius:12px;padding:30px 28px}
+.hero-kort h2{font-family:'Lexend',sans-serif;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--korall-lys);font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,.12)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:16px;width:15px;height:8px;border-left:3px solid var(--korall);border-bottom:3px solid var(--korall);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:var(--dypblaa);color:#B9C7D3}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:#fff;font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-family:'Lexend',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--korall)}
+.seksjonstittel h2{font-size:clamp(26px,3.4vw,38px);color:var(--dypblaa);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:12px;padding:26px 24px;position:relative;overflow:hidden}
+.tjeneste::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--korall)}
+.tjeneste h3{font-size:19px;color:var(--dypblaa);margin-bottom:8px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Avløpstesten */
+.avlop-seksjon{background:var(--dypblaa-morkere);color:#E3EAF0}
+.avlop-seksjon .seksjonstittel h2{color:#fff}
+.avlop-seksjon .seksjonstittel p{color:#8CA0B1}
+.avlop-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.vask-ramme{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:26px 20px 14px;text-align:center}
+.vask-ramme figcaption{font-family:'Lexend',sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#8CA0B1;font-weight:700;padding:10px 0 6px}
+.propp{transition:opacity .4s}
+.avlop-status{font-family:'Lexend',sans-serif;font-weight:700;font-size:17px;padding:10px 18px;border-radius:8px;display:inline-block;margin-top:8px}
+.avlop-status.fritt{background:#1E5E45;color:#C9EFD9}
+.avlop-status.trangt{background:#8A6A1C;color:#FBEAB8}
+.avlop-status.tett{background:#8A2B1C;color:#FFD9CE}
+.kast-knapper{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.kast-knapp{font-family:'Lexend',sans-serif;font-weight:700;font-size:15px;padding:11px 18px;border-radius:8px;border:2px solid #33546E;background:transparent;color:#E3EAF0;cursor:pointer}
+.kast-knapp:hover{border-color:var(--korall)}
+.kast-knapp[disabled]{opacity:.45;cursor:not-allowed}
+.tom-knapp{font-family:'Lexend',sans-serif;font-weight:700;font-size:15px;padding:11px 18px;border-radius:8px;border:none;background:var(--korall);color:#fff;cursor:pointer}
+.tom-knapp:hover{background:#C43F1B}
+.avlop-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:4px solid var(--korall);border-radius:12px;padding:24px 26px;margin-top:16px}
+.avlop-panel h3{font-size:21px;color:#fff;margin-bottom:8px}
+.avlop-panel p{color:#B9C7D3;font-size:15.5px}
+.avlop-fot{margin-top:20px;font-size:14px;color:#8CA0B1;max-width:72ch}
+@media (max-width:900px){.avlop-flex{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:12px;padding:26px 24px}
+.hvorfor-kort h3{font-size:19px;color:var(--dypblaa);margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:#EAEEF2}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:12px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:counter(steg);display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--dypblaa);color:#fff;font-family:'Lexend',sans-serif;font-weight:700;font-size:18px;margin-bottom:12px}
+.steg h3{font-size:17.5px;color:var(--dypblaa);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-flex{display:grid;grid-template-columns:auto 1fr;gap:24px;max-width:760px;margin:0 auto;align-items:stretch}
+.omtale-tall{background:var(--dypblaa);color:#fff;border-radius:12px;padding:28px 30px;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.omtale-tall b{font-family:'Lexend',sans-serif;font-size:44px;line-height:1}
+.omtale-tall span{font-size:13.5px;color:#B9C7D3;margin-top:6px;display:block}
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--korall);border-radius:12px;padding:28px;display:flex;align-items:center}
+.omtale-ramme p{color:var(--dus)}
+@media (max-width:640px){.omtale-flex{grid-template-columns:1fr}}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:700;color:var(--dypblaa);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:13px;height:13px;border-radius:50%;background:var(--korall)}
+.mester-kort{background:var(--dypblaa);color:#E3EAF0;border-radius:12px;padding:30px 28px}
+.mester-kort h3{color:var(--korall-lys);font-size:21px;margin-bottom:10px}
+.mester-kort p{font-size:15.5px;color:#B9C7D3}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:12px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--dypblaa);list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Lexend',sans-serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--korall);line-height:1;font-weight:500}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(150deg,var(--dypblaa-morkere),var(--dypblaa));color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,40px);color:#fff}
+.slutt-cta p{color:#8CA0B1;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Lexend',sans-serif;font-size:clamp(30px,5vw,46px);font-weight:800;color:var(--korall-lys);text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px;color:#8CA0B1}
+
+/* Footer */
+footer{background:var(--dypblaa-morkere);color:#8CA0B1;padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:var(--korall-lys)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid #1E4260;margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--dypblaa-morkere);border-top:2px solid var(--korall);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:8px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--korall);color:#fff}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Myrdalshovden 134, Nyborg i Åsane</span>
+    <span>Ring: <a href="tel:+4791806388">91 80 63 88</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>KLEVSTAD <span>RØRSERVICE</span></b>
+      <small>Rørlegger i Åsane</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#avlop">Avløpstesten</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4791806388">91 80 63 88</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Rørleggeren i Åsane, fra <em>dryppende kran</em> til nytt bad</h1>
+      <p class="ingress">Klevstad Rørservice er en mesterbedrift på Nyborg. Vi tar de små jobbene like alvorlig som de store: bytte av blandebatteri, ny varmtvannsbereder, gulvvarme eller komplett renovering av badet.</p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4791806388">Ring 91 80 63 88</a>
+        <a class="knapp knapp-sekundar" href="#avlop">Prøv avløpstesten</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Mesterbedrift med ansvarsrett</li>
+        <li>Godkjent lærebedrift</li>
+        <li>Medlem av VVS Eksperten</li>
+        <li>Base på Nyborg, kort vei til hele Bergen nord</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Mesterbedrift</b><span>Rørleggermester med ansvarsrett</span></div>
+    <div><b>4,8 av 5</b><span>Fra 26 oppdrag på Mittanbud</span></div>
+    <div><b>Lærebedrift</b><span>Vi utdanner nye fagfolk</span></div>
+    <div><b>Nyborg, Åsane</b><span>Lokal rørlegger i Bergen nord</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Rørleggerarbeid for hjem, hytte og næring</h2>
+      <p>Fra en time med småjobber til totalrenovering av bad. Vi jobber i boliger, hytter, industribygg og næringsbygg.</p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><h3>Bad og våtrom</h3><p>Renovering, modernisering og totalrenovering av bad, i samarbeid med elektriker, tømrer og murer når det trengs.</p></div>
+      <div class="tjeneste"><h3>Sanitæranlegg</h3><p>Nybygg og rehabilitering av sanitæranlegg, fra bunnledning til blandebatteri.</p></div>
+      <div class="tjeneste"><h3>Varmepumper</h3><p>Installasjon og service av varmepumper, med rørleggerfaget i bunn.</p></div>
+      <div class="tjeneste"><h3>Gulvvarme</h3><p>Vannbåren gulvvarme i nybygg og ved rehabilitering, service på eksisterende anlegg.</p></div>
+      <div class="tjeneste"><h3>Småjobber</h3><p>Skifte kran eller blandebatteri, koble til vaskemaskin, montere vannstoppventil eller bytte varmtvannsbereder.</p></div>
+      <div class="tjeneste"><h3>Hytte og næring</h3><p>Rørleggerarbeid ved nybygg og modernisering av hytter, industribygg og næringsbygg.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="avlop" class="avlop-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Hva tåler avløpet ditt?</h2>
+      <p>Vannlåsen under vasken er ikke en søppelbøtte. Kast ting i avløpet og se hva som skjer i røret. Helt ufarlig her, dyrere hjemme.</p>
+    </div>
+    <div class="avlop-flex">
+      <figure class="vask-ramme">
+        <svg viewBox="0 0 360 300" role="img" aria-label="Tverrsnitt av vannlås under en vask, som gradvis tettes av det du kaster i avløpet">
+          <path d="M60,30 L300,30 L290,60 L70,60 Z" fill="#33546E"/>
+          <rect x="168" y="60" width="24" height="60" fill="none" stroke="#7FA0BC" stroke-width="5"/>
+          <path d="M168,120 L168,190 Q168,230 208,230 Q248,230 248,190 L248,150" fill="none" stroke="#7FA0BC" stroke-width="5"/>
+          <path d="M192,120 L192,182 Q192,206 208,206 Q224,206 224,190 L224,150" fill="none" stroke="#7FA0BC" stroke-width="5"/>
+          <path d="M224,150 L224,190 Q224,206 208,206 Q192,206 192,182 L192,150 Z" fill="#2B6C8F" opacity=".55"/>
+          <path d="M248,150 L310,150 L310,126 L248,126 Z" fill="none" stroke="#7FA0BC" stroke-width="5"/>
+          <g class="propp" id="propp-1" opacity="0"><ellipse cx="208" cy="200" rx="15" ry="9" fill="#C9A227"/></g>
+          <g class="propp" id="propp-2" opacity="0"><ellipse cx="197" cy="190" rx="12" ry="8" fill="#8B6F47"/><ellipse cx="219" cy="193" rx="10" ry="7" fill="#6B7B52"/></g>
+          <g class="propp" id="propp-3" opacity="0"><ellipse cx="208" cy="180" rx="16" ry="10" fill="#B0B7BD"/><ellipse cx="200" cy="168" rx="11" ry="7" fill="#C9A227"/></g>
+          <g class="propp" id="propp-4" opacity="0"><ellipse cx="209" cy="155" rx="17" ry="12" fill="#7A5C3E"/><ellipse cx="215" cy="140" rx="12" ry="8" fill="#B0B7BD"/><path d="M180,128 Q200,120 216,128 Q232,136 240,128" fill="none" stroke="#4A4A4A" stroke-width="3"/></g>
+          <text x="88" y="50" fill="#B9C7D3" font-family="Lexend,sans-serif" font-weight="700" font-size="14">VASKEN</text>
+        </svg>
+        <figcaption>Vannlåsen, sett fra siden</figcaption>
+        <div><span class="avlop-status fritt" id="avlop-status" aria-live="polite">Rørstatus: fritt løp</span></div>
+      </figure>
+      <div>
+        <div class="kast-knapper" role="group" aria-label="Velg hva du kaster i avløpet">
+          <button type="button" class="kast-knapp" data-kast="fett">Stekefett</button>
+          <button type="button" class="kast-knapp" data-kast="grut">Kaffegrut</button>
+          <button type="button" class="kast-knapp" data-kast="servietter">Våtservietter</button>
+          <button type="button" class="kast-knapp" data-kast="haar">Hår og såperester</button>
+        </div>
+        <button type="button" class="tom-knapp" id="tom-roret">Tøm røret og start på nytt</button>
+        <div class="avlop-panel" aria-live="polite">
+          <h3 id="avlop-tittel">Røret er åpent</h3>
+          <p id="avlop-tekst">Kast noe i avløpet og se hva som bygger seg opp i vannlåsen. Alt du heller i vasken skal gjennom denne svingen.</p>
+        </div>
+        <p class="avlop-fot">Tett avløp er noe av det vanligste en rørlegger rykker ut til. Kommer vannet sakte unna allerede, er det lurt å ta det før det står helt tett.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Liten nok til å komme raskt, kvalifisert nok til alt</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Mesterbrev og ansvarsrett</h3><p>Arbeidet ledes av rørleggermester. Det betyr dokumentert kompetanse, og at vi kan ta ansvarsrett i byggesaker.</p></div>
+      <div class="hvorfor-kort"><h3>Ingen jobb er for liten</h3><p>Mange rørleggere vil helst ha de store prosjektene. Hos oss er en dryppende kran en like reell jobb som et helt bad.</p></div>
+      <div class="hvorfor-kort"><h3>Kjede i ryggen</h3><p>Som medlem av VVS Eksperten-kjeden har vi et større fagmiljø i ryggen, og du får fortsatt lokal service.</p></div>
+      <div class="hvorfor-kort"><h3>Vi utdanner fagfolk</h3><p>Som godkjent lærebedrift tar vi inn lærlinger og investerer i faget. Det holder standarden oppe, også på dine oppdrag.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra telefon til ferdig jobb</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ring oss</h3><p>Beskriv jobben på telefon, stor eller liten.</p></div>
+      <div class="steg"><h3>Vurdering</h3><p>Småjobber avtales direkte. Større prosjekter starter med en befaring.</p></div>
+      <div class="steg"><h3>Pris og plan</h3><p>Du får en tydelig pris og et tidspunkt du kan stole på.</p></div>
+      <div class="steg"><h3>Utført og ryddet</h3><p>Vi gjør jobben, tester at alt virker og rydder etter oss.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-flex">
+      <div class="omtale-tall morkflate">
+        <b>4,8</b>
+        <span>av 5 stjerner etter 26 oppdrag på Mittanbud</span>
+      </div>
+      <div class="omtale-ramme">
+        <p>Flere kundeomtaler hentes fra Mittanbud-profilen og legges inn her ved lansering.</p>
+        <!-- PLACEHOLDER: erstattes med ekte innhold -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Bergen nord er hjemmebane</h2>
+          <p>Base på Nyborg, kort vei til hele Åsane og resten av Bergen.</p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Nyborg og Åsane</li>
+          <li>Eidsvåg</li>
+          <li>Salhus og Hordvik</li>
+          <li>Hylkje</li>
+          <li>Arna</li>
+          <li>Bergen ellers</li>
+        </ul>
+      </div>
+      <div class="mester-kort morkflate">
+        <h3>Familiedrevet håndverk</h3>
+        <p>Klevstad Rørservice drives som en familiebedrift, med korte linjer fra den som tar telefonen til den som gjør jobben hjemme hos deg.<!-- PLACEHOLDER: familiehistorikk fra omtale i BA/Mittanbud, bekreftes med kunden --></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Tar dere små oppdrag, som en kran eller et blandebatteri?</summary>
+      <div class="svar">Ja. Småjobber er en viktig del av hverdagen vår: kraner, blandebatterier, vannstoppventiler, tilkobling av vaskemaskin og bytte av varmtvannsbereder.</div>
+    </details>
+    <details>
+      <summary>Avløpet går tregt. Bør jeg vente eller ringe?</summary>
+      <div class="svar">Ring heller før det står helt tett. Et avløp som går tregt er et tidlig varsel, og jobben er som regel mindre jo før vi tar den.</div>
+    </details>
+    <details>
+      <summary>Kan dere ta hele badet?</summary>
+      <div class="svar">Ja, vi tar renovering, modernisering og totalrenovering av bad, og samarbeider med elektriker, tømrer og murer der det trengs.</div>
+    </details>
+    <details>
+      <summary>Monterer dere varmepumper?</summary>
+      <div class="svar">Ja, vi utfører både installasjon og service av varmepumper.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris på en jobb?</summary>
+      <div class="svar">Ring 91 80 63 88 og beskriv jobben. Småjobber prises som regel direkte, større prosjekter etter en kort befaring.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Rørene venter ikke. Det gjør ikke vi heller.</h2>
+    <p>Ring oss og fortell hva som har skjedd, eller hva du planlegger. Så finner vi ut av det sammen.</p>
+    <a class="stor-tel" href="tel:+4791806388">91 80 63 88</a>
+    <p class="merknad">[E-postadresse legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold. E-post paa gammelt domene er avviklet. --></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Klevstad Rørservice AS</h3>
+        <ul>
+          <li>Myrdalshovden 134</li>
+          <li>5130 Nyborg</li>
+          <li>Org.nr 921 054 971</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4791806388">91 80 63 88</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Bad og våtrom</a></li>
+          <li><a href="#tjenester">Sanitæranlegg</a></li>
+          <li><a href="#tjenester">Varmepumper</a></li>
+          <li><a href="#tjenester">Småjobber</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Klevstad Rørservice AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4791806388">Ring 91 80 63 88</a>
+  <a class="m-mer" href="#avlop">Prøv avløpstesten</a>
+</div>
+
+<script>
+(function () {
+  var innhold = {
+    fett: {
+      tittel: 'Stekefett stivner i røret',
+      tekst: 'Flytende fett fra pannen stivner når det treffer kaldt vann, og legger seg som et voksbelegg i vannlåsen og videre nedover. Tørk av pannen med papir før oppvask.'
+    },
+    grut: {
+      tittel: 'Kaffegrut synker og blir liggende',
+      tekst: 'Grut løser seg ikke opp i vann. Den samler seg i bunnen av vannlåsen og binder seg med fett til en fast masse. Grut hører hjemme i matavfallet.'
+    },
+    servietter: {
+      tittel: 'Våtservietter løser seg aldri opp',
+      tekst: 'I motsetning til dopapir beholder våtservietter styrken i vann. De hekter seg fast og fanger alt annet som kommer. En av de vanligste årsakene til full stopp.'
+    },
+    haar: {
+      tittel: 'Hår og såperester fletter seg sammen',
+      tekst: 'Hår fester seg i røret og danner et nett som såperester og fett bygger videre på. Et slukrist-innlegg koster lite og sparer mye.'
+    }
+  };
+  var maks = 4;
+  var nivaa = 0;
+  var knapper = document.querySelectorAll('.kast-knapp');
+  var tomKnapp = document.getElementById('tom-roret');
+  var status = document.getElementById('avlop-status');
+  var tittel = document.getElementById('avlop-tittel');
+  var tekst = document.getElementById('avlop-tekst');
+
+  function oppdaterStatus() {
+    for (var i = 1; i <= maks; i++) {
+      document.getElementById('propp-' + i).setAttribute('opacity', i <= nivaa ? '1' : '0');
+    }
+    status.classList.remove('fritt', 'trangt', 'tett');
+    if (nivaa === 0) {
+      status.classList.add('fritt');
+      status.textContent = 'Rørstatus: fritt løp';
+    } else if (nivaa < maks) {
+      status.classList.add('trangt');
+      status.textContent = 'Rørstatus: trangere og trangere';
+    } else {
+      status.classList.add('tett');
+      status.textContent = 'Rørstatus: helt tett!';
+    }
+    knapper.forEach(function (k) { k.disabled = nivaa >= maks; });
+  }
+
+  knapper.forEach(function (k) {
+    k.addEventListener('click', function () {
+      if (nivaa >= maks) return;
+      nivaa++;
+      var data = innhold[k.dataset.kast];
+      if (nivaa >= maks) {
+        tittel.textContent = 'Helt tett. Nå ringer folk oss.';
+        tekst.textContent = data.tekst + ' Og akkurat nå står vannet i vasken din. Ring 91 80 63 88, så tar vi det derfra.';
+      } else {
+        tittel.textContent = data.tittel;
+        tekst.textContent = data.tekst;
+      }
+      oppdaterStatus();
+    });
+  });
+
+  tomKnapp.addEventListener('click', function () {
+    nivaa = 0;
+    tittel.textContent = 'Røret er åpent';
+    tekst.textContent = 'Kast noe i avløpet og se hva som bygger seg opp i vannlåsen. Alt du heller i vasken skal gjennom denne svingen.';
+    oppdaterStatus();
+  });
+
+  oppdaterStatus();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Hjartøy Entreprenørforretning | Grunnarbeid, sprengning og betong på Sotra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Khand:wght@500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oransje:#E3690B;
+  --oransje-dyp:#B85207;
+  --mork:#2E2E2B;
+  --mork-dypere:#1F1F1D;
+  --lys:#F2F1EE;
+  --hvit:#FFFFFF;
+  --tekst:#2A2A27;
+  --dus:#6A6A64;
+  --strek:#DEDCD5;
+  --jord:#6B4F35;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--lys);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Khand',sans-serif;line-height:1.08;font-weight:600;letter-spacing:.01em}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--oransje);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--mork-dypere);color:#B9B9B2;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:#F2954C;text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.merke{text-decoration:none;line-height:1}
+.merke b{font-family:'Khand',sans-serif;font-weight:700;font-size:25px;color:var(--mork);text-transform:uppercase;letter-spacing:.02em}
+.merke b span{color:var(--oransje)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dus);font-weight:600;font-family:'Open Sans',sans-serif}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px}
+nav.hoved a:hover{color:var(--oransje)}
+.ring-knapp{background:var(--oransje);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:4px;white-space:nowrap}
+.ring-knapp:hover{background:var(--oransje-dyp)}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:var(--hvit);border-bottom:1px solid var(--strek);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:repeating-linear-gradient(-45deg,var(--oransje) 0 24px,var(--mork) 24px 48px);opacity:.9}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 76px}
+.hero h1{font-size:clamp(36px,5.2vw,60px);color:var(--mork);text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--oransje)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:4px;font-size:17px}
+.knapp-primar{background:var(--oransje);color:#fff}
+.knapp-primar:hover{background:var(--oransje-dyp)}
+.knapp-sekundar{background:transparent;color:var(--mork);border:2px solid var(--mork)}
+.knapp-sekundar:hover{background:var(--mork);color:#fff}
+.hero-kort{background:var(--mork);color:#E9E9E4;border-radius:8px;padding:30px 28px}
+.hero-kort h2{font-family:'Open Sans',sans-serif;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#F2954C;font-weight:700;margin-bottom:14px}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,.14)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:16px;width:15px;height:8px;border-left:3px solid var(--oransje);border-bottom:3px solid var(--oransje);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 56px}}
+
+/* Trust-strip */
+.trust{background:var(--mork);color:#B9B9B2}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:#F2954C;font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:70ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-family:'Open Sans',sans-serif;font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--oransje)}
+.seksjonstittel h2{font-size:clamp(30px,4vw,46px);color:var(--mork);margin-top:8px;text-transform:uppercase}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:6px;padding:26px 24px;border-left:5px solid var(--oransje)}
+.tjeneste h3{font-size:24px;color:var(--mork);margin-bottom:8px;text-transform:uppercase}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Graveseksjonen */
+.grav-seksjon{background:var(--mork-dypere);color:#E9E9E4}
+.grav-seksjon .seksjonstittel h2{color:#fff}
+.grav-seksjon .seksjonstittel p{color:#98988F}
+.grav-flex{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.grav-ramme{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:26px 18px 14px;text-align:center}
+.grav-ramme figcaption{font-family:'Open Sans',sans-serif;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#98988F;font-weight:700;padding:12px 0 8px}
+#grabb{transition:transform .45s ease;transform-origin:355px 96px}
+.grop,.haug{transition:opacity .4s}
+.grav-knapper{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.grav-knapp{font-family:'Khand',sans-serif;font-weight:600;font-size:18px;letter-spacing:.03em;padding:11px 26px;border-radius:4px;border:none;background:var(--oransje);color:#fff;cursor:pointer;text-transform:uppercase}
+.grav-knapp:hover{background:var(--oransje-dyp)}
+.grav-knapp[disabled]{opacity:.45;cursor:not-allowed}
+.fyll-knapp{font-family:'Khand',sans-serif;font-weight:600;font-size:18px;letter-spacing:.03em;padding:11px 26px;border-radius:4px;border:2px solid #4A4A45;background:transparent;color:#E9E9E4;cursor:pointer;text-transform:uppercase}
+.fyll-knapp:hover{border-color:var(--oransje)}
+.grav-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:4px solid var(--oransje);border-radius:8px;padding:26px 28px}
+.grav-panel .steg-etikett{font-family:'Open Sans',sans-serif;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#F2954C;font-weight:700}
+.grav-panel h3{font-size:28px;color:#fff;margin:6px 0 10px;text-transform:uppercase}
+.grav-panel p{color:#B9B9B2;font-size:15.5px}
+@media (max-width:900px){.grav-flex{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:6px;padding:26px 24px}
+.hvorfor-kort h3{font-size:23px;color:var(--mork);margin-bottom:8px;text-transform:uppercase}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:#E7E5DF}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:6px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:"0" counter(steg);font-family:'Khand',sans-serif;font-weight:700;font-size:34px;color:var(--oransje);display:block;margin-bottom:6px}
+.steg h3{font-size:21px;color:var(--mork);margin-bottom:6px;text-transform:uppercase}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--oransje);border-radius:6px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Nyhet */
+.nyhet-seksjon{background:var(--hvit);border-top:1px solid var(--strek);border-bottom:1px solid var(--strek)}
+.nyhet-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.nyhet-kort{background:var(--mork);color:#E9E9E4;border-radius:8px;padding:30px 28px}
+.nyhet-kort .stempel{display:inline-block;font-family:'Open Sans',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;background:var(--oransje);color:#fff;padding:5px 12px;border-radius:3px;margin-bottom:14px}
+.nyhet-kort h3{color:#fff;font-size:26px;margin-bottom:10px;text-transform:uppercase}
+.nyhet-kort p{font-size:15.5px;color:#B9B9B2}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:600;color:var(--mork);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:13px;height:13px;background:var(--oransje);clip-path:polygon(50% 0,100% 100%,0 100%)}
+@media (max-width:860px){.nyhet-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:6px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600;padding:18px 22px;font-size:18px;color:var(--mork);list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Khand',sans-serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--oransje);line-height:1}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(150deg,var(--mork-dypere),#3A2A1A);color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(32px,4.4vw,52px);color:#fff;text-transform:uppercase}
+.slutt-cta p{color:#98988F;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Khand',sans-serif;font-size:clamp(34px,5.4vw,52px);font-weight:700;color:#F2954C;text-decoration:none;display:inline-block;margin-bottom:14px;letter-spacing:.02em}
+.slutt-cta .merknad{font-size:14px;color:#98988F}
+
+/* Footer */
+footer{background:var(--mork-dypere);color:#98988F;padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:#F2954C}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid #3A3A36;margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--mork-dypere);border-top:2px solid var(--oransje);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:4px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--oransje);color:#fff}
+.mobil-bar .m-mer{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Strenghaugen 11, Fjell på Sotra</span>
+    <span>Ring: <a href="tel:+4799611608">996 11 608</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>HJARTØY <span>ENTREPRENØR</span></b>
+      <small>Grunnarbeid, sprengning og betong</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#grav">Grav selv</a>
+      <a href="#nyhet">Om oss</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4799611608">996 11 608</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Vi gjør tomten <em>byggeklar</em></h1>
+      <p class="ingress">Hjartøy Entreprenørforretning tar grunnarbeid, sprengning, muring og betong på Sotra og i Bergensområdet. Fra første grabbtak til støpt grunnmur, med eget fjell- og betonglag i konsernet.</p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4799611608">Ring 996 11 608</a>
+        <a class="knapp knapp-sekundar" href="#grav">Grav ut tomten selv</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Grunnarbeid, sprengning, muring og betong</li>
+        <li>Sentral godkjenning<!-- PLACEHOLDER: ansvarsklasser (veg, vann, avloep, betong iflg. egen side) bekreftes med kunden --></li>
+        <li>Bergsprengar AS i laget siden 2017</li>
+        <li>Base på Fjell, midt på Sotra</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Fjell og betong</b><span>To fag i samme konsern</span></div>
+    <div><b>Sentral godkjenning</b><span>Dokumentert ansvarsrett</span></div>
+    <div><b>Sotra og Bergen</b><span>Store og små prosjekter</span></div>
+    <div><b>Eget utstyr</b><span>Maskiner for hele jobben<!-- PLACEHOLDER: maskinpark bekreftes med kunden --></span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Fra fjell til ferdig grunnmur</h2>
+      <p>Vi tar hele kjeden under bakken, så byggingen kan starte på fast grunn.</p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><h3>Grunnarbeid</h3><p>Graving, planering og klargjøring av tomter for bolig og næring.</p></div>
+      <div class="tjeneste"><h3>Sprengning</h3><p>Fjellsprengning utført kontrollert og trygt, med Bergsprengar AS i laget.</p></div>
+      <div class="tjeneste"><h3>Betongarbeid</h3><p>Grunnmurer, dekker og konstruksjoner, støpt for å stå.</p></div>
+      <div class="tjeneste"><h3>Muring</h3><p>Natursteinsmurer og støttemurer som holder på skrånende tomter.</p></div>
+      <div class="tjeneste"><h3>Vei, vann og avløp</h3><p>Grøfter, ledninger og veier, utført med dokumentert ansvarsrett.<!-- PLACEHOLDER: VVA-omfang bekreftes med kunden --></p></div>
+      <div class="tjeneste"><h3>Sjøarbeider</h3><p>Arbeid i overgangen mellom land og sjø, der Sotra-kysten krever erfaring.<!-- PLACEHOLDER: sjoearbeid-omfang fra Anlegg.no-omtale, bekreftes med kunden --></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="grav" class="grav-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Grav ut tomten</h2>
+      <p>Fire grabbtak skiller en gjengrodd tomt fra en byggeklar en. Ta spakene og grav.</p>
+    </div>
+    <div class="grav-flex">
+      <figure class="grav-ramme">
+        <svg viewBox="0 0 560 300" role="img" aria-label="Gravemaskin som graver ut en tomt grabbtak for grabbtak til den er byggeklar">
+          <rect x="20" y="228" width="520" height="50" fill="#3A3128"/>
+          <line x1="20" y1="228" x2="540" y2="228" stroke="#4A4A45" stroke-width="3"/>
+          <g class="grop" id="grop-1" opacity="0"><rect x="60" y="228" width="90" height="16" fill="#171310"/></g>
+          <g class="grop" id="grop-2" opacity="0"><rect x="60" y="228" width="160" height="28" fill="#171310"/></g>
+          <g class="grop" id="grop-3" opacity="0"><rect x="60" y="228" width="220" height="40" fill="#171310"/></g>
+          <g class="grop" id="grop-4" opacity="0"><rect x="60" y="228" width="250" height="46" fill="#171310"/><line x1="60" y1="274" x2="310" y2="274" stroke="#F2954C" stroke-width="3" stroke-dasharray="10 6"/></g>
+          <g class="haug" id="haug-1" opacity="0"><path d="M395,228 Q415,206 435,228 Z" fill="#5C4630"/></g>
+          <g class="haug" id="haug-2" opacity="0"><path d="M385,228 Q415,192 448,228 Z" fill="#5C4630"/></g>
+          <g class="haug" id="haug-3" opacity="0"><path d="M375,228 Q415,178 460,228 Z" fill="#5C4630"/></g>
+          <g class="haug" id="haug-4" opacity="0"><path d="M368,228 Q415,166 470,228 Z" fill="#5C4630"/></g>
+          <g>
+            <rect x="420" y="180" width="110" height="40" rx="6" fill="#E3690B"/>
+            <rect x="440" y="148" width="52" height="38" rx="5" fill="#E3690B"/>
+            <rect x="448" y="156" width="26" height="18" rx="3" fill="#1F1F1D"/>
+            <rect x="415" y="218" width="120" height="18" rx="9" fill="#2E2E2B" stroke="#4A4A45" stroke-width="2"/>
+            <circle cx="435" cy="227" r="6" fill="#6A6A64"/>
+            <circle cx="475" cy="227" r="6" fill="#6A6A64"/>
+            <circle cx="515" cy="227" r="6" fill="#6A6A64"/>
+            <g id="grabb">
+              <path d="M430,185 L355,96" stroke="#C25A08" stroke-width="10" stroke-linecap="round" fill="none"/>
+              <path d="M355,96 L300,150" stroke="#C25A08" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <path d="M300,150 L282,178 L316,178 Z" fill="#8A8A84"/>
+            </g>
+          </g>
+        </svg>
+        <figcaption id="grav-status">Gjengrodd tomt, klar for første grabbtak</figcaption>
+        <div class="grav-knapper">
+          <button type="button" class="grav-knapp" id="grav-knapp">Grav</button>
+          <button type="button" class="fyll-knapp" id="fyll-knapp">Fyll igjen og start på nytt</button>
+        </div>
+      </figure>
+      <div class="grav-panel" aria-live="polite">
+        <span class="steg-etikett" id="grav-steg">Grabbtak 0 av 4</span>
+        <h3 id="grav-tittel">Alt starter i jorden</h3>
+        <p id="grav-tekst">Før grunnmuren, før byggesettet, før alt: noen må flytte massene. Trykk på grav og se tomten ta form.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Hele grunnjobben, ett ansvar</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>Fjell, masse og betong samlet</h3><p>Sprengningen, gravingen og støpen henger sammen. Hos oss slipper du å koordinere tre firmaer som skylder på hverandre.</p></div>
+      <div class="hvorfor-kort"><h3>Dokumentert ansvarsrett</h3><p>Sentral godkjenning betyr at kvalifikasjonene er vurdert og dokumentert, ikke bare lovet.</p></div>
+      <div class="hvorfor-kort"><h3>Bygget for Sotra-grunn</h3><p>Berg, myr og sjønære tomter er hverdagen vår. Vi vet hva grunnen her ute krever før du bygger på den.</p></div>
+      <div class="hvorfor-kort"><h3>Fra plan til ferdig</h3><p>Vi er med fra prosjektering til overlevering, med samme kontaktperson hele veien.<!-- PLACEHOLDER: prosjekteringsomfang fra egen side, bekreftes med kunden --></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra befaring til byggeklar tomt</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ta kontakt</h3><p>Ring og fortell om tomten og planene dine.</p></div>
+      <div class="steg"><h3>Befaring</h3><p>Vi vurderer grunnforhold, adkomst og omfang på stedet.</p></div>
+      <div class="steg"><h3>Tilbud og plan</h3><p>Du får pris og en fremdriftsplan som holder.</p></div>
+      <div class="steg"><h3>Utførelse</h3><p>Vi sprenger, graver og støper til tomten er klar.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="nyhet" class="nyhet-seksjon">
+  <div class="wrap">
+    <div class="nyhet-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Sotra og Bergensområdet</h2>
+          <p>Base på Fjell, prosjekter i Bergen og omegn.</p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Fjell og Straume</li>
+          <li>Ågotnes</li>
+          <li>Skogsvåg og Sund</li>
+          <li>Rong og Nordre Øygarden</li>
+          <li>Askøy</li>
+          <li>Bergen</li>
+        </ul>
+      </div>
+      <div class="nyhet-kort morkflate">
+        <span class="stempel">Fra konsernet</span>
+        <h3>Sterkere lag under bakken</h3>
+        <p>Hjartøy Entreprenørforretning har kjøpt alle aksjene i Bergtun Fjell &amp; Betongarbeid, og Bergsprengar AS har vært en del av laget siden 2017. Det gjør oss til en komplett aktør innen fjell, grunn og betong på Sotra.</p>
+        <p style="margin-top:12px">[Flere nyheter og referanseprosjekter legges inn her ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Tar dere små jobber for privatpersoner?</summary>
+      <div class="svar">Ja, vi tar både store prosjekter og mindre jobber som drenering, murer og utgraving for garasje eller tilbygg.<!-- PLACEHOLDER: tjenestetilbud bekreftes med kunden --></div>
+    </details>
+    <details>
+      <summary>Det er fjell på tomten min. Er det et problem?</summary>
+      <div class="svar">Nei, det er spesialiteten vår. Med Bergsprengar AS i laget tar vi sprengningen kontrollert og trygt, og massene kan ofte brukes videre på tomten.</div>
+    </details>
+    <details>
+      <summary>Kan dere ta hele jobben frem til grunnmur?</summary>
+      <div class="svar">Ja. Sprengning, graving, vei, vann og avløp og betongarbeid kan leveres samlet, med ett ansvar.</div>
+    </details>
+    <details>
+      <summary>Hva betyr sentral godkjenning?</summary>
+      <div class="svar">Det er Direktoratet for byggkvalitet sin ordning for å dokumentere at bedriften har kvalifikasjoner og rutiner i orden for ansvarsrett i byggesaker.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris på et prosjekt?</summary>
+      <div class="svar">Ring 996 11 608 og beskriv tomten og planene. Vi tar en befaring før vi gir pris, for grunnforholdene avgjør jobben.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Skal du bygge? Start med grunnen.</h2>
+    <p>Ring oss for en befaring, så får du en ærlig vurdering av tomten og en pris du kan planlegge etter.</p>
+    <a class="stor-tel" href="tel:+4799611608">996 11 608</a>
+    <p class="merknad">[E-postadresse legges inn ved lansering.]<!-- PLACEHOLDER: erstattes med ekte innhold --></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Hjartøy Entreprenørforretning AS</h3>
+        <ul>
+          <li>Strenghaugen 11</li>
+          <li>5357 Fjell</li>
+          <li>Org.nr 914 353 602</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4799611608">996 11 608</a></li>
+          <li>[E-post legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Grunnarbeid</a></li>
+          <li><a href="#tjenester">Sprengning</a></li>
+          <li><a href="#tjenester">Betongarbeid</a></li>
+          <li><a href="#tjenester">Muring</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Hjartøy Entreprenørforretning AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4799611608">Ring 996 11 608</a>
+  <a class="m-mer" href="#grav">Grav ut tomten</a>
+</div>
+
+<script>
+(function () {
+  var steg = 0;
+  var maks = 4;
+  var grabb = document.getElementById('grabb');
+  var gravKnapp = document.getElementById('grav-knapp');
+  var fyllKnapp = document.getElementById('fyll-knapp');
+  var status = document.getElementById('grav-status');
+  var stegTekst = document.getElementById('grav-steg');
+  var tittel = document.getElementById('grav-tittel');
+  var tekst = document.getElementById('grav-tekst');
+
+  var innhold = [
+    { tittel: 'Alt starter i jorden', tekst: 'Før grunnmuren, før byggesettet, før alt: noen må flytte massene. Trykk på grav og se tomten ta form.', status: 'Gjengrodd tomt, klar for første grabbtak' },
+    { tittel: 'Matjorden av', tekst: 'Topplaget skaves vekk og legges i ranke. God matjord kastes ikke, den brukes igjen når tomten skal ferdigstilles.', status: 'Grabbtak 1: topplaget er av' },
+    { tittel: 'Ned mot fast grunn', tekst: 'Løsmassene flyttes ut. Nå viser tomten hva den faktisk består av: jord, leire eller fjellet vi eventuelt må sprenge.', status: 'Grabbtak 2: løsmassene flyttes' },
+    { tittel: 'Traubunnen tar form', tekst: 'Utgravingen nærmer seg riktig dybde. Herfra handler det om presisjon: riktig nivå, riktig fall, riktig komprimering.', status: 'Grabbtak 3: nesten på dybde' },
+    { tittel: 'Byggeklar', tekst: 'Traubunnen er avrettet og klar for pukk, rør og forskaling. Det neste som skjer her, er grunnmur. Slik ser starten på ethvert byggeprosjekt ut.', status: 'Grabbtak 4: tomten er byggeklar' }
+  ];
+
+  function vis() {
+    var i;
+    for (i = 1; i <= maks; i++) {
+      document.getElementById('grop-' + i).setAttribute('opacity', i === steg ? '1' : '0');
+      document.getElementById('haug-' + i).setAttribute('opacity', i === steg ? '1' : '0');
+    }
+    stegTekst.textContent = 'Grabbtak ' + steg + ' av ' + maks;
+    tittel.textContent = innhold[steg].tittel;
+    tekst.textContent = innhold[steg].tekst;
+    status.textContent = innhold[steg].status;
+    gravKnapp.disabled = steg >= maks;
+  }
+
+  gravKnapp.addEventListener('click', function () {
+    if (steg >= maks) return;
+    steg++;
+    grabb.style.transform = 'rotate(14deg)';
+    setTimeout(function () { grabb.style.transform = 'rotate(0deg)'; }, 460);
+    vis();
+  });
+
+  fyllKnapp.addEventListener('click', function () {
+    steg = 0;
+    vis();
+  });
+
+  vis();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Minde Blikk | Blikkenslager og lekkasjesøk i Bergen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Commissioner:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --staal:#3D5A73;
+  --staal-dyp:#22344A;
+  --roed:#D64541;
+  --roed-lys:#E8837F;
+  --lys:#F2F4F5;
+  --hvit:#FFFFFF;
+  --tekst:#25313B;
+  --dus:#5F6E7A;
+  --strek:#DCE2E6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+[id]{scroll-margin-top:84px}
+body{font-family:'Commissioner',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:var(--tekst);background:var(--lys);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Familjen Grotesk',sans-serif;line-height:1.12;font-weight:700;letter-spacing:-.01em}
+a{color:inherit}
+svg{max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--roed);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{background:var(--staal-dyp);color:#BCC9D4;font-size:14px;padding:7px 0}
+.topplinje .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topplinje a{color:#fff;text-decoration:none;font-weight:700}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hode{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+.merke{text-decoration:none;line-height:1.05}
+.merke b{font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:22px;color:var(--staal-dyp)}
+.merke b span{color:var(--roed)}
+.merke small{display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dus);font-weight:600}
+nav.hoved{display:flex;gap:22px}
+nav.hoved a{text-decoration:none;font-weight:600;font-size:15px}
+nav.hoved a:hover{color:var(--roed)}
+.ring-knapp{background:var(--roed);color:#fff;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:6px;white-space:nowrap}
+.ring-knapp:hover{background:#B03330}
+@media (max-width:880px){nav.hoved{display:none}}
+
+/* Hero */
+.hero{background:var(--hvit);border-bottom:1px solid var(--strek)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:64px 20px 72px}
+.hero h1{font-size:clamp(31px,4.4vw,50px);color:var(--staal-dyp)}
+.hero h1 em{font-style:normal;color:var(--roed)}
+.hero .ingress{font-size:19px;color:var(--dus);margin:18px 0 26px;max-width:52ch}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;padding:15px 28px;border-radius:6px;font-size:17px}
+.knapp-primar{background:var(--roed);color:#fff}
+.knapp-primar:hover{background:#B03330}
+.knapp-sekundar{background:transparent;color:var(--staal-dyp);border:2px solid var(--staal-dyp)}
+.knapp-sekundar:hover{background:var(--staal-dyp);color:#fff}
+.hero-kort{background:var(--staal-dyp);color:#E6ECF1;border-radius:10px;padding:30px 28px}
+.hero-kort h2{font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--roed-lys);font-weight:700;margin-bottom:14px;font-family:'Commissioner',sans-serif}
+.hero-kort ul{list-style:none}
+.hero-kort li{padding:10px 0 10px 30px;position:relative;font-size:16px;border-bottom:1px solid rgba(255,255,255,.12)}
+.hero-kort li:last-child{border-bottom:none}
+.hero-kort li::before{content:"";position:absolute;left:0;top:16px;width:15px;height:8px;border-left:3px solid var(--roed);border-bottom:3px solid var(--roed);transform:rotate(-45deg)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}}
+
+/* Trust-strip */
+.trust{background:var(--staal-dyp);color:#BCC9D4}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;text-align:center}
+.trust b{display:block;color:#fff;font-size:15px}
+.trust span{font-size:13.5px}
+@media (max-width:860px){.trust .wrap{grid-template-columns:repeat(2,1fr);gap:16px}}
+
+/* Seksjoner */
+section{padding:72px 0}
+.seksjonstittel{max-width:66ch;margin-bottom:40px}
+.seksjonstittel .overtittel{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--roed);font-family:'Commissioner',sans-serif}
+.seksjonstittel h2{font-size:clamp(26px,3.4vw,38px);color:var(--staal-dyp);margin-top:8px}
+.seksjonstittel p{color:var(--dus);margin-top:12px}
+
+/* Tjenester */
+.tjenester-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tjeneste{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;padding:26px 24px;border-top:4px solid var(--staal)}
+.tjeneste h3{font-size:20px;color:var(--staal-dyp);margin-bottom:8px}
+.tjeneste p{font-size:15px;color:var(--dus)}
+@media (max-width:960px){.tjenester-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.tjenester-grid{grid-template-columns:1fr}}
+
+/* Lekkasjesporeren */
+.lekk-seksjon{background:var(--staal-dyp);color:#E6ECF1}
+.lekk-seksjon .seksjonstittel h2{color:#fff}
+.lekk-seksjon .seksjonstittel p{color:#93A6B5}
+.lekk-flex{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.hus-ramme{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:26px 18px 12px;text-align:center}
+.hus-ramme figcaption{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:#93A6B5;font-weight:700;padding:10px 0 8px;font-family:'Commissioner',sans-serif}
+.dryppe{fill:#6FA8C9}
+.drypp-anim{animation:drypp 1.4s ease-in infinite}
+@keyframes drypp{
+  0%{transform:translateY(0);opacity:1}
+  80%{transform:translateY(46px);opacity:1}
+  100%{transform:translateY(52px);opacity:0}
+}
+.sporvei{stroke:#6FA8C9;stroke-width:3.5;stroke-dasharray:7 7;fill:none;opacity:0;transition:opacity .5s}
+.sporer .sporvei{opacity:.9;animation:spor 1.2s linear infinite}
+@keyframes spor{
+  from{stroke-dashoffset:14}
+  to{stroke-dashoffset:0}
+}
+.lekkpunkt{opacity:0;transition:opacity .5s}
+.sporer .lekkpunkt{opacity:1}
+.lekkpuls{transform-origin:392px 74px}
+.sporer .lekkpuls{animation:puls 1.6s ease-out infinite}
+@keyframes puls{
+  0%{transform:scale(.6);opacity:.9}
+  100%{transform:scale(1.6);opacity:0}
+}
+.spor-knapp{font-family:'Commissioner',sans-serif;font-weight:700;font-size:16px;padding:13px 24px;border-radius:6px;border:none;background:var(--roed);color:#fff;cursor:pointer;margin-top:6px}
+.spor-knapp:hover{background:#B03330}
+.spor-knapp[aria-pressed="true"]{background:#6FA8C9;color:#12242F}
+.lekk-panel{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-left:4px solid var(--roed);border-radius:10px;padding:26px 28px}
+.lekk-panel h3{font-size:23px;color:#fff;margin-bottom:10px}
+.lekk-panel p{color:#BCC9D4;font-size:15.5px}
+.lekk-panel p + p{margin-top:10px}
+@media (max-width:900px){.lekk-flex{grid-template-columns:1fr}}
+
+/* Hvorfor */
+.hvorfor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.hvorfor-kort{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;padding:26px 24px}
+.hvorfor-kort h3{font-size:19px;color:var(--staal-dyp);margin-bottom:8px}
+.hvorfor-kort p{font-size:15px;color:var(--dus)}
+@media (max-width:760px){.hvorfor-grid{grid-template-columns:1fr}}
+
+/* Prosess */
+.prosess-seksjon{background:#E5EAEE}
+.prosess-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:steg}
+.steg{background:var(--hvit);border-radius:10px;padding:24px 22px;counter-increment:steg;border:1px solid var(--strek)}
+.steg::before{content:counter(steg);display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--staal);color:#fff;font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:18px;margin-bottom:12px}
+.steg h3{font-size:17.5px;color:var(--staal-dyp);margin-bottom:6px}
+.steg p{font-size:14.5px;color:var(--dus)}
+@media (max-width:920px){.prosess-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prosess-grid{grid-template-columns:1fr}}
+
+/* Omtaler */
+.omtale-ramme{background:var(--hvit);border:1px dashed var(--roed);border-radius:10px;padding:36px;text-align:center;max-width:720px;margin:0 auto}
+.omtale-ramme p{color:var(--dus)}
+
+/* Dekning */
+.dekning-flex{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.dekning-liste{list-style:none;columns:2;gap:24px;margin-top:8px}
+.dekning-liste li{padding:9px 0 9px 26px;position:relative;font-weight:600;color:var(--staal-dyp);break-inside:avoid}
+.dekning-liste li::before{content:"";position:absolute;left:0;top:15px;width:13px;height:13px;border-radius:50%;background:var(--staal)}
+.mester-kort{background:var(--staal-dyp);color:#E6ECF1;border-radius:10px;padding:30px 28px}
+.mester-kort h3{color:var(--roed-lys);font-size:21px;margin-bottom:10px}
+.mester-kort p{font-size:15.5px;color:#BCC9D4}
+@media (max-width:860px){.dekning-flex{grid-template-columns:1fr}.dekning-liste{columns:1}}
+
+/* FAQ */
+details{background:var(--hvit);border:1px solid var(--strek);border-radius:10px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:18px 22px;font-size:16.5px;color:var(--staal-dyp);list-style:none;display:flex;justify-content:space-between;gap:14px;font-family:'Familjen Grotesk',sans-serif}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--roed);line-height:1;font-weight:500}
+details[open] summary::after{content:"\2212"}
+details .svar{padding:0 22px 20px;color:var(--dus);font-size:15.5px}
+
+/* CTA */
+.slutt-cta{background:linear-gradient(150deg,#1A2836,var(--staal-dyp));color:#fff;text-align:center}
+.slutt-cta h2{font-size:clamp(28px,3.6vw,40px);color:#fff}
+.slutt-cta p{color:#93A6B5;max-width:56ch;margin:14px auto 30px}
+.slutt-cta .stor-tel{font-family:'Familjen Grotesk',sans-serif;font-size:clamp(30px,5vw,46px);font-weight:700;color:#fff;text-decoration:none;display:inline-block;margin-bottom:14px}
+.slutt-cta .merknad{font-size:14px}
+.slutt-cta .merknad a{color:var(--roed-lys)}
+
+/* Footer */
+footer{background:#1A2836;color:#93A6B5;padding:48px 0 110px;font-size:15px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+footer h3{color:#fff;font-size:17px;margin-bottom:12px}
+footer a{color:var(--roed-lys)}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+.bunnlinje{border-top:1px solid #2E4256;margin-top:40px;padding-top:20px;font-size:13.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (max-width:760px){.footer-grid{grid-template-columns:1fr}}
+
+/* Sticky mobil-bar */
+.mobil-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:#1A2836;border-top:2px solid var(--roed);padding:10px 12px;gap:10px}
+.mobil-bar a{flex:1;text-align:center;text-decoration:none;font-weight:700;padding:13px 8px;border-radius:6px;font-size:15.5px}
+.mobil-bar .m-ring{background:var(--roed);color:#fff}
+.mobil-bar .m-post{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+@media (max-width:760px){.mobil-bar{display:flex}}
+</style>
+</head>
+<body>
+
+<div class="topplinje">
+  <div class="wrap">
+    <span>Ulsmågvegen 24, Nesttun</span>
+    <span>Ring: <a href="tel:+4790191940">90 19 19 40</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap hode">
+    <a class="merke" href="#topp">
+      <b>MINDE <span>BLIKK</span></b>
+      <small>Blikkenslagermestere, Bergen</small>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#lekkasje">Lekkasjesporeren</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a href="#faq">Spørsmål</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="ring-knapp" href="tel:+4790191940">90 19 19 40</a>
+  </div>
+</header>
+
+<main id="topp">
+
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Lekker taket? <em>Ring noen som finner hvor.</em></h1>
+      <p class="ingress">Minde Blikk er en mesterbedrift med to blikkenslagermestere på Nesttun. Vi driver med metallkledding, beslag, takrenner og lekkasjesøk, og du når oss på telefon, ikke bare via et skjema.</p>
+      <div class="hero-cta">
+        <a class="knapp knapp-primar" href="tel:+4790191940">Ring 90 19 19 40</a>
+        <a class="knapp knapp-sekundar" href="#lekkasje">Se hvordan lekkasjer lurer deg</a>
+      </div>
+    </div>
+    <div class="hero-kort morkflate">
+      <h2>Kort om oss</h2>
+      <ul>
+        <li>Mesterbedrift med to blikkenslagermestere</li>
+        <li>Sentral godkjenning, tiltaksklasse 2 på tak</li>
+        <li>Godkjent for bevaringsverdige bygg</li>
+        <li>Alle på laget har svennebrev</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="trust morkflate" aria-label="Nøkkelpunkter">
+  <div class="wrap">
+    <div><b>Mesterbedrift</b><span>To blikkenslagermestere</span></div>
+    <div><b>Sentral godkjenning</b><span>Tiltaksklasse 2 på tak</span></div>
+    <div><b>Lekkasjesøk</b><span>Vi finner kilden, ikke bare flekken</span></div>
+    <div><b>Nesttun, Bergen</b><span>Kort vei i hele Bergen sør</span></div>
+  </div>
+</div>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Tjenester</span>
+      <h2>Metall som holder været ute</h2>
+      <p>Fire fagområder, samme presisjon: kledding, beslag, takrenner og lekkasjesøk.</p>
+    </div>
+    <div class="tjenester-grid">
+      <div class="tjeneste"><h3>Metallkledding</h3><p>Fasader og detaljer i metall, formet og montert av fagfolk med svennebrev.</p></div>
+      <div class="tjeneste"><h3>Beslag</h3><p>Pipebeslag, vindusbeslag og alle overgangene der vann prøver seg inn.</p></div>
+      <div class="tjeneste"><h3>Takrenner og nedløp</h3><p>Renner og nedløp dimensjonert for bergensregnet, montert så de holder.</p></div>
+      <div class="tjeneste"><h3>Lekkasjesøk</h3><p>Vi sporer lekkasjen til kilden, i stedet for å tette der det synes og håpe.</p></div>
+      <div class="tjeneste"><h3>Bevaringsverdige bygg</h3><p>Godkjent for arbeid på bevaringsverdige bygg, der detaljene skal gjøres som originalen.</p></div>
+      <div class="tjeneste"><h3>Reparasjon</h3><p>Løse beslag, rustne renner og skader etter uvær. Vi utbedrer og forebygger.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="lekkasje" class="lekk-seksjon morkflate">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Prøv selv</span>
+      <h2>Der det drypper, er det sjelden det lekker</h2>
+      <p>Vann følger konstruksjonen: Det kommer inn ett sted, renner langs sperrer og plater, og drypper et helt annet sted. Spor lekkasjen og se selv.</p>
+    </div>
+    <div class="lekk-flex">
+      <figure class="hus-ramme" id="hus-ramme">
+        <svg viewBox="0 0 560 320" role="img" aria-label="Snitt av et loft der dryppet i taket spores bakover langs konstruksjonen til et utett beslag hoeyere oppe">
+          <line x1="30" y1="292" x2="530" y2="292" stroke="#3A5068" stroke-width="3"/>
+          <path d="M60,180 L280,60 L500,180 L500,292 L60,292 Z" fill="#283C50" stroke="#3A5068" stroke-width="2"/>
+          <path d="M60,180 L280,60 L500,180" fill="none" stroke="#4A6076" stroke-width="10"/>
+          <line x1="120" y1="240" x2="440" y2="240" stroke="#3A5068" stroke-width="2"/>
+          <rect x="120" y="240" width="320" height="52" fill="#203144"/>
+          <text x="280" y="272" text-anchor="middle" fill="#6C8299" font-family="Commissioner,sans-serif" font-weight="600" font-size="13">STUEN UNDER LOFTET</text>
+          <rect x="368" y="64" width="30" height="52" fill="#283C50" stroke="#3A5068" stroke-width="2"/>
+          <g class="lekkpunkt">
+            <circle class="lekkpuls" cx="392" cy="74" r="14" fill="none" stroke="#D64541" stroke-width="3"/>
+            <circle cx="392" cy="74" r="7" fill="#D64541"/>
+            <text x="416" y="70" fill="#E8837F" font-family="Commissioner,sans-serif" font-weight="700" font-size="13.5">Her lekker det inn</text>
+          </g>
+          <path class="sporvei" d="M392,80 L330,116 Q300,132 268,150 L212,180 Q196,192 190,214 L188,236"/>
+          <g id="dryppested">
+            <circle cx="188" cy="240" r="4.5" class="dryppe"/>
+            <g class="drypp-anim"><circle cx="188" cy="246" r="4" class="dryppe"/></g>
+            <text x="182" y="228" text-anchor="end" fill="#6FA8C9" font-family="Commissioner,sans-serif" font-weight="700" font-size="13.5">Her drypper det</text>
+          </g>
+        </svg>
+        <figcaption id="lekk-status">Dryppet i stuetaket, midt i rommet</figcaption>
+        <button type="button" class="spor-knapp" id="spor-knapp" aria-pressed="false">Spor lekkasjen</button>
+      </figure>
+      <div class="lekk-panel" aria-live="polite">
+        <h3 id="lekk-tittel">Flekken lyver</h3>
+        <p id="lekk-tekst">Dryppet i taket er bare der vannet slapp taket. Å tette der det synes, stopper sjelden lekkasjen, og fukten fortsetter å jobbe i konstruksjonen.</p>
+        <p>Derfor er lekkasjesøk et eget fag hos oss: Vi følger vannet bakover til kilden, og utbedrer der det faktisk lekker.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hvorfor">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Hvorfor velge oss</span>
+      <h2>Dokumentert kompetanse, hele laget</h2>
+    </div>
+    <div class="hvorfor-grid">
+      <div class="hvorfor-kort"><h3>To mestere, ikke én</h3><p>Minde Blikk har to blikkenslagermestere. Det gir faglig ledelse på hvert prosjekt, ikke bare på papiret.</p></div>
+      <div class="hvorfor-kort"><h3>Svennebrev hos alle</h3><p>Alle som jobber hos oss er fagarbeidere med svennebrev. Det er laget vårt, og det merkes på detaljene.</p></div>
+      <div class="hvorfor-kort"><h3>Godkjent for det krevende</h3><p>Sentral godkjenning i tiltaksklasse 2 på tak, og godkjenning for bevaringsverdige bygg der kravene er strengest.</p></div>
+      <div class="hvorfor-kort"><h3>Vi finner årsaken</h3><p>Lekkasjesøk handler om å forstå hvordan vann beveger seg i bygget. Det sparer deg for gjentatte utbedringer som ikke virker.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="prosess-seksjon" id="prosess">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Slik jobber vi</span>
+      <h2>Fra telefon til tett tak</h2>
+    </div>
+    <div class="prosess-grid">
+      <div class="steg"><h3>Ring oss</h3><p>Beskriv det du ser, gjerne med bilder av dryppet eller skaden.</p></div>
+      <div class="steg"><h3>Befaring og søk</h3><p>Vi sporer årsaken, ikke bare symptomet, før vi foreslår løsning.</p></div>
+      <div class="steg"><h3>Tilbud</h3><p>Du får en tydelig pris på utbedringen som faktisk løser problemet.</p></div>
+      <div class="steg"><h3>Utført og dokumentert</h3><p>Vi utbedrer fagmessig og går gjennom resultatet med deg.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="omtaler">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Omtaler</span>
+      <h2>Hva kundene sier</h2>
+    </div>
+    <div class="omtale-ramme">
+      <p>Kundeomtaler legges inn her ved lansering.</p>
+      <!-- PLACEHOLDER: erstattes med ekte innhold -->
+    </div>
+  </div>
+</section>
+
+<section id="dekning">
+  <div class="wrap">
+    <div class="dekning-flex">
+      <div>
+        <div class="seksjonstittel" style="margin-bottom:24px">
+          <span class="overtittel">Dekningsområde</span>
+          <h2>Nesttun er utgangspunktet</h2>
+          <p>Base i Ulsmågvegen, oppdrag i hele Bergensområdet.<!-- PLACEHOLDER: dekningsomraade bekreftes med kunden --></p>
+        </div>
+        <ul class="dekning-liste">
+          <li>Nesttun og Midtun</li>
+          <li>Fana</li>
+          <li>Rådal</li>
+          <li>Bergen sentrum</li>
+          <li>Åsane</li>
+          <li>Bergen ellers</li>
+        </ul>
+      </div>
+      <div class="mester-kort morkflate">
+        <h3>Hva betyr sentral godkjenning?</h3>
+        <p>Sentral godkjenning er Direktoratet for byggkvalitet sin ordning for å dokumentere at en bedrift har kvalifikasjonene i orden. Minde Blikk er godkjent i tiltaksklasse 2 på tak, og kan i tillegg arbeide på bevaringsverdige bygg, der utførelsen skal møte antikvariske krav.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="seksjonstittel">
+      <span class="overtittel">Ofte stilte spørsmål</span>
+      <h2>Lurer du på noe?</h2>
+    </div>
+    <details>
+      <summary>Det drypper fra taket. Hva gjør jeg nå?</summary>
+      <div class="svar">Sett en bøtte under, ta bilder, og ring oss på 90 19 19 40. Ikke vent til neste regnskyll: Jo lenger fukten jobber, desto større blir utbedringen.</div>
+    </details>
+    <details>
+      <summary>Hva er lekkasjesøk?</summary>
+      <div class="svar">Systematisk sporing av hvor vannet faktisk kommer inn. Der det drypper er sjelden der det lekker, for vann følger konstruksjonen før det slipper taket. Vi finner kilden før vi utbedrer.</div>
+    </details>
+    <details>
+      <summary>Jobber dere på eldre og bevaringsverdige bygg?</summary>
+      <div class="svar">Ja, vi er godkjent for arbeid på bevaringsverdige bygg og former detaljene slik originalen krever.</div>
+    </details>
+    <details>
+      <summary>Tar dere små jobber?</summary>
+      <div class="svar">Ja. Et enkelt beslag eller en takrenne som har løsnet, er også en jobb for oss.</div>
+    </details>
+    <details>
+      <summary>Hvordan får jeg pris?</summary>
+      <div class="svar">Ring 90 19 19 40 eller send en e-post til <a href="mailto:sandvik@mindeblikk.no">sandvik@mindeblikk.no</a>, så avtaler vi en befaring.</div>
+    </details>
+  </div>
+</section>
+
+<section class="slutt-cta morkflate" id="kontakt">
+  <div class="wrap">
+    <h2>Vann gir seg aldri. Vi gir oss ikke vi heller.</h2>
+    <p>Ring oss om lekkasjen, beslaget eller prosjektet ditt, så får du svar fra fagfolk, ikke fra et skjema.</p>
+    <a class="stor-tel" href="tel:+4790191940">90 19 19 40</a>
+    <p class="merknad"><a href="mailto:sandvik@mindeblikk.no">sandvik@mindeblikk.no</a></p>
+  </div>
+</section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>Minde Blikk AS</h3>
+        <ul>
+          <li>Ulsmågvegen 24</li>
+          <li>5224 Nesttun</li>
+          <li>Org.nr 936 297 374</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Telefon: <a href="tel:+4790191940">90 19 19 40</a></li>
+          <li>E-post: <a href="mailto:sandvik@mindeblikk.no">sandvik@mindeblikk.no</a></li>
+          <li>[Åpningstider legges inn her]<!-- PLACEHOLDER: erstattes med ekte innhold --></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Tjenester</h3>
+        <ul>
+          <li><a href="#tjenester">Metallkledding</a></li>
+          <li><a href="#tjenester">Beslag</a></li>
+          <li><a href="#tjenester">Takrenner og nedløp</a></li>
+          <li><a href="#tjenester">Lekkasjesøk</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bunnlinje">
+      <span>&copy; 2026 Minde Blikk AS</span>
+      <span>Skisse utarbeidet av Elevate Marketing</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobil-bar morkflate">
+  <a class="m-ring" href="tel:+4790191940">Ring 90 19 19 40</a>
+  <a class="m-post" href="mailto:sandvik@mindeblikk.no">Send e-post</a>
+</div>
+
+<script>
+(function () {
+  var knapp = document.getElementById('spor-knapp');
+  var ramme = document.getElementById('hus-ramme');
+  var status = document.getElementById('lekk-status');
+  var tittel = document.getElementById('lekk-tittel');
+  var tekst = document.getElementById('lekk-tekst');
+  var sporer = false;
+
+  knapp.addEventListener('click', function () {
+    sporer = !sporer;
+    ramme.classList.toggle('sporer', sporer);
+    knapp.setAttribute('aria-pressed', String(sporer));
+    knapp.textContent = sporer ? 'Skjul sporet' : 'Spor lekkasjen';
+    status.textContent = sporer ? 'Kilden: et utett beslag ved pipen, flere meter unna' : 'Dryppet i stuetaket, midt i rommet';
+    if (sporer) {
+      tittel.textContent = 'Der er synderen';
+      tekst.textContent = 'Vannet kommer inn ved pipebeslaget, renner langs undertaket og sperrene, og slipper taket først midt over stuen. Uten sporing hadde du tettet feil sted.';
+    } else {
+      tittel.textContent = 'Flekken lyver';
+      tekst.textContent = 'Dryppet i taket er bare der vannet slapp taket. Å tette der det synes, stopper sjelden lekkasjen, og fukten fortsetter å jobbe i konstruksjonen.';
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

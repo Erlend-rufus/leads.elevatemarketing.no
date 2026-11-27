@@ -3,24 +3,33 @@ User-agent: *
 Allow: /
 Disallow: /takk
 Disallow: /ikke-aktuell
+Disallow: /prospekt/
 
 # AI-crawlere er velkomne — vi praktiserer det vi selger (GEO).
+# Salgsskissene under /prospekt/ holdes utenfor for alle, også dem.
+
 User-agent: GPTBot
 Allow: /
+Disallow: /prospekt/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /prospekt/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /prospekt/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /prospekt/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /prospekt/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /prospekt/
 
 # TODO (domene): legg til Sitemap-linje med absolutt URL når domenet er koblet på.

@@ -1,0 +1,26 @@
+Bilder til Malermester Hope-skissen
+===================================
+
+Legg bildefilene rett i denne mappen. De dukker opp automatisk i skissen,
+ingen kodeendring trengs. Filene MÅ hete nøyaktig dette (små bokstaver, .jpg):
+
+  fasademaling.jpg      hovedbilde: utvendig maling av bolig
+  fasademaling-2.jpg    ekstrabilde samme type (valgfritt)
+  murfasade.jpg      hovedbilde: vedlikehold og reparasjon av murfasade
+  murfasade-2.jpg    ekstrabilde samme type (valgfritt)
+  innvendig.jpg      hovedbilde: maling og tapetsering innvendig
+  innvendig-2.jpg    ekstrabilde samme type (valgfritt)
+  gulv.jpg      hovedbilde: legging av gulv
+  gulv-2.jpg    ekstrabilde samme type (valgfritt)
+  dekormaling.jpg      hovedbilde: dekormaling, logo og kunst på vegg
+  dekormaling-2.jpg    ekstrabilde samme type (valgfritt)
+
+Hovedbildene (uten -2) brukes både på forsiden og øverst på referansesiden.
+Legger du bare inn de fem hovedbildene, ser skissen komplett ut.
+
+Format: JPG, gjerne 1200 px bred. Bildene fra 2017 er lavoppløselige, og
+rammene er derfor satt i 4:3 slik at de vises i moderat størrelse og
+beskjæres pent i stedet for å bli strukket.
+
+Kilder: absoluttmaling.no og Facebook-siden til firmaet. Bruk kun egne
+bilder, aldri arkivbilder.

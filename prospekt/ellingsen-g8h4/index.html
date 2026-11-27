@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Anleggsgartner Ellingsen | Uterom med garanti i Fana og Bergen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gran:#234F32;
+  --gran-dyp:#1A3B25;
+  --lime:#8FBC5A;
+  --lime-mork:#6F9C41;
+  --jord:#6B4F35;
+  --flote:#FAF7F0;
+  --flote-dyp:#EFE9DC;
+  --hvit:#FFFFFF;
+  --tekst:#28352C;
+  --tekst-dus:#5D6B60;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Hind',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--flote);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Lora',Georgia,serif;font-weight:700;line-height:1.15;color:var(--gran)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--lime-mork);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--gran);color:#fff;border-bottom:3px solid var(--lime)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Lora',serif;font-weight:700;font-size:1.1rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-merke{width:30px;height:30px;flex:none}
+.logo span{color:var(--lime)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:#DCE5DD}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--lime);color:var(--gran-dyp);text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--lime-mork);color:#fff}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:.96rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--gran);color:#fff}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:68px 22px 78px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(143,188,90,.6);color:var(--lime);font-weight:600;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(1.9rem,4.2vw,2.9rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero-tekst{color:#DCE5DD;font-size:1.06rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--lime);color:var(--gran-dyp)}
+.knapp-primar:hover{background:var(--lime-mork);color:#fff;transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(220,229,221,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:50px;padding-bottom:56px}}
+
+/* Hekken, signaturelementet */
+.hage{background:var(--gran-dyp);border:1px solid rgba(143,188,90,.35);border-radius:14px;padding:24px 22px 22px}
+.hage-tittel{font-family:'Lora',serif;font-weight:700;font-size:1.05rem;color:var(--lime);margin-bottom:2px}
+.hage-hint{font-size:.87rem;color:rgba(220,229,221,.75);margin-bottom:14px}
+#hekk-form{transition:d .5s ease}
+#saks{transition:transform .3s ease}
+#saks.klipper{transform:translateY(6px) rotate(-8deg)}
+.lov{opacity:0}
+.lov.faller{opacity:1;animation:fall 1s ease-in forwards}
+@keyframes fall{
+  0%{transform:translateY(0) rotate(0deg);opacity:1}
+  100%{transform:translateY(70px) rotate(60deg);opacity:0}
+}
+.hage-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.klipp-knapp{
+  font-family:'Lora',serif;font-weight:700;font-size:.98rem;
+  background:var(--lime);color:var(--gran-dyp);border:none;border-radius:8px;
+  padding:11px 20px;cursor:pointer;transition:background .15s ease;
+}
+.klipp-knapp:hover{background:var(--lime-mork);color:#fff}
+.klipp-knapp:disabled{background:rgba(220,229,221,.25);color:rgba(220,229,221,.6);cursor:not-allowed}
+.gro-knapp{
+  font-family:'Hind',sans-serif;font-weight:500;font-size:.88rem;
+  background:transparent;color:#DCE5DD;border:1.5px solid rgba(220,229,221,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.gro-knapp:hover{border-color:#fff;color:#fff}
+.hage-status-rad{margin-top:12px;background:rgba(143,188,90,.14);border-left:3px solid var(--lime);border-radius:0 8px 8px 0;padding:10px 14px}
+.hage-steg{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+.hage-status{font-size:.95rem;color:#EDF3EE}
+
+/* Fakta-stripe */
+.stripe{background:var(--lime);color:var(--gran-dyp)}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Lora',serif;font-weight:700;font-size:1.9rem;line-height:1.1}
+.stripe-navn{font-size:.88rem;font-weight:600;opacity:.92}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--lime-mork);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.seksjon h2{font-size:clamp(1.55rem,3.1vw,2.15rem);margin-bottom:14px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Garanti */
+.garanti{background:var(--hvit)}
+.garanti-indre{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.garanti-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.garanti-tekst p strong{color:var(--tekst)}
+.garanti-kort{background:var(--gran);color:#fff;border-radius:14px;padding:32px 30px;border-bottom:5px solid var(--lime)}
+.garanti-kort h3{color:var(--lime);font-size:1.15rem;margin-bottom:16px}
+.garanti-kort ul{list-style:none;display:grid;gap:13px}
+.garanti-kort li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:#DCE5DD}
+.garanti-kort .punkt{width:9px;height:9px;border-radius:50%;background:var(--lime);flex:none;transform:translateY(-1px)}
+@media(max-width:860px){.garanti-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tjeneste{background:var(--hvit);border-radius:12px;padding:26px 24px;border:1px solid var(--flote-dyp);border-top:4px solid var(--gran);transition:transform .15s ease,box-shadow .15s ease}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(35,79,50,.12);border-top-color:var(--lime)}
+.tjeneste h3{font-size:1.08rem;margin-bottom:8px}
+.tjeneste p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.tjenester-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{max-width:44rem;background:var(--flote);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--lime)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--gran);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:14px}
+.cta p{color:#DCE5DD;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--gran-dyp);border:1px solid rgba(143,188,90,.35);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.08rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#DCE5DD}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--gran-dyp);color:#C8D4CA;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#C8D4CA}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(200,212,202,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(200,212,202,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--gran-dyp);border-top:2px solid var(--lime)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--lime);color:var(--gran-dyp)}
+.mobilbar .epost{background:rgba(220,229,221,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Anleggsgartner Ellingsen, til toppen">
+      <svg class="logo-merke" viewBox="0 0 30 30" aria-hidden="true">
+        <path d="M15 26 L15 12" stroke="#8FBC5A" stroke-width="2.6" stroke-linecap="round"/>
+        <path d="M15 16 C9 16 6 11 5 6 C11 6 15 9 15 16 Z" fill="#8FBC5A"/>
+        <path d="M15 13 C20 13 24 9 25 4 C19 4 15 7 15 13 Z" fill="#FFFFFF"/>
+      </svg>
+      Anleggsgartner <span>Ellingsen</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#hekken">Hekken</a></li>
+        <li><a href="#garanti">Garantien</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4740454084">40 45 40 84</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Anleggsgartner, Fana</p>
+        <h1>Uterom formet med <em>saks, stein og garanti</em></h1>
+        <p class="hero-tekst">
+          Anleggsgartner Ellingsen bygger og steller uterom i Fana og resten av
+          Bergen. Vi kombinerer anleggsgartnerfaget med murer- og snekkerkompetanse,
+          og står bak arbeidet vårt med garanti.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4740454084">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#hekken">Klipp hekken selv</a>
+        </div>
+      </div>
+
+      <div class="hage" id="hekken" aria-label="Interaktiv hekklipping">
+        <p class="hage-tittel">Hekken trenger en faghånd</p>
+        <p class="hage-hint">Klipp den ville hekken i form, klipp for klipp.</p>
+
+        <svg id="hekk-svg" viewBox="0 0 460 240" role="img" aria-labelledby="hekk-tittel-svg">
+          <title id="hekk-tittel-svg">Vilter hekk som klippes til en jevn form</title>
+          <!-- Bakke -->
+          <rect x="20" y="204" width="420" height="16" fill="#6B4F35"/>
+          <line x1="20" y1="204" x2="440" y2="204" stroke="#57402B" stroke-width="2"/>
+          <!-- Hekk: vill form som morphes -->
+          <path id="hekk-form" d="M70 204 L60 156 L74 148 L66 118 L86 124 L84 92 L104 104 L110 72 L126 92 L138 66 L148 94 L166 74 L172 100 L190 82 L192 110 L212 98 L210 128 L232 122 L224 150 L244 154 L236 176 L246 204 Z" fill="#4F8A3D" stroke="#1A3B25" stroke-width="3" stroke-linejoin="round" transform="translate(75 0)"/>
+          <!-- Stamme synlig under -->
+          <rect x="218" y="186" width="24" height="18" fill="#6B4F35"/>
+          <!-- Løv som faller ved klipp -->
+          <g fill="#8FBC5A">
+            <circle id="lov-1" class="lov" cx="150" cy="120" r="5"/>
+            <circle id="lov-2" class="lov" cx="310" cy="110" r="5"/>
+            <circle id="lov-3" class="lov" cx="180" cy="90" r="4"/>
+            <circle id="lov-4" class="lov" cx="290" cy="140" r="4"/>
+          </g>
+          <!-- Hekksaks -->
+          <g id="saks">
+            <path d="M330 52 L368 74" stroke="#C9C5BE" stroke-width="5" stroke-linecap="round"/>
+            <path d="M330 74 L368 52" stroke="#EDEFF1" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="349" cy="63" r="4" fill="#1A3B25" stroke="#EDEFF1" stroke-width="2"/>
+            <path d="M368 74 L384 84" stroke="#6B4F35" stroke-width="7" stroke-linecap="round"/>
+            <path d="M368 52 L384 42" stroke="#6B4F35" stroke-width="7" stroke-linecap="round"/>
+          </g>
+        </svg>
+
+        <div class="hage-panel">
+          <button class="klipp-knapp" id="klipp-knapp" type="button">Klipp</button>
+          <button class="gro-knapp" id="gro-knapp" type="button">La den gro igjen</button>
+        </div>
+        <div class="hage-status-rad" aria-live="polite">
+          <div class="hage-steg" id="hage-steg">Klipp 0 av 4</div>
+          <div class="hage-status" id="hage-status">Hekken har fått vokse fritt litt for lenge. Ta det første klippet.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">Garanti</div>
+        <div class="stripe-navn">Vi står bak arbeidet vårt</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Tre fag</div>
+        <div class="stripe-navn">Anleggsgartner, murer og snekker</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Fana</div>
+        <div class="stripe-navn">Base i Fana, kort vei til hele Bergen</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon garanti" id="garanti">
+    <div class="ramme">
+      <div class="garanti-indre">
+        <div class="garanti-tekst">
+          <p class="overtittel">Garantien</p>
+          <h2>Gartnerarbeid vi tør å garantere for</h2>
+          <p>
+            Et uterom skal se bra ut den dagen vi rydder plassen, og enda bedre
+            to somre senere. Derfor gir vi <strong>garanti på arbeidet vårt</strong>.<!-- PLACEHOLDER: garantivilkaar og ordlyd bekreftes med kunden -->
+          </p>
+          <p>
+            Laget vårt samler tre fag under samme ledelse. Anleggsgartneren former
+            det grønne, mureren legger stein og bygger murer, og snekkeren tar
+            platting, levegg og det som skal bygges i tre.
+          </p>
+          <p>
+            For deg betyr det ett firma å forholde deg til, fra første skisse til
+            ferdig uterom.
+          </p>
+        </div>
+        <div class="garanti-kort morkflate">
+          <h3>Dette får du hos oss</h3>
+          <ul>
+            <li><span class="punkt"></span>Garanti på utført arbeid<!-- PLACEHOLDER: garantivilkaar bekreftes med kunden --></li>
+            <li><span class="punkt"></span>Anleggsgartner-, murer- og snekkerkompetanse i samme lag</li>
+            <li><span class="punkt"></span>Befaring og tydelig pris før vi starter</li>
+            <li><span class="punkt"></span>Ett kontaktpunkt gjennom hele prosjektet</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Fra steinlegging til grøntanlegg</h2>
+        <p>Vi bygger uterommet og holder det i form etterpå.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Steinlegging</h3>
+          <p>Belegningsstein, heller og kantstein, lagt med riktig oppbygging under.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Hageanlegg</h3>
+          <p>Komplette hager formet etter tomten og menneskene som skal bruke dem.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Murer og trapper</h3>
+          <p>Natursteinsmurer, støttemurer og trapper som binder uterommet sammen.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Beplantning</h3>
+          <p>Trær, busker og hekker valgt for vestlandsklimaet, plantet så de trives.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Snekkerarbeid ute</h3>
+          <p>Platting, levegger og annet trearbeid som hører uterommet til.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Vedlikehold</h3>
+          <p>Hekklipp, stell og jevnlig vedlikehold som holder anlegget i form.<!-- PLACEHOLDER: tjenesteomfang bekreftes med kunden --></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva kundene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en kunde som har fått uterommet sitt formet av Anleggsgartner Ellingsen.»</p>
+        <p class="omtale-kilde">Navn og bydel settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--lime)">Kontakt</p>
+        <h2>Klar for et uterom som varer?</h2>
+        <p>
+          Fortell oss hva du drømmer om, så kommer vi på befaring. Du får en
+          konkret plan, en tydelig pris og et resultat vi garanterer for.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4740454084">Ring 40 45 40 84</a>
+          <a class="knapp knapp-sekundar" href="mailto:olvar@gartnerellingsen.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Anleggsgartner Ellingsen AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#DCE5DD" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#8FBC5A"/></svg>
+          <span>Svartefjorden 92, 5244 Fana</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#DCE5DD" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4740454084">40 45 40 84</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#DCE5DD" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#8FBC5A" stroke-width="1.6"/></svg>
+          <a href="mailto:olvar@gartnerellingsen.no">olvar@gartnerellingsen.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#DCE5DD" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#8FBC5A" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Fana og hele Bergen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Anleggsgartner Ellingsen AS</h3>
+        <p>Anleggsgartner i Fana med murer- og snekkerkompetanse i samme lag. Uterom bygget og vedlikeholdt med garanti.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Svartefjorden 92, 5244 Fana</li>
+          <li><a href="tel:+4740454084">40 45 40 84</a></li>
+          <li><a href="mailto:olvar@gartnerellingsen.no">olvar@gartnerellingsen.no</a></li>
+          <li>Org.nr. 911 619 466</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#hekken">Hekken</a></li>
+          <li><a href="#garanti">Garantien</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4740454084">Ring 40 45 40 84</a>
+  <a class="epost" href="mailto:olvar@gartnerellingsen.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var former = [
+    'M70 204 L60 156 L74 148 L66 118 L86 124 L84 92 L104 104 L110 72 L126 92 L138 66 L148 94 L166 74 L172 100 L190 82 L192 110 L212 98 L210 128 L232 122 L224 150 L244 154 L236 176 L246 204 Z',
+    'M70.0 204.0 L63.6 160.2 L74.0 148.6 L69.0 122.2 L84.2 122.8 L85.2 98.0 L102.2 105.2 L110.6 82.2 L126.6 95.9 L139.8 77.4 L151.0 97.0 L167.8 83.0 L176.2 101.5 L193.0 89.2 L198.0 109.4 L215.0 102.2 L215.4 125.6 L232.0 125.0 L227.0 150.0 L241.6 158.8 L236.6 179.0 L244.2 204.0 Z',
+    'M70.0 204.0 L67.2 164.4 L74.0 149.2 L72.0 126.4 L82.4 121.6 L86.4 104.0 L100.4 106.4 L111.2 92.4 L127.2 99.8 L141.6 88.8 L154.0 100.0 L169.6 92.0 L180.4 103.0 L196.0 96.4 L204.0 108.8 L218.0 106.4 L220.8 123.2 L232.0 128.0 L230.0 150.0 L239.2 163.6 L237.2 182.0 L242.4 204.0 Z',
+    'M70.0 204.0 L70.2 167.9 L74.0 149.7 L74.5 129.9 L80.9 120.6 L87.4 109.0 L98.9 107.4 L111.7 100.9 L127.7 103.0 L143.1 98.3 L156.5 102.5 L171.1 99.5 L183.9 104.2 L198.5 102.4 L209.0 108.3 L220.5 109.9 L225.3 121.2 L232.0 130.5 L232.5 150.0 L237.2 167.6 L237.7 184.5 L240.9 204.0 Z',
+    'M70 204 L72 170 L74 150 L76 132 L80 120 L88 112 L98 108 L112 106 L128 105 L144 104 L158 104 L172 104 L186 105 L200 106 L212 108 L222 112 L228 120 L232 132 L234 150 L236 170 L238 186 L240 204 Z'
+  ];
+  var status = [
+    'Hekken har fått vokse fritt litt for lenge. Ta det første klippet.',
+    'De verste toppene er tatt. Formen begynner å vise seg.',
+    'Halvveis. En hekk klippes med plan, aldri på måfå.',
+    'Nesten der. Siste klipp jevner overflaten.',
+    'Der satt den. Jevn, tett og klar for sommeren. Slik ser fagarbeid ut.'
+  ];
+  var klipp = 0;
+  var hekk = document.getElementById('hekk-form');
+  var saks = document.getElementById('saks');
+  var knapp = document.getElementById('klipp-knapp');
+  var groKnapp = document.getElementById('gro-knapp');
+  var stegEl = document.getElementById('hage-steg');
+  var statusEl = document.getElementById('hage-status');
+
+  function oppdater(){
+    stegEl.textContent = 'Klipp ' + klipp + ' av 4';
+    statusEl.textContent = status[klipp];
+    knapp.disabled = klipp >= 4;
+    knapp.textContent = klipp >= 4 ? 'Hekken er i form' : 'Klipp';
+  }
+
+  knapp.addEventListener('click', function(){
+    if (klipp >= 4) return;
+    klipp++;
+    hekk.setAttribute('d', former[klipp]);
+    saks.classList.add('klipper');
+    var lov = document.getElementById('lov-' + klipp);
+    if (lov) { lov.classList.remove('faller'); void lov.getBoundingClientRect(); lov.classList.add('faller'); }
+    setTimeout(function(){ saks.classList.remove('klipper'); }, 350);
+    oppdater();
+  });
+
+  groKnapp.addEventListener('click', function(){
+    klipp = 0;
+    hekk.setAttribute('d', former[0]);
+    for (var i = 1; i <= 4; i++) document.getElementById('lov-' + i).classList.remove('faller');
+    oppdater();
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>

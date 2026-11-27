@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Forsideskisse for AS Toft Mesterrør: rørlegger på Sotra for privat, havbruk og industri.">
+<title>Toft Mesterrør · Rørlegger på Sotra, fra bad til merdkant</title>
+
+<!-- SKISSE for salgsmøte. Ingen sporing, ingen pixel, ingen delte filer.
+     Innholdet bygger på tmr.no og offentlige kilder, og er merket PLACEHOLDER
+     der det ikke er verifisert. Dagens side har ødelagt kontaktskjema og
+     verken telefon eller e-post synlig; skissen viser kontakt overalt. -->
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M3 12h7V5m4 0v7h7' fill='none' stroke='%231FA3A3' stroke-width='3.5'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@600;700;900&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --staal:#243B52;
+  --staal-dyp:#182A3C;
+  --akva:#1FA3A3;
+  --akva-mork:#157B7B;
+  --teknisk:#EEF1F3;
+  --hvit:#FFFFFF;
+  --linje:#D7DDE2;
+  --dempet:#5B6875;
+  --tekst:#1B2833;
+  --display:'Chivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono','Courier New',monospace;
+  --brod:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --maks:1100px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--teknisk);color:var(--tekst);
+  font-family:var(--brod);font-size:16px;line-height:1.6;padding-bottom:76px;
+}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:900;line-height:1.07;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(32px,7.4vw,54px)}
+h2{font-size:clamp(25px,5.2vw,37px)}
+h3{font-size:18.5px;font-weight:700}
+p{margin:0}
+.wrap{width:100%;max-width:var(--maks);margin:0 auto;padding:0 20px}
+section{padding:54px 0}
+[id]{scroll-margin-top:84px}
+:focus-visible{outline:3px solid var(--akva);outline-offset:3px;border-radius:2px}
+.morkflate :focus-visible{outline-color:#fff}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
+.hopp-til{position:absolute;left:-9999px;top:0;background:var(--staal);color:#fff;padding:12px 18px;z-index:300;font-weight:600}
+.hopp-til:focus{left:8px;top:8px}
+
+.seksjonshode{max-width:620px;margin-bottom:26px}
+.seksjonshode p{margin-top:10px;color:var(--dempet)}
+.etikett{
+  display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);
+  font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--akva-mork);margin-bottom:10px;
+}
+.etikett::before{content:"//";font-weight:600}
+
+.knapp{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--display);font-weight:700;font-size:15.5px;text-decoration:none;
+  padding:14px 24px;border-radius:6px;border:2px solid transparent;cursor:pointer;
+  min-height:50px;transition:background-color .13s ease,transform .13s ease;
+}
+.knapp:hover{transform:translateY(-1px)}
+.knapp--akva{background:var(--akva);color:#fff}
+.knapp--akva:hover{background:var(--akva-mork)}
+.knapp--staal{background:var(--staal);color:#fff}
+.knapp--staal:hover{background:var(--staal-dyp)}
+.knapp--lys{background:#fff;color:var(--staal);border-color:var(--linje)}
+.knapp--lys:hover{border-color:var(--staal)}
+.knapp--liten{padding:10px 16px;font-size:14px;min-height:42px}
+
+/* ---------- Topplinje ---------- */
+.topp{
+  position:sticky;top:0;z-index:100;background:rgba(36,59,82,.97);color:#fff;
+}
+.topp .wrap{display:flex;align-items:center;gap:14px;height:62px}
+.merke{display:flex;flex-direction:column;text-decoration:none;flex:none;line-height:1.1}
+.merke b{font-family:var(--display);font-weight:900;font-size:15.5px}
+.merke small{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7ED4D4}
+.topp-hoyre{margin-left:auto;display:flex;align-items:center;gap:10px}
+.tlf-topp{display:none;text-decoration:none;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;color:#fff}
+.tlf-topp:hover{color:#7ED4D4}
+@media (min-width:700px){.tlf-topp{display:inline}}
+
+/* ---------- Hero: rørskjemaet ---------- */
+.hero{background:var(--staal);color:#fff;padding:56px 0 54px;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:36px 36px;
+}
+.hero .wrap{position:relative}
+.hero h1{max-width:16ch}
+.hero h1 em{font-style:normal;color:#7ED4D4}
+.hero-ingress{margin-top:14px;max-width:50ch;font-size:17px;color:#BFCCD8}
+.hero-knapper{display:flex;flex-direction:column;gap:11px;margin-top:22px}
+@media (min-width:560px){.hero-knapper{flex-direction:row;flex-wrap:wrap}}
+
+/* Signatur: rørskjemaet med ventiler */
+.skjema{
+  margin-top:34px;background:var(--staal-dyp);border:1px solid #33506D;
+  border-radius:12px;padding:20px 16px;
+}
+.skjema-tittel{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:#7C93A8;margin-bottom:14px;
+}
+.ventiler{display:grid;gap:10px;grid-template-columns:repeat(3,1fr)}
+.ventil{
+  font-family:var(--mono);font-weight:600;font-size:12.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:#BFCCD8;background:transparent;
+  border:1.5px solid #33506D;border-radius:8px;padding:12px 8px;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:8px;min-height:74px;
+  transition:border-color .15s ease,background-color .15s ease;
+}
+.ventil:hover{border-color:#4E6E8E}
+.ventil[aria-pressed="true"]{border-color:var(--akva);background:rgba(31,163,163,.12);color:#fff}
+.ventil .hjul{
+  width:26px;height:26px;border-radius:50%;border:3px solid currentColor;position:relative;
+  transition:transform .5s cubic-bezier(.4,0,.2,1);
+}
+.ventil .hjul::after{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:3px;margin-left:-1.5px;background:currentColor}
+.ventil[aria-pressed="true"] .hjul{transform:rotate(90deg);color:var(--akva)}
+/* røret med strøm */
+.ror{margin:16px 0 14px;position:relative;height:14px;border-radius:7px;background:#33506D;overflow:hidden}
+.strom{
+  position:absolute;inset:3px;border-radius:5px;
+  background:repeating-linear-gradient(90deg,var(--akva) 0 18px,transparent 18px 34px);
+  animation:flyt 1.1s linear infinite;opacity:.9;
+}
+@keyframes flyt{to{transform:translateX(34px)}}
+.spor-innhold{min-height:120px}
+.spor-kort{display:none}
+.spor-kort.aktiv{display:block}
+.spor-kort h3{color:#fff;margin-bottom:6px}
+.spor-kort p{font-size:14.5px;color:#BFCCD8;max-width:60ch}
+.spor-kort .mono-liste{
+  list-style:none;margin:12px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;
+}
+.spor-kort .mono-liste li{
+  font-family:var(--mono);font-size:12px;letter-spacing:.04em;
+  background:rgba(255,255,255,.07);border:1px solid #33506D;border-radius:6px;
+  padding:6px 10px;color:#D5E0E9;
+}
+
+/* Trust-strip */
+.tillit{background:#122130;color:#fff;padding:0}
+.tillit ul{list-style:none;margin:0;padding:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}
+@media (min-width:860px){.tillit ul{grid-template-columns:repeat(4,auto);justify-content:space-between}}
+.tillit li{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:500;color:#BFCCD8}
+.tillit li::before{content:"";flex:none;width:8px;height:8px;background:var(--akva)}
+
+/* ---------- Tjenester ---------- */
+.t-rutenett{display:grid;gap:14px}
+@media (min-width:760px){.t-rutenett{grid-template-columns:1fr 1fr}}
+@media (min-width:1000px){.t-rutenett{grid-template-columns:repeat(3,1fr)}}
+.t-kort{
+  background:#fff;border:1px solid var(--linje);border-radius:10px;padding:18px 16px;
+}
+.t-kort .kode{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--akva-mork);
+  display:block;margin-bottom:8px;
+}
+.t-kort h3{margin-bottom:6px}
+.t-kort p{font-size:14.5px;color:#3B4854}
+.t-kort .merk{display:inline-block;margin-top:8px;font-size:12.5px;color:var(--dempet);background:var(--teknisk);padding:2px 8px;border-radius:4px}
+
+/* ---------- Hvorfor ---------- */
+.hvorfor{background:#fff;border-top:1px solid var(--linje);border-bottom:1px solid var(--linje)}
+.h-rutenett{display:grid;gap:18px}
+@media (min-width:820px){.h-rutenett{grid-template-columns:repeat(3,1fr);gap:26px}}
+.h-kort{border-top:3px solid var(--akva);padding-top:14px}
+.h-kort h3{margin-bottom:6px}
+.h-kort p{font-size:14.5px;color:#3B4854}
+
+/* ---------- Prosess ---------- */
+.steg{display:grid;gap:18px;counter-reset:steg;list-style:none;margin:0;padding:0}
+@media (min-width:820px){.steg{grid-template-columns:repeat(3,1fr);gap:26px}}
+.steg li{counter-increment:steg;background:#fff;border:1px solid var(--linje);border-radius:10px;padding:18px 16px}
+.steg li::before{
+  content:"0" counter(steg);font-family:var(--mono);font-weight:600;font-size:13px;
+  letter-spacing:.1em;color:var(--akva-mork);display:block;margin-bottom:8px;
+}
+.steg h3{margin-bottom:6px}
+.steg p{font-size:14.5px;color:#3B4854}
+
+/* ---------- Omtaler ---------- */
+.omtaler-boks{
+  background:#fff;border:1px dashed #C2CBD3;border-radius:10px;padding:34px 22px;text-align:center;
+}
+.omtaler-boks p{color:var(--dempet);max-width:40ch;margin:0 auto}
+
+/* ---------- Dekning ---------- */
+.dekning{background:var(--staal);color:#fff}
+.dekning h2{color:#fff}
+.dekning p{color:#BFCCD8;max-width:52ch}
+.steder{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;list-style:none;padding:0}
+.steder li{
+  font-family:var(--mono);font-weight:500;font-size:12.5px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+  padding:7px 14px;border-radius:99px;
+}
+
+/* ---------- FAQ ---------- */
+.faq{max-width:740px}
+.faq details{background:#fff;border:1px solid var(--linje);border-radius:10px;margin-bottom:10px}
+.faq summary{
+  cursor:pointer;padding:15px 46px 15px 16px;position:relative;list-style:none;
+  font-family:var(--display);font-weight:700;font-size:16.5px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"";position:absolute;right:18px;top:50%;width:10px;height:10px;
+  border-right:2.5px solid var(--akva);border-bottom:2.5px solid var(--akva);
+  transform:translateY(-70%) rotate(45deg);transition:transform .16s ease;
+}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.faq .svar{padding:0 16px 16px;font-size:15px;color:#3B4854}
+
+/* ---------- Avsluttende CTA ---------- */
+.avslutt{background:var(--akva);color:#fff;text-align:center}
+.avslutt h2{color:#fff}
+.avslutt p{color:#D7F0F0;max-width:44ch;margin:12px auto 0}
+.avslutt .knapp--staal{margin-top:24px}
+
+/* ---------- Footer ---------- */
+footer{background:#122130;color:#AEBBc7;padding:42px 0 30px}
+footer{color:#AEBBC7}
+.f-rutenett{display:grid;gap:24px}
+@media (min-width:760px){.f-rutenett{grid-template-columns:1.2fr 1fr 1fr}}
+footer h3{color:#fff;font-size:13.5px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+.nap{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14.5px;font-variant-numeric:tabular-nums}
+.f-bunn{border-top:1px solid rgba(255,255,255,.12);margin-top:26px;padding-top:15px;font-size:13px;color:#7A8794}
+
+/* ---------- Sticky bunnlinje ---------- */
+.bunnlinje{
+  position:fixed;left:0;right:0;bottom:0;z-index:110;background:#fff;
+  border-top:1px solid var(--linje);padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;align-items:center;box-shadow:0 -6px 20px rgba(18,33,48,.12);
+}
+.bunnlinje .knapp{flex:1}
+@media (min-width:900px){.bunnlinje{display:none} body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<a class="hopp-til" href="#innhold">Hopp til innhold</a>
+
+<header class="topp morkflate">
+  <div class="wrap">
+    <a class="merke" href="#" aria-label="Toft Mesterrør, til toppen">
+      <b>Toft Mesterrør</b>
+      <small>TMR · Skogsvåg, Sotra</small>
+    </a>
+    <div class="topp-hoyre">
+      <a class="tlf-topp" href="tel:+4756319500">56 31 95 00</a>
+      <a class="knapp knapp--akva knapp--liten" href="tel:+4756319500">Ring rørleggeren</a>
+    </div>
+  </div>
+</header>
+
+<main id="innhold">
+
+  <!-- Hero: rørskjemaet -->
+  <section class="hero morkflate" aria-labelledby="hero-tittel">
+    <div class="wrap">
+      <span class="etikett" style="color:#7ED4D4">Rørlegger på Sotra · Mesterbedrift</span>
+      <h1 id="hero-tittel">Fra bad til <em>merdkant</em></h1>
+      <p class="hero-ingress">
+        Toft Mesterrør tar rørjobbene de fleste rørleggere må takke nei til:
+        badet ditt, men også fiskepumpesystemer, RSW-anlegg og prosessanlegg
+        for havbruk og industri.
+      </p>
+      <div class="hero-knapper">
+        <a class="knapp knapp--akva" href="tel:+4756319500">Ring 56 31 95 00</a>
+        <a class="knapp knapp--lys" href="#tjenester">Se alt vi gjør</a>
+      </div>
+
+      <!-- Signatur: åpne en ventil, strømmen renner dit -->
+      <div class="skjema" id="skjema">
+        <p class="skjema-tittel" id="skjema-tittel">Rørskjema TMR · velg linje</p>
+        <div class="ventiler" role="group" aria-labelledby="skjema-tittel">
+          <button type="button" class="ventil" data-spor="privat" aria-pressed="true">
+            <span class="hjul" aria-hidden="true"></span>Privat
+          </button>
+          <button type="button" class="ventil" data-spor="havbruk" aria-pressed="false">
+            <span class="hjul" aria-hidden="true"></span>Havbruk
+          </button>
+          <button type="button" class="ventil" data-spor="industri" aria-pressed="false">
+            <span class="hjul" aria-hidden="true"></span>Industri
+          </button>
+        </div>
+        <div class="ror" aria-hidden="true"><div class="strom"></div></div>
+        <div class="spor-innhold" aria-live="polite">
+          <div class="spor-kort aktiv" data-spor="privat">
+            <h3>For hjemmet ditt</h3>
+            <p>Bad, varme, service og reparasjoner, utført av fagfolk med
+              mesterbrev. Samme presisjon hjemme hos deg som ute på anlegget.</p>
+            <ul class="mono-liste"><li>Bad og våtrom</li><li>Service</li><li>Varme</li><li>Rehabilitering</li></ul>
+          </div>
+          <div class="spor-kort" data-spor="havbruk">
+            <h3>For havbruk og fiskeri</h3>
+            <p>Rørsystemene som holder fisken i live og produksjonen i gang:
+              pumping, kjøling og prosess, bygget for drift døgnet rundt.</p>
+            <ul class="mono-liste"><li>Fiskepumpesystemer</li><li>RSW-anlegg</li><li>Samletanker</li><li>Prosessanlegg</li></ul>
+          </div>
+          <div class="spor-kort" data-spor="industri">
+            <h3>For industri og næring</h3>
+            <p>Prosjekter og service for industrikunder, med dokumentasjonen og
+              kvalifikasjonene større byggherrer krever.</p>
+            <!-- PLACEHOLDER: erstattes med ekte innhold. Achilles-kvalifisering
+                 står i lead-arket og må bekreftes av bedriften. -->
+            <ul class="mono-liste"><li>Næringsbygg</li><li>Industrianlegg</li><li>Serviceavtaler</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust-strip -->
+  <div class="tillit morkflate" role="region" aria-label="Kjernefakta">
+    <div class="wrap">
+      <ul>
+        <li>Mesterbedrift</li>
+        <li>Privat, havbruk og industri</li>
+        <li>Holder til i Skogsvåg på Sotra</li>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Achilles-kvalifisering fra
+             lead-arket, bekreftes av bedriften. -->
+        <li>Kvalifisert for industrileveranser</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tjenester -->
+  <section id="tjenester" aria-labelledby="tjenester-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Det vi gjør</span>
+        <h2 id="tjenester-tittel">Tretten arbeidsområder, ett nummer</h2>
+        <p>Utstyr og kompetanse til å ta de fleste typer rørarbeid, fra servicebilen til prosessanlegget.</p>
+      </div>
+      <div class="t-rutenett">
+        <article class="t-kort">
+          <span class="kode">TMR-01</span>
+          <h3>Bad og våtrom</h3>
+          <p>Komplett rørarbeid i badprosjekter, med dokumentasjon i orden.</p>
+        </article>
+        <article class="t-kort">
+          <span class="kode">TMR-02</span>
+          <h3>Service og reparasjon</h3>
+          <p>Lekkasjer, tette avløp og daglige rørproblemer, for hjem og bedrift.</p>
+        </article>
+        <article class="t-kort">
+          <span class="kode">TMR-03</span>
+          <h3>Varme</h3>
+          <p>Vannbåren varme og varmeanlegg, dimensjonert for vestlandshus.</p>
+        </article>
+        <article class="t-kort">
+          <span class="kode">TMR-04</span>
+          <h3>Fiskepumpesystemer</h3>
+          <p>Pumpesystemer for levende fisk, der skånsom håndtering avgjør verdien
+            av lasten.</p>
+        </article>
+        <article class="t-kort">
+          <span class="kode">TMR-05</span>
+          <h3>RSW- og kjøleanlegg</h3>
+          <p>Sjøvannskjøling som holder temperaturen fra merd til mottak.</p>
+        </article>
+        <article class="t-kort">
+          <span class="kode">TMR-06</span>
+          <h3>Prosessanlegg</h3>
+          <p>Rørsystemer i fiskeforedling og industri, bygget for vask, trykk og
+            kontinuerlig drift.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hvorfor -->
+  <section class="hvorfor" aria-labelledby="hvorfor-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Hvorfor Toft</span>
+        <h2 id="hvorfor-tittel">Industrikompetanse, også på badet ditt</h2>
+      </div>
+      <div class="h-rutenett">
+        <div class="h-kort">
+          <h3>Mesterbrev i bunn</h3>
+          <p>Mesterbedrift med dokumentert fagkompetanse. Arbeidet dokumenteres
+            slik at papirene er i orden ved forsikring og salg.</p>
+        </div>
+        <div class="h-kort">
+          <h3>Bygget for tøffe krav</h3>
+          <p>Når anleggene våre står i sjødrift døgnet rundt, er en helg med
+            hyttebad en rolig dag på jobben. Kravene fra industrien løfter alt vi
+            gjør.</p>
+        </div>
+        <div class="h-kort">
+          <h3>Lokale på Sotra</h3>
+          <p>Vi holder til i Skogsvåg og kjenner øyene, været og byggene her ute.
+            Kort vei når det haster.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prosess -->
+  <section aria-labelledby="prosess-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Slik gjør du</span>
+        <h2 id="prosess-tittel">Fra telefon til trykksatt anlegg</h2>
+      </div>
+      <ol class="steg">
+        <li>
+          <h3>Ring og beskriv</h3>
+          <p>Ring <a href="tel:+4756319500">56 31 95 00</a>. Småjobber avtales på
+            telefonen; prosjekter tar vi på befaring.</p>
+        </li>
+        <li>
+          <h3>Pris før arbeid</h3>
+          <p>Du får pris og plan før vi starter, enten det gjelder et sluk eller
+            et prosessanlegg.</p>
+        </li>
+        <li>
+          <h3>Utført og dokumentert</h3>
+          <p>Fagmessig utført og dokumentert, med serviceavtale etterpå om du vil
+            ha anlegget fulgt opp.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Omtaler: nøytralt -->
+  <section aria-labelledby="omtale-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Fra kundene</span>
+        <h2 id="omtale-tittel">Det kundene sier</h2>
+      </div>
+      <!-- PLACEHOLDER: erstattes med ekte innhold. Omtaler hentes fra Google-
+           profilen med samtykke. Aldri dikt opp sitater eller navn. -->
+      <div class="omtaler-boks">
+        <p>Kundeomtaler hentes fra Google-profilen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dekning -->
+  <section class="dekning morkflate" aria-labelledby="dekning-tittel">
+    <div class="wrap">
+      <span class="etikett" style="color:#7ED4D4">Her jobber vi</span>
+      <h2 id="dekning-tittel">Sotra, Øygarden og Bergensområdet</h2>
+      <p>Base i Skogsvåg, oppdrag over hele Øygarden og i Bergensområdet.
+        Havbruksoppdrag etter avtale langs kysten.</p>
+      <ul class="steder">
+        <li>Skogsvåg</li><li>Straume</li><li>Ågotnes</li><li>Rong</li>
+        <li>Sund</li><li>Fjell</li><li>Bergen</li><li>Kysten etter avtale</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section aria-labelledby="faq-tittel">
+    <div class="wrap">
+      <div class="seksjonshode">
+        <span class="etikett">Spørsmål og svar</span>
+        <h2 id="faq-tittel">Det folk lurer på</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Tar dere vanlige rørleggerjobber for private?</summary>
+          <div class="svar">Ja. Bad, service, varme og reparasjoner er en stor del av
+            hverdagen vår, og industrierfaringen gjør oss ikke dårligere hjemme hos
+            deg.</div>
+        </details>
+        <details>
+          <summary>Hva slags havbruksarbeid gjør dere?</summary>
+          <div class="svar">Fiskepumpesystemer, RSW-anlegg, samletanker og
+            prosessanlegg i fiskeforedling. Ring, så tar vi detaljene om ditt
+            anlegg.</div>
+        </details>
+        <details>
+          <summary>Hva koster en rørlegger?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Priser må fylles inn av
+               bedriften. -->
+          <div class="svar">Du får pris før vi begynner. Ring
+            <a href="tel:+4756319500">56 31 95 00</a>, så får du et konkret svar.</div>
+        </details>
+        <details>
+          <summary>Tilbyr dere serviceavtaler?</summary>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Bekreft omfanget av
+               serviceavtaler. -->
+          <div class="svar">Ja, for anlegg som skal driftes over tid setter vi opp
+            serviceavtale med fast oppfølging.</div>
+        </details>
+        <details>
+          <summary>Er dere Mesterbedrift?</summary>
+          <div class="svar">Ja, Toft Mesterrør er registrert Mesterbedrift. Det betyr
+            dokumentert fagkompetanse og en bedrift som står for arbeidet sitt.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avsluttende CTA -->
+  <section class="avslutt morkflate" aria-labelledby="avslutt-tittel">
+    <div class="wrap">
+      <h2 id="avslutt-tittel">Har du en rørjobb, stor eller liten?</h2>
+      <p>Ring, så får du snakke med fagfolk med en gang.</p>
+      <a class="knapp knapp--staal" href="tel:+4756319500">Ring 56 31 95 00</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="morkflate">
+  <div class="wrap">
+    <div class="f-rutenett">
+      <div>
+        <div class="merke" style="margin-bottom:10px">
+          <b style="color:#fff">Toft Mesterrør</b>
+          <small style="color:#7ED4D4">TMR · Skogsvåg, Sotra</small>
+        </div>
+        <p style="font-size:14px;max-width:34ch">
+          Rørlegger for privat, havbruk og industri. Mesterbedrift.
+        </p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul class="nap">
+          <li>AS Toft Mesterrør</li>
+          <li><a href="tel:+4756319500">56 31 95 00</a></li>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. E-post er ikke funnet i
+               offentlige kilder; dagens side viser ingen. -->
+          <li>[E-postadresse]</li>
+          <li>Org.nr 917 037 809</li>
+          <li>Midtstegen 60, 5382 Skogsvåg</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Arbeidsområder</h3>
+        <ul class="nap">
+          <li><a href="#tjenester">Bad og service</a></li>
+          <li><a href="#tjenester">Varme</a></li>
+          <li><a href="#tjenester">Havbruk og fiskeri</a></li>
+          <li><a href="#tjenester">Industri og prosess</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="f-bunn">© 2026 AS Toft Mesterrør. Skisse til salgsmøte, ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="bunnlinje">
+  <a class="knapp knapp--akva" href="tel:+4756319500">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Ring rørleggeren
+  </a>
+</div>
+
+<script>
+/* Rørskjemaet: åpne en ventil, innholdet ruter dit. Ingen sporing. */
+(function () {
+  var ventiler = document.querySelectorAll('.ventil');
+  var kort = document.querySelectorAll('.spor-kort');
+  if (!ventiler.length || !kort.length) return;
+  ventiler.forEach(function (v) {
+    v.addEventListener('click', function () {
+      ventiler.forEach(function (b) { b.setAttribute('aria-pressed', String(b === v)); });
+      kort.forEach(function (k) { k.classList.toggle('aktiv', k.dataset.spor === v.dataset.spor); });
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

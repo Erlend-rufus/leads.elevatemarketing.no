@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>[Prosjektnavn] | MCTY</title>
+<style>
+  :root {
+    --bakgrunn: #0B0A09;
+    --flate: #131110;
+    --kort: #191613;
+    --morkest: #070606;
+    --lys: #F2F0EA;
+    --dus: #CBC5B8;
+    --note: #A39C8E;
+    --linje: #292520;
+    --sand: #C7B287;
+    --sand-lys: #D8C8A4;
+    --sand-mork: #8A6F44;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--bakgrunn); color: var(--dus);
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.0425rem; line-height: 1.65;
+  }
+  .serif { font-family: "Playfair Display", "Didot", Georgia, serif; font-weight: 500; }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 1.4rem; }
+  h1, h2, h3 { text-wrap: balance; margin: 0; color: var(--lys); }
+  p { margin: 0 0 1rem; max-width: 62ch; }
+  a { color: inherit; }
+  .eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); margin-bottom: 1.1rem; display: block; }
+  .btn { display: inline-block; padding: 0.95rem 1.7rem; border: 1px solid transparent; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.15s ease, color 0.15s ease; }
+  .btn:focus-visible { outline: 3px solid var(--sand); outline-offset: 3px; }
+  .btn--primar { background: var(--sand); color: #1A1712; }
+  .btn--primar:hover { background: var(--sand-lys); }
+  .ph { color: var(--note); }
+  .ph-note { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--note); border: 1px dashed var(--sand-mork); padding: 0.15rem 0.5rem; margin-top: 0.6rem; }
+  .skisse-banner { background: var(--flate); border-bottom: 1px solid var(--linje); font-size: 0.78rem; color: var(--note); text-align: center; padding: 0.5rem 1rem; }
+
+  header.site { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.3rem 0; border-bottom: 1px solid var(--linje); }
+  .logo svg { display: block; height: 84px; width: auto; }
+  nav.hoved { display: flex; gap: 1.7rem; align-items: center; flex-wrap: wrap; }
+  nav.hoved a { text-decoration: none; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lys); }
+  nav.hoved a:hover { color: var(--sand); }
+  nav.hoved a:focus-visible { outline: 3px solid var(--sand); outline-offset: 3px; }
+  @media (max-width: 820px) { nav.hoved .lenke { display: none; } }
+
+  .case-hero { position: relative; min-height: 62vh; display: flex; align-items: flex-end; overflow: hidden; }
+  .case-hero .bilde { position: absolute; inset: 0; background: url('../etter.jpg') center/cover no-repeat; }
+  .case-hero .overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,10,9,0.35) 0%, rgba(11,10,9,0.15) 40%, rgba(11,10,9,0.88) 88%, #0B0A09 100%); }
+  .case-hero .innhold { position: relative; z-index: 1; padding-bottom: 3rem; width: 100%; }
+  .brodsmule { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--note); margin-bottom: 0.8rem; }
+  .brodsmule a { text-decoration: none; }
+  .brodsmule a:hover { color: var(--sand); }
+  .case-hero h1 { font-size: clamp(2.4rem, 5.5vw, 4rem); }
+  .case-hero .merk-ill { position: absolute; top: 1rem; right: 1rem; z-index: 1; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(242,240,234,0.85); background: rgba(11,10,9,0.55); padding: 0.3rem 0.6rem; }
+  .badge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.28rem 0.65rem; background: var(--sand); color: #1A1712; display: inline-block; margin-bottom: 1rem; }
+
+  .fakta { background: var(--flate); border-top: 1px solid var(--linje); border-bottom: 1px solid var(--linje); }
+  .fakta .grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 900px) { .fakta .grid { grid-template-columns: repeat(2, 1fr); } }
+  .fakta .celle { padding: 1.4rem 1.2rem; border-left: 1px solid var(--linje); }
+  .fakta .celle:first-child, .fakta .celle:nth-child(5) { border-left: none; }
+  .fakta .celle:nth-child(n+5) { border-top: 1px solid var(--linje); }
+  @media (max-width: 900px) { .fakta .celle:nth-child(odd) { border-left: none; } .fakta .celle:nth-child(n+3) { border-top: 1px solid var(--linje); } }
+  .fakta .navn { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--note); margin-bottom: 0.25rem; }
+  .fakta .verdi { font-family: "Playfair Display", "Didot", Georgia, serif; font-size: 1.15rem; color: var(--lys); }
+
+  section.blokk { padding: 4.5rem 0; }
+  .sek-hode { margin-bottom: 2.2rem; }
+  .sek-hode h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
+
+  .sammenlign { position: relative; overflow: hidden; border: 1px solid var(--linje); }
+  .sammenlign .foto { min-height: 500px; position: relative; display: flex; align-items: flex-end; background-size: cover; background-position: center; }
+  @media (max-width: 700px) { .sammenlign .foto { min-height: 340px; } }
+  .sammenlign .lag-for { position: absolute; inset: 0; width: var(--pos, 50%); overflow: hidden; border-right: 2px solid var(--lys); }
+  .sammenlign .lag-for .foto { position: absolute; inset: 0; width: 100%; min-height: 100%; }
+  .sammenlign input[type="range"] { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; }
+  .sammenlign input[type="range"]:focus-visible ~ .handtak { outline: 3px solid var(--sand); outline-offset: 2px; }
+  .sammenlign .handtak { position: absolute; top: 50%; left: var(--pos, 50%); transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: var(--lys); border: 1px solid #211F1C; display: flex; align-items: center; justify-content: center; pointer-events: none; font-size: 0.85rem; color: #211F1C; }
+  .merk { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(33,31,28,0.78); background: rgba(242,240,234,0.85); padding: 0.35rem 0.7rem; margin: 0.8rem; }
+
+  .akter { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  @media (max-width: 780px) { .akter { grid-template-columns: 1fr; } }
+  .akt .nr { font-family: "Playfair Display", "Didot", Georgia, serif; font-size: 2.4rem; color: var(--sand); line-height: 1; }
+  .akt h3 { font-size: 1.1rem; margin: 0.7rem 0 0.5rem; }
+  .akt p { font-size: 0.96rem; margin: 0; }
+
+  .medier { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 1.6rem; align-items: stretch; }
+  @media (max-width: 860px) { .medier { grid-template-columns: 1fr; } }
+  .film { position: relative; border: 1px solid var(--linje); overflow: hidden; min-height: 480px; background: #000; }
+  .film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .video-knapp { position: absolute; right: 0.8rem; bottom: 0.8rem; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(242,240,234,0.5); background: rgba(11,10,9,0.55); color: var(--lys); font-size: 0.72rem; cursor: pointer; z-index: 1; }
+  .video-knapp:hover { background: rgba(11,10,9,0.85); }
+  .video-knapp:focus-visible { outline: 3px solid var(--sand); outline-offset: 2px; }
+  .galleri { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1.6rem; }
+  .g-bilde { border: 1px solid var(--linje); background: linear-gradient(160deg, #2A251E, #1C1916); display: flex; align-items: flex-end; min-height: 220px; }
+  .g-bilde.ekte { background: url('../etter.jpg') center/cover no-repeat; }
+  .g-bilde .merk { color: var(--note); background: rgba(11,10,9,0.6); }
+
+  .kart { border: 1px solid var(--linje); background: var(--kort); min-height: 260px; display: flex; align-items: center; justify-content: center; }
+
+  .cta-blokk { background: var(--flate); border-top: 1px solid var(--linje); border-bottom: 1px solid var(--linje); text-align: center; padding: 4.5rem 1.4rem; }
+  .cta-blokk h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); max-width: 22ch; margin: 0 auto 1rem; }
+  .cta-blokk p { margin: 0 auto 1.8rem; }
+
+  footer.site { background: var(--morkest); color: var(--note); padding: 3.5rem 0 2.5rem; }
+  footer.site .inner { display: flex; justify-content: space-between; gap: 2.5rem; flex-wrap: wrap; align-items: flex-start; }
+  footer.site svg { display: block; height: 140px; width: auto; }
+  footer.site .tag { font-family: "Playfair Display", "Didot", Georgia, serif; color: var(--lys); font-size: 1.05rem; margin-top: 1rem; }
+  footer.site ul { list-style: none; margin: 0; padding: 0; font-size: 0.9rem; }
+  footer.site li { margin-bottom: 0.45rem; }
+  footer.site a { text-decoration: none; }
+  footer.site a:hover { text-decoration: underline; color: var(--sand); }
+  footer.site .jur { margin-top: 2.5rem; padding-top: 1.2rem; border-top: 1px solid #1E1B18; font-size: 0.78rem; color: #7E786C; }
+</style>
+</head>
+<body>
+
+<div class="skisse-banner">Skisse: case-mal &middot; Tekst og tall i klammer er plassholdere som fylles med godkjente prosjektdata</div>
+
+<div class="wrap">
+  <header class="site">
+    <a class="logo" href="../" aria-label="MCTY, til forsiden">
+      <svg viewBox="0 0 680 420" role="img" aria-label="MCTY-logo med plantegning"><defs><linearGradient id="gull-cd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7CF9B"/><stop offset="0.5" stop-color="#C9A76C"/><stop offset="1" stop-color="#A07C46"/></linearGradient></defs><g fill="#362F26"><rect x="70" y="50" width="40" height="8"/><rect x="160" y="50" width="70" height="8"/><rect x="280" y="50" width="120" height="8"/><rect x="450" y="50" width="70" height="8"/><rect x="570" y="50" width="40" height="8"/><rect x="70" y="362" width="50" height="8"/><rect x="170" y="362" width="125" height="8"/><rect x="325" y="362" width="11" height="8"/><rect x="344" y="362" width="11" height="8"/><rect x="385" y="362" width="125" height="8"/><rect x="560" y="362" width="50" height="8"/><rect x="70" y="50" width="8" height="100"/><rect x="70" y="200" width="8" height="170"/><rect x="602" y="50" width="8" height="100"/><rect x="602" y="200" width="8" height="170"/><rect x="336" y="50" width="8" height="312"/><rect x="228" y="50" width="8" height="120"/><rect x="444" y="50" width="8" height="120"/><rect x="78" y="170" width="32" height="8"/><rect x="140" y="170" width="100" height="8"/><rect x="270" y="170" width="66" height="8"/><rect x="344" y="170" width="66" height="8"/><rect x="440" y="170" width="100" height="8"/><rect x="570" y="170" width="32" height="8"/><rect x="78" y="262" width="42" height="8"/><rect x="150" y="262" width="100" height="8"/><rect x="280" y="262" width="56" height="8"/><rect x="344" y="262" width="56" height="8"/><rect x="430" y="262" width="100" height="8"/><rect x="560" y="262" width="42" height="8"/><rect x="200" y="270" width="8" height="92"/><rect x="472" y="270" width="8" height="92"/></g><g stroke="#5A5142" stroke-width="2" fill="none"><path d="M110 54 H160 M450 54 H520"/><path d="M230 54 H280 M400 54 H450 M520 54 H570"/><path d="M120 366 H170 M510 366 H560"/><path d="M73 150 V200 M607 150 V200"/></g><g stroke="#453D31" stroke-width="2" fill="none"><path d="M295 362 V332 M295 332 A30 30 0 0 1 325 362"/><path d="M385 362 V332 M385 332 A30 30 0 0 0 355 362"/><path d="M110 178 V208 M110 208 A30 30 0 0 0 140 178"/><path d="M270 178 V208 M270 208 A30 30 0 0 1 240 178"/><path d="M410 178 V208 M410 208 A30 30 0 0 0 440 178"/><path d="M570 178 V208 M570 208 A30 30 0 0 1 540 178"/><path d="M120 270 V300 M120 300 A30 30 0 0 0 150 270"/><path d="M280 270 V300 M280 300 A30 30 0 0 1 250 270"/><path d="M430 270 V300 M430 300 A30 30 0 0 1 400 270"/><path d="M560 270 V300 M560 300 A30 30 0 0 0 530 270"/></g><g fill="url(#gull-cd)"><path d="M264.6 168.0V170.4Q260.52 170.52 258.48 171.3Q256.44 172.08 255.78 174.18Q255.12 176.28 255.12 180.73V240.27Q255.12 244.6 255.78 246.76Q256.44 248.92 258.48 249.64Q260.52 250.36 264.6 250.6V253.0Q261.6 252.76 257.16 252.7Q252.72 252.64 248.16 252.64Q243.11 252.64 238.67 252.7Q234.23 252.76 231.59 253.0V250.6Q235.67 250.36 237.77 249.64Q239.87 248.92 240.59 246.76Q241.31 244.6 241.31 240.27V174.6L241.91 174.84L212.38 253.48H210.46L179.48 175.68V237.15Q179.48 242.19 180.2 245.02Q180.93 247.84 183.33 249.04Q185.73 250.24 190.65 250.6V253.0Q188.37 252.76 184.83 252.7Q181.29 252.64 178.16 252.64Q175.16 252.64 172.16 252.7Q169.16 252.76 167.24 253.0V250.6Q171.2 250.24 173.24 249.1Q175.28 247.96 176 245.2Q176.72 242.44 176.72 237.63V180.73Q176.72 176.28 176 174.18Q175.28 172.08 173.24 171.3Q171.2 170.52 167.24 170.4V168.0Q169.16 168.12 172.16 168.24Q175.16 168.36 178.16 168.36Q181.65 168.36 185.19 168.24Q188.73 168.12 191.25 168.0L217.78 236.19L215.5 237.75L241.55 168.36Q243.11 168.36 244.8 168.36Q246.48 168.36 248.16 168.36Q252.72 168.36 257.16 168.24Q261.6 168.12 264.6 168.0Z"/><path d="M320.31 166.32Q328.23 166.32 333.34 168.66Q338.44 171 342.4 174.12Q344.8 175.92 346.06 174.54Q347.32 173.16 347.8 168.0H350.56Q350.32 172.56 350.2 178.99Q350.08 185.41 350.08 196.09H347.32Q346.48 190.81 345.7 187.45Q344.92 184.09 343.66 181.69Q342.4 179.29 340.24 177Q336.76 172.68 331.72 170.76Q326.67 168.84 321.03 168.84Q314.91 168.84 310.23 171.9Q305.54 174.96 302.36 180.61Q299.18 186.25 297.5 193.93Q295.82 201.62 295.82 210.74Q295.82 220.1 297.62 227.73Q299.42 235.35 302.84 240.81Q306.26 246.28 311.13 249.22Q315.99 252.16 321.99 252.16Q326.91 252.16 332.2 250.18Q337.48 248.2 340.6 244.12Q343.96 240.51 345.22 236.01Q346.48 231.51 347.32 223.71H350.08Q350.08 234.75 350.2 241.53Q350.32 248.32 350.56 253.0H347.8Q347.32 247.84 346.18 246.52Q345.04 245.2 342.4 246.88Q337.96 250 332.98 252.34Q327.99 254.68 320.19 254.68Q308.31 254.68 299.42 249.52Q290.54 244.36 285.61 234.63Q280.69 224.91 280.69 211.22Q280.69 197.77 285.79 187.69Q290.9 177.6 299.78 171.96Q308.67 166.32 320.31 166.32Z"/><path d="M436.53 168.0Q436.05 173.04 435.87 177.78Q435.69 182.53 435.69 185.05Q435.69 187.81 435.81 190.33Q435.93 192.85 436.05 194.65H433.28Q432.08 185.65 430.1 180.49Q428.12 175.32 424.4 173.04Q420.68 170.76 413.71 170.76H408.55V239.19Q408.55 244 409.45 246.4Q410.35 248.8 413.05 249.58Q415.76 250.36 420.92 250.6V253.0Q417.56 252.76 412.27 252.7Q406.99 252.64 401.47 252.64Q395.71 252.64 390.6 252.7Q385.5 252.76 382.38 253.0V250.6Q387.54 250.36 390.18 249.58Q392.82 248.8 393.79 246.4Q394.75 244 394.75 239.19V170.76H389.46Q382.74 170.76 378.9 173.04Q375.06 175.32 373.14 180.49Q371.21 185.65 370.01 194.65H367.25Q367.49 192.85 367.55 190.33Q367.61 187.81 367.61 185.05Q367.61 182.53 367.43 177.78Q367.25 173.04 366.77 168.0Q371.94 168.12 378.06 168.24Q384.18 168.36 390.42 168.36Q396.67 168.36 401.71 168.36Q406.75 168.36 412.87 168.36Q419 168.36 425.24 168.24Q431.48 168.12 436.53 168.0Z"/><path d="M517.08 168.0V170.4Q514.68 171 512.22 173.7Q509.76 176.4 506.76 182.17L483.11 229.11H479.87L451.77 177.24Q449.37 172.92 447.75 171.72Q446.13 170.52 444.81 170.52V168.0Q447.45 168.12 450.33 168.24Q453.21 168.36 456.57 168.36Q460.9 168.36 465.94 168.3Q470.98 168.24 475.3 168.0V170.52Q472.3 170.52 469.96 171.12Q467.62 171.72 466.84 173.46Q466.06 175.2 467.74 178.44L487.55 216.5L485.63 218.54L500.4 189.13Q504.12 181.81 504.18 177.78Q504.24 173.76 501.54 172.14Q498.83 170.52 493.79 170.4V168.0Q497.51 168.12 501.12 168.24Q504.72 168.36 507.96 168.36Q510.96 168.36 513.12 168.24Q515.28 168.12 517.08 168.0ZM489.47 214.34V240.27Q489.47 244.6 490.19 246.76Q490.91 248.92 492.95 249.64Q494.99 250.36 498.95 250.6V253.0Q496.07 252.76 491.63 252.7Q487.19 252.64 482.63 252.64Q477.7 252.64 473.26 252.7Q468.82 252.76 466.18 253.0V250.6Q470.26 250.36 472.3 249.64Q474.34 248.92 475 246.76Q475.66 244.6 475.66 240.27V215.66L483.47 223.11Z"/></g></svg>
+    </a>
+    <nav class="hoved" aria-label="Hovedmeny">
+      <a class="lenke" href="../#prosjekter">Prosjekter</a>
+      <a class="lenke" href="../#selg">Vi kjøper eiendom</a>
+      <a class="lenke" href="../#om">Om oss</a>
+      <a class="btn btn--primar" href="../#selg">Selg til oss</a>
+    </nav>
+  </header>
+</div>
+
+<section class="case-hero">
+  <div class="bilde" role="img" aria-label="Ferdig stue med fjordutsikt"></div>
+  <div class="overlay" aria-hidden="true"></div>
+  <span class="merk-ill">Illustrasjon</span>
+  <div class="wrap innhold">
+    <p class="brodsmule"><a href="../#prosjekter">Prosjekter</a> / <span class="ph">[Prosjektnavn]</span></p>
+    <span class="badge">Under arbeid</span>
+    <h1 class="serif ph">[Prosjektnavn, f.eks. gatenavn]</h1>
+  </div>
+</section>
+
+<div class="fakta">
+  <div class="wrap">
+    <div class="grid">
+      <div class="celle"><div class="navn">Sted</div><div class="verdi ph">[Bydel, kommune]</div></div>
+      <div class="celle"><div class="navn">Boligtype</div><div class="verdi">Tomannsbolig</div></div>
+      <div class="celle"><div class="navn">Hva gjøres</div><div class="verdi ph">[Nybygg / utvikling]</div></div>
+      <div class="celle"><div class="navn">Status</div><div class="verdi">Under arbeid</div></div>
+      <div class="celle"><div class="navn">Kjøpt</div><div class="verdi ph">[år]</div></div>
+      <div class="celle"><div class="navn">Ferdigstilles</div><div class="verdi ph">[år/kvartal]</div></div>
+      <div class="celle"><div class="navn">Enheter</div><div class="verdi">2</div></div>
+      <div class="celle"><div class="navn">Areal</div><div class="verdi ph">[BRA per enhet]</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="blokk">
+    <div class="sek-hode">
+      <span class="eyebrow">Transformasjonen</span>
+      <h2 class="serif">Fra råbygg i vintersol til ferdig hjem</h2>
+    </div>
+    <div class="sammenlign" style="--pos: 50%;">
+      <div class="foto" style="background-image:url('../etter.jpg');"><span class="merk">Etter &middot; illustrasjon</span></div>
+      <div class="lag-for"><div class="foto" style="background-image:url('../for.jpg');"><span class="merk">Før</span></div></div>
+      <input type="range" min="0" max="100" value="50" aria-label="Sammenlign før- og etter-bilde" />
+      <div class="handtak" aria-hidden="true">⇤⇥</div>
+    </div>
+    <span class="ph-note">Dra i glideren (eller bruk piltaster). «Etter» er 3D-visualisering og merkes «Illustrasjon» til den erstattes av ferdigfoto</span>
+  </section>
+
+  <section class="blokk" style="padding-top: 0;">
+    <div class="sek-hode">
+      <span class="eyebrow">Historien</span>
+      <h2 class="serif">Slik gjør vi det</h2>
+    </div>
+    <div class="akter">
+      <div class="akt">
+        <div class="nr">01</div>
+        <h3>Utgangspunktet</h3>
+        <p class="ph">[Hva MCTY overtok: tomten/boligen, tilstanden, potensialet som ble sett. 2&ndash;3 konkrete setninger.]</p>
+      </div>
+      <div class="akt">
+        <div class="nr">02</div>
+        <h3>Grepet</h3>
+        <p class="ph">[Hva som gjøres: riving/nybygg, planløsning, materialvalg, hvem som utfører. Ærlig, også om det som ble vanskelig.]</p>
+      </div>
+      <div class="akt">
+        <div class="nr">03</div>
+        <h3>Resultatet</h3>
+        <p class="ph">[Utfallet: to enheter, standard, utsikt, salg/utleie. Tall kun der de er godkjent for publisering.]</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="blokk" style="padding-top: 0;">
+    <div class="sek-hode">
+      <span class="eyebrow">Underveis</span>
+      <h2 class="serif">Fra byggeplassen</h2>
+    </div>
+    <div class="medier">
+      <div class="film">
+        <video autoplay muted loop playsinline preload="auto" aria-label="Film fra byggeplassen: hovedetasjen">
+          <source src="../hero.mp4" type="video/mp4">
+        </video>
+        <button class="video-knapp" type="button" aria-label="Pause filmen">&#10074;&#10074;</button>
+      </div>
+      <div class="galleri">
+        <div class="g-bilde ekte"><span class="merk">Illustrasjon</span></div>
+        <div class="g-bilde"><span class="merk ph">[Foto 2: fasade]</span></div>
+        <div class="g-bilde"><span class="merk ph">[Foto 3: detalj]</span></div>
+        <div class="g-bilde"><span class="merk ph">[Foto 4: utsikt/drone]</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blokk" style="padding-top: 0;">
+    <div class="sek-hode">
+      <span class="eyebrow">Beliggenhet</span>
+      <h2 class="serif ph">[Område]</h2>
+    </div>
+    <div class="kart">
+      <span class="ph-note" style="margin:0;">[Kart lastes ved klikk, personvernvennlig løsning velges ved bygging]</span>
+    </div>
+  </section>
+</div>
+
+<div class="cta-blokk">
+  <span class="eyebrow">Vi kjøper eiendom</span>
+  <h2 class="serif">Har du en tomt eller bolig med lignende potensial?</h2>
+  <p>Vi gir deg en uforpliktende og konfidensiell vurdering, og forteller deg åpent hvordan vi setter prisen.</p>
+  <a class="btn btn--primar" href="../#selg">Få en uforpliktende vurdering</a>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="inner">
+      <div>
+        <svg viewBox="0 0 680 420" role="img" aria-label="MCTY-logo med plantegning" style="height:140px;"><use href="#gull-cd"/><g fill="#362F26"><rect x="70" y="50" width="40" height="8"/><rect x="160" y="50" width="70" height="8"/><rect x="280" y="50" width="120" height="8"/><rect x="450" y="50" width="70" height="8"/><rect x="570" y="50" width="40" height="8"/><rect x="70" y="362" width="50" height="8"/><rect x="170" y="362" width="125" height="8"/><rect x="325" y="362" width="11" height="8"/><rect x="344" y="362" width="11" height="8"/><rect x="385" y="362" width="125" height="8"/><rect x="560" y="362" width="50" height="8"/><rect x="70" y="50" width="8" height="100"/><rect x="70" y="200" width="8" height="170"/><rect x="602" y="50" width="8" height="100"/><rect x="602" y="200" width="8" height="170"/><rect x="336" y="50" width="8" height="312"/><rect x="228" y="50" width="8" height="120"/><rect x="444" y="50" width="8" height="120"/><rect x="78" y="170" width="32" height="8"/><rect x="140" y="170" width="100" height="8"/><rect x="270" y="170" width="66" height="8"/><rect x="344" y="170" width="66" height="8"/><rect x="440" y="170" width="100" height="8"/><rect x="570" y="170" width="32" height="8"/><rect x="78" y="262" width="42" height="8"/><rect x="150" y="262" width="100" height="8"/><rect x="280" y="262" width="56" height="8"/><rect x="344" y="262" width="56" height="8"/><rect x="430" y="262" width="100" height="8"/><rect x="560" y="262" width="42" height="8"/><rect x="200" y="270" width="8" height="92"/><rect x="472" y="270" width="8" height="92"/></g><g fill="#C7B287"><path d="M264.6 168.0V170.4Q260.52 170.52 258.48 171.3Q256.44 172.08 255.78 174.18Q255.12 176.28 255.12 180.73V240.27Q255.12 244.6 255.78 246.76Q256.44 248.92 258.48 249.64Q260.52 250.36 264.6 250.6V253.0Q261.6 252.76 257.16 252.7Q252.72 252.64 248.16 252.64Q243.11 252.64 238.67 252.7Q234.23 252.76 231.59 253.0V250.6Q235.67 250.36 237.77 249.64Q239.87 248.92 240.59 246.76Q241.31 244.6 241.31 240.27V174.6L241.91 174.84L212.38 253.48H210.46L179.48 175.68V237.15Q179.48 242.19 180.2 245.02Q180.93 247.84 183.33 249.04Q185.73 250.24 190.65 250.6V253.0Q188.37 252.76 184.83 252.7Q181.29 252.64 178.16 252.64Q175.16 252.64 172.16 252.7Q169.16 252.76 167.24 253.0V250.6Q171.2 250.24 173.24 249.1Q175.28 247.96 176 245.2Q176.72 242.44 176.72 237.63V180.73Q176.72 176.28 176 174.18Q175.28 172.08 173.24 171.3Q171.2 170.52 167.24 170.4V168.0Q169.16 168.12 172.16 168.24Q175.16 168.36 178.16 168.36Q181.65 168.36 185.19 168.24Q188.73 168.12 191.25 168.0L217.78 236.19L215.5 237.75L241.55 168.36Q243.11 168.36 244.8 168.36Q246.48 168.36 248.16 168.36Q252.72 168.36 257.16 168.24Q261.6 168.12 264.6 168.0Z"/><path d="M320.31 166.32Q328.23 166.32 333.34 168.66Q338.44 171 342.4 174.12Q344.8 175.92 346.06 174.54Q347.32 173.16 347.8 168.0H350.56Q350.32 172.56 350.2 178.99Q350.08 185.41 350.08 196.09H347.32Q346.48 190.81 345.7 187.45Q344.92 184.09 343.66 181.69Q342.4 179.29 340.24 177Q336.76 172.68 331.72 170.76Q326.67 168.84 321.03 168.84Q314.91 168.84 310.23 171.9Q305.54 174.96 302.36 180.61Q299.18 186.25 297.5 193.93Q295.82 201.62 295.82 210.74Q295.82 220.1 297.62 227.73Q299.42 235.35 302.84 240.81Q306.26 246.28 311.13 249.22Q315.99 252.16 321.99 252.16Q326.91 252.16 332.2 250.18Q337.48 248.2 340.6 244.12Q343.96 240.51 345.22 236.01Q346.48 231.51 347.32 223.71H350.08Q350.08 234.75 350.2 241.53Q350.32 248.32 350.56 253.0H347.8Q347.32 247.84 346.18 246.52Q345.04 245.2 342.4 246.88Q337.96 250 332.98 252.34Q327.99 254.68 320.19 254.68Q308.31 254.68 299.42 249.52Q290.54 244.36 285.61 234.63Q280.69 224.91 280.69 211.22Q280.69 197.77 285.79 187.69Q290.9 177.6 299.78 171.96Q308.67 166.32 320.31 166.32Z"/><path d="M436.53 168.0Q436.05 173.04 435.87 177.78Q435.69 182.53 435.69 185.05Q435.69 187.81 435.81 190.33Q435.93 192.85 436.05 194.65H433.28Q432.08 185.65 430.1 180.49Q428.12 175.32 424.4 173.04Q420.68 170.76 413.71 170.76H408.55V239.19Q408.55 244 409.45 246.4Q410.35 248.8 413.05 249.58Q415.76 250.36 420.92 250.6V253.0Q417.56 252.76 412.27 252.7Q406.99 252.64 401.47 252.64Q395.71 252.64 390.6 252.7Q385.5 252.76 382.38 253.0V250.6Q387.54 250.36 390.18 249.58Q392.82 248.8 393.79 246.4Q394.75 244 394.75 239.19V170.76H389.46Q382.74 170.76 378.9 173.04Q375.06 175.32 373.14 180.49Q371.21 185.65 370.01 194.65H367.25Q367.49 192.85 367.55 190.33Q367.61 187.81 367.61 185.05Q367.61 182.53 367.43 177.78Q367.25 173.04 366.77 168.0Q371.94 168.12 378.06 168.24Q384.18 168.36 390.42 168.36Q396.67 168.36 401.71 168.36Q406.75 168.36 412.87 168.36Q419 168.36 425.24 168.24Q431.48 168.12 436.53 168.0Z"/><path d="M517.08 168.0V170.4Q514.68 171 512.22 173.7Q509.76 176.4 506.76 182.17L483.11 229.11H479.87L451.77 177.24Q449.37 172.92 447.75 171.72Q446.13 170.52 444.81 170.52V168.0Q447.45 168.12 450.33 168.24Q453.21 168.36 456.57 168.36Q460.9 168.36 465.94 168.3Q470.98 168.24 475.3 168.0V170.52Q472.3 170.52 469.96 171.12Q467.62 171.72 466.84 173.46Q466.06 175.2 467.74 178.44L487.55 216.5L485.63 218.54L500.4 189.13Q504.12 181.81 504.18 177.78Q504.24 173.76 501.54 172.14Q498.83 170.52 493.79 170.4V168.0Q497.51 168.12 501.12 168.24Q504.72 168.36 507.96 168.36Q510.96 168.36 513.12 168.24Q515.28 168.12 517.08 168.0ZM489.47 214.34V240.27Q489.47 244.6 490.19 246.76Q490.91 248.92 492.95 249.64Q494.99 250.36 498.95 250.6V253.0Q496.07 252.76 491.63 252.7Q487.19 252.64 482.63 252.64Q477.7 252.64 473.26 252.7Q468.82 252.76 466.18 253.0V250.6Q470.26 250.36 472.3 249.64Q474.34 248.92 475 246.76Q475.66 244.6 475.66 240.27V215.66L483.47 223.11Z"/></g></svg>
+        <p class="tag">Uttales mektig.</p>
+      </div>
+      <ul>
+        <li><strong style="color:var(--lys);">MCTY</strong></li>
+        <li>MCTY Eiendom AS &middot; Org.nr 935 896 134</li>
+        <li><a href="https://www.instagram.com/mctyeiendom">Instagram: @mctyeiendom</a></li>
+      </ul>
+      <ul>
+        <li><a href="../#prosjekter">Prosjekter</a></li>
+        <li><a href="../#selg">Vi kjøper eiendom</a></li>
+        <li><a href="../#om">Om oss</a></li>
+        <li><a href="#">Personvern</a></li>
+      </ul>
+    </div>
+    <p class="jur">© MCTY &middot; Case-mal (skisse) &middot; Renders merkes «Illustrasjon» &middot; Bygges med cookiefri analyse</p>
+  </div>
+</footer>
+
+<script>
+  var vid = document.querySelector('.film video');
+  var knapp = document.querySelector('.video-knapp');
+  if (vid && knapp) {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      vid.removeAttribute('autoplay'); vid.pause();
+      knapp.innerHTML = '&#9654;'; knapp.setAttribute('aria-label', 'Spill av filmen');
+    }
+    knapp.addEventListener('click', function () {
+      if (vid.paused) { vid.play(); knapp.innerHTML = '&#10074;&#10074;'; knapp.setAttribute('aria-label', 'Pause filmen'); }
+      else { vid.pause(); knapp.innerHTML = '&#9654;'; knapp.setAttribute('aria-label', 'Spill av filmen'); }
+    });
+  }
+  document.querySelectorAll('.sammenlign').forEach(function (el) {
+    var input = el.querySelector('input[type="range"]');
+    input.addEventListener('input', function () {
+      el.style.setProperty('--pos', input.value + '%');
+    });
+  });
+</script>
+</body>
+</html>

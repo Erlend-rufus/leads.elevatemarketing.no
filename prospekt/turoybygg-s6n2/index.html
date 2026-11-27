@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Turøy Bygg og Snekkerverksted | Tømrer og snekkerverksted i Øygarden</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Besley:wght@600;700;800&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bark:#3E2F23;
+  --bark-dyp:#2E2219;
+  --furu:#D9A96C;
+  --furu-lys:#E9C795;
+  --lin:#F4EEE3;
+  --lin-dyp:#E9E0CF;
+  --skog:#4F6F52;
+  --skog-mork:#3D5740;
+  --hvit:#FFFFFF;
+  --tekst:#33291F;
+  --tekst-dus:#6B5F51;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Alegreya Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--lin);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Besley',Georgia,serif;font-weight:700;line-height:1.12;color:var(--bark)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--skog);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--bark);color:#fff;border-bottom:3px solid var(--furu)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Besley',serif;font-weight:800;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-merke{width:30px;height:30px;flex:none}
+.logo span{color:var(--furu)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:#E5DCCB}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--skog);color:#fff;text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--skog-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:.95rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--bark);color:#fff}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:68px 22px 78px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(217,169,108,.55);color:var(--furu);font-weight:700;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(1.9rem,4.2vw,2.9rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--furu)}
+.hero-tekst{color:#E5DCCB;font-size:1.06rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--skog);color:#fff}
+.knapp-primar:hover{background:var(--skog-mork);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(229,220,203,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:50px;padding-bottom:56px}}
+
+/* Hoevelbenken, signaturelementet */
+.benk{background:var(--bark-dyp);border:1px solid rgba(217,169,108,.3);border-radius:14px;padding:24px 22px 22px}
+.benk-tittel{font-family:'Besley',serif;font-weight:700;font-size:1.05rem;color:var(--furu);margin-bottom:2px}
+.benk-hint{font-size:.87rem;color:rgba(229,220,203,.75);margin-bottom:14px}
+#hovel{transition:transform .55s ease}
+#hovel.drar{transform:translateX(250px)}
+.spon{opacity:0;transition:opacity .35s ease}
+.spon.synlig{opacity:1}
+#plank-topp{transition:d .4s ease}
+.benk-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.hovel-knapp{
+  font-family:'Besley',serif;font-weight:700;font-size:.98rem;
+  background:var(--furu);color:var(--bark-dyp);border:none;border-radius:8px;
+  padding:11px 20px;cursor:pointer;transition:background .15s ease;
+}
+.hovel-knapp:hover{background:var(--furu-lys)}
+.hovel-knapp:disabled{background:rgba(229,220,203,.25);color:rgba(229,220,203,.6);cursor:not-allowed}
+.ny-planke{
+  font-family:'Alegreya Sans',sans-serif;font-weight:500;font-size:.88rem;
+  background:transparent;color:#E5DCCB;border:1.5px solid rgba(229,220,203,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.ny-planke:hover{border-color:#fff;color:#fff}
+.benk-status-rad{margin-top:12px;background:rgba(217,169,108,.12);border-left:3px solid var(--furu);border-radius:0 8px 8px 0;padding:10px 14px}
+.benk-steg{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--furu)}
+.benk-status{font-size:.95rem;color:#F0EADC}
+
+/* Fakta-stripe */
+.stripe{background:var(--skog);color:#fff}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Besley',serif;font-weight:800;font-size:1.9rem;line-height:1.1}
+.stripe-navn{font-size:.88rem;font-weight:500;opacity:.94}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--skog);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.seksjon h2{font-size:clamp(1.55rem,3.1vw,2.15rem);margin-bottom:14px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Om */
+.om{background:var(--hvit)}
+.om-indre{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.om-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.om-tekst p strong{color:var(--tekst)}
+.verksted-kort{background:var(--bark);color:#fff;border-radius:14px;padding:32px 30px;border-bottom:5px solid var(--furu)}
+.verksted-kort h3{color:var(--furu);font-size:1.15rem;margin-bottom:16px}
+.verksted-kort ul{list-style:none;display:grid;gap:13px}
+.verksted-kort li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:#E5DCCB}
+.verksted-kort .punkt{width:9px;height:9px;background:var(--furu);flex:none;transform:translateY(-1px)}
+@media(max-width:860px){.om-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.tjeneste{background:var(--hvit);border-radius:12px;padding:28px 26px;border:1px solid var(--lin-dyp);border-left:5px solid var(--bark);transition:transform .15s ease,box-shadow .15s ease}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(62,47,35,.12);border-left-color:var(--skog)}
+.tjeneste h3{font-size:1.15rem;margin-bottom:8px}
+.tjeneste p{font-size:.95rem;color:var(--tekst-dus)}
+@media(max-width:700px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Omraade */
+.omraade{background:var(--hvit)}
+.omraade-nett{display:flex;gap:12px;flex-wrap:wrap}
+.sted{background:var(--lin);border:1px solid var(--lin-dyp);border-radius:999px;padding:9px 18px;font-weight:500;font-size:.95rem}
+.sted b{color:var(--skog)}
+
+/* Omtale */
+.omtale-kort{max-width:44rem;background:var(--hvit);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--furu)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--bark);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:14px}
+.cta p{color:#E5DCCB;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--bark-dyp);border:1px solid rgba(217,169,108,.3);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.08rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#E5DCCB}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:700}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--bark-dyp);color:#D8CDBB;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#D8CDBB}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(216,205,187,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(216,205,187,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--bark-dyp);border-top:2px solid var(--furu)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--skog);color:#fff}
+.mobilbar .epost{background:rgba(229,220,203,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  #hovel.drar{transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Turøy Bygg og Snekkerverksted, til toppen">
+      <svg class="logo-merke" viewBox="0 0 30 30" aria-hidden="true">
+        <rect x="4" y="13" width="22" height="8" rx="1.5" fill="none" stroke="#D9A96C" stroke-width="2.4"/>
+        <path d="M9 13 L9 8 L21 8 L21 13" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M4 24 L26 24" stroke="#D9A96C" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      Turøy <span>Bygg</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#hovelbenken">Høvelbenken</a></li>
+        <li><a href="#om">Om oss</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4793498234">93 49 82 34</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Tømrer og snekkerverksted, Øygarden</p>
+        <h1>Bygget ute, <em>snekret inne</em></h1>
+        <p class="hero-tekst">
+          Turøy Bygg og Snekkerverksted er et lite byggefirma på Rong med noe de
+          færreste har: eget snekkerverksted. Vi tar alt fra mindre reparasjoner til
+          nybygg og totalentrepriser, i Øygarden, på Askøy og i Bergen.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4793498234">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#hovelbenken">Prøv høvelbenken</a>
+        </div>
+      </div>
+
+      <div class="benk" id="hovelbenken" aria-label="Interaktiv høvelbenk">
+        <p class="benk-tittel">Høvelbenken</p>
+        <p class="benk-hint">Ta noen høveldrag og se planken bli slett. Slik starter godt snekkerarbeid.</p>
+
+        <svg id="benk-svg" viewBox="0 0 460 230" role="img" aria-labelledby="benk-tittel-svg">
+          <title id="benk-tittel-svg">Planke på høvelbenk som høvles slett</title>
+          <!-- Hoevelbenk -->
+          <rect x="20" y="170" width="420" height="18" fill="#5A4632"/>
+          <rect x="46" y="188" width="16" height="34" fill="#4A3826"/>
+          <rect x="392" y="188" width="16" height="34" fill="#4A3826"/>
+          <!-- Planke: ru overflate som morphes -->
+          <path id="plank-topp" d="M60 170 L60 138 L84 130 L108 142 L132 128 L156 140 L180 129 L204 141 L228 128 L252 140 L276 129 L300 141 L324 128 L348 140 L372 130 L396 138 L396 170 Z" fill="#D9A96C" stroke="#8A6A42" stroke-width="2" stroke-linejoin="round"/>
+          <!-- Aarringer -->
+          <g stroke="#B98A52" stroke-width="1.4" fill="none" opacity=".6">
+            <path d="M78 158 C160 150 300 150 380 158"/>
+            <path d="M90 164 C180 158 290 158 368 164"/>
+          </g>
+          <!-- Spon -->
+          <g id="spon-1" class="spon"><path d="M120 118 C112 106 126 100 130 110 C133 117 124 122 120 118" fill="none" stroke="#E9C795" stroke-width="3" stroke-linecap="round"/></g>
+          <g id="spon-2" class="spon"><path d="M200 114 C192 102 206 96 210 106 C213 113 204 118 200 114" fill="none" stroke="#E9C795" stroke-width="3" stroke-linecap="round"/></g>
+          <g id="spon-3" class="spon"><path d="M280 116 C272 104 286 98 290 108 C293 115 284 120 280 116" fill="none" stroke="#E9C795" stroke-width="3" stroke-linecap="round"/></g>
+          <g id="spon-4" class="spon"><path d="M348 112 C340 100 354 94 358 104 C361 111 352 116 348 112" fill="none" stroke="#E9C795" stroke-width="3" stroke-linecap="round"/></g>
+          <!-- Hoevel -->
+          <g id="hovel">
+            <rect x="66" y="96" width="96" height="26" rx="5" fill="#3D5740"/>
+            <rect x="96" y="78" width="14" height="22" rx="3" fill="#2E2219"/>
+            <path d="M130 122 L146 122 L140 132 Z" fill="#C5CDD6"/>
+          </g>
+        </svg>
+
+        <div class="benk-panel">
+          <button class="hovel-knapp" id="hovel-knapp" type="button">Ta et høveldrag</button>
+          <button class="ny-planke" id="ny-planke-knapp" type="button">Ny planke</button>
+        </div>
+        <div class="benk-status-rad" aria-live="polite">
+          <div class="benk-steg" id="benk-steg">Drag 0 av 4</div>
+          <div class="benk-status" id="benk-status">Planken er ru fra saga. Ta det første høveldraget.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">Eget verksted</div>
+        <div class="stripe-navn">Snekkerverksted på Rong, ikke bare byggeplass</div>
+      </div>
+      <div>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Brreg oppgir 6 ansatte, bekreftes med kunden. -->
+        <div class="stripe-tall">Lite lag</div>
+        <div class="stripe-navn">Du møter de samme folkene gjennom hele jobben</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Hele spennet</div>
+        <div class="stripe-navn">Fra mindre reparasjoner til nybygg og totalentrepriser</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon om" id="om">
+    <div class="ramme">
+      <div class="om-indre">
+        <div class="om-tekst">
+          <p class="overtittel">Om oss</p>
+          <h2>Byggefirmaet med eget snekkerverksted</h2>
+          <p>
+            De fleste byggefirma kjøper alt ferdig. Vi har beholdt
+            <strong>snekkerverkstedet på Rong</strong>, og det gir oss et spillerom
+            de færreste har: når standardløsningen ikke passer huset ditt, lager vi
+            det som trengs selv.
+          </p>
+          <p>
+            Turøy Bygg og Snekkerverksted drives fra Rong i Øygarden og tar oppdrag
+            i hele regionen. Vi er et lite lag, og det betyr korte veier: den du
+            snakker med om jobben, er også den som står på byggeplassen.
+          </p>
+          <p>
+            Ingen jobb er for liten. Vi tar gjerne reparasjonen andre ikke har tid
+            til, og vi tar hele huset når du trenger det.
+          </p>
+        </div>
+        <div class="verksted-kort morkflate">
+          <h3>Derfor betyr verkstedet noe</h3>
+          <ul>
+            <li><span class="punkt"></span>Spesialtilpasninger når standardmål ikke strekker til<!-- PLACEHOLDER: konkrete verkstedprodukter bekreftes med kunden --></li>
+            <li><span class="punkt"></span>Reparasjoner der nytt må matche gammelt</li>
+            <li><span class="punkt"></span>Kortere ventetid, siden mer gjøres lokalt</li>
+            <li><span class="punkt"></span>Ett firma å forholde seg til, fra verksted til ferdig montert</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Fra reparasjon til totalentreprise</h2>
+        <p>Vi tar små og store oppdrag, ute og inne.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Nybygg</h3>
+          <p>Hus og bygg oppført fra grunnen av, med tømrerarbeid vi står inne for.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Renovering og tilbygg</h3>
+          <p>Vi løfter eldre boliger, bygger på og bygger om, med respekt for det som står der fra før.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Mindre reparasjoner</h3>
+          <p>Vinduet som ikke lukker, døren som subber, listverket som mangler. Vi tar de små jobbene også.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Totalentreprise</h3>
+          <p>Vi tar ansvar for hele prosjektet og koordinerer fagene, så du har ett kontaktpunkt hele veien.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omraade">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Dekningsområde</p>
+        <h2>Vi jobber der du bor</h2>
+        <p>Med base på Rong dekker vi øyene og byen.</p>
+      </div>
+      <div class="omraade-nett">
+        <span class="sted"><b>Øygarden</b></span>
+        <span class="sted">Sotra</span>
+        <span class="sted">Askøy</span>
+        <span class="sted">Bergen</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva kundene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en kunde som har brukt Turøy Bygg og Snekkerverksted.»</p>
+        <p class="omtale-kilde">Navn og sted settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--furu)">Kontakt</p>
+        <h2>Har du en jobb til oss?</h2>
+        <p>
+          Stor eller liten, fortell oss hva du trenger, så gir vi deg et ærlig svar
+          på hva det krever og hva det koster.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4793498234">Ring 93 49 82 34</a>
+          <a class="knapp knapp-sekundar" href="mailto:post@turoybygg.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Turøy Bygg og Snekkerverksted AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#E5DCCB" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#D9A96C"/></svg>
+          <!-- PLACEHOLDER: erstattes med ekte innhold. Fullstendig gateadresse bekreftes med kunden. -->
+          <span>Rong, Øygarden</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#E5DCCB" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4793498234">93 49 82 34</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#E5DCCB" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#D9A96C" stroke-width="1.6"/></svg>
+          <a href="mailto:post@turoybygg.no">post@turoybygg.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#E5DCCB" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#D9A96C" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Øygarden, Sotra, Askøy og Bergen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Turøy Bygg og Snekkerverksted AS</h3>
+        <p>Tømrerarbeid og eget snekkerverksted på Rong i Øygarden. Fra mindre reparasjoner til nybygg og totalentrepriser.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Rong, Øygarden</li>
+          <li><a href="tel:+4793498234">93 49 82 34</a></li>
+          <li><a href="mailto:post@turoybygg.no">post@turoybygg.no</a></li>
+          <li>Org.nr. 997 898 796</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#hovelbenken">Høvelbenken</a></li>
+          <li><a href="#om">Om oss</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4793498234">Ring 93 49 82 34</a>
+  <a class="epost" href="mailto:post@turoybygg.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var former = [
+    'M60 170 L60 138 L84 130 L108 142 L132 128 L156 140 L180 129 L204 141 L228 128 L252 140 L276 129 L300 141 L324 128 L348 140 L372 130 L396 138 L396 170 Z',
+    'M60 170 L60 138 L84 133 L108 140 L132 131 L156 139 L180 132 L204 139 L228 131 L252 139 L276 132 L300 139 L324 131 L348 139 L372 133 L396 138 L396 170 Z',
+    'M60 170 L60 138 L84 135 L108 138 L132 134 L156 138 L180 134 L204 138 L228 134 L252 138 L276 134 L300 138 L324 134 L348 138 L372 135 L396 138 L396 170 Z',
+    'M60 170 L60 138 L84 136 L108 137 L132 136 L156 137 L180 136 L204 137 L228 136 L252 137 L276 136 L300 137 L324 136 L348 137 L372 136 L396 137 L396 170 Z',
+    'M60 170 L60 137 L396 137 L396 170 Z'
+  ];
+  var status = [
+    'Planken er ru fra saga. Ta det første høveldraget.',
+    'Første drag tatt. De verste kulene er borte.',
+    'Overflaten begynner å jevne seg.',
+    'Nesten der. Ett drag til.',
+    'Planken er slett og klar til bruk. Godt håndverk starter her.'
+  ];
+  var drag = 0;
+  var plank = document.getElementById('plank-topp');
+  var hovel = document.getElementById('hovel');
+  var knapp = document.getElementById('hovel-knapp');
+  var nyKnapp = document.getElementById('ny-planke-knapp');
+  var stegEl = document.getElementById('benk-steg');
+  var statusEl = document.getElementById('benk-status');
+
+  function oppdater(){
+    stegEl.textContent = 'Drag ' + drag + ' av 4';
+    statusEl.textContent = status[drag];
+    knapp.disabled = drag >= 4;
+    knapp.textContent = drag >= 4 ? 'Planken er slett' : 'Ta et høveldrag';
+  }
+
+  knapp.addEventListener('click', function(){
+    if (drag >= 4) return;
+    drag++;
+    hovel.classList.add('drar');
+    plank.setAttribute('d', former[drag]);
+    var spon = document.getElementById('spon-' + drag);
+    if (spon) spon.classList.add('synlig');
+    setTimeout(function(){ hovel.classList.remove('drar'); }, 620);
+    oppdater();
+  });
+
+  nyKnapp.addEventListener('click', function(){
+    drag = 0;
+    plank.setAttribute('d', former[0]);
+    for (var i = 1; i <= 4; i++) document.getElementById('spon-' + i).classList.remove('synlig');
+    hovel.classList.remove('drar');
+    oppdater();
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>

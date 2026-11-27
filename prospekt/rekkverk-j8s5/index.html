@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Rekkverk Spesialisten | Rekkverk, trapper og glass fra Straume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grafitt:#23292F;
+  --grafitt-dyp:#191E23;
+  --staal:#46586A;
+  --isblaa:#BFD9E5;
+  --isblaa-lys:#DEEDF4;
+  --lys:#F4F6F8;
+  --lys-dyp:#E5EAEE;
+  --hvit:#FFFFFF;
+  --tekst:#272C31;
+  --tekst-dus:#5C646C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--lys);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Syne',Verdana,sans-serif;font-weight:700;line-height:1.12;color:var(--grafitt)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--staal);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--grafitt);color:#fff;border-bottom:3px solid var(--isblaa)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.08rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-merke{width:30px;height:30px;flex:none}
+.logo span{color:var(--isblaa)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:#D4DBE1}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--isblaa);color:var(--grafitt-dyp);text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:#A9CBDA}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:.94rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--grafitt);color:#fff}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:66px 22px 76px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(191,217,229,.55);color:var(--isblaa);font-weight:600;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(1.9rem,4.2vw,2.9rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--isblaa)}
+.hero-tekst{color:#D4DBE1;font-size:1.06rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--isblaa);color:var(--grafitt-dyp)}
+.knapp-primar:hover{background:#A9CBDA;transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(212,219,225,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:48px;padding-bottom:54px}}
+
+/* Rekkverksbyggeren, signaturelementet */
+.terrassen{background:var(--grafitt-dyp);border:1px solid rgba(191,217,229,.3);border-radius:14px;padding:24px 22px 22px}
+.terrassen-tittel{font-family:'Syne',sans-serif;font-weight:700;font-size:1.02rem;color:var(--isblaa);margin-bottom:2px}
+.terrassen-hint{font-size:.87rem;color:rgba(212,219,225,.75);margin-bottom:14px}
+.rekk-del{opacity:0;transition:opacity .5s ease}
+.rekk-del.montert{opacity:1}
+#fylling-glass,#fylling-spiler{opacity:0;transition:opacity .4s ease}
+#fylling-glass.valgt,#fylling-spiler.valgt{opacity:1}
+.terrassen-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.bygg-knapp{
+  font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;
+  background:var(--isblaa);color:var(--grafitt-dyp);border:none;border-radius:8px;
+  padding:11px 20px;cursor:pointer;transition:background .15s ease;
+}
+.bygg-knapp:hover{background:#A9CBDA}
+.bygg-knapp:disabled{background:rgba(212,219,225,.25);color:rgba(212,219,225,.6);cursor:not-allowed}
+.riv-knapp{
+  font-family:'Inter Tight',sans-serif;font-weight:500;font-size:.88rem;
+  background:transparent;color:#D4DBE1;border:1.5px solid rgba(212,219,225,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.riv-knapp:hover{border-color:#fff;color:#fff}
+.fylling-chips{display:flex;gap:8px;margin-top:12px}
+.chip{
+  font-family:'Inter Tight',sans-serif;font-weight:600;font-size:.88rem;
+  color:#D4DBE1;background:transparent;border:1.5px solid rgba(212,219,225,.45);
+  border-radius:999px;padding:8px 16px;cursor:pointer;transition:all .15s ease;
+}
+.chip:hover{border-color:#fff;color:#fff}
+.chip[aria-pressed="true"]{background:var(--isblaa);border-color:var(--isblaa);color:var(--grafitt-dyp)}
+.chip:disabled{opacity:.45;cursor:not-allowed}
+.terrassen-status-rad{margin-top:12px;background:rgba(191,217,229,.12);border-left:3px solid var(--isblaa);border-radius:0 8px 8px 0;padding:10px 14px}
+.terrassen-steg{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--isblaa)}
+.terrassen-status{font-size:.95rem;color:#EFF3F5}
+
+/* Fakta-stripe */
+.stripe{background:var(--staal);color:#fff}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Syne',sans-serif;font-weight:800;font-size:1.8rem;line-height:1.1}
+.stripe-navn{font-size:.88rem;font-weight:500;opacity:.95}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--staal);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.seksjon h2{font-size:clamp(1.55rem,3.1vw,2.15rem);margin-bottom:14px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Prosess */
+.prosess{background:var(--hvit)}
+.prosess-nett{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prosess-steg{background:var(--lys);border-radius:12px;padding:24px 22px;border-top:4px solid var(--staal)}
+.prosess-steg .nr{font-family:'Syne',sans-serif;font-weight:800;font-size:1.6rem;color:var(--staal);line-height:1;margin-bottom:10px}
+.prosess-steg h3{font-size:1.02rem;margin-bottom:6px}
+.prosess-steg p{font-size:.92rem;color:var(--tekst-dus)}
+@media(max-width:900px){.prosess-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.prosess-nett{grid-template-columns:1fr}}
+
+/* Produkter */
+.produkt-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.produkt{background:var(--hvit);border-radius:12px;padding:26px 24px;border:1px solid var(--lys-dyp);border-top:4px solid var(--grafitt);transition:transform .15s ease,box-shadow .15s ease}
+.produkt:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(35,41,47,.12);border-top-color:var(--staal)}
+.produkt h3{font-size:1.05rem;margin-bottom:8px}
+.produkt p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.produkt-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.produkt-nett{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{max-width:44rem;background:var(--lys);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--staal)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--grafitt);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:14px}
+.cta p{color:#D4DBE1;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--grafitt-dyp);border:1px solid rgba(191,217,229,.3);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.05rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#D4DBE1}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--grafitt-dyp);color:#C4CCD3;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#C4CCD3}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(196,204,211,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(196,204,211,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--grafitt-dyp);border-top:2px solid var(--isblaa)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--isblaa);color:var(--grafitt-dyp)}
+.mobilbar .epost{background:rgba(212,219,225,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Rekkverk Spesialisten, til toppen">
+      <svg class="logo-merke" viewBox="0 0 30 30" aria-hidden="true">
+        <line x1="4" y1="10" x2="26" y2="10" stroke="#BFD9E5" stroke-width="2.6" stroke-linecap="round"/>
+        <line x1="7" y1="10" x2="7" y2="24" stroke="#FFFFFF" stroke-width="2.2"/>
+        <line x1="15" y1="10" x2="15" y2="24" stroke="#FFFFFF" stroke-width="2.2"/>
+        <line x1="23" y1="10" x2="23" y2="24" stroke="#FFFFFF" stroke-width="2.2"/>
+      </svg>
+      Rekkverk <span>Spesialisten</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#byggeren">Byggeren</a></li>
+        <li><a href="#prosessen">Prosessen</a></li>
+        <li><a href="#produkter">Produkter</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4793073490">930 73 490</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Rekkverk og trapper, Straume</p>
+        <h1>Utsikten er din. <em>Sikringen er vår.</em></h1>
+        <p class="hero-tekst">
+          Rekkverk Spesialisten produserer og monterer rekkverk i glass og metall,
+          trapper, baldakiner og glassvegger. Fra befaring og 3D-tegning til ferdig
+          montert, med eget lag hele veien.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4793073490">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#byggeren">Bygg rekkverket selv</a>
+        </div>
+      </div>
+
+      <div class="terrassen" id="byggeren" aria-label="Interaktiv rekkverksbygger">
+        <p class="terrassen-tittel">Bygg rekkverket</p>
+        <p class="terrassen-hint">Monter i tre steg, og velg fylling til slutt.</p>
+
+        <svg id="terrasse-svg" viewBox="0 0 460 240" role="img" aria-labelledby="terrasse-tittel-svg">
+          <title id="terrasse-tittel-svg">Terrasse der et rekkverk monteres steg for steg</title>
+          <!-- Terrassegulv -->
+          <rect x="20" y="196" width="420" height="16" fill="#46586A"/>
+          <g stroke="#3A4A5A" stroke-width="1.6">
+            <line x1="70" y1="196" x2="70" y2="212"/>
+            <line x1="130" y1="196" x2="130" y2="212"/>
+            <line x1="190" y1="196" x2="190" y2="212"/>
+            <line x1="250" y1="196" x2="250" y2="212"/>
+            <line x1="310" y1="196" x2="310" y2="212"/>
+            <line x1="370" y1="196" x2="370" y2="212"/>
+          </g>
+          <!-- Utsikt bak -->
+          <path d="M20 196 L120 150 L200 176 L300 140 L440 176" fill="none" stroke="#46586A" stroke-width="2" opacity=".5"/>
+          <!-- Planlagt rekkverk, stiplet -->
+          <g fill="none" stroke="#BFD9E5" stroke-width="1.6" stroke-dasharray="6 6" opacity=".4">
+            <line x1="60" y1="90" x2="400" y2="90"/>
+            <line x1="64" y1="96" x2="64" y2="196"/>
+            <line x1="396" y1="96" x2="396" y2="196"/>
+          </g>
+          <!-- Steg 1: stolper -->
+          <g id="del-stolper" class="rekk-del">
+            <rect x="60" y="96" width="9" height="100" rx="2" fill="#C9D4DC"/>
+            <rect x="170" y="96" width="9" height="100" rx="2" fill="#C9D4DC"/>
+            <rect x="281" y="96" width="9" height="100" rx="2" fill="#C9D4DC"/>
+            <rect x="391" y="96" width="9" height="100" rx="2" fill="#C9D4DC"/>
+          </g>
+          <!-- Steg 2: håndløper -->
+          <g id="del-handloper" class="rekk-del">
+            <rect x="52" y="84" width="356" height="11" rx="5" fill="#E8EDF1"/>
+          </g>
+          <!-- Steg 3: fylling (glass som standard) -->
+          <g id="del-fylling" class="rekk-del">
+            <g id="fylling-glass" class="valgt">
+              <rect x="74" y="100" width="91" height="92" fill="#BFD9E5" opacity=".35" stroke="#BFD9E5" stroke-width="1.6"/>
+              <rect x="184" y="100" width="92" height="92" fill="#BFD9E5" opacity=".35" stroke="#BFD9E5" stroke-width="1.6"/>
+              <rect x="295" y="100" width="91" height="92" fill="#BFD9E5" opacity=".35" stroke="#BFD9E5" stroke-width="1.6"/>
+              <path d="M84 108 L118 176 M198 108 L232 176 M305 108 L339 176" stroke="#FFFFFF" stroke-width="2.4" opacity=".5"/>
+            </g>
+            <g id="fylling-spiler">
+              <g fill="#C9D4DC">
+                <rect x="86" y="100" width="5" height="92"/><rect x="108" y="100" width="5" height="92"/><rect x="130" y="100" width="5" height="92"/><rect x="152" y="100" width="5" height="92"/>
+                <rect x="197" y="100" width="5" height="92"/><rect x="219" y="100" width="5" height="92"/><rect x="241" y="100" width="5" height="92"/><rect x="263" y="100" width="5" height="92"/>
+                <rect x="308" y="100" width="5" height="92"/><rect x="330" y="100" width="5" height="92"/><rect x="352" y="100" width="5" height="92"/><rect x="374" y="100" width="5" height="92"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+
+        <div class="terrassen-panel">
+          <button class="bygg-knapp" id="bygg-knapp" type="button">Sett stolpene</button>
+          <button class="riv-knapp" id="riv-knapp" type="button">Start på nytt</button>
+        </div>
+        <div class="fylling-chips" role="group" aria-label="Velg fylling">
+          <button class="chip" id="chip-glass" aria-pressed="true" disabled>Glass</button>
+          <button class="chip" id="chip-spiler" aria-pressed="false" disabled>Spiler</button>
+        </div>
+        <div class="terrassen-status-rad" aria-live="polite">
+          <div class="terrassen-steg" id="terrassen-steg">Steg 0 av 3</div>
+          <div class="terrassen-status" id="terrassen-status">Terrassen står åpen mot kanten. Sett stolpene først.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe morkflate" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">Egen produksjon</div>
+        <div class="stripe-navn">Vi produserer og monterer selv</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Sikkerhetsglass</div>
+        <div class="stripe-navn">Herdet og laminert, med polerte kanter</div>
+      </div>
+      <div>
+        <div class="stripe-tall">3D-tegning</div>
+        <div class="stripe-navn">Du ser løsningen før vi produserer den</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon prosess" id="prosessen">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Prosessen</p>
+        <h2>Fra befaring til ferdig montert</h2>
+        <p>Samme lag følger jobben hele veien, så løsningen passer huset ditt på millimeteren.</p>
+      </div>
+      <div class="prosess-nett">
+        <div class="prosess-steg"><div class="nr">1</div><h3>Befaring</h3><p>Vi måler og ser på stedet, og finner løsningen som passer.</p></div>
+        <div class="prosess-steg"><div class="nr">2</div><h3>3D-tegning</h3><p>Du får en tegning av løsningen, så du vet nøyaktig hva du bestiller.</p></div>
+        <div class="prosess-steg"><div class="nr">3</div><h3>Produksjon</h3><p>Rekkverket produseres etter mål, i glass, aluminium eller rustfritt stål.</p></div>
+        <div class="prosess-steg"><div class="nr">4</div><h3>Montering</h3><p>Egne montører leverer og monterer, til avtalt tid.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="produkter">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Produktene</p>
+        <h2>Rekkverk, trapper og glass</h2>
+        <p>Produsert etter mål, montert av egne folk.</p>
+      </div>
+      <div class="produkt-nett">
+        <article class="produkt">
+          <h3>Glassrekkverk</h3>
+          <p>I aluminium eller rustfritt stål, også stolpefritt med U-profil. Herdet, laminert sikkerhetsglass.</p>
+        </article>
+        <article class="produkt">
+          <h3>Spilerekkverk</h3>
+          <p>Ryddige linjer i metall, til terrasse, balkong og trapp.</p>
+        </article>
+        <article class="produkt">
+          <h3>Trapperekkverk</h3>
+          <p>Rekkverk i glass og metall som løfter trappen, ute og inne.</p>
+        </article>
+        <article class="produkt">
+          <h3>Trapper</h3>
+          <p>Innetrapper, utetrapper og rømningstrapper, produsert etter mål.</p>
+        </article>
+        <article class="produkt">
+          <h3>Baldakiner</h3>
+          <p>Tak over inngangspartiet som beskytter dør og besøkende.</p>
+        </article>
+        <article class="produkt">
+          <h3>Glassvegger</h3>
+          <p>Le og skjerming uten å miste utsikten.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva kundene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en kunde som har fått rekkverk eller trapp fra Rekkverk Spesialisten.»</p>
+        <p class="omtale-kilde">Navn og sted settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--isblaa)">Kontakt</p>
+        <h2>Klar for å sikre kanten?</h2>
+        <p>
+          Send oss noen bilder og mål, så kommer vi på befaring. Du får en
+          3D-tegning og en tydelig pris før vi produserer noe som helst.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4793073490">Ring 930 73 490</a>
+          <a class="knapp knapp-sekundar" href="mailto:info@rsrekkverk.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Rekkverk Spesialisten AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#D4DBE1" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#BFD9E5"/></svg>
+          <span>Idrettsvegen 147, 5353 Straume</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#D4DBE1" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4793073490">930 73 490</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#D4DBE1" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#BFD9E5" stroke-width="1.6"/></svg>
+          <a href="mailto:info@rsrekkverk.no">info@rsrekkverk.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#D4DBE1" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#BFD9E5" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Sotra, Bergen og omegn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Rekkverk Spesialisten AS</h3>
+        <p>Produksjon og montering av rekkverk i glass og metall, trapper, baldakiner og glassvegger. Base på Straume.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Idrettsvegen 147, 5353 Straume</li>
+          <li><a href="tel:+4793073490">930 73 490</a></li>
+          <li><a href="mailto:info@rsrekkverk.no">info@rsrekkverk.no</a></li>
+          <li>Org.nr. 918 318 437</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#byggeren">Byggeren</a></li>
+          <li><a href="#prosessen">Prosessen</a></li>
+          <li><a href="#produkter">Produkter</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4793073490">Ring 930 73 490</a>
+  <a class="epost" href="mailto:info@rsrekkverk.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var knappTekster = ['Sett stolpene', 'Legg håndløperen', 'Monter fyllingen', 'Rekkverket står'];
+  var status = [
+    'Terrassen står åpen mot kanten. Sett stolpene først.',
+    'Stolpene står i lodd. Nå bindes de sammen av håndløperen.',
+    'Håndløperen ligger. Siste steg er fyllingen som sikrer hele feltet.',
+    'Rekkverket står, og utsikten er intakt. Prøv å bytte mellom glass og spiler under.'
+  ];
+  var steg = 0;
+  var knapp = document.getElementById('bygg-knapp');
+  var rivKnapp = document.getElementById('riv-knapp');
+  var chipGlass = document.getElementById('chip-glass');
+  var chipSpiler = document.getElementById('chip-spiler');
+  var stegEl = document.getElementById('terrassen-steg');
+  var statusEl = document.getElementById('terrassen-status');
+  var deler = ['del-stolper', 'del-handloper', 'del-fylling'];
+
+  function oppdater(){
+    stegEl.textContent = 'Steg ' + steg + ' av 3';
+    statusEl.textContent = status[steg];
+    knapp.disabled = steg >= 3;
+    knapp.textContent = knappTekster[steg];
+    chipGlass.disabled = steg < 3;
+    chipSpiler.disabled = steg < 3;
+  }
+
+  knapp.addEventListener('click', function(){
+    if (steg >= 3) return;
+    steg++;
+    document.getElementById(deler[steg - 1]).classList.add('montert');
+    oppdater();
+  });
+
+  function velgFylling(valg){
+    document.getElementById('fylling-glass').classList.toggle('valgt', valg === 'glass');
+    document.getElementById('fylling-spiler').classList.toggle('valgt', valg === 'spiler');
+    chipGlass.setAttribute('aria-pressed', valg === 'glass' ? 'true' : 'false');
+    chipSpiler.setAttribute('aria-pressed', valg === 'spiler' ? 'true' : 'false');
+    statusEl.textContent = valg === 'glass'
+      ? 'Glassfylling: herdet og laminert sikkerhetsglass, og utsikten består.'
+      : 'Spilefylling: ryddige linjer i metall, lett å like og lett å holde.';
+  }
+
+  chipGlass.addEventListener('click', function(){ velgFylling('glass'); });
+  chipSpiler.addEventListener('click', function(){ velgFylling('spiler'); });
+
+  rivKnapp.addEventListener('click', function(){
+    steg = 0;
+    deler.forEach(function(id){ document.getElementById(id).classList.remove('montert'); });
+    velgFylling('glass');
+    oppdater();
+    statusEl.textContent = status[0];
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>

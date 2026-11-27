@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Totland Blikk | Blikkenslagermester og taktekker i Bergen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Piazzolla:opsz,wght@8..30,600;8..30,700;8..30,800&family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --skifer:#2C3A47;
+  --skifer-dyp:#212C37;
+  --dagslys:#F2B84B;
+  --dagslys-mork:#D99F2B;
+  --luft:#AECBDF;
+  --luft-lys:#DCE9F2;
+  --krit:#F8F6F1;
+  --krit-dyp:#ECE8DE;
+  --hvit:#FFFFFF;
+  --tekst:#2A3540;
+  --tekst-dus:#5B6874;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Asap',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--krit);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Piazzolla',Georgia,serif;font-weight:700;line-height:1.12;color:var(--skifer)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--dagslys-mork);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--skifer);color:#fff;border-bottom:3px solid var(--dagslys)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Piazzolla',serif;font-weight:800;font-size:1.15rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-merke{width:30px;height:30px;flex:none}
+.logo span{color:var(--dagslys)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:500;font-size:.95rem;color:#D5DEE6}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--dagslys);color:var(--skifer-dyp);text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--dagslys-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:1rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:linear-gradient(180deg,var(--luft-lys) 0%,var(--krit) 100%)}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:64px 22px 74px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;background:var(--hvit);border:1.5px solid var(--luft);color:var(--skifer);font-weight:600;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{font-size:clamp(1.9rem,4.2vw,2.9rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--dagslys-mork)}
+.hero-tekst{color:var(--tekst-dus);font-size:1.06rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--skifer);color:#fff}
+.knapp-primar:hover{background:var(--skifer-dyp);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:var(--skifer);border:2px solid var(--skifer)}
+.knapp-sekundar:hover{background:var(--skifer);color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:46px;padding-bottom:54px}}
+
+/* Takvindu-aapneren, signaturelementet */
+.loft{background:var(--hvit);border:1px solid var(--krit-dyp);border-radius:14px;padding:24px 22px 22px;box-shadow:0 16px 40px rgba(44,58,71,.1)}
+.loft-tittel{font-family:'Piazzolla',serif;font-weight:700;font-size:1.05rem;color:var(--skifer);margin-bottom:2px}
+.loft-hint{font-size:.87rem;color:var(--tekst-dus);margin-bottom:14px}
+#vindu-ramme{transition:transform .25s ease}
+#lysstraale{transition:opacity .3s ease}
+.loft-panel{margin-top:14px}
+.vinkel-rad{display:flex;align-items:center;gap:14px}
+#vindu-slider{flex:1;accent-color:var(--dagslys-mork);height:6px;cursor:pointer}
+.vinkel-tall{font-family:'Piazzolla',serif;font-weight:800;font-size:1.5rem;color:var(--skifer);min-width:3.2ch;text-align:right}
+.loft-status-rad{margin-top:12px;background:var(--luft-lys);border-left:3px solid var(--dagslys-mork);border-radius:0 8px 8px 0;padding:10px 14px}
+.loft-modus{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dagslys-mork)}
+.loft-status{font-size:.95rem;color:var(--tekst)}
+
+/* Fakta-stripe */
+.stripe{background:var(--skifer);color:#fff}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Piazzolla',serif;font-weight:800;font-size:1.9rem;line-height:1.1;color:var(--dagslys)}
+.stripe-navn{font-size:.88rem;font-weight:500;opacity:.94}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--dagslys-mork);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.seksjon h2{font-size:clamp(1.55rem,3.1vw,2.15rem);margin-bottom:14px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Mester */
+.mester{background:var(--hvit)}
+.mester-indre{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.mester-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.mester-tekst p strong{color:var(--tekst)}
+.mester-kort{background:var(--skifer);color:#fff;border-radius:14px;padding:32px 30px;border-bottom:5px solid var(--dagslys)}
+.mester-kort h3{color:var(--dagslys);font-size:1.15rem;margin-bottom:16px}
+.mester-kort ul{list-style:none;display:grid;gap:13px}
+.mester-kort li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:#D5DEE6}
+.mester-kort .punkt{width:9px;height:9px;border-radius:50%;background:var(--dagslys);flex:none;transform:translateY(-1px)}
+@media(max-width:860px){.mester-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tjeneste{background:var(--hvit);border-radius:12px;padding:26px 24px;border:1px solid var(--krit-dyp);border-top:4px solid var(--skifer);transition:transform .15s ease,box-shadow .15s ease}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(44,58,71,.12);border-top-color:var(--dagslys)}
+.tjeneste h3{font-size:1.08rem;margin-bottom:8px}
+.tjeneste p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.tjenester-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{max-width:44rem;background:var(--krit);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--dagslys)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--skifer);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:14px}
+.cta p{color:#D5DEE6;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.cta .knapp-primar{background:var(--dagslys);color:var(--skifer-dyp)}
+.cta .knapp-primar:hover{background:var(--dagslys-mork)}
+.cta .knapp-sekundar{color:#fff;border-color:rgba(213,222,230,.5)}
+.cta .knapp-sekundar:hover{background:transparent;border-color:#fff;color:#fff}
+.kontakt-kort{background:var(--skifer-dyp);border:1px solid rgba(213,222,230,.22);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.08rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#D5DEE6}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--skifer-dyp);color:#C3CDD6;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#C3CDD6}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(195,205,214,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(195,205,214,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--skifer-dyp);border-top:2px solid var(--dagslys)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--dagslys);color:var(--skifer-dyp)}
+.mobilbar .epost{background:rgba(213,222,230,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Totland Blikk, til toppen">
+      <svg class="logo-merke" viewBox="0 0 30 30" aria-hidden="true">
+        <path d="M3 20 L15 6 L27 20" fill="none" stroke="#F2B84B" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="12" y="10" width="7" height="6" rx="1" transform="rotate(-40 15.5 13)" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      </svg>
+      Totland <span>Blikk</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#takvinduet">Takvinduet</a></li>
+        <li><a href="#mester">Mesterbedrift</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4791997485">919 97 485</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Blikkenslagermester, Nesttun</p>
+        <h1>Tette tak og <em>dagslys på loftet</em></h1>
+        <p class="hero-tekst">
+          Totland Blikk er en mesterbedrift i blikkenslagerfaget som tekker tak,
+          monterer takvinduer og former beslag i kobber, sink og aluminium.
+          Fra Nesttun tar vi oppdrag i hele Bergen og omegn.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4791997485">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#takvinduet">Åpne takvinduet</a>
+        </div>
+      </div>
+
+      <div class="loft" id="takvinduet" aria-label="Interaktivt takvindu">
+        <p class="loft-tittel">Prøv takvinduet</p>
+        <p class="loft-hint">Dra i glidebryteren og se hvordan lyset fyller loftet.</p>
+
+        <svg id="loft-svg" viewBox="0 0 460 250" role="img" aria-labelledby="loft-tittel-svg">
+          <title id="loft-tittel-svg">Skråtak med takvindu som kan åpnes, dagslys slipper inn</title>
+          <!-- Loftsrom -->
+          <rect x="20" y="20" width="420" height="210" fill="#F0EBDF"/>
+          <!-- Gulv -->
+          <rect x="20" y="206" width="420" height="24" fill="#D8CFBC"/>
+          <g stroke="#C7BCA5" stroke-width="1.4">
+            <line x1="80" y1="206" x2="80" y2="230"/>
+            <line x1="150" y1="206" x2="150" y2="230"/>
+            <line x1="220" y1="206" x2="220" y2="230"/>
+            <line x1="290" y1="206" x2="290" y2="230"/>
+            <line x1="360" y1="206" x2="360" y2="230"/>
+          </g>
+          <!-- Lysstraale (bak taket, foran rommet) -->
+          <polygon id="lysstraale" points="150,96 260,96 320,206 130,206" fill="#F2B84B" opacity="0"/>
+          <!-- Skraatak -->
+          <polygon points="20,20 20,206 205,20" fill="#2C3A47"/>
+          <path d="M20 206 L205 20" stroke="#212C37" stroke-width="6"/>
+          <!-- Vindusaapning i taket -->
+          <g transform="rotate(-45 160 106)">
+            <rect x="124" y="86" width="76" height="44" fill="#AECBDF" stroke="#212C37" stroke-width="3"/>
+            <!-- Vindusramme som roterer om toppen -->
+            <g id="vindu-ramme">
+              <rect x="124" y="86" width="76" height="44" fill="#DCE9F2" stroke="#212C37" stroke-width="4" opacity=".96"/>
+              <line x1="162" y1="86" x2="162" y2="130" stroke="#212C37" stroke-width="2"/>
+            </g>
+          </g>
+          <!-- Interioer -->
+          <g>
+            <rect x="330" y="150" width="86" height="56" rx="3" fill="#B9CBDA"/>
+            <rect x="338" y="158" width="70" height="26" rx="2" fill="#9FB4C6"/>
+            <rect x="252" y="176" width="52" height="30" fill="#C8A16B"/>
+            <rect x="256" y="180" width="44" height="6" fill="#B98A52"/>
+          </g>
+          <!-- Sol utenfor -->
+          <circle cx="72" cy="52" r="14" fill="#F2B84B" opacity=".9"/>
+        </svg>
+
+        <div class="loft-panel">
+          <div class="vinkel-rad">
+            <input type="range" id="vindu-slider" min="0" max="45" value="0" step="1" aria-label="Åpningsvinkel for takvinduet i grader">
+            <div class="vinkel-tall"><span id="vinkel-verdi">0</span>°</div>
+          </div>
+          <div class="loft-status-rad" aria-live="polite">
+            <div class="loft-modus" id="loft-modus">Lukket</div>
+            <div class="loft-status" id="loft-status">Vinduet er lukket. Dra i bryteren for å slippe inn dagen.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe morkflate" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">Mesterbedrift</div>
+        <div class="stripe-navn">Registrert i Mesterregisteret</div>
+      </div>
+      <div>
+        <div class="stripe-tall">20 år</div>
+        <div class="stripe-navn">Erfaring fra blikkenslagerfaget</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Kobber og sink</div>
+        <div class="stripe-navn">Beslag formet etter huset ditt</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon mester" id="mester">
+    <div class="ramme">
+      <div class="mester-indre">
+        <div class="mester-tekst">
+          <p class="overtittel">Mesterbedrift</p>
+          <h2>Håndverket bak et tett tak</h2>
+          <p>
+            Totland Blikk drives av blikkenslagermester <strong>Veigo Kasemets</strong>
+            fra Totlandsvegen på Nesttun. Mesterbrevet dokumenterer kompetansen,
+            og bedriften står i Mesterregisteret.
+          </p>
+          <p>
+            Vi tar både store og små prosjekter, og kommer gjerne på befaring også
+            for mindre, private oppdrag. Du får en tydelig vurdering av hva jobben
+            krever, hva den koster og når den kan gjøres.
+          </p>
+          <p>
+            Med 20 års erfaring i faget vet vi hvor bergensværet angriper et tak
+            først, og hvordan vi former beslagene som stopper det.
+          </p>
+        </div>
+        <div class="mester-kort morkflate">
+          <h3>Dokumentert kompetanse</h3>
+          <ul>
+            <li><span class="punkt"></span>Mesterbedrift, registrert i Mesterregisteret</li>
+            <li><span class="punkt"></span>Medlem av Handverkslaget<!-- PLACEHOLDER: medlemskapet bekreftes med kunden foer lansering --></li>
+            <li><span class="punkt"></span>Befaring også for mindre, private prosjekter</li>
+            <li><span class="punkt"></span>Tydelig pris- og tidsvurdering før vi starter</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Alt innen tak- og blikkenslagerarbeid</h2>
+        <p>Fra hel omtekking til det lille beslaget som stopper lekkasjen.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Taktekking</h3>
+          <p>Tekking med takstein, skifer og belegg, tilpasset både huset og været det skal stå i.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Takvinduer</h3>
+          <p>Montering av takvinduer som gir dagslys og luft til rom under skråtak.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Beslag</h3>
+          <p>Pipebeslag, vindskier, takhatter og spesialbeslag i kobber, sink og aluminium.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Renner og nedløp</h3>
+          <p>Takrenner og nedløp som leder vannet trygt bort fra tak og fasade.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Taksikring</h3>
+          <p>Snøfangere og taksikring som beskytter folk og eiendom under taket.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Fasade og rehabilitering</h3>
+          <p>Fasadearbeid, balkonger og rehabilitering, sammen med tømrerarbeidet som hører til.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva kundene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en huseier som har brukt Totland Blikk.»</p>
+        <p class="omtale-kilde">Navn og bydel settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:var(--dagslys)">Kontakt</p>
+        <h2>Skal vi se på taket ditt?</h2>
+        <p>
+          Ring eller send en e-post, så avtaler vi en befaring. Vi kommer gjerne
+          også for mindre, private prosjekter.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4791997485">Ring 919 97 485</a>
+          <a class="knapp knapp-sekundar" href="mailto:post@totlandblikk.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Totland Blikk AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#D5DEE6" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#F2B84B"/></svg>
+          <span>Totlandsvegen 175, 5226 Nesttun</span>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#D5DEE6" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4791997485">919 97 485</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#D5DEE6" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#F2B84B" stroke-width="1.6"/></svg>
+          <a href="mailto:post@totlandblikk.no">post@totlandblikk.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#D5DEE6" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#F2B84B" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Bergen og omegn</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Totland Blikk AS</h3>
+        <p>Mesterbedrift i blikkenslagerfaget på Nesttun. Taktekking, takvinduer, beslag og taksikring i Bergen og omegn.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Totlandsvegen 175, 5226 Nesttun</li>
+          <li><a href="tel:+4791997485">919 97 485</a></li>
+          <li><a href="mailto:post@totlandblikk.no">post@totlandblikk.no</a></li>
+          <li>Org.nr. 998 093 139</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#takvinduet">Takvinduet</a></li>
+          <li><a href="#mester">Mesterbedrift</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4791997485">Ring 919 97 485</a>
+  <a class="epost" href="mailto:post@totlandblikk.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var slider = document.getElementById('vindu-slider');
+  var ramme = document.getElementById('vindu-ramme');
+  var straale = document.getElementById('lysstraale');
+  var verdi = document.getElementById('vinkel-verdi');
+  var modus = document.getElementById('loft-modus');
+  var status = document.getElementById('loft-status');
+
+  function oppdater(){
+    var v = parseInt(slider.value, 10);
+    verdi.textContent = v;
+    ramme.setAttribute('transform', 'rotate(' + (-v) + ' 162 86)');
+    straale.setAttribute('opacity', (v / 45 * 0.45).toFixed(2));
+    if (v === 0) {
+      modus.textContent = 'Lukket';
+      status.textContent = 'Vinduet er lukket. Dra i bryteren for å slippe inn dagen.';
+    } else if (v <= 20) {
+      modus.textContent = 'Luftestilling';
+      status.textContent = 'Litt på gløtt. Frisk luft inn, regnet holdes ute.';
+    } else {
+      modus.textContent = 'Full åpning';
+      status.textContent = 'Vinduet står oppe og loftet bades i dagslys.';
+    }
+  }
+
+  slider.addEventListener('input', oppdater);
+  oppdater();
+})();
+</script>
+
+</body>
+</html>

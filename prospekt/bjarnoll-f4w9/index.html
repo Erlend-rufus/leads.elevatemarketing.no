@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Maleren Bjarnoll | Malerfirma på Sotra med et helt lag bak seg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Sen:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --petrol:#14555A;
+  --petrol-dyp:#0E3F43;
+  --korall:#F26D5B;
+  --korall-mork:#D95643;
+  --kritt:#FBF8F4;
+  --kritt-dyp:#F0EAE1;
+  --hvit:#FFFFFF;
+  --tekst:#243638;
+  --tekst-dus:#59696B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:84px}
+body{
+  font-family:'Sen',system-ui,-apple-system,'Segoe UI',sans-serif;
+  color:var(--tekst);
+  background:var(--kritt);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Merriweather',Georgia,serif;font-weight:900;line-height:1.16;color:var(--petrol)}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:inherit}
+.ramme{max-width:1140px;margin:0 auto;padding:0 22px}
+.morkflate :focus-visible{outline-color:#fff}
+:focus-visible{outline:3px solid var(--korall);outline-offset:2px}
+
+/* Topplinje */
+.topplinje{position:sticky;top:0;z-index:50;background:var(--petrol);color:#fff;border-bottom:3px solid var(--korall)}
+.topplinje-indre{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 22px;max-width:1140px;margin:0 auto}
+.logo{font-family:'Merriweather',serif;font-weight:900;font-size:1.05rem;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-merke{width:30px;height:30px;flex:none}
+.logo span{color:var(--korall);filter:brightness(1.15)}
+.meny{display:flex;gap:26px;list-style:none}
+.meny a{text-decoration:none;font-weight:600;font-size:.93rem;color:#D6E2E3}
+.meny a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.topp-tlf{background:var(--korall);color:#fff;text-decoration:none;font-weight:700;padding:9px 18px;border-radius:6px;font-size:.95rem;white-space:nowrap}
+.topp-tlf:hover{background:var(--korall-mork)}
+@media(max-width:840px){.meny{display:none}}
+@media(max-width:430px){
+  .topplinje-indre{padding:12px 14px}
+  .logo{font-size:.92rem}
+  .topp-tlf{padding:8px 12px;font-size:.86rem}
+}
+
+/* Hero */
+.hero{background:var(--petrol);color:#fff}
+.hero-indre{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;padding:66px 22px 76px;max-width:1140px;margin:0 auto}
+.hero-stikk{display:inline-block;border:1.5px solid rgba(242,109,91,.6);color:#F8B0A4;font-weight:600;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;padding:7px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--korall);filter:brightness(1.2)}
+.hero-tekst{color:#D6E2E3;font-size:1.06rem;max-width:32rem;margin-bottom:28px}
+.hero-knapper{display:flex;gap:14px;flex-wrap:wrap}
+.knapp{display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 28px;border-radius:6px;transition:background .15s ease,transform .15s ease}
+.knapp-primar{background:var(--korall);color:#fff}
+.knapp-primar:hover{background:var(--korall-mork);transform:translateY(-1px)}
+.knapp-sekundar{background:transparent;color:#fff;border:2px solid rgba(214,226,227,.5)}
+.knapp-sekundar:hover{border-color:#fff}
+@media(max-width:900px){.hero-indre{grid-template-columns:1fr;padding-top:48px;padding-bottom:54px}}
+
+/* Laget, signaturelementet */
+.veggen{background:var(--petrol-dyp);border:1px solid rgba(242,109,91,.35);border-radius:14px;padding:24px 22px 22px}
+.veggen-tittel{font-family:'Merriweather',serif;font-weight:900;font-size:1.02rem;color:#F8B0A4;margin-bottom:2px}
+.veggen-hint{font-size:.87rem;color:rgba(214,226,227,.75);margin-bottom:14px}
+.felt{opacity:0;transition:opacity .5s ease}
+.felt.malt{opacity:1}
+.maler-fig{opacity:0;transform:translateY(8px);transition:opacity .4s ease,transform .4s ease}
+.maler-fig.paa-jobb{opacity:1;transform:translateY(0)}
+.veggen-panel{display:flex;align-items:center;gap:12px;margin-top:14px;flex-wrap:wrap}
+.lag-knapp{
+  font-family:'Sen',sans-serif;font-weight:700;font-size:.95rem;
+  background:var(--korall);color:#fff;border:none;border-radius:8px;
+  padding:11px 20px;cursor:pointer;transition:background .15s ease;
+}
+.lag-knapp:hover{background:var(--korall-mork)}
+.lag-knapp:disabled{background:rgba(214,226,227,.25);color:rgba(214,226,227,.6);cursor:not-allowed}
+.tomt-knapp{
+  font-family:'Sen',sans-serif;font-weight:600;font-size:.88rem;
+  background:transparent;color:#D6E2E3;border:1.5px solid rgba(214,226,227,.4);
+  border-radius:8px;padding:10px 16px;cursor:pointer;
+}
+.tomt-knapp:hover{border-color:#fff;color:#fff}
+.veggen-status-rad{margin-top:12px;background:rgba(242,109,91,.14);border-left:3px solid var(--korall);border-radius:0 8px 8px 0;padding:10px 14px}
+.veggen-steg{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F8B0A4}
+.veggen-status{font-size:.95rem;color:#F0F4F4}
+
+/* Fakta-stripe */
+.stripe{background:var(--korall);color:#fff}
+.stripe-indre{max-width:1140px;margin:0 auto;padding:26px 22px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.stripe-tall{font-family:'Merriweather',serif;font-weight:900;font-size:1.85rem;line-height:1.1}
+.stripe-navn{font-size:.88rem;font-weight:600;opacity:.95}
+@media(max-width:640px){.stripe-indre{grid-template-columns:1fr;gap:14px}}
+
+/* Seksjoner */
+.seksjon{padding:76px 0}
+.seksjon-hode{max-width:46rem;margin-bottom:44px}
+.overtittel{color:var(--korall-mork);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.seksjon h2{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:14px}
+.seksjon-hode p{color:var(--tekst-dus);font-size:1.04rem}
+
+/* Laget-seksjon */
+.laget{background:var(--hvit)}
+.laget-indre{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.laget-tekst p{margin-bottom:16px;color:var(--tekst-dus)}
+.laget-tekst p strong{color:var(--tekst)}
+.laget-kort{background:var(--petrol);color:#fff;border-radius:14px;padding:32px 30px;border-bottom:5px solid var(--korall)}
+.laget-kort h3{color:#F8B0A4;font-size:1.1rem;margin-bottom:16px}
+.laget-kort ul{list-style:none;display:grid;gap:13px}
+.laget-kort li{display:flex;gap:12px;align-items:baseline;font-size:.95rem;color:#D6E2E3}
+.laget-kort .punkt{width:9px;height:9px;border-radius:50%;background:var(--korall);flex:none;transform:translateY(-1px)}
+@media(max-width:860px){.laget-indre{grid-template-columns:1fr}}
+
+/* Tjenester */
+.tjenester-nett{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tjeneste{background:var(--hvit);border-radius:12px;padding:26px 24px;border:1px solid var(--kritt-dyp);border-top:4px solid var(--petrol);transition:transform .15s ease,box-shadow .15s ease}
+.tjeneste:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(20,85,90,.12);border-top-color:var(--korall)}
+.tjeneste h3{font-size:1.05rem;margin-bottom:8px}
+.tjeneste p{font-size:.93rem;color:var(--tekst-dus)}
+@media(max-width:900px){.tjenester-nett{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tjenester-nett{grid-template-columns:1fr}}
+
+/* Omtale */
+.omtale{background:var(--hvit)}
+.omtale-kort{max-width:44rem;background:var(--kritt);border-radius:12px;padding:30px 30px 26px;border-left:4px solid var(--korall)}
+.omtale-kort p{font-size:1.02rem;margin-bottom:14px}
+.omtale-kilde{font-size:.88rem;color:var(--tekst-dus)}
+
+/* CTA */
+.cta{background:var(--petrol);color:#fff}
+.cta-indre{max-width:1140px;margin:0 auto;padding:70px 22px;display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center}
+.cta h2{color:#fff;margin-bottom:14px}
+.cta p{color:#D6E2E3;font-size:1.04rem;margin-bottom:26px;max-width:32rem}
+.kontakt-kort{background:var(--petrol-dyp);border:1px solid rgba(242,109,91,.35);border-radius:12px;padding:28px 26px}
+.kontakt-kort h3{color:#fff;font-size:1.05rem;margin-bottom:16px}
+.kontakt-rad{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;font-size:.95rem;color:#D6E2E3}
+.kontakt-rad svg{width:20px;height:20px;flex:none;margin-top:2px}
+.kontakt-rad a{color:#fff;font-weight:600}
+@media(max-width:860px){.cta-indre{grid-template-columns:1fr}}
+
+/* Footer */
+.bunn{background:var(--petrol-dyp);color:#BFD0D1;padding:46px 0 110px}
+.bunn-indre{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px}
+.bunn h3{color:#fff;font-size:1rem;margin-bottom:12px}
+.bunn p,.bunn li{font-size:.92rem}
+.bunn ul{list-style:none;display:grid;gap:8px}
+.bunn a{color:#BFD0D1}
+.bunn a:hover{color:#fff}
+.bunnlinje{border-top:1px solid rgba(191,208,209,.2);margin-top:36px;padding-top:18px;font-size:.82rem;color:rgba(191,208,209,.7)}
+@media(max-width:760px){.bunn-indre{grid-template-columns:1fr}}
+
+/* Mobil bunnlinje */
+.mobilbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;gap:10px;padding:10px 14px;background:var(--petrol-dyp);border-top:2px solid var(--korall)}
+.mobilbar a{flex:1;text-align:center;text-decoration:none;font-weight:700;font-size:.95rem;padding:12px 8px;border-radius:8px}
+.mobilbar .ring{background:var(--korall);color:#fff}
+.mobilbar .epost{background:rgba(214,226,227,.16);color:#fff}
+@media(max-width:760px){.mobilbar{display:flex}}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topplinje morkflate">
+  <div class="topplinje-indre">
+    <a class="logo" href="#topp" aria-label="Maleren Bjarnoll, til toppen">
+      <svg class="logo-merke" viewBox="0 0 30 30" aria-hidden="true">
+        <rect x="4" y="5" width="16" height="9" rx="2" fill="none" stroke="#F26D5B" stroke-width="2.4"/>
+        <path d="M20 9 L26 9 L26 15 L15 15 L15 19" fill="none" stroke="#FFFFFF" stroke-width="2.2"/>
+        <rect x="12.6" y="19" width="4.8" height="7" rx="1.2" fill="#F26D5B"/>
+      </svg>
+      Maleren <span>Bjarnoll</span>
+    </a>
+    <nav aria-label="Hovedmeny">
+      <ul class="meny">
+        <li><a href="#veggen">Veggen</a></li>
+        <li><a href="#laget">Laget</a></li>
+        <li><a href="#tjenester">Tjenester</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a class="topp-tlf" href="tel:+4793438340">934 38 340</a>
+  </div>
+</header>
+
+<main id="topp">
+
+  <section class="hero morkflate">
+    <div class="hero-indre">
+      <div>
+        <p class="hero-stikk">Malerfirma, Kolltveit på Sotra</p>
+        <h1>Én maler ble til <em>et helt lag</em></h1>
+        <p class="hero-tekst">
+          Det som startet med Petter Bjarnoll alene, er i dag Maleren Bjarnoll AS,
+          et malerfirma med et helt lag av fagfolk. Vi maler, legger gulv og
+          fornyer rom for private og bedrifter på Sotra og i Bergen.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4793438340">Ring oss</a>
+          <a class="knapp knapp-sekundar" href="#veggen">Sett laget i sving</a>
+        </div>
+      </div>
+
+      <div class="veggen" id="veggen" aria-label="Interaktiv malervegg">
+        <p class="veggen-tittel">Flere malere, raskere ferdig</p>
+        <p class="veggen-hint">Sett på flere fra laget og se veggen bli ferdig.</p>
+
+        <svg id="vegg-svg" viewBox="0 0 460 230" role="img" aria-labelledby="vegg-tittel-svg">
+          <title id="vegg-tittel-svg">Vegg som males av et voksende malerlag</title>
+          <!-- Vegg -->
+          <rect x="30" y="24" width="400" height="140" fill="#E9E4DC" stroke="#0E3F43" stroke-width="2"/>
+          <!-- Planlagte felt, stiplet -->
+          <g stroke="#0E3F43" stroke-width="1.4" stroke-dasharray="6 6" opacity=".3">
+            <line x1="130" y1="26" x2="130" y2="162"/>
+            <line x1="229" y1="26" x2="229" y2="162"/>
+            <line x1="328" y1="26" x2="328" y2="162"/>
+          </g>
+          <!-- Malingsspann ved veggen -->
+          <g>
+            <rect x="38" y="198" width="26" height="20" rx="3" fill="#F26D5B"/>
+            <path d="M40 200 C46 190 56 190 62 200" fill="none" stroke="#D6E2E3" stroke-width="2.4"/>
+          </g>
+          <!-- Malte felt -->
+          <rect id="felt-1" class="felt" x="32" y="26" width="98" height="136" fill="#F26D5B"/>
+          <rect id="felt-2" class="felt" x="130" y="26" width="99" height="136" fill="#EF624F"/>
+          <rect id="felt-3" class="felt" x="229" y="26" width="99" height="136" fill="#F26D5B"/>
+          <rect id="felt-4" class="felt" x="328" y="26" width="100" height="136" fill="#EF624F"/>
+          <!-- Gulvlist -->
+          <rect x="24" y="164" width="412" height="10" fill="#0E3F43"/>
+          <!-- Malere (enkle figurer med rull) -->
+          <g id="maler-1" class="maler-fig">
+            <circle cx="80" cy="186" r="9" fill="#D6E2E3"/>
+            <rect x="72" y="196" width="16" height="22" rx="4" fill="#F26D5B"/>
+            <line x1="90" y1="200" x2="102" y2="188" stroke="#D6E2E3" stroke-width="3.4" stroke-linecap="round"/>
+            <rect x="98" y="178" width="12" height="7" rx="2.4" fill="#FBF8F4"/>
+          </g>
+          <g id="maler-2" class="maler-fig">
+            <circle cx="180" cy="186" r="9" fill="#D6E2E3"/>
+            <rect x="172" y="196" width="16" height="22" rx="4" fill="#1E7A81"/>
+            <line x1="190" y1="200" x2="202" y2="188" stroke="#D6E2E3" stroke-width="3.4" stroke-linecap="round"/>
+            <rect x="198" y="178" width="12" height="7" rx="2.4" fill="#FBF8F4"/>
+          </g>
+          <g id="maler-3" class="maler-fig">
+            <circle cx="280" cy="186" r="9" fill="#D6E2E3"/>
+            <rect x="272" y="196" width="16" height="22" rx="4" fill="#F26D5B"/>
+            <line x1="290" y1="200" x2="302" y2="188" stroke="#D6E2E3" stroke-width="3.4" stroke-linecap="round"/>
+            <rect x="298" y="178" width="12" height="7" rx="2.4" fill="#FBF8F4"/>
+          </g>
+          <g id="maler-4" class="maler-fig">
+            <circle cx="380" cy="186" r="9" fill="#D6E2E3"/>
+            <rect x="372" y="196" width="16" height="22" rx="4" fill="#1E7A81"/>
+            <line x1="390" y1="200" x2="402" y2="188" stroke="#D6E2E3" stroke-width="3.4" stroke-linecap="round"/>
+            <rect x="398" y="178" width="12" height="7" rx="2.4" fill="#FBF8F4"/>
+          </g>
+        </svg>
+
+        <div class="veggen-panel">
+          <button class="lag-knapp" id="lag-knapp" type="button">Sett på en maler til</button>
+          <button class="tomt-knapp" id="tomt-knapp" type="button">Ny vegg</button>
+        </div>
+        <div class="veggen-status-rad" aria-live="polite">
+          <div class="veggen-steg" id="veggen-steg">0 malere på jobb</div>
+          <div class="veggen-status" id="veggen-status">Veggen venter. Sett den første maleren i sving.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="stripe" aria-label="Nøkkelfakta">
+    <div class="stripe-indre">
+      <div>
+        <div class="stripe-tall">2003</div>
+        <div class="stripe-navn">Petter Bjarnoll startet for seg selv</div>
+      </div>
+      <div>
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Brreg oppgir 11 ansatte i AS-et, bekreftes med kunden. -->
+        <div class="stripe-tall">Helt lag</div>
+        <div class="stripe-navn">AS-et har vokst jevnt siden starten</div>
+      </div>
+      <div>
+        <div class="stripe-tall">Gratis befaring</div>
+        <div class="stripe-navn">Uforpliktende pristilbud på jobben</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seksjon laget" id="laget">
+    <div class="ramme">
+      <div class="laget-indre">
+        <div class="laget-tekst">
+          <p class="overtittel">Laget</p>
+          <h2>Fra énmannsfirma til malerlag</h2>
+          <p>
+            <strong>Petter Bjarnoll</strong> startet som maler for egen regning i 2003.
+            Siden har firmaet vokst jevnt og trutt, og i dag er Maleren Bjarnoll AS
+            et lag av malere og fagfolk med base på Kolltveit.
+          </p>
+          <p>
+            Størrelsen betyr noe for deg som kunde: vi kan bemanne store jobber uten
+            at de små blir nedprioritert, og vi kan holde fremdriften selv når et
+            prosjekt vokser underveis.
+          </p>
+          <p>
+            Kvaliteten er fortsatt den samme som da Petter jobbet alene. Kunnskap,
+            kvalitet og ferdig til avtalt tid.
+          </p>
+        </div>
+        <div class="laget-kort morkflate">
+          <h3>Dette får du hos oss</h3>
+          <ul>
+            <li><span class="punkt"></span>Et helt lag, ikke én manns kalender</li>
+            <li><span class="punkt"></span>Godkjent våtromsbedrift<!-- PLACEHOLDER: sertifiseringen bekreftes med kunden foer lansering --></li>
+            <li><span class="punkt"></span>Gratis og uforpliktende befaring</li>
+            <li><span class="punkt"></span>Ferdig til avtalt tid</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon" id="tjenester">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Det vi gjør</p>
+        <h2>Maling, gulv og rom som fornyes</h2>
+        <p>For private hjem, kontorer, butikker og næringsbygg.</p>
+      </div>
+      <div class="tjenester-nett">
+        <article class="tjeneste">
+          <h3>Malerarbeid inne</h3>
+          <p>Vegger, tak og listverk, malt av fagfolk som rydder etter seg.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Malerarbeid ute</h3>
+          <p>Fasader og utvendig treverk som tåler kystværet på Sotra.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Gulvlegging</h3>
+          <p>Nye gulv lagt riktig første gang, i alt fra stue til butikklokale.</p>
+        </article>
+        <article class="tjeneste">
+          <h3>Våtrom</h3>
+          <p>Renovering av bad og vaskerom, utført som godkjent våtromsbedrift.<!-- PLACEHOLDER: sertifiseringen bekreftes med kunden --></p>
+        </article>
+        <article class="tjeneste">
+          <h3>Kjøkkenfornying</h3>
+          <p>Renovering og oppussing som gir kjøkkenet nytt liv uten full utskifting.<!-- PLACEHOLDER: tjenesteomfang bekreftes med kunden --></p>
+        </article>
+        <article class="tjeneste">
+          <h3>Næring og offentlig</h3>
+          <p>Oppdrag for bedrifter og offentlige kunder, med bemanning som holder planen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="seksjon omtale">
+    <div class="ramme">
+      <div class="seksjon-hode">
+        <p class="overtittel">Kundene</p>
+        <h2>Hva kundene sier</h2>
+      </div>
+      <div class="omtale-kort">
+        <!-- PLACEHOLDER: erstattes med ekte innhold. Hent en verifisert kundeuttalelse eller Google-omtale før publisering. -->
+        <p>«Her kommer en uttalelse fra en kunde som har brukt Maleren Bjarnoll.»</p>
+        <p class="omtale-kilde">Navn og sted settes inn etter avtale med kunden</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta morkflate" id="kontakt">
+    <div class="cta-indre">
+      <div>
+        <p class="overtittel" style="color:#F8B0A4">Kontakt</p>
+        <h2>Trenger rommene dine nytt liv?</h2>
+        <p>
+          Ring eller send en e-post, så kommer vi på gratis befaring. Du får et
+          uforpliktende pristilbud og en tydelig plan for jobben.
+        </p>
+        <div class="hero-knapper">
+          <a class="knapp knapp-primar" href="tel:+4793438340">Ring 934 38 340</a>
+          <a class="knapp knapp-sekundar" href="mailto:petter@bjarnoll.no">Send e-post</a>
+        </div>
+      </div>
+      <div class="kontakt-kort">
+        <h3>Maleren Bjarnoll AS</h3>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2 C6.7 2 4 4.7 4 8 C4 12.5 10 18 10 18 C10 18 16 12.5 16 8 C16 4.7 13.3 2 10 2 Z" fill="none" stroke="#D6E2E3" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="#F26D5B"/></svg>
+          <span>Kolltveitvegen 146, 5360 Kolltveit</span><!-- PLACEHOLDER: skrivemaate paa veinavnet (vegen/veien) bekreftes med kunden -->
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4 L8 3 L9.5 7 L7.5 8.5 C8.5 10.5 9.5 11.5 11.5 12.5 L13 10.5 L17 12 L16 16 C10 16 4 10 4 4 Z" fill="none" stroke="#D6E2E3" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <a href="tel:+4793438340">934 38 340</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="5" width="14" height="11" rx="1.5" fill="none" stroke="#D6E2E3" stroke-width="1.6"/><path d="M3 6 L10 11.5 L17 6" fill="none" stroke="#F26D5B" stroke-width="1.6"/></svg>
+          <a href="mailto:petter@bjarnoll.no">petter@bjarnoll.no</a>
+        </div>
+        <div class="kontakt-rad">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 16 L4 8 L10 3 L16 8 L16 16 Z" fill="none" stroke="#D6E2E3" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 16 L8 11 L12 11 L12 16" fill="none" stroke="#F26D5B" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <span>Sotra, Øygarden og Bergen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bunn morkflate">
+  <div class="ramme">
+    <div class="bunn-indre">
+      <div>
+        <h3>Maleren Bjarnoll AS</h3>
+        <p>Malerfirma på Kolltveit, startet av Petter Bjarnoll i 2003. Malerarbeid, gulv og våtrom for private og bedrifter.</p>
+      </div>
+      <div>
+        <h3>Kontakt</h3>
+        <ul>
+          <li>Kolltveitvegen 146, 5360 Kolltveit</li>
+          <li><a href="tel:+4793438340">934 38 340</a></li>
+          <li><a href="mailto:petter@bjarnoll.no">petter@bjarnoll.no</a></li>
+          <li>Org.nr. 920 330 665</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Innhold</h3>
+        <ul>
+          <li><a href="#veggen">Veggen</a></li>
+          <li><a href="#laget">Laget</a></li>
+          <li><a href="#tjenester">Tjenester</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="bunnlinje">Skisse utarbeidet av Elevate Marketing. Ikke publisert innhold.</p>
+  </div>
+</footer>
+
+<div class="mobilbar morkflate" aria-label="Hurtigkontakt">
+  <a class="ring" href="tel:+4793438340">Ring 934 38 340</a>
+  <a class="epost" href="mailto:petter@bjarnoll.no">Send e-post</a>
+</div>
+
+<script>
+(function(){
+  var status = [
+    'Veggen venter. Sett den første maleren i sving.',
+    'Én maler er i gang. Det går, men det tar tid.',
+    'To på jobb. Nå begynner det å ligne noe.',
+    'Tre malere ruller i takt. Snart ferdig.',
+    'Hele laget på veggen, og jobben er ferdig på en brøkdel av tiden. Det er forskjellen på én mann og et lag.'
+  ];
+  var antall = 0;
+  var knapp = document.getElementById('lag-knapp');
+  var tomtKnapp = document.getElementById('tomt-knapp');
+  var stegEl = document.getElementById('veggen-steg');
+  var statusEl = document.getElementById('veggen-status');
+
+  function oppdater(){
+    stegEl.textContent = antall + (antall === 1 ? ' maler' : ' malere') + ' på jobb';
+    statusEl.textContent = status[antall];
+    knapp.disabled = antall >= 4;
+    knapp.textContent = antall >= 4 ? 'Veggen er ferdig' : 'Sett på en maler til';
+  }
+
+  knapp.addEventListener('click', function(){
+    if (antall >= 4) return;
+    antall++;
+    document.getElementById('maler-' + antall).classList.add('paa-jobb');
+    document.getElementById('felt-' + antall).classList.add('malt');
+    oppdater();
+  });
+
+  tomtKnapp.addEventListener('click', function(){
+    antall = 0;
+    for (var i = 1; i <= 4; i++) {
+      document.getElementById('maler-' + i).classList.remove('paa-jobb');
+      document.getElementById('felt-' + i).classList.remove('malt');
+    }
+    oppdater();
+  });
+
+  oppdater();
+})();
+</script>
+
+</body>
+</html>
