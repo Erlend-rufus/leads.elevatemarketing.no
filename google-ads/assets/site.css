@@ -68,6 +68,9 @@ section{padding:clamp(64px,9vw,120px) 0;border-bottom:1px solid var(--line)}
 .rad label:has(input:checked){border-color:var(--c1)}
 .pv{font-size:14px;color:var(--dim);margin:14px 0 0}
 #skjema .btn:disabled{opacity:.6}
+.midcta{margin:36px 0 0;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.midcta span{font-size:15px;color:var(--dim)}
+.moter{color:var(--mut);max-width:60ch;margin:20px 0 0;padding-left:16px;border-left:2px solid var(--c1)}
 .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .opt{background:var(--s2);border:1px solid var(--line);color:var(--tx);border-radius:12px;padding:18px;font:500 17px IN,sans-serif;text-align:left;cursor:pointer}
 .opt:hover{border-color:var(--c1)}
