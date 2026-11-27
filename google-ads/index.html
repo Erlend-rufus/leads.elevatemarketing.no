@@ -191,6 +191,8 @@ var PIXEL_ID = '2054301445970035';            // samme pixel som resten av leads
     if(done)return; done=true;
     var d=new FormData(form), body=new URLSearchParams(d).toString(), bud=d.get('budsjett');
     var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sender…';
+    var zp=new URLSearchParams(d); zp.delete('form-name'); zp.set('kilde','google-ads'+(q.get('utm_campaign')?' / '+q.get('utm_campaign'):''));
+    try{fetch('https://hooks.zapier.com/hooks/catch/21716066/HNZje673pBmrCIYp/',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:zp.toString()})}catch(err){}
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(){}).then(function(){
       if(bud==='Under 30 000 kr'){ location.href='ikke-aktuelt/'; return; }
       emTrack('GoogleAdsKvalifisert',{budsjett:bud}); if(ok&&window.fbq) fbq('track','Lead',{content_name:'google-ads-fastpris'});
