@@ -169,7 +169,7 @@ var PIXEL_ID = '2054301445970035';            // samme pixel som resten av leads
   document.querySelector('.opts').addEventListener('click',function(e){
     var b=e.target.closest('.opt'); if(!b)return;
     if(b.dataset.q==='nei'){ location.href='ikke-aktuelt/'; return; }
-    if(!done){ done=true; emTrack('GoogleAdsKvalifisert',{budsjett:b.dataset.b}); }
+    if(!done){ done=true; emTrack('GoogleAdsKvalifisert',{budsjett:b.dataset.b}); if(ok&&window.fbq) fbq('track','Lead',{content_name:'google-ads-fastpris'}); }
     msg.textContent='Bra. Velg et tidspunkt som passer for gjennomgangen.';
     if(/^[A-Z_]+$/.test(CALENDLY_URL)){ msg.textContent='Kalenderen er ikke koblet på ennå. Send oss en e-post på post@elevatemarketing.no, så finner vi et tidspunkt.'; return; }
     utm.set('hide_gdpr_banner','1'); utm.set('primary_color','00a3d6');
@@ -180,7 +180,7 @@ var PIXEL_ID = '2054301445970035';            // samme pixel som resten av leads
   });
   window.addEventListener('message',function(e){
     if(e.origin.indexOf('calendly.com')<0||!e.data||e.data.event!=='calendly.event_scheduled')return;
-    emTrack('GoogleAdsMoteBooket'); setTimeout(function(){location.href='takk/'},600);
+    emTrack('GoogleAdsMoteBooket'); try{sessionStorage.setItem('em_booket','1')}catch(e){} setTimeout(function(){location.href='takk/'},600);
   });
 })();
 </script>
