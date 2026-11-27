@@ -163,6 +163,8 @@
 /* ---- Konfigurasjon: fyll inn Calendly-eventet her ---------------------- */
 var CALENDLY_URL = 'https://calendly.com/eb-growwithelevate/google-ads-gjennomgang-45-min';
 var PIXEL_ID = '2054301445970035';            // samme pixel som resten av leads-domenet
+var GADS_ID = 'AW-11161185005';               // Google Ads (Aspiria-kontoen 635-846-6803)
+var GADS_LEAD = 'AW-11161185005/ITz6CMKH2MAdEO3ViMop'; // konvertering «EM fastpris - kvalifisert skjema»
 /* ----------------------------------------------------------------------- */
 (function(){
   var KEY='em_consent', ok=false;
@@ -172,6 +174,8 @@ var PIXEL_ID = '2054301445970035';            // samme pixel som resten av leads
     if(ok||!/^\d+$/.test(PIXEL_ID))return; ok=true;
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init',PIXEL_ID); fbq('track','PageView');
+    var g=document.createElement('script'); g.async=true; g.src='https://www.googletagmanager.com/gtag/js?id='+GADS_ID; document.head.appendChild(g);
+    window.dataLayer=window.dataLayer||[]; window.gtag=function(){dataLayer.push(arguments)}; gtag('js',new Date()); gtag('config',GADS_ID);
   }
   window.emTrack=function(name,data){ if(ok&&window.fbq) fbq('trackCustom',name,data||{}); };
   var c=document.getElementById('consent'), v=get();
@@ -194,7 +198,7 @@ var PIXEL_ID = '2054301445970035';            // samme pixel som resten av leads
     try{fetch('https://hooks.zapier.com/hooks/catch/21716066/HNZje673pBmrCIYp/',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:zp.toString()}).catch(function(){})}catch(err){}
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(){}).then(function(){
       if(bud==='Under 30 000 kr'){ location.href='ikke-aktuelt/'; return; }
-      emTrack('GoogleAdsKvalifisert',{budsjett:bud}); if(ok&&window.fbq) fbq('track','Lead',{content_name:'google-ads-fastpris'});
+      emTrack('GoogleAdsKvalifisert',{budsjett:bud}); if(ok&&window.fbq) fbq('track','Lead',{content_name:'google-ads-fastpris'}); if(ok&&window.gtag) gtag('event','conversion',{send_to:GADS_LEAD});
       form.hidden=true;
       msg.textContent='Takk. Velg et tidspunkt som passer for gjennomgangen.';
       if(/^[A-Z_]+$/.test(CALENDLY_URL)){ msg.textContent='Takk, vi tar kontakt på e-post innen én arbeidsdag.'; return; }
