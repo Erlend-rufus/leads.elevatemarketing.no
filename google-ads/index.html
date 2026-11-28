@@ -145,7 +145,7 @@
 </div></footer>
 
 <div class="consent" id="consent" role="region" aria-label="Samtykke">
-  <span>Vi bruker informasjonskapsler fra Meta til å måle om annonsene våre virker. Du velger selv. <a href="/ai-synlighet/personvern/">Personvernerklæring</a></span>
+  <span>Vi bruker informasjonskapsler fra Meta og Google til å måle om annonsene våre virker. Du velger selv. <a href="/ai-synlighet/personvern/">Personvernerklæring</a></span>
   <span><button type="button" class="yes" data-c="ja">Godta</button><button type="button" data-c="nei">Bare nødvendige</button></span>
 </div>
 
@@ -185,6 +185,7 @@ var GADS_LEAD = 'AW-11161185005/ITz6CMKH2MAdEO3ViMop'; // konvertering «EM fast
     var d=new FormData(form), body=new URLSearchParams(d).toString(), bud=d.get('budsjett');
     var btn=form.querySelector('button[type=submit]'); btn.disabled=true; btn.textContent='Sender…';
     var zp=new URLSearchParams(d); zp.delete('form-name'); zp.set('kilde','google-ads'+(q.get('utm_campaign')?' / '+q.get('utm_campaign'):''));
+    if(q.get('gclid')&&get()==='ja') zp.set('gclid',q.get('gclid').slice(0,200));
     try{fetch('https://hooks.zapier.com/hooks/catch/21716066/HNZje673pBmrCIYp/',{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'application/x-www-form-urlencoded'},body:zp.toString()}).catch(function(){})}catch(err){}
     fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body}).catch(function(){}).then(function(){
       if(bud==='Under 30 000 kr'){ location.href='ikke-aktuelt/'; return; }
